@@ -23,10 +23,13 @@ public class ZXFileUtil {
     }
 
     private static String splicePath(String str1,String str2){
-        String path = str1;
-        if (path.endsWith(DIVIDER)){
-            //TODO
+        if (str1.endsWith(DIVIDER)){
+            str1 = str1.substring(0,str1.length()-1);
         }
+        if(str2.startsWith(DIVIDER)){
+            str2 = str1.substring(0,str2.length()-1);
+        }
+        String path = str1+DIVIDER+str2;
         return path;
     }
 
