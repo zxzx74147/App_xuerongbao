@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.android.databinding'
 
+
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.0"
@@ -36,10 +38,8 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.makeramen:roundedimageview:2.2.0'
-    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
     compile 'com.mcxiaoke.volley:library:1.0.18'
     compile 'com.alibaba:fastjson:1.2.6'
     compile 'com.parse.bolts:bolts-android:1.2.1'
-
-
+    compile 'com.github.liuguangqiang.swipeback:library:1.0.2@aar'
 }
