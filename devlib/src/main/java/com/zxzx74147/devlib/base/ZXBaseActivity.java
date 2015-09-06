@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 public class ZXBaseActivity extends FragmentActivity {
 
     public ZXBaseActivity() {
+        super();
     }
 
     @Override

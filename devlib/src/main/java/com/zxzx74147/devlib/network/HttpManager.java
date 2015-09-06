@@ -2,6 +2,7 @@ package com.zxzx74147.devlib.network;
 
 import android.app.Application;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
@@ -10,22 +11,27 @@ import com.android.volley.toolbox.Volley;
  */
 public class HttpManager {
 
-    private RequestQueue mRequestQueue;
+    private static RequestQueue mRequestQueue;
     private HttpManager(){
 
     }
 
-    public void init(Application application){
-        mRequestQueue =  Volley.newRequestQueue(application);
-        mRequestQueue.start();
+    public static void init(Application application){
+        if(mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(application);
+            mRequestQueue.start();
+        }
     }
 
-    public void stop(){
+    public static void stop(){
         mRequestQueue.stop();
     }
-    public void start(){
+    public static void start(){
         mRequestQueue.start();
     }
 
+    public static void sendRequest(Request request){
+        mRequestQueue.add(request);
+    }
 
 }

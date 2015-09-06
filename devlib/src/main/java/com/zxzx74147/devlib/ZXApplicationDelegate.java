@@ -3,6 +3,7 @@ package com.zxzx74147.devlib;
 import android.app.Application;
 
 import com.zxzx74147.devlib.image.ImageModelInterface;
+import com.zxzx74147.devlib.network.NetworkInterface;
 import com.zxzx74147.devlib.orm.OrmInterface;
 
 /**
@@ -20,6 +21,7 @@ public class ZXApplicationDelegate {
         mApplication = application;
         ImageModelInterface.init(mApplication);
         OrmInterface.init(mApplication);
+        NetworkInterface.init(mApplication);
     }
 
 }
