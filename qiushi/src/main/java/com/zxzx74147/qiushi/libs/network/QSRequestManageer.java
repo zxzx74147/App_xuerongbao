@@ -8,6 +8,7 @@ import com.zxzx74147.devlib.utils.ZXAssetUtil;
 import com.zxzx74147.qiushi.libs.network.data.Param;
 import com.zxzx74147.qiushi.libs.network.data.RequestRule;
 import com.zxzx74147.qiushi.libs.util.DeviceUtil;
+import com.zxzx74147.qiushi.module.statistics.HistoryManager;
 
 import java.util.HashMap;
 import java.util.List;
@@ -68,6 +69,7 @@ public class QSRequestManageer {
 
         request.addParams("r", mAndroidID+System.currentTimeMillis());
         request.addParams("rqcnt",mRqcnt++);
+        request.addParams("readarticles", HistoryManager.getHistory());
 
         String method = requestRule.method;
         if("GET".equals(method)){

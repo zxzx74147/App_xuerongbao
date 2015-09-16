@@ -110,7 +110,9 @@ public class BaseHttpRequest<T> {
         @Override
         public void onErrorResponse(VolleyError error) {
             if(error != null) {
-                Log.e("http_error", error.getMessage());
+                if(error.getMessage() != null) {
+                    Log.e("http_error", error.getMessage());
+                }
             }
         }
     };

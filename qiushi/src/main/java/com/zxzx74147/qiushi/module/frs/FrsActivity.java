@@ -10,6 +10,7 @@ import com.zxzx74147.qiushi.common.QSViewBinder;
 import com.zxzx74147.qiushi.common.data.CardItemListData;
 import com.zxzx74147.qiushi.libs.network.QSHttpRequest;
 import com.zxzx74147.qiushi.libs.network.QSRequestManageer;
+import com.zxzx74147.qiushi.module.statistics.HistoryManager;
 
 /**
  * Created by zhengxin on 15/9/1.
@@ -35,7 +36,7 @@ public class FrsActivity extends QSBaseListActivity {
                 Log.e("FrsActivity", "id2=" + Thread.currentThread().getId());
                 CardItemListData data = response.result;
                 setData(data.items);
-
+                HistoryManager.addHistory(data.items.getFirst().id);
             }
         });
         request.setPath("article/list/suggest");
@@ -43,6 +44,5 @@ public class FrsActivity extends QSBaseListActivity {
         QSRequestManageer.sharedInstance().dealRequest(request);
         sendRequest(request);
     }
-
 
 }
