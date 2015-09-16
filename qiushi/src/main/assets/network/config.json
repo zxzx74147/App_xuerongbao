@@ -1,0 +1,7 @@
+{
+  "HOST":"http://m2.qiushibaike.com/",
+  "TIMEOUT":5000,
+  "HEADERS":{
+    "User-agent":"qiushibalke_8.0.2_WIFI_auto_19"
+  }
+}

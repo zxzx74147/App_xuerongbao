@@ -34,4 +34,32 @@ public class HttpManager {
         mRequestQueue.add(request);
     }
 
+    public static void cancel(final int  id){
+        mRequestQueue.cancelAll(new RequestQueue.RequestFilter() {
+            @Override
+            public boolean apply(Request<?> request) {
+                Object tag = request.getTag();
+                if(tag != null && tag instanceof BaseHttpRequest){
+                    BaseHttpRequest oriRequest = (BaseHttpRequest) tag;
+                    if(oriRequest.getTag() == id){
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+    }
+
+    public static void cancel(BaseHttpRequest request){
+        mRequestQueue.cancelAll(new RequestQueue.RequestFilter() {
+            @Override
+            public boolean apply(Request<?> request) {
+                if(request.getTag() == request){
+                    return true;
+                }
+                return false;
+            }
+        });
+    }
+
 }

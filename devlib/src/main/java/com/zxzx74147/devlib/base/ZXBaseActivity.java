@@ -3,11 +3,16 @@ package com.zxzx74147.devlib.base;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
+import com.zxzx74147.devlib.network.BaseHttpRequest;
+import com.zxzx74147.devlib.network.HttpManager;
+import com.zxzx74147.devlib.utils.ZXUniqueIDGenerator;
+
 
 /**
  * Created by zhengxin on 15/8/27.
  */
 public class ZXBaseActivity extends FragmentActivity {
+    private int mUniqueID = ZXUniqueIDGenerator.getUniqueID();
 
     public ZXBaseActivity() {
         super();
@@ -33,7 +38,16 @@ public class ZXBaseActivity extends FragmentActivity {
 
     }
 
+    public void sendRequest(BaseHttpRequest request){
+        request.setTag(mUniqueID);
+        request.send();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        HttpManager.cancel(mUniqueID);
 
+    }
 
 }

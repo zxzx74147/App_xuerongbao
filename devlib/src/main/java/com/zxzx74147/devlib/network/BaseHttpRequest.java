@@ -7,7 +7,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.concurrent.Callable;
 
 import bolts.Continuation;
@@ -18,17 +18,26 @@ import bolts.Task;
  */
 public class BaseHttpRequest<T> {
     protected String mUrl;
-    protected HashMap<String,Object> mParams;
+    protected LinkedHashMap<String,Object> mParams;
     protected int mMothod;
     protected boolean mLoadCache = false;
     protected Request mProxy;
     protected HttpResponseListener<T> mResponseListener;
     private Class<T> mDstClass;
-
+    private int mTag = 0;
+    private boolean isCancel = false;
     public BaseHttpRequest(Class<T> dstClass,HttpResponseListener<T> listener){
         super();
         mResponseListener = listener;
         mDstClass = dstClass;
+    }
+
+    public int getTag(){
+        return mTag;
+    }
+
+    public void setTag(int tag){
+        mTag = tag;
     }
 
     public void setUrl(String url){
@@ -37,9 +46,17 @@ public class BaseHttpRequest<T> {
 
     public void addParams(String key,Object value){
         if(mParams == null) {
-            mParams = new HashMap<>();
+            mParams = new LinkedHashMap<>();
         }
         mParams.put(key,value);
+    }
+
+    public Object getParams(String key){
+        return mParams.get(key);
+    }
+
+    public void setMethod(int mothod){
+        mMothod = mothod;
     }
 
 
@@ -55,27 +72,35 @@ public class BaseHttpRequest<T> {
         }else {
             mProxy = new RequestProxy(mMothod, mUrl, ZXNetworkUtil.getKVParamData(mParams), mSucessListener, mFailListener);
         }
+        mProxy.setTag(this);
         HttpManager.sendRequest(mProxy);
     }
 
     private Response.Listener<String> mSucessListener = new Response.Listener<String>() {
         @Override
         public void onResponse(final String response) {
+
             Task<T> task = Task.callInBackground(new Callable<T>() {
                 @Override
                 public T call() throws Exception {
-                    T data = new Gson().fromJson(response,mDstClass);
+                    Log.d("NETWORK URL = ", mUrl+"?"+ZXNetworkUtil.getKVParamData(mParams));
+                    Log.d("NETWORK RSP = ", response);
+                    T data = new Gson().fromJson(response, mDstClass);
                     return data;
                 }
-            }).onSuccess(new Continuation<T, T>() {
-                @Override
-                public T then(Task<T> task) throws Exception {
-                    HttpResponse rsp = new HttpResponse();
-                    rsp.result = task.getResult();
-                    mResponseListener.onResponse(rsp);
-                    return null;
-                }
-            });
+            }).
+                    onSuccess(new Continuation<T, T>() {
+                        @Override
+                        public T then(Task<T> task) throws Exception {
+                            if (isCancel) {
+                                return null;
+                            }
+                            HttpResponse rsp = new HttpResponse();
+                            rsp.result = task.getResult();
+                            mResponseListener.onResponse(rsp);
+                            return null;
+                        }
+                    }, Task.UI_THREAD_EXECUTOR);
 
 
         }
@@ -84,7 +109,14 @@ public class BaseHttpRequest<T> {
     private Response.ErrorListener mFailListener = new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError error) {
-            Log.e("http_error",error.getMessage());
+            if(error != null) {
+                Log.e("http_error", error.getMessage());
+            }
         }
     };
+
+    private void cancel(){
+        isCancel = true;
+        HttpManager.cancel(this);
+    }
 }

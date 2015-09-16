@@ -1,0 +1,47 @@
+[
+  {
+    "path":"common",
+    "method":"GET",
+    "params":[
+      {
+        "key":"uid",
+        "value":"0000"
+      }
+    ]
+  },
+
+  {
+    "path":"article/list/suggest",
+    "comments":"首页",
+    "method":"GET",
+    "params":[
+      {
+        "key":"type",
+        "value":"refresh"
+      },
+      {
+        "key":"count",
+        "value":30
+      }
+    ],
+    "include":"common"
+  },
+
+  {
+    "path":"article/list/imgrank",
+    "comments":"图片",
+    "method":"GET",
+    "params":[
+      {
+        "key":"type",
+        "value":"refresh"
+      },
+      {
+        "key":"count",
+        "value":30
+      }
+    ],
+    "include":"common"
+  }
+
+]
