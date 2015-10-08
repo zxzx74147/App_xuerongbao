@@ -1,5 +1,7 @@
 package com.zxzx74147.qiushi.common.data;
 
+import com.zxzx74147.qiushi.libs.util.ImageUtil;
+
 import java.io.Serializable;
 
 /**
@@ -20,5 +22,11 @@ public class CardItemData implements Serializable{
     public String type;
     public long id;
     public ImageSizeData image_size;
+
+    public String getItemUrl(){
+        return ImageUtil.getImageUrl(image);
+    }
+
+
 
 }

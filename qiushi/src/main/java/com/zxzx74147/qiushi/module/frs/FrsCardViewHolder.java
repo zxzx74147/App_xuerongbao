@@ -2,6 +2,7 @@ package com.zxzx74147.qiushi.module.frs;
 
 import android.databinding.ViewDataBinding;
 
+import com.zxzx74147.qiushi.BR;
 import com.zxzx74147.qiushi.common.QSViewHolder;
 import com.zxzx74147.qiushi.common.data.CardItemData;
 import com.zxzx74147.qiushi.databinding.FrsItemLayoutBinding;
@@ -18,6 +19,7 @@ public class FrsCardViewHolder extends QSViewHolder<CardItemData> {
     @Override
     protected void bindData(CardItemData data) {
         FrsItemLayoutBinding binding = (FrsItemLayoutBinding)mBinding;
-        binding.setItem(data);
+        binding.setVariable(BR.item, data);
+        binding.executePendingBindings();
     }
 }

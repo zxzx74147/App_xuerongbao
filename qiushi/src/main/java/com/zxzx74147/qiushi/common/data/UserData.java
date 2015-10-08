@@ -1,5 +1,7 @@
 package com.zxzx74147.qiushi.common.data;
 
+import com.zxzx74147.qiushi.libs.util.ImageUtil;
+
 import java.io.Serializable;
 
 /**
@@ -16,4 +18,8 @@ public class UserData implements Serializable {
     public String role;
     public String login;
     public String icon;
+
+    public String getAvgUrl(){
+        return ImageUtil.getAvgUrl(String.valueOf(id),icon);
+    }
 }

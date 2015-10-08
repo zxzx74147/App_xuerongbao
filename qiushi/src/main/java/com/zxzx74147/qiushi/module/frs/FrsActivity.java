@@ -1,7 +1,6 @@
 package com.zxzx74147.qiushi.module.frs;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
@@ -29,11 +28,10 @@ public class FrsActivity extends QSBaseListActivity {
 
     @Override
     protected void refreshData() {
-        Log.e("FrsActivity","id1="+Thread.currentThread().getId());
+
         QSHttpRequest<CardItemListData> request = new QSHttpRequest<>(CardItemListData.class,new HttpResponseListener<CardItemListData>() {
             @Override
             public void onResponse(HttpResponse<CardItemListData> response) {
-                Log.e("FrsActivity", "id2=" + Thread.currentThread().getId());
                 CardItemListData data = response.result;
                 setData(data.items);
                 HistoryManager.addHistory(data.items.getFirst().id);

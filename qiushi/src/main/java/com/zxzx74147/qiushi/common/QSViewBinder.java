@@ -41,6 +41,7 @@ public abstract class QSViewBinder<T> {
     }
 
     public  void onBindViewHolder(QSViewHolder<T> holder, T data){
+
         holder.bindData(data);
     }
 
