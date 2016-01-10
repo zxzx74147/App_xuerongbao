@@ -2,10 +2,10 @@ package com.zxzx74147.devlib.network;
 
 import android.util.Log;
 
+import com.alibaba.fastjson.JSON;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.google.gson.Gson;
 
 import java.util.LinkedHashMap;
 import java.util.concurrent.Callable;
@@ -18,7 +18,7 @@ import bolts.Task;
  */
 public class BaseHttpRequest<T> {
     protected String mUrl;
-    protected LinkedHashMap<String,Object> mParams;
+    protected LinkedHashMap<String, Object> mParams;
     protected int mMothod;
     protected boolean mLoadCache = false;
     protected Request mProxy;
@@ -26,50 +26,51 @@ public class BaseHttpRequest<T> {
     private Class<T> mDstClass;
     private int mTag = 0;
     private boolean isCancel = false;
-    public BaseHttpRequest(Class<T> dstClass,HttpResponseListener<T> listener){
+
+    public BaseHttpRequest(Class<T> dstClass, HttpResponseListener<T> listener) {
         super();
         mResponseListener = listener;
         mDstClass = dstClass;
     }
 
-    public int getTag(){
+    public int getTag() {
         return mTag;
     }
 
-    public void setTag(int tag){
+    public void setTag(int tag) {
         mTag = tag;
     }
 
-    public void setUrl(String url){
+    public void setUrl(String url) {
         mUrl = url;
     }
 
-    public void addParams(String key,Object value){
-        if(mParams == null) {
+    public void addParams(String key, Object value) {
+        if (mParams == null) {
             mParams = new LinkedHashMap<>();
         }
-        mParams.put(key,value);
+        mParams.put(key, value);
     }
 
-    public Object getParams(String key){
+    public Object getParams(String key) {
         return mParams.get(key);
     }
 
-    public void setMethod(int mothod){
+    public void setMethod(int mothod) {
         mMothod = mothod;
     }
 
 
-    public void send(){
-        if(mMothod == Request.Method.GET){
+    public void send() {
+        if (mMothod == Request.Method.GET) {
             String path = mUrl;
-            if(mUrl.contains("?")){
-                path+=ZXNetworkUtil.getKVParamData(mParams);
-            }else{
-                path+="?"+ZXNetworkUtil.getKVParamData(mParams);
+            if (mUrl.contains("?")) {
+                path += ZXNetworkUtil.getKVParamData(mParams);
+            } else {
+                path += "?" + ZXNetworkUtil.getKVParamData(mParams);
             }
             mProxy = new RequestProxy(mMothod, path, ZXNetworkUtil.getKVParamData(mParams), mSucessListener, mFailListener);
-        }else {
+        } else {
             mProxy = new RequestProxy(mMothod, mUrl, ZXNetworkUtil.getKVParamData(mParams), mSucessListener, mFailListener);
         }
         mProxy.setTag(this);
@@ -83,9 +84,9 @@ public class BaseHttpRequest<T> {
             Task<T> task = Task.callInBackground(new Callable<T>() {
                 @Override
                 public T call() throws Exception {
-                    Log.d("NETWORK URL = ", mUrl+"?"+ZXNetworkUtil.getKVParamData(mParams));
+                    Log.d("NETWORK URL = ", mUrl + "?" + ZXNetworkUtil.getKVParamData(mParams));
                     Log.d("NETWORK RSP = ", response);
-                    T data = new Gson().fromJson(response, mDstClass);
+                    T data = JSON.parseObject(response, mDstClass);
                     return data;
                 }
             }).
@@ -109,15 +110,15 @@ public class BaseHttpRequest<T> {
     private Response.ErrorListener mFailListener = new Response.ErrorListener() {
         @Override
         public void onErrorResponse(VolleyError error) {
-            if(error != null) {
-                if(error.getMessage() != null) {
+            if (error != null) {
+                if (error.getMessage() != null) {
                     Log.e("http_error", error.getMessage());
                 }
             }
         }
     };
 
-    private void cancel(){
+    private void cancel() {
         isCancel = true;
         HttpManager.cancel(this);
     }
