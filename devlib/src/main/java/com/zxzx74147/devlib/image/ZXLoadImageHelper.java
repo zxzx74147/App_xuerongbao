@@ -5,6 +5,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.zxzx74147.devlib.ZXApplicationDelegate;
+import com.zxzx74147.devlib.image.widget.ZXImageView;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 
 /**
@@ -20,6 +21,13 @@ public class ZXLoadImageHelper {
         }
         if (imageView == null) {
             return;
+        }
+        if (imageView instanceof ZXImageView) {
+            if (url.equals(((ZXImageView) imageView).getImageUrl())) {
+                return;
+            } else {
+                imageView.setImageDrawable(null);
+            }
         }
         Context context = imageView.getContext();
         if (context == null) {
