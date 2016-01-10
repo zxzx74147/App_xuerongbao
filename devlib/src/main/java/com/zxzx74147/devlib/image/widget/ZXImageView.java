@@ -3,18 +3,13 @@ package com.zxzx74147.devlib.image.widget;
 import android.content.Context;
 import android.util.AttributeSet;
 
-import com.facebook.drawee.generic.GenericDraweeHierarchy;
-import com.facebook.drawee.view.GenericDraweeView;
+import com.bumptech.glide.Glide;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 /**
  * Created by zhengxin on 15/8/27.
  */
-public class ZXImageView extends GenericDraweeView {
-
-    public ZXImageView(Context context, GenericDraweeHierarchy hierarchy) {
-        super(context);
-        this.setHierarchy(hierarchy);
-    }
+public class ZXImageView extends RoundedImageView {
 
     public ZXImageView(Context context) {
         super(context);
@@ -26,5 +21,9 @@ public class ZXImageView extends GenericDraweeView {
 
     public ZXImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+    }
+
+    public void loadImageResource(String url) {
+        Glide.with(getContext());
     }
 }
