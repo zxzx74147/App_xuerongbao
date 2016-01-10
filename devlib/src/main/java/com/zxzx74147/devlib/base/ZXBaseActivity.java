@@ -49,5 +49,4 @@ public class ZXBaseActivity extends FragmentActivity {
         HttpManager.cancel(mUniqueID);
 
     }
-
 }
