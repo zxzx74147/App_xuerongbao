@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseFragment2" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/view_default_bg"
+        android:orientation="vertical">
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:id="@+id/mail_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/mail_hint"
+            app:label_text="@string/mail"
+            app:label_width="@dimen/default_gap_150"
+            app:not_null="true"
+            app:post_key="@string/mail_post_key" />
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:id="@+id/wechat_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/wechat_hint"
+            app:input_right_drawable="@drawable/reg_wx"
+            app:label_text="@string/wechat"
+            app:label_width="@dimen/default_gap_150"
+            app:not_null="true"
+            app:post_key="@string/wechat_post_key" />
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:id="@+id/qq_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/qq_hint"
+            app:input_right_drawable="@drawable/reg_qq"
+            app:label_text="@string/qq"
+            app:label_width="@dimen/default_gap_150"
+            app:not_null="true"
+            app:post_key="@string/qq_post_key" />
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:id="@+id/weibo_id"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/weibo_hint"
+            app:input_right_drawable="@drawable/reg_wb"
+            app:label_text="@string/weibo"
+            app:label_width="@dimen/default_gap_150"
+            app:not_null="true"
+            app:post_key="@string/weibo_post_key" />
+    </LinearLayout>
+</layout>

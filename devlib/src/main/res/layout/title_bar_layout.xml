@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/default_gap_110"
+    android:clipChildren="false"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:paddingLeft="@dimen/default_gap_30"
+        android:paddingRight="@dimen/default_gap_50"
+        android:scaleType="centerInside"
+        android:src="@drawable/reg_black_left_arrow" />
+
+    <LinearLayout
+        android:id="@+id/left_box"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingLeft="@dimen/default_gap_30"
+
+        android:paddingRight="@dimen/default_gap_30">
+
+        <TextView
+            android:id="@+id/left_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title_bar_right" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:paddingLeft="@dimen/default_gap_150"
+        android:paddingRight="@dimen/default_gap_150"
+        android:singleLine="true"
+        android:textColor="@color/title_bar_text"
+        android:textSize="@dimen/default_size_36" />
+
+    <LinearLayout
+        android:id="@+id/right_box"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:clipChildren="false"
+        android:gravity="center"
+        android:paddingLeft="@dimen/default_gap_30"
+        android:paddingRight="@dimen/default_gap_30">
+
+        <TextView
+            android:id="@+id/right_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title_bar_right" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/title_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/title_divider" />
+
+</RelativeLayout>

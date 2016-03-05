@@ -30,15 +30,18 @@ public class ZXBaseActivity extends FragmentActivity {
 
     }
 
-    protected void showToast(String content){
+    public void showToast(String content) {
 
     }
 
-    protected void showToast(int contentID){
+    protected void showToast(int contentID) {
 
     }
 
-    public void sendRequest(BaseHttpRequest request){
+    public void sendRequest(BaseHttpRequest request) {
+        if (isFinishing()) {
+            return;
+        }
         request.setTag(mUniqueID);
         request.send();
     }
@@ -47,6 +50,7 @@ public class ZXBaseActivity extends FragmentActivity {
     protected void onDestroy() {
         super.onDestroy();
         HttpManager.cancel(mUniqueID);
-
     }
+
+
 }

@@ -26,6 +26,7 @@ public class BaseHttpRequest<T> {
     private Class<T> mDstClass;
     private int mTag = 0;
     private boolean isCancel = false;
+    private ErrorData mError;
 
     public BaseHttpRequest(Class<T> dstClass, HttpResponseListener<T> listener) {
         super();
@@ -72,6 +73,7 @@ public class BaseHttpRequest<T> {
             mProxy = new RequestProxy(mMothod, path, ZXNetworkUtil.getKVParamData(mParams), mSucessListener, mFailListener);
         } else {
             mProxy = new RequestProxy(mMothod, mUrl, ZXNetworkUtil.getKVParamData(mParams), mSucessListener, mFailListener);
+//            mProxy = new UplaodRequestProxy(mMothod, mUrl, mParams, mSucessListener, mFailListener);
         }
         mProxy.setTag(this);
         HttpManager.sendRequest(mProxy);
@@ -81,12 +83,18 @@ public class BaseHttpRequest<T> {
         @Override
         public void onResponse(final String response) {
 
-            Task<T> task = Task.callInBackground(new Callable<T>() {
+            final Task<T> task = Task.callInBackground(new Callable<T>() {
                 @Override
                 public T call() throws Exception {
-                    Log.d("NETWORK URL = ", mUrl + "?" + ZXNetworkUtil.getKVParamData(mParams));
+                    Log.d("NETWORK URL = ", mUrl + "?" + new String(mProxy.getBody()));
                     Log.d("NETWORK RSP = ", response);
                     T data = JSON.parseObject(response, mDstClass);
+                    try {
+                        mError = JSON.toJavaObject(JSON.parseObject(response).getJSONObject("error"), ErrorData.class);
+
+                    } catch (Exception e) {
+
+                    }
                     return data;
                 }
             }).
@@ -96,7 +104,12 @@ public class BaseHttpRequest<T> {
                             if (isCancel) {
                                 return null;
                             }
+
                             HttpResponse rsp = new HttpResponse();
+                            if (mError != null && mError.errno != 0) {
+                                rsp.error = mError.errno;
+                                rsp.errorString = mError.usermsg;
+                            }
                             rsp.result = task.getResult();
                             mResponseListener.onResponse(rsp);
                             return null;
@@ -113,12 +126,18 @@ public class BaseHttpRequest<T> {
             if (error != null) {
                 if (error.getMessage() != null) {
                     Log.e("http_error", error.getMessage());
+                    if (mResponseListener != null) {
+                        HttpResponse rsp = new HttpResponse();
+                        rsp.error = -1;
+                        rsp.errorString = error.getMessage();
+                        mResponseListener.onResponse(rsp);
+                    }
                 }
             }
         }
     };
 
-    private void cancel() {
+    public void cancel() {
         isCancel = true;
         HttpManager.cancel(this);
     }

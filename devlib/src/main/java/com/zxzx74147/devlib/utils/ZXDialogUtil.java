@@ -34,7 +34,7 @@ public class ZXDialogUtil {
         // 设置监听，包括成功、失败、取消时候的动作
         WindowManager.LayoutParams lp = window.getAttributes();
 
-//        lp.width = (int) (BdUtilHelper.getEquipmentWidth(context) * 0.9);
+        lp.width = (int) (ZXViewHelper.getScreenW() * 0.9);
         // lp.x = (int) (BdUtilHelper.getEquipmentWidth(mContext) * 0.15);
         window.setAttributes(lp);
         window.setContentView(rootView);

@@ -2,8 +2,10 @@ package com.zxzx74147.devlib.image;
 
 import android.content.Context;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.imagepipeline.core.ImagePipelineConfig;
+import com.squareup.picasso.Picasso;
+
+//import com.facebook.drawee.backends.pipeline.Fresco;
+//import com.facebook.imagepipeline.core.ImagePipelineConfig;
 
 /**
  * Created by zhengxin on 15/8/27.
@@ -16,7 +18,8 @@ public class ImageModelInterface  {
     }
 
     private static void initFresco(Context context){
-        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(context).build();
-        Fresco.initialize(context, config);
+//        ImagePipelineConfig config = ImagePipelineConfig.newBuilder(context).build();
+//        Fresco.initialize(context, config);
+        Picasso.with(context);
     }
 }

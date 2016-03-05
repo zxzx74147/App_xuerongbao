@@ -1,1 +1,1 @@
-include ':qiushi', ':devlib'
+include ':qiushi', ':devlib', ':zhuxuebao', ':OneSDK'

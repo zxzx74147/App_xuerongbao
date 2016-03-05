@@ -8,4 +8,8 @@ public class HttpResponse<T> {
     public String errorString;
     public T result;
     public boolean mIsLoadCache;
+
+    public boolean hasError(){
+        return error != 200;
+    }
 }

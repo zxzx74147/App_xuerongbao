@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.credit.CreditFamilyActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/view_default_bg"
+        android:orientation="vertical">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            app:text="@string/family_info" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_gap_10"
+            android:layout_marginLeft="@dimen/default_gap_10"
+            android:layout_marginTop="@dimen/default_gap_10"
+            android:text="@string/info_remind"
+            android:textColor="@color/button_bg_red"
+            android:textSize="@dimen/default_size_15" />
+
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:id="@+id/father_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_20"
+            app:edit_hint="@string/father_name_hint"
+            app:label_text="@string/father_name"
+            app:not_null="true"
+            app:post_key="@string/father_name_post_key" />
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:id="@+id/father_phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/father_phone_hint"
+            app:input_right_drawable="@drawable/about_tele"
+            app:label_text="@string/father_phone"
+            app:not_null="true"
+            app:pick_type="phone"
+            app:post_key="@string/father_phone_post_key" />
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:id="@+id/mother_name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/mother_name_hint"
+            app:label_text="@string/mother_name"
+            app:not_null="true"
+            app:post_key="@string/mother_name_post_key" />
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:id="@+id/mother_phone_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/mother_phone_hint"
+            app:input_right_drawable="@drawable/about_tele"
+            app:pick_type="phone"
+            app:label_text="@string/mother_phone"
+            app:not_null="true"
+            app:post_key="@string/mother_phone_post_key" />
+
+    </LinearLayout>
+</layout>

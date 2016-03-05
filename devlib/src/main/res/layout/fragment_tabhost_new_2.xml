@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bb="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.zxzx74147.devlib.widget.tabhost.FragmentTabWidget
+        android:id="@+id/tabcontainer"
+        android:layout_width="fill_parent"
+        bb:tabPosition="bottom"
+        bb:tabHeight="@dimen/default_gap_100"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
+    <com.zxzx74147.devlib.widget.ScrollControlViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+
+</merge>

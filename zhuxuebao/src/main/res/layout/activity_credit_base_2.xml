@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseFragment2" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/view_default_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/school_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/school_hint"
+                app:label_text="@string/school"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/school_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/college_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/college_hint"
+                app:label_text="@string/college"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/college_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/major_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/major_hint"
+                app:label_text="@string/major"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/major_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/degree_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/degree_hint"
+                app:label_text="@string/degree"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/degree_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/enrollment_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/enrollment_hint"
+                app:label_text="@string/enrollment"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:pick_type="year"
+                app:post_key="@string/enrollment_post_key" />
+
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/student_num_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/student_num_hint"
+                app:label_text="@string/student_num"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/student_num_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/collage_class_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/collage_class_hint"
+                app:label_text="@string/collage_class"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/collage_class_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/dorm_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/dorm_hint"
+                app:label_text="@string/dorm"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/dorm_post_key" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_gap_20"
+
+                android:layout_marginRight="@dimen/default_gap_20"
+
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:background="@color/view_input_default_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/default_gap_20"
+                android:paddingLeft="@dimen/default_gap_30"
+                android:paddingRight="@dimen/default_gap_30"
+                android:paddingTop="@dimen/default_gap_20">
+
+                <TextView
+                    android:layout_width="@dimen/default_gap_150"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/default_gap_50"
+                    android:text="@string/student_id_photo"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.wazxb.zhuxuebao.widget.UploadImageView
+                    android:layout_width="@dimen/default_gap_202"
+                    android:layout_height="@dimen/default_gap_148"
+                    android:layout_marginRight="@dimen/default_gap_30"
+                    android:background="@color/white">
+
+
+                </com.wazxb.zhuxuebao.widget.UploadImageView>
+
+                <com.wazxb.zhuxuebao.widget.UploadImageView
+                    android:layout_width="@dimen/default_gap_202"
+                    android:layout_height="@dimen/default_gap_148"
+                    android:layout_marginRight="@dimen/default_gap_30"
+                    android:background="@color/white">
+
+
+                </com.wazxb.zhuxuebao.widget.UploadImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_gap_20"
+
+                android:layout_marginRight="@dimen/default_gap_20"
+
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:background="@color/view_input_default_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/default_gap_20"
+                android:paddingLeft="@dimen/default_gap_30"
+                android:paddingRight="@dimen/default_gap_30"
+                android:paddingTop="@dimen/default_gap_20">
+
+                <TextView
+                    android:layout_width="@dimen/default_gap_150"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/default_gap_50"
+                    android:text="@string/one_card_photo"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <com.wazxb.zhuxuebao.widget.UploadImageView
+                    android:layout_width="@dimen/default_gap_202"
+                    android:layout_height="@dimen/default_gap_148"
+                    android:layout_marginRight="@dimen/default_gap_30"
+                    android:background="@color/white">
+
+
+                </com.wazxb.zhuxuebao.widget.UploadImageView>
+
+                <com.wazxb.zhuxuebao.widget.UploadImageView
+                    android:layout_width="@dimen/default_gap_202"
+                    android:layout_height="@dimen/default_gap_148"
+                    android:layout_marginRight="@dimen/default_gap_30"
+                    android:background="@color/white">
+
+
+                </com.wazxb.zhuxuebao.widget.UploadImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_gap_20"
+
+                android:layout_marginRight="@dimen/default_gap_20"
+
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:background="@color/view_input_default_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/default_gap_20"
+                android:paddingLeft="@dimen/default_gap_30"
+                android:paddingRight="@dimen/default_gap_30"
+                android:paddingTop="@dimen/default_gap_20">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="@dimen/default_gap_150"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/default_gap_50"
+                        android:text="@string/xxw_photo"
+                        android:textSize="@dimen/text_size_normal" />
+
+
+                    <TextView
+                        android:layout_width="@dimen/default_gap_150"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/default_gap_10"
+                        android:layout_marginLeft="@dimen/default_gap_10"
+                        android:layout_marginTop="@dimen/default_gap_10"
+                        android:text="@string/xxw_remind"
+                        android:textColor="@color/button_bg_red"
+                        android:textSize="@dimen/default_size_15" />
+                </RelativeLayout>
+
+                <com.wazxb.zhuxuebao.widget.UploadImageView
+                    android:layout_width="@dimen/default_gap_202"
+                    android:layout_height="@dimen/default_gap_148"
+                    android:layout_marginRight="@dimen/default_gap_30"
+                    android:background="@color/white">
+
+
+                </com.wazxb.zhuxuebao.widget.UploadImageView>
+
+
+            </LinearLayout>
+
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/hometown_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginBottom="@dimen/default_gap_20"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/hometown_hint"
+                app:label_text="@string/hometown"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

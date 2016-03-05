@@ -2,13 +2,12 @@ package com.zxzx74147.devlib.image.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-
-import com.makeramen.roundedimageview.RoundedImageView;
+import android.widget.ImageView;
 
 /**
  * Created by zhengxin on 15/8/27.
  */
-public class ZXImageView extends RoundedImageView {
+public class ZXImageView extends ImageView {
 
     private String mUrl = null;
 

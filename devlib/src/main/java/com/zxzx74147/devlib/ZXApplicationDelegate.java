@@ -2,6 +2,7 @@ package com.zxzx74147.devlib;
 
 import android.app.Application;
 
+import com.lusfold.androidkeyvaluestore.KVStore;
 import com.zxzx74147.devlib.image.ImageModelInterface;
 import com.zxzx74147.devlib.network.NetworkInterface;
 
@@ -12,7 +13,7 @@ public class ZXApplicationDelegate {
 
     public static Application mApplication;
 
-    public static Application getApplication(){
+    public static Application getApplication() {
         return mApplication;
     }
 
@@ -21,6 +22,8 @@ public class ZXApplicationDelegate {
         ImageModelInterface.init(mApplication);
 //        OrmInterface.init(mApplication);
         NetworkInterface.init(mApplication);
+        KVStore.init(mApplication, "zx_lib.db");
+        KVStore.getInstance().setDebug(true);
     }
 
 }

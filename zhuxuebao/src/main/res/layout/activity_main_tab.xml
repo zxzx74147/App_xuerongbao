@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bb="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+
+    </data>
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.wazxb.zhuxuebao.MainTabActivity">
+
+        <com.zxzx74147.devlib.widget.tabhost.FragmentTabHost
+            android:id="@+id/tab_host"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            bb:dividerColor="@color/maintab_divider"
+            bb:dividerHeight="1px"
+            bb:scrollable="false"
+            bb:smoothScroll="false"
+            bb:tabHeight="@dimen/default_gap_110"
+            bb:tabPosition="bottom"
+            bb:tabWigetBackground="@color/white" />
+    </FrameLayout>
+</layout>

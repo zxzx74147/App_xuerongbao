@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FragmentTabHost">
+        <attr name="tabPosition">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+        </attr>
+        <attr name="cursorMode">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+        </attr>
+
+        <attr name="tabHeight" format="dimension" />
+        <attr name="dividerHeight" format="dimension" />
+        <attr name="cursorHeight" format="dimension" />
+        <attr name="dividerColor" format="color" />
+        <attr name="tabWigetBackground" format="reference|color" />
+        <attr name="cursorColor" format="color" />
+        <attr name="smoothScroll" format="boolean" />
+        <attr name="scrollable" format="boolean" />
+        <attr name="defaultSelect" format="integer" />
+        <attr name="verticalDividerWidth" format="dimension" />
+        <attr name="verticalDividerColor" format="color" />
+        <attr name="verticalDividerPadding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TitleBar">
+        <attr name="text" format="string" />
+        <attr name="bgColor" format="color" />
+        <attr name="showBack" format="boolean" />
+        <attr name="right_text" format="string" />
+        <attr name="text_title" format="boolean"/>
+        <attr name="right_drawable" format="integer" />
+        <attr name="left_text" format="string" />
+        <attr name="divColor" format="color" />
+    </declare-styleable>
+
+
+</resources>

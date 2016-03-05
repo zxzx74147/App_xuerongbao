@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.account.RegitsterActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/view_default_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_20"
+            android:background="@color/view_input_default_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:paddingRight="@dimen/default_gap_30">
+
+            <TextView
+                android:layout_width="@dimen/default_gap_120"
+                android:layout_height="wrap_content"
+
+                android:text="@string/wechat"
+                android:textSize="@dimen/text_size_normal" />
+
+            <EditText
+                android:id="@+id/school_id"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/wechat_hint"
+                android:textColorHint="@color/text_color_hint"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/reg_wx" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_5"
+            android:background="@color/view_input_default_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:paddingRight="@dimen/default_gap_30">
+
+            <TextView
+                android:layout_width="@dimen/default_gap_120"
+                android:layout_height="wrap_content"
+
+                android:text="@string/qq"
+                android:textSize="@dimen/text_size_normal" />
+
+            <EditText
+                android:id="@+id/college_id"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/qq_hint"
+                android:textColorHint="@color/text_color_hint"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/reg_qq" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_5"
+            android:background="@color/view_input_default_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:paddingRight="@dimen/default_gap_30">
+
+            <TextView
+                android:layout_width="@dimen/default_gap_120"
+                android:layout_height="wrap_content"
+
+                android:text="@string/weibo"
+                android:textSize="@dimen/text_size_normal" />
+
+            <EditText
+                android:id="@+id/major_id"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/weibo_hint"
+                android:textColorHint="@color/text_color_hint"
+                android:textSize="@dimen/text_size_normal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/reg_wb" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
