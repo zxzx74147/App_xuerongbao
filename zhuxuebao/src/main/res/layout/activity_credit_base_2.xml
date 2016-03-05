@@ -153,7 +153,9 @@
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    app:img_not_null="true"
+                    app:img_post_key="sIDAPic">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -162,7 +164,8 @@
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    app:img_post_key="sIDBPic">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -195,7 +198,9 @@
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    app:img_not_null="true"
+                    app:img_post_key="sCardFPic">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -204,7 +209,9 @@
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    app:img_not_null="true"
+                    app:img_post_key="sCardBPic">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -228,21 +235,30 @@
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/default_gap_200">
 
                     <TextView
-                        android:layout_width="@dimen/default_gap_150"
+                        android:id="@+id/xxw_id"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/default_gap_50"
                         android:text="@string/xxw_photo"
                         android:textSize="@dimen/text_size_normal" />
 
+                    <TextView
+                        android:id="@+id/not_null"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/xxw_id"
+                        android:gravity="top"
+                        android:text="*"
+                        android:textColor="@color/button_bg_red" />
+
 
                     <TextView
                         android:layout_width="@dimen/default_gap_150"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/xxw_id"
                         android:layout_marginBottom="@dimen/default_gap_10"
-                        android:layout_marginLeft="@dimen/default_gap_10"
                         android:layout_marginTop="@dimen/default_gap_10"
                         android:text="@string/xxw_remind"
                         android:textColor="@color/button_bg_red"
