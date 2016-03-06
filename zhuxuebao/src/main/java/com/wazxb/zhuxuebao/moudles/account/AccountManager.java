@@ -60,6 +60,7 @@ public class AccountManager {
     public void setUserAllData(UserAllData data) {
         mUserAllData = data;
         StorageManager.sharedInstance().saveKVObjectAsync(SP_KEY_USER_ALL_DATA, mUserAllData);
+        EventBus.getDefault().post("user_all_data");
     }
 
     public void logout() {

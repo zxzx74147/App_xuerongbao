@@ -7,6 +7,10 @@
         <variable
             name="handler"
             type="com.wazxb.zhuxuebao.moudles.credit.CreditActivity" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserAllData" />
     </data>
 
     <LinearLayout
@@ -67,13 +71,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit_medal_black" />
+                    android:src='@{data.cdBase.audit == 0? @drawable/credit_medal_black:@drawable/credit_medal}' />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit_base" />
+                    android:src='@{data.cdBase.audit == 0? @drawable/credit_base_black:@drawable/credit_base}' />
             </FrameLayout>
 
             <FrameLayout
@@ -86,13 +90,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit_medal_black" />
+                    android:src='@{data.cdHome.audit == 0? @drawable/credit_medal_black:@drawable/credit_medal}' />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit_home_black" />
+                    android:src='@{data.cdHome.audit == 0? @drawable/credit_home_black:@drawable/credit_home}' />
             </FrameLayout>
 
             <FrameLayout
@@ -105,13 +109,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit_medal_black" />
+                    android:src='@{data.cdSchool.audit == 0? @drawable/credit_medal_black:@drawable/credit_medal}' />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit_contacts" />
+                    android:src='@{data.cdSchool.audit == 0? @drawable/credit_contacts_black:@drawable/credit_contacts}' />
             </FrameLayout>
 
             <FrameLayout
@@ -124,13 +128,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit_medal_black" />
+                    android:src='@{data.cdLife.audit == 0? @drawable/credit_medal_black:@drawable/credit_medal}' />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit_consume" />
+                    android:src='@{data.cdLife.audit == 0? @drawable/credit_consume_black:@drawable/credit_consume}' />
             </FrameLayout>
 
 
