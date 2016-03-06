@@ -94,6 +94,7 @@
             app:edit_hint="@string/birthday_hint"
             app:input_edit_text='@{data.birthday}'
             app:label_text="@string/birthday"
+            app:pick_type="day"
             app:label_width="@dimen/default_gap_150"
             app:match_regex="@string/id_regex"
             app:not_null="true"

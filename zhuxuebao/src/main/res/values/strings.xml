@@ -176,4 +176,6 @@
     <string name="change_ge_pass">修改密码</string>
     <string name="logout">退出当前账号</string>
     <string name="portrait">头像</string>
+    <string name="j_pickerview_cancel">取消</string>
+    <string name="j_pickerview_submit">确定</string>
 </resources>

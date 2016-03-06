@@ -23,8 +23,11 @@ import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.InputTextViewBinding;
 import com.wazxb.zhuxuebao.util.IDUtil;
 import com.wazxb.zhuxuebao.util.RequestCode;
+import com.wazxb.zhuxuebao.util.ZXDataPickerHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
-import com.zxzx74147.devlib.widget.ZXDataPickerHelper;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by zhengxin on 16/3/1.
@@ -175,8 +178,36 @@ public class InputTextView extends LinearLayout {
                 }
             });
         } else if ("day".equals(mPickType)) {
+            mBinding.edit.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    List<String> sexs = new LinkedList<>();
+                    sexs.add("男");
+                    sexs.add("女");
+                    ZXDataPickerHelper.selectDay(getContext(), new ZXDataPickerHelper.IDateSelected() {
 
+                        @Override
+                        public void onSelected(int year, int month, int day) {
+                            mBinding.edit.setText(year + "-" + month + "-" + day);
+                        }
+                    });
+                }
+            });
         } else if ("sex".equals(mPickType)) {
+            mBinding.edit.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    List<String> sexs = new LinkedList<>();
+                    sexs.add("男");
+                    sexs.add("女");
+                    ZXDataPickerHelper.selectItem(getContext(), sexs, new ZXDataPickerHelper.IItemSelected() {
+                        @Override
+                        public void onSelected(String item) {
+                            mBinding.edit.setText(item);
+                        }
+                    });
+                }
+            });
 
         }
 
