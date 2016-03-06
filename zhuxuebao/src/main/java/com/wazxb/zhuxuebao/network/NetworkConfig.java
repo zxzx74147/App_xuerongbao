@@ -14,4 +14,5 @@ public class NetworkConfig {
     public static final String ADDRESS_CD_LIFE= "cd/uplife";
     public static final String ADDRESS_CD_BASE= "cd/upbase";
     public static final String ADDRESS_CD_INFO= "cd/info";
+    public static final String ADDRESS_CD_UPSCHOOL= "cd/upschool";
 }

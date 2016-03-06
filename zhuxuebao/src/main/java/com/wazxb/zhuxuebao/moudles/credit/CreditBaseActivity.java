@@ -82,6 +82,7 @@ public class CreditBaseActivity extends ZXBBaseActivity {
             @Override
             public void onResponse(HttpResponse<UserAllData> response) {
                 mRequest = null;
+                hideProgressBar();
                 if (response.hasError()) {
                     showToast(response.errorString);
                     return;
@@ -93,6 +94,7 @@ public class CreditBaseActivity extends ZXBBaseActivity {
         mRequest.setPath(NetworkConfig.ADDRESS_CD_BASE);
         FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
         sendRequest(mRequest);
+        showProgressBar();
     }
 
     private ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {

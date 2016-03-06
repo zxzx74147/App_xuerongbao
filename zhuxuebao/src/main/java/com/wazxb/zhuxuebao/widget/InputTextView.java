@@ -65,12 +65,21 @@ public class InputTextView extends LinearLayout {
 
     public String getText() {
 
-        String text =  mBinding.edit.getText().toString();
-        if(!ZXStringUtil.checkString(text)){
+        String text = mBinding.edit.getText().toString();
+        if (!ZXStringUtil.checkString(text)) {
             return text;
         }
-        if((inputType & InputType.TYPE_TEXT_VARIATION_PASSWORD) !=0){
+        if ((inputType & InputType.TYPE_TEXT_VARIATION_PASSWORD) != 0) {
             text = Md5Utils.md5Digest(text.getBytes());
+        }
+        if ("sex".equals(mPickType)) {
+            if ("男".equals(text)) {
+                return "1";
+            } else if ("女".equals(text)) {
+                return "2";
+            }
+        } else if ("phone".equals(mPickType)) {
+            text = ZXStringUtil.formatPhone(text);
         }
         return text;
     }

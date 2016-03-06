@@ -436,6 +436,13 @@ public class ZXViewHelper {
         }
     }
 
+    public static void stopFramAnim(ImageView imageView) {
+        Drawable drawable = imageView.getDrawable();
+        if (drawable instanceof AnimationDrawable) {
+            ((AnimationDrawable) drawable).stop();
+        }
+    }
+
     public static int getAnimationTime(AnimationDrawable animation) {
         if (animation == null) {
             return 0;

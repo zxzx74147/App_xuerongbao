@@ -8,6 +8,8 @@ import com.wazxb.zhuxuebao.widget.UploadImageView;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 import com.zxzx74147.devlib.utils.ZXViewHelper;
 
+import java.util.HashMap;
+
 /**
  * Created by zhengxin on 16/3/6.
  */
@@ -15,6 +17,7 @@ public class FillRqeustUtil {
 
     //填充字段
     public static void fillRequest(final ZXBHttpRequest request, View mRoot) {
+        final HashMap<String, Integer> mMap = new HashMap<>();
         ZXViewHelper.dfsViewGroup(mRoot, new ZXViewHelper.IViewProcess() {
             @Override
             public void processView(View view) {
@@ -26,14 +29,20 @@ public class FillRqeustUtil {
                 } else if (view instanceof UploadImageView) {
                     UploadImageView input = (UploadImageView) view;
                     if (ZXStringUtil.checkString(input.getPostKey())) {
-                        String value = (String) request.getParams(input.getPostKey());
-                        if (ZXStringUtil.checkString(value)) {
-                            if (ZXStringUtil.checkString(input.getPicKey())) {
-                                value += "," + input.getPicKey();
-                            }
-                        } else {
-                            value = input.getPicKey();
+                        Integer time = mMap.get(input.getPostKey());
+                        if (time == null) {
+                            time = 0;
                         }
+                        time++;
+                        mMap.put(input.getPostKey(), time);
+                        String value = (String) request.getParams(input.getPostKey());
+                        if (!ZXStringUtil.checkString(value)) {
+                            value = "";
+                        }
+                        if (time > 1) {
+                            value += ",";
+                        }
+                        value += input.getPicKey() == null ? "" : input.getPicKey();
                         if (ZXStringUtil.checkString(value)) {
                             request.addParams(input.getPostKey(), value);
                         }

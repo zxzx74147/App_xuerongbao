@@ -48,6 +48,7 @@ public class CreditFamilyActivity extends ZXBBaseActivity {
             @Override
             public void onResponse(HttpResponse<UserAllData> response) {
                 mRequest = null;
+                hideProgressBar();
                 if (response.hasError()) {
                     showToast(response.errorString);
                     return;
@@ -59,7 +60,7 @@ public class CreditFamilyActivity extends ZXBBaseActivity {
         mRequest.setPath(NetworkConfig.ADDRESS_CD_UPHOME);
         FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
         sendRequest(mRequest);
-
+        showProgressBar();
     }
 
 }

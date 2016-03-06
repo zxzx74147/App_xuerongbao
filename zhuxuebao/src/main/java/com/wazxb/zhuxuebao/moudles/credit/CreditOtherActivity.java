@@ -47,6 +47,7 @@ public class CreditOtherActivity extends ZXBBaseActivity {
         mRequest = new ZXBHttpRequest<>(UserAllData.class, new HttpResponseListener<UserAllData>() {
             @Override
             public void onResponse(HttpResponse<UserAllData> response) {
+                hideProgressBar();
                 if (response.hasError()) {
                     showToast(response.errorString);
                     return;
@@ -58,7 +59,7 @@ public class CreditOtherActivity extends ZXBBaseActivity {
         mRequest.setPath(NetworkConfig.ADDRESS_CD_LIFE);
         FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
         sendRequest(mRequest);
-
+        showProgressBar();
     }
 
 

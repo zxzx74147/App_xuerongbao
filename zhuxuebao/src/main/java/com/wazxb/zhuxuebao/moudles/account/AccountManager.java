@@ -9,6 +9,8 @@ import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.SharedPreferenceHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by zhengxin on 16/3/1.
  */
@@ -22,6 +24,7 @@ public class AccountManager {
     private UserAllData mUserAllData = null;
 
     private AccountManager() {
+//        EventBus.getDefault().register(this);
         mUid = SharedPreferenceHelper.getString(SP_KEY_UID, null);
     }
 
@@ -59,6 +62,12 @@ public class AccountManager {
         StorageManager.sharedInstance().saveKVObjectAsync(SP_KEY_USER_ALL_DATA, mUserAllData);
     }
 
+    public void logout() {
+        saveUid(null);
+        mUserAllData = null;
+        EventBus.getDefault().post("user_all_data");
+    }
+
     public UserAllData getUserAllData() {
         return mUserAllData;
     }
@@ -79,10 +88,12 @@ public class AccountManager {
                 }
                 mUserAllData = response.result;
                 setUserAllData(mUserAllData);
+                EventBus.getDefault().post("user_all_data");
             }
         });
         mRequest.setPath(NetworkConfig.ADDRESS_CD_INFO);
         mRequest.addParams("uId", mUid);
         mRequest.send();
+
     }
 }

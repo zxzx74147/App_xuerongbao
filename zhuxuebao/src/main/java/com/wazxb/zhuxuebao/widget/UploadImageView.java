@@ -107,13 +107,13 @@ public class UploadImageView extends RelativeLayout {
         mPicKey = null;
         mPicUrl = null;
         mPicUri = uri;
-
+        if (getContext() instanceof ZXBBaseActivity) {
+            ((ZXBBaseActivity) getContext()).showProgressBar();
+        }
         ImageUtil.uploadImage(uri, mBinding.picture, new ImageUtil.ImageUploadCallback() {
             @Override
             public void onPrepare() {
-                if (getContext() instanceof ZXBBaseActivity) {
-                    ((ZXBBaseActivity) getContext()).showProgressBar();
-                }
+
             }
 
             @Override

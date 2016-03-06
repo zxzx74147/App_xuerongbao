@@ -57,4 +57,8 @@ public class InfoTextView extends LinearLayout {
         }
 
     }
+
+    public void setContent(String edit) {
+        mBinding.content.setText(edit);
+    }
 }

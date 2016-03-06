@@ -6,8 +6,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
 
+import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.util.RequestCode;
 import com.wazxb.zhuxuebao.widget.InputTextView;
 import com.wazxb.zhuxuebao.widget.UploadImageView;
@@ -19,7 +20,7 @@ import com.zxzx74147.devlib.utils.ZXViewHelper;
  */
 public class ZXBBaseActivity extends ZXBaseActivity {
 
-    private ProgressBar mProgressBar;
+    private ImageView mProgressBar;
 
     /**
      * 中心点为基点显示菊花
@@ -31,7 +32,8 @@ public class ZXBBaseActivity extends ZXBaseActivity {
 
     public void showProgressBarWithOffset(int xDp, int yDp) {
         if (mProgressBar == null) {
-            mProgressBar = new ProgressBar(this);
+            mProgressBar = new ImageView(this);
+            mProgressBar.setImageResource(R.drawable.progress);
             FrameLayout content = (FrameLayout) findViewById(android.R.id.content);
             content.addView(mProgressBar,
                     new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -39,6 +41,7 @@ public class ZXBBaseActivity extends ZXBaseActivity {
         }
         mProgressBar.setPadding(ZXViewHelper.dip2px(this, xDp), ZXViewHelper.dip2px(this, yDp), 0, 0);
         mProgressBar.setVisibility(View.VISIBLE);
+        ZXViewHelper.startFramAnim(mProgressBar);
     }
 
     /**
@@ -47,6 +50,7 @@ public class ZXBBaseActivity extends ZXBaseActivity {
     public void hideProgressBar() {
         if (mProgressBar != null) {
             mProgressBar.setVisibility(View.GONE);
+            ZXViewHelper.stopFramAnim(mProgressBar);
         }
     }
 

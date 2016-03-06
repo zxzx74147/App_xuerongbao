@@ -7,6 +7,11 @@
         <variable
             name="handler"
             type="com.wazxb.zhuxuebao.moudles.personal.PersonalFragment" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+
     </data>
 
     <LinearLayout
@@ -19,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/major_color"
+            android:onClick="@{handler.onPersonalInfoClick}"
             android:paddingBottom="@dimen/default_gap_40"
             android:paddingLeft="@dimen/default_gap_30"
             android:paddingRight="@dimen/default_gap_30"
@@ -28,13 +34,18 @@
                 android:id="@+id/head"
                 android:layout_width="@dimen/default_gap_120"
                 android:layout_height="@dimen/default_gap_120"
-                android:layout_marginRight="@dimen/default_gap_40" />
+                android:layout_marginRight="@dimen/default_gap_40"
+                app:img_url="@{data.portrait}"
+                app:riv_border_color="@color/white"
+                app:riv_border_width="@dimen/default_gap_2"
+                app:riv_corner_radius="@dimen/default_gap_200" />
 
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/head"
+                android:text="@{data.name}"
                 android:textColor="@color/text_color_black"
                 android:textSize="@dimen/default_gap_30" />
 
@@ -45,6 +56,14 @@
 
             </LinearLayout>
 
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/default_gap_30"
+                android:src="@drawable/user_black_right_arrow" />
 
         </RelativeLayout>
 

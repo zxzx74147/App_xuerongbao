@@ -166,4 +166,14 @@
     <string name="green_hand">新手指南</string>
     <string name="help">使用帮助</string>
     <string name="xxw_post_key">authenPic</string>
+    <string name="personal_info">个人资料</string>
+    <string name="account">账号</string>
+    <string name="amount">额度</string>
+    <string name="quota">额度</string>
+    <string name="beans">信用豆</string>
+    <string name="quotatotal">总额度</string>
+    <string name="ge_pass">手势密码</string>
+    <string name="change_ge_pass">修改密码</string>
+    <string name="logout">退出当前账号</string>
+    <string name="portrait">头像</string>
 </resources>
