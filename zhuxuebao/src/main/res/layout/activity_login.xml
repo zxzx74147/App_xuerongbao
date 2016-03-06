@@ -48,7 +48,6 @@
             android:inputType="textPassword"
             app:edit_hint="@string/password_hint"
             app:label_text="@string/password"
-
             app:label_width="@dimen/default_gap_150"
             app:not_null="true"
             app:post_key="@string/password_post_key"

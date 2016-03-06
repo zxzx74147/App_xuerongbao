@@ -7,6 +7,10 @@
         <variable
             name="handler"
             type="com.wazxb.zhuxuebao.moudles.credit.CreditContactActivity" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserSchoolData" />
     </data>
 
     <LinearLayout
@@ -56,6 +60,7 @@
                     android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginRight="@dimen/default_gap_20"
                     app:edit_hint="@string/company_hint"
+                    app:input_edit_text="@{data.faCompany}"
                     app:label_text="@string/company"
                     app:not_null="true"
                     app:post_key="@string/father_company_post_key" />
@@ -68,6 +73,7 @@
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_20"
                     app:edit_hint="@string/company_address_hint"
+                    app:input_edit_text="@{data.faCompanyAddr}"
                     app:label_text="@string/company_address"
                     app:not_null="true"
                     app:post_key="@string/father_company_address_post_key" />
@@ -81,6 +87,7 @@
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_10"
                     app:edit_hint="@string/duty_hint"
+                    app:input_edit_text="@{data.faDuty}"
                     app:label_text="@string/duty"
                     app:not_null="true"
                     app:post_key="@string/father_duty_post_key" />
@@ -100,6 +107,7 @@
                     android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginRight="@dimen/default_gap_20"
                     app:edit_hint="@string/company_hint"
+                    app:input_edit_text="@{data.moCompany}"
                     app:label_text="@string/company"
                     app:not_null="true"
                     app:post_key="@string/mother_company_post_key" />
@@ -112,6 +120,7 @@
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_20"
                     app:edit_hint="@string/company_address_hint"
+                    app:input_edit_text="@{data.moCompanyAddr}"
                     app:label_text="@string/company_address"
                     app:not_null="true"
                     app:post_key="@string/mother_company_address_post_key" />
@@ -125,6 +134,7 @@
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_10"
                     app:edit_hint="@string/duty_hint"
+                    app:input_edit_text="@{data.moDuty}"
                     app:label_text="@string/duty"
                     app:not_null="true"
                     app:post_key="@string/mother_duty_post_key" />
@@ -137,6 +147,7 @@
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_20"
                     app:edit_hint="@string/home_address_hint"
+                    app:input_edit_text="@{data.homeAddr}"
                     app:label_text="@string/home_address"
                     app:not_null="true"
                     app:post_key="@string/home_address_post_key" />
@@ -163,6 +174,7 @@
                         android:layout_marginTop="@dimen/default_gap_10"
                         android:layout_weight="100"
                         app:edit_hint="@string/name_hint"
+                        app:input_edit_text="@{data.caName}"
                         app:label_text="@string/name"
                         app:not_null="true"
                         app:post_key="@string/mate1_name_post_key" />
@@ -176,6 +188,7 @@
                         android:layout_marginTop="@dimen/default_gap_10"
                         android:layout_weight="70"
                         app:error_hint="@string/sex_hint"
+                        app:input_sex="@{data.caSex}"
                         app:input_right_drawable="@drawable/user_gray_right_arrow"
                         app:label_text="@string/sex"
                         app:not_null="true"
@@ -192,6 +205,7 @@
                     android:layout_marginTop="@dimen/default_gap_20"
                     android:inputType="phone"
                     app:edit_hint="@string/phone_num_hint"
+                    app:input_edit_text="@{data.caPhone}"
                     app:input_right_drawable="@drawable/about_tele"
                     app:label_text="@string/phone_num"
                     app:label_width="@dimen/default_gap_150"
@@ -208,6 +222,7 @@
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_20"
                     app:edit_hint="@string/dorm_hint"
+                    app:input_edit_text="@{data.caDormAddr}"
                     app:label_text="@string/dorm"
                     app:label_width="@dimen/default_gap_150"
                     app:not_null="true"
@@ -236,6 +251,7 @@
                         android:layout_marginTop="@dimen/default_gap_10"
                         android:layout_weight="100"
                         app:edit_hint="@string/name_hint"
+                        app:input_edit_text="@{data.cbName}"
                         app:label_text="@string/name"
                         app:not_null="true"
                         app:post_key="@string/mate2_name_post_key" />
@@ -249,6 +265,7 @@
                         android:layout_marginTop="@dimen/default_gap_10"
                         android:layout_weight="70"
                         app:error_hint="@string/sex_hint"
+                        app:input_sex="@{data.cbSex}"
                         app:input_right_drawable="@drawable/user_gray_right_arrow"
                         app:label_text="@string/sex"
                         app:not_null="true"
@@ -265,6 +282,7 @@
                     android:layout_marginTop="@dimen/default_gap_20"
                     android:inputType="phone"
                     app:edit_hint="@string/phone_num_hint"
+                    app:input_edit_text="@{data.cbPhone}"
                     app:input_right_drawable="@drawable/about_tele"
                     app:label_text="@string/phone_num"
                     app:label_width="@dimen/default_gap_150"
@@ -281,6 +299,7 @@
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_20"
                     app:edit_hint="@string/dorm_hint"
+                    app:input_edit_text="@{data.cbDormAddr}"
                     app:label_text="@string/dorm"
                     app:label_width="@dimen/default_gap_150"
                     app:not_null="true"
@@ -292,7 +311,7 @@
                     android:layout_margin="@dimen/default_gap_20"
                     android:text="@string/other_info"
                     android:textColor="@color/text_color_black"
-                    android:textSize="@dimen/default_gap_20" />
+                    android:textSize="@dimen/default_size_20" />
 
 
                 <LinearLayout
@@ -321,8 +340,8 @@
                         android:layout_marginRight="@dimen/default_gap_30"
                         android:background="@color/white"
                         app:img_not_null="true"
-                        app:img_post_key="handPic">
-                    </com.wazxb.zhuxuebao.widget.UploadImageView>
+                        app:img_post_key="handPic"
+                        app:img_url="@{data.handPic}"/>
 
 
                 </LinearLayout>
@@ -330,10 +349,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_gap_20"
                     android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_10"
-                    android:layout_marginBottom="@dimen/default_gap_20"
                     android:background="@color/view_input_default_bg"
                     android:orientation="horizontal"
                     android:paddingBottom="@dimen/default_gap_20"
@@ -353,10 +372,10 @@
                         android:layout_height="@dimen/default_gap_148"
                         android:layout_marginRight="@dimen/default_gap_30"
                         android:background="@color/white"
-                        app:img_not_null="false"
                         app:img_label_text="@string/admission_hint"
-                        app:img_post_key="admissionPic">
-                    </com.wazxb.zhuxuebao.widget.UploadImageView>
+                        app:img_not_null="false"
+                        app:img_post_key="admissionPic"
+                        app:img_url="@{data.admissionPic}"/>
 
 
                 </LinearLayout>

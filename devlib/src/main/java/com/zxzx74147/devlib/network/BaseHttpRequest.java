@@ -86,7 +86,8 @@ public class BaseHttpRequest<T> {
             final Task<T> task = Task.callInBackground(new Callable<T>() {
                 @Override
                 public T call() throws Exception {
-                    Log.d("NETWORK URL = ", mUrl + "?" + new String(mProxy.getBody()));
+                    String url = mUrl + "?" + new String(mProxy.getBody());
+                    Log.d("NETWORK URL = ", url);
                     Log.d("NETWORK RSP = ", response);
                     T data = JSON.parseObject(response, mDstClass);
                     try {

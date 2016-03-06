@@ -20,7 +20,7 @@ public class FillRqeustUtil {
             public void processView(View view) {
                 if (view instanceof InputTextView) {
                     InputTextView input = (InputTextView) view;
-                    if (ZXStringUtil.checkString(input.getKey())) {
+                    if (ZXStringUtil.checkString(input.getKey()) && ZXStringUtil.checkString(input.getText())) {
                         request.addParams(input.getKey(), input.getText());
                     }
                 } else if (view instanceof UploadImageView) {

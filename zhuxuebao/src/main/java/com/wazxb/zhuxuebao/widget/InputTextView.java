@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.provider.ContactsContract;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.LinearLayout;
 
+import com.alibaba.sdk.android.util.Md5Utils;
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.InputTextViewBinding;
 import com.wazxb.zhuxuebao.util.IDUtil;
@@ -38,7 +40,7 @@ public class InputTextView extends LinearLayout {
     private final int PHONE_REQUEST_ID = IDUtil.genID() + RequestCode.REQUEST_PICK_PHONE;
     private String mPickType = null;
     private String mErrorHint;
-
+    private int inputType;
 
 
     public InputTextView(Context context) {
@@ -62,7 +64,15 @@ public class InputTextView extends LinearLayout {
     }
 
     public String getText() {
-        return mBinding.edit.getText().toString();
+
+        String text =  mBinding.edit.getText().toString();
+        if(!ZXStringUtil.checkString(text)){
+            return text;
+        }
+        if((inputType & InputType.TYPE_TEXT_VARIATION_PASSWORD) !=0){
+            text = Md5Utils.md5Digest(text.getBytes());
+        }
+        return text;
     }
 
     public String getError() {
@@ -109,7 +119,7 @@ public class InputTextView extends LinearLayout {
             mKey = a.getString(R.styleable.InputTextView_post_key);
             String label = a.getString(R.styleable.InputTextView_label_text);
             mBinding.label.setText(label);
-            int inputType = a.getInt(R.styleable.InputTextView_android_inputType, EditorInfo.TYPE_TEXT_VARIATION_NORMAL);
+            inputType = a.getInt(R.styleable.InputTextView_android_inputType, EditorInfo.TYPE_TEXT_VARIATION_NORMAL);
             mBinding.edit.setInputType(inputType);
             mRegex = a.getString(R.styleable.InputTextView_match_regex);
             mHint = a.getString(R.styleable.InputTextView_edit_hint);
@@ -167,7 +177,7 @@ public class InputTextView extends LinearLayout {
         mBinding.edit.addTextChangedListener(watcher);
     }
 
-    public void setContent(String edit){
+    public void setContent(String edit) {
         mBinding.edit.setText(edit);
     }
 

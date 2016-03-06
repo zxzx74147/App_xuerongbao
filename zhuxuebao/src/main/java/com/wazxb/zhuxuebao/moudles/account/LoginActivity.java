@@ -4,20 +4,17 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 
-import com.alibaba.sdk.android.util.Md5Utils;
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.ActivityLoginBinding;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.storage.data.UidData;
-import com.wazxb.zhuxuebao.widget.InputTextView;
-import com.wazxb.zhuxuebao.widget.UploadImageView;
+import com.wazxb.zhuxuebao.util.FillRqeustUtil;
 import com.zxzx74147.devlib.base.ZXBaseActivity;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
-import com.zxzx74147.devlib.utils.ZXViewHelper;
 
 public class LoginActivity extends ZXBaseActivity {
     private ActivityLoginBinding mBinding = null;
@@ -40,7 +37,7 @@ public class LoginActivity extends ZXBaseActivity {
     @Override
     public void onResume() {
         super.onResume();
-        if(AccountManager.sharedInstance().hasUid()){
+        if (AccountManager.sharedInstance().hasUid()) {
             finish();
         }
     }
@@ -75,27 +72,13 @@ public class LoginActivity extends ZXBaseActivity {
                     showToast(response.errorString);
                     return;
                 }
+
                 AccountManager.sharedInstance().saveUid(response.result.uId);
+
                 finish();
             }
         });
-        ZXViewHelper.dfsViewGroup(getWindow().getDecorView(), new ZXViewHelper.IViewProcess() {
-            @Override
-            public void processView(View view) {
-                if (view instanceof InputTextView) {
-                    InputTextView input = (InputTextView) view;
-                    if (ZXStringUtil.checkString(input.getKey())) {
-                        if (input != mBinding.passwordId) {
-                            mRequest.addParams(input.getKey(), input.getText());
-                        } else {
-                            mRequest.addParams(input.getKey(), Md5Utils.md5Digest(input.getText().getBytes()));
-                        }
-                    }
-                } else if (view instanceof UploadImageView) {
-
-                }
-            }
-        });
+        FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
         mRequest.setPath(NetworkConfig.ADDRESS_U_LOGIN);
         sendRequest(mRequest);
     }

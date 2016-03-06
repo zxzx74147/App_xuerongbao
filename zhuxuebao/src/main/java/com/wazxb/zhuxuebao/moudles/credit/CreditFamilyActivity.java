@@ -23,6 +23,10 @@ public class CreditFamilyActivity extends ZXBBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_credit_family);
+        UserAllData data = AccountManager.sharedInstance().getUserAllData();
+        if (data != null) {
+            mBinding.setData(data.cdHome);
+        }
         init();
     }
 
@@ -43,7 +47,8 @@ public class CreditFamilyActivity extends ZXBBaseActivity {
         mRequest = new ZXBHttpRequest<>(UserAllData.class, new HttpResponseListener<UserAllData>() {
             @Override
             public void onResponse(HttpResponse<UserAllData> response) {
-                if(response.hasError()){
+                mRequest = null;
+                if (response.hasError()) {
                     showToast(response.errorString);
                     return;
                 }

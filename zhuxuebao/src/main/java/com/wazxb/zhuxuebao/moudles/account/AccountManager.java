@@ -35,6 +35,7 @@ public class AccountManager {
     public void saveUid(String uid) {
         mUid = uid;
         SharedPreferenceHelper.saveString(SP_KEY_UID, uid);
+        requestUserAllData();
     }
 
     public void clearUid() {

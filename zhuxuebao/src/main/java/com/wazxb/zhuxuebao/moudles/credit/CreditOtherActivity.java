@@ -23,6 +23,10 @@ public class CreditOtherActivity extends ZXBBaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_credit_other);
+        UserAllData data = AccountManager.sharedInstance().getUserAllData();
+        if (data != null) {
+            mBinding.setData(data.cdLife);
+        }
         init();
     }
 

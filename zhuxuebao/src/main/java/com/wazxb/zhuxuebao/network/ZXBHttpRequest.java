@@ -16,6 +16,7 @@ public class ZXBHttpRequest<T> extends BaseHttpRequest<T> {
         if (ZXStringUtil.checkString(AccountManager.sharedInstance().getUid())) {
             addParams("uId", AccountManager.sharedInstance().getUid());
         }
+//        mMothod = Request.Method.POST;
     }
 
     public void setPath(String path) {

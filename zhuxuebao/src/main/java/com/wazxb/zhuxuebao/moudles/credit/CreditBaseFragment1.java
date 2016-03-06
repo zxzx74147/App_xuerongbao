@@ -24,7 +24,9 @@ public class CreditBaseFragment1 extends BaseFragment {
                              Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.activity_credit_base_1, container, false);
         UserAllData data = AccountManager.sharedInstance().getUserAllData();
-        mBinding.setData(data.cdBase);
+        if (data != null) {
+            mBinding.setData(data.cdBase);
+        }
         return mBinding.getRoot();
     }
 
