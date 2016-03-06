@@ -52,6 +52,8 @@ public class StorageManager {
         return mInstance;
     }
 
+
+
     public void saveKVObjectAsync(final String key, final Object value) {
         AsyncHelper.executeAsyncTask(new AsyncHelper.BDTask() {
             @Override

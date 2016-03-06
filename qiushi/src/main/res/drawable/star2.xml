@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/star_0017"
+        android:duration="@integer/star_anim_2" />
+    <item
+        android:drawable="@drawable/star_0016"
+        android:duration="@integer/star_anim_2" />
+</animation-list>

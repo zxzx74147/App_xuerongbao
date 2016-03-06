@@ -10,4 +10,6 @@ public class NetworkConfig {
     public static final String ADDRESS_SYS_INIT = "sys/init";
     public static final String ADDRESS_U_REG = "u/reg";
     public static final String ADDRESS_U_LOGIN = "u/login";
+    public static final String ADDRESS_CD_UPHOME = "cd/uphome";
+    public static final String ADDRESS_CD_LIFE= "cd/uplife";
 }

@@ -315,7 +315,6 @@ public class ZXViewHelper {
                 text.setSelection(b.length());
             }
         }, 100);
-
     }
 
 
@@ -435,6 +434,17 @@ public class ZXViewHelper {
         if (drawable instanceof AnimationDrawable) {
             ((AnimationDrawable) drawable).start();
         }
+    }
+
+    public static int getAnimationTime(AnimationDrawable animation) {
+        if (animation == null) {
+            return 0;
+        }
+        int time = 0;
+        for (int i = 0; i < animation.getNumberOfFrames(); i++) {
+            time += animation.getDuration(i);
+        }
+        return time;
     }
 
     public static Bitmap getViewBitmap(View view) {

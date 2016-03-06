@@ -3,4 +3,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="common_narrow_gap">@dimen/default_gap_4</dimen>
+    <dimen name="common_broad_gap">@dimen/default_gap_20</dimen>
 </resources>

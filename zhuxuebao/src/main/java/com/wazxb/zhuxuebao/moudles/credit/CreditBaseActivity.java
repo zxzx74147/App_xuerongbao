@@ -58,6 +58,7 @@ public class CreditBaseActivity extends ZXBBaseActivity {
                         }
                         break;
                     case 2:
+                        submit();
                         break;
                 }
 
@@ -65,6 +66,10 @@ public class CreditBaseActivity extends ZXBBaseActivity {
         });
 
         mBinding.tabHost.setOnScrollChangedListener(mOnPageChangeListener);
+    }
+
+    private void submit() {
+
     }
 
     private ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -75,11 +80,11 @@ public class CreditBaseActivity extends ZXBBaseActivity {
 
         @Override
         public void onPageSelected(int position) {
-            mBinding.titleBar.setText(getResources().getString(R.string.register) + "(" + (position + 1) + "/2)");
+            mBinding.titleBar.setText(getResources().getString(R.string.credit_base) + "(" + (position + 1) + "/3)");
             if (position == 2) {
-                mBinding.titleBar.hideRight();
+                mBinding.titleBar.setRightText(R.string.done);
             } else {
-                mBinding.titleBar.showRight();
+                mBinding.titleBar.setRightText(R.string.next_step);
             }
         }
 

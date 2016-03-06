@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/star_0001" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0002" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0003" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0004" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0005" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0006" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0007" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0008" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0009" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0010" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0011" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0012" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0013" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0014" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0015" android:duration="@integer/star_anim" />
+    <item android:drawable="@drawable/star_0016" android:duration="@integer/star_anim" />
+</animation-list>

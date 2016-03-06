@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.credit.CreditContactActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/view_default_bg_grey"
+        android:orientation="vertical">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            app:right_text="@string/done"
+            app:text="@string/contact_info" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_gap_10"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            android:text="@string/info_remind"
+            android:textColor="@color/button_bg_red"
+            android:textSize="@dimen/default_size_15" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@string/father_info"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_20" />
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/father_company_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    app:edit_hint="@string/company_hint"
+                    app:label_text="@string/company"
+                    app:not_null="true"
+                    app:post_key="@string/father_company_post_key" />
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/father_company_address_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    app:edit_hint="@string/company_address_hint"
+                    app:label_text="@string/company_address"
+                    app:not_null="true"
+                    app:post_key="@string/father_company_address_post_key" />
+
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/father_duty_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    app:edit_hint="@string/duty_hint"
+                    app:label_text="@string/duty"
+                    app:not_null="true"
+                    app:post_key="@string/father_duty_post_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@string/mother_info"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_20" />
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/mothor_company_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    app:edit_hint="@string/company_hint"
+                    app:label_text="@string/company"
+                    app:not_null="true"
+                    app:post_key="@string/mother_company_post_key" />
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/mother_company_address_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    app:edit_hint="@string/company_address_hint"
+                    app:label_text="@string/company_address"
+                    app:not_null="true"
+                    app:post_key="@string/mother_company_address_post_key" />
+
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/mother_duty_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    app:edit_hint="@string/duty_hint"
+                    app:label_text="@string/duty"
+                    app:not_null="true"
+                    app:post_key="@string/mother_duty_post_key" />
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/address_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    app:edit_hint="@string/home_address_hint"
+                    app:label_text="@string/home_address"
+                    app:not_null="true"
+                    app:post_key="@string/home_address_post_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@string/mate1_info"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_20" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.wazxb.zhuxuebao.widget.InputTextView
+                        android:id="@+id/mate1_name_layout"
+                        android:layout_width="0dip"
+                        android:layout_height="@dimen/size_input_layout"
+                        android:layout_marginLeft="@dimen/default_gap_20"
+                        android:layout_marginRight="@dimen/default_gap_5"
+                        android:layout_marginTop="@dimen/default_gap_10"
+                        android:layout_weight="100"
+                        app:edit_hint="@string/name_hint"
+                        app:label_text="@string/name"
+                        app:not_null="true"
+                        app:post_key="@string/mate1_name_post_key" />
+
+                    <com.wazxb.zhuxuebao.widget.InputTextView
+                        android:id="@+id/mate1_sex_layout"
+                        android:layout_width="0dip"
+                        android:layout_height="@dimen/size_input_layout"
+                        android:layout_marginLeft="@dimen/default_gap_5"
+                        android:layout_marginRight="@dimen/default_gap_20"
+                        android:layout_marginTop="@dimen/default_gap_10"
+                        android:layout_weight="70"
+                        app:error_hint="@string/sex_hint"
+                        app:input_right_drawable="@drawable/user_gray_right_arrow"
+                        app:label_text="@string/sex"
+                        app:not_null="true"
+                        app:pick_type="sex"
+                        app:post_key="@string/mate1_sex_post_key" />
+                </LinearLayout>
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/mate1_phone_num_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    android:inputType="phone"
+                    app:edit_hint="@string/phone_num_hint"
+                    app:input_right_drawable="@drawable/about_tele"
+                    app:label_text="@string/phone_num"
+                    app:label_width="@dimen/default_gap_150"
+                    app:match_regex="@string/phone_num_regex"
+                    app:not_null="true"
+                    app:pick_type="phone"
+                    app:post_key="@string/mate1_phone_post_key" />
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/mate1_address_num_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    app:edit_hint="@string/dorm_hint"
+                    app:label_text="@string/dorm"
+                    app:label_width="@dimen/default_gap_150"
+                    app:not_null="true"
+                    app:post_key="@string/mate1_dorm_post_key" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@string/mate2_info"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_20" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.wazxb.zhuxuebao.widget.InputTextView
+                        android:id="@+id/mate2_name_layout"
+                        android:layout_width="0dip"
+                        android:layout_height="@dimen/size_input_layout"
+                        android:layout_marginLeft="@dimen/default_gap_20"
+                        android:layout_marginRight="@dimen/default_gap_5"
+                        android:layout_marginTop="@dimen/default_gap_10"
+                        android:layout_weight="100"
+                        app:edit_hint="@string/name_hint"
+                        app:label_text="@string/name"
+                        app:not_null="true"
+                        app:post_key="@string/mate2_name_post_key" />
+
+                    <com.wazxb.zhuxuebao.widget.InputTextView
+                        android:id="@+id/mate2_sex_layout"
+                        android:layout_width="0dip"
+                        android:layout_height="@dimen/size_input_layout"
+                        android:layout_marginLeft="@dimen/default_gap_5"
+                        android:layout_marginRight="@dimen/default_gap_20"
+                        android:layout_marginTop="@dimen/default_gap_10"
+                        android:layout_weight="70"
+                        app:error_hint="@string/sex_hint"
+                        app:input_right_drawable="@drawable/user_gray_right_arrow"
+                        app:label_text="@string/sex"
+                        app:not_null="true"
+                        app:pick_type="sex"
+                        app:post_key="@string/mate2_sex_post_key" />
+                </LinearLayout>
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/mate2_phone_num_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    android:inputType="phone"
+                    app:edit_hint="@string/phone_num_hint"
+                    app:input_right_drawable="@drawable/about_tele"
+                    app:label_text="@string/phone_num"
+                    app:label_width="@dimen/default_gap_150"
+                    app:match_regex="@string/phone_num_regex"
+                    app:not_null="true"
+                    app:pick_type="phone"
+                    app:post_key="@string/mate2_phone_post_key" />
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/mate2_address_num_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    app:edit_hint="@string/dorm_hint"
+                    app:label_text="@string/dorm"
+                    app:label_width="@dimen/default_gap_150"
+                    app:not_null="true"
+                    app:post_key="@string/mate2_dorm_post_key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@string/other_info"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_20" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    android:background="@color/view_input_default_bg"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/default_gap_20"
+                    android:paddingLeft="@dimen/default_gap_30"
+                    android:paddingRight="@dimen/default_gap_30"
+                    android:paddingTop="@dimen/default_gap_20">
+
+                    <TextView
+                        android:layout_width="@dimen/default_gap_150"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/default_gap_50"
+                        android:text="@string/hold_id_photo"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <com.wazxb.zhuxuebao.widget.UploadImageView
+                        android:layout_width="@dimen/default_gap_202"
+                        android:layout_height="@dimen/default_gap_148"
+                        android:layout_marginRight="@dimen/default_gap_30"
+                        android:background="@color/white"
+                        app:img_not_null="true"
+                        app:img_post_key="handPic">
+                    </com.wazxb.zhuxuebao.widget.UploadImageView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    android:layout_marginBottom="@dimen/default_gap_20"
+                    android:background="@color/view_input_default_bg"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/default_gap_20"
+                    android:paddingLeft="@dimen/default_gap_30"
+                    android:paddingRight="@dimen/default_gap_30"
+                    android:paddingTop="@dimen/default_gap_20">
+
+                    <TextView
+                        android:layout_width="@dimen/default_gap_150"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/default_gap_50"
+                        android:text="@string/admission_photo"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <com.wazxb.zhuxuebao.widget.UploadImageView
+                        android:layout_width="@dimen/default_gap_202"
+                        android:layout_height="@dimen/default_gap_148"
+                        android:layout_marginRight="@dimen/default_gap_30"
+                        android:background="@color/white"
+                        app:img_not_null="false"
+                        app:img_label_text="@string/admission_hint"
+                        app:img_post_key="admissionPic">
+                    </com.wazxb.zhuxuebao.widget.UploadImageView>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

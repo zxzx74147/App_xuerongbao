@@ -7,19 +7,15 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.android.volley.Request;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
-import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
-import com.wazxb.zhuxuebao.network.ZXBRequestManageer;
 import com.wazxb.zhuxuebao.network.http.BdHttpManager2;
 import com.wazxb.zhuxuebao.network.http.HttpContext2;
 import com.wazxb.zhuxuebao.network.http.HttpRequest2;
 import com.wazxb.zhuxuebao.network.http.HttpResponsedMessage;
 import com.wazxb.zhuxuebao.storage.data.UploadPicData;
 import com.zxzx74147.devlib.ZXApplicationDelegate;
-import com.zxzx74147.devlib.base.ZXBaseActivity;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.AsyncHelper;
@@ -162,17 +158,17 @@ public class ImageUtil {
 
                     }
                 });
-                ZXBHttpRequest<UploadPicData> request = new ZXBHttpRequest<UploadPicData>(UploadPicData.class, listener);
-                request.addParams("file", bitmap2Byte(bitmap, 85));
-                request.setMethod(Request.Method.POST);
-                request.setPath(ADDRESS_UP_IMAGE);
-                ZXBRequestManageer.sharedInstance().dealRequest(request);
-                if (context instanceof ZXBaseActivity) {
-
-                    ((ZXBaseActivity) context).sendRequest(request);
-                } else {
-                    request.send();
-                }
+//                ZXBHttpRequest<UploadPicData> request = new ZXBHttpRequest<UploadPicData>(UploadPicData.class, listener);
+//                request.addParams("file", bitmap2Byte(bitmap, 85));
+//                request.setMethod(Request.Method.POST);
+//                request.setPath(ADDRESS_UP_IMAGE);
+//                ZXBRequestManageer.sharedInstance().dealRequest(request);
+//                if (context instanceof ZXBaseActivity) {
+//
+//                    ((ZXBaseActivity) context).sendRequest(request);
+//                } else {
+//                    request.send();
+//                }
             }
 
             @Override

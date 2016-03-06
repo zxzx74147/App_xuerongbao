@@ -81,6 +81,9 @@ public class UploadImageView extends RelativeLayout {
     }
 
 
+    public String getPicKey(){
+        return mPicKey;
+    }
     public void onCheckClick(View v) {
         ZXUtil.takePhoto((Activity) getContext(), PIC_REQUEST_ID);
     }

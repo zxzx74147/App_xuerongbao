@@ -7,10 +7,13 @@
 
     <color name="major_color">#ffffcb2c</color>
     <color name="view_default_bg">@color/white</color>
+    <color name="view_default_bg_grey">#f0f0f0</color>
     <color name="view_input_default_bg">#FFF9F9F9</color>
 
     <color name="text_color_black">#ff666666</color>
+    <color name="text_color_dark_black">#ff333333</color>
     <color name="text_color_hint">#ffcccccc</color>
+    <color name="text_color_grey">#ff999999</color>
 
     <color name="title_bar_bg">@color/major_color</color>
     <color name="title_divider">#FFdcddde</color>

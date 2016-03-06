@@ -63,6 +63,7 @@
         <activity android:name=".moudles.credit.CreditActivity" />
         <activity android:name=".moudles.credit.CreditFamilyActivity" />
         <activity android:name=".moudles.credit.CreditContactActivity" />
+        <activity android:name=".moudles.credit.CreditOtherActivity" />
 
 
     </application>
