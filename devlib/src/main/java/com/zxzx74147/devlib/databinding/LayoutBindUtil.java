@@ -1,6 +1,5 @@
 package com.zxzx74147.devlib.databinding;
 
-import android.databinding.BindingAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,7 +10,7 @@ import java.util.LinkedList;
  */
 public class LayoutBindUtil {
 
-    @BindingAdapter("bind:layout_wh")
+//    @BindingAdapter("bind:layout_wh")
     public static void setLayout(View view, LinkedList<Integer> layout) {
         if(layout == null){
             return;

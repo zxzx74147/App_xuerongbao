@@ -12,4 +12,6 @@ public class NetworkConfig {
     public static final String ADDRESS_U_LOGIN = "u/login";
     public static final String ADDRESS_CD_UPHOME = "cd/uphome";
     public static final String ADDRESS_CD_LIFE= "cd/uplife";
+    public static final String ADDRESS_CD_BASE= "cd/upbase";
+    public static final String ADDRESS_CD_INFO= "cd/info";
 }

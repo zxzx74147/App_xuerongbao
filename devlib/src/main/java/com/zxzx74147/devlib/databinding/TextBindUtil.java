@@ -2,7 +2,6 @@ package com.zxzx74147.devlib.databinding;
 
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.databinding.BindingAdapter;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.Editable;
@@ -25,7 +24,7 @@ public class TextBindUtil {
 
     public static final int NO_ID = -1;
 
-    @BindingAdapter({"bind:changeCallback"})
+//    @BindingAdapter({"bind:changeCallback"})
     public static void loadImage(TextView textView, String method) {
         textView.addTextChangedListener(new TextWatcher() {
             @Override

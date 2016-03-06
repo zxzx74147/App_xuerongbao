@@ -80,7 +80,7 @@
     <string name="enrollment_post_key">enrollment</string>
     <string name="collage_class">班级</string>
     <string name="collage_class_hint">请输入班级</string>
-    <string name="collage_class_post_key">class</string>
+    <string name="collage_class_post_key">grade</string>
     <string name="dorm">寝室地址</string>
     <string name="dorm_hint">请输入寝室地址</string>
     <string name="dorm_post_key">dorm</string>
@@ -165,4 +165,5 @@
     <string name="clear_cache">清理缓存</string>
     <string name="green_hand">新手指南</string>
     <string name="help">使用帮助</string>
+    <string name="xxw_post_key">authenPic</string>
 </resources>

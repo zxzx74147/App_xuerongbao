@@ -11,12 +11,9 @@ import com.wazxb.zhuxuebao.moudles.account.AccountManager;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.storage.data.UserAllData;
-import com.wazxb.zhuxuebao.widget.InputTextView;
-import com.wazxb.zhuxuebao.widget.UploadImageView;
+import com.wazxb.zhuxuebao.util.FillRqeustUtil;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
-import com.zxzx74147.devlib.utils.ZXStringUtil;
-import com.zxzx74147.devlib.utils.ZXViewHelper;
 
 public class CreditOtherActivity extends ZXBBaseActivity {
     ActivityCreditOtherBinding mBinding = null;
@@ -55,30 +52,7 @@ public class CreditOtherActivity extends ZXBBaseActivity {
             }
         });
         mRequest.setPath(NetworkConfig.ADDRESS_CD_LIFE);
-        ZXViewHelper.dfsViewGroup(getWindow().getDecorView(), new ZXViewHelper.IViewProcess() {
-            @Override
-            public void processView(View view) {
-                if (view instanceof InputTextView) {
-                    InputTextView input = (InputTextView) view;
-                    if (ZXStringUtil.checkString(input.getKey())) {
-                        mRequest.addParams(input.getKey(), input.getText());
-                    }
-                } else if (view instanceof UploadImageView) {
-                    UploadImageView input = (UploadImageView) view;
-                    if (ZXStringUtil.checkString(input.getPostKey())) {
-                        String value = (String) mRequest.getParams(input.getPostKey());
-                        if (ZXStringUtil.checkString(value)) {
-                            if (ZXStringUtil.checkString(input.getPicKey())) {
-                                value += "," + input.getPicKey();
-                            }
-                        } else {
-                            value = input.getPicKey();
-                        }
-                        mRequest.addParams(input.getPostKey(), value);
-                    }
-                }
-            }
-        });
+        FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
         sendRequest(mRequest);
 
     }

@@ -7,6 +7,11 @@
         <variable
             name="handler"
             type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseFragment2" />
+
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserCdData" />
     </data>
 
 
@@ -28,6 +33,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/school_hint"
+                app:input_edit_text="@{data.university}"
                 app:label_text="@string/school"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
@@ -41,6 +47,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/college_hint"
+                app:input_edit_text="@{data.college}"
                 app:label_text="@string/college"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
@@ -54,6 +61,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/major_hint"
+                app:input_edit_text="@{data.major}"
                 app:label_text="@string/major"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
@@ -67,6 +75,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/degree_hint"
+                app:input_edit_text="@{data.education}"
                 app:label_text="@string/degree"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
@@ -80,6 +89,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/enrollment_hint"
+                app:input_edit_text="@{data.enrollment}"
                 app:label_text="@string/enrollment"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
@@ -95,6 +105,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/student_num_hint"
+                app:input_edit_text="@{data.sID}"
                 app:label_text="@string/student_num"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
@@ -108,6 +119,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/collage_class_hint"
+                app:input_edit_text="@{data.grade}"
                 app:label_text="@string/collage_class"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
@@ -121,6 +133,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/dorm_hint"
+                app:input_edit_text="@{data.dorm}"
                 app:label_text="@string/dorm"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
@@ -153,7 +166,8 @@
                     android:layout_marginRight="@dimen/default_gap_30"
                     android:background="@color/white"
                     app:img_not_null="true"
-                    app:img_post_key="sIDAPic">
+                    app:img_post_key="sIDAPic"
+                    app:img_url="@{data.sIDAPic}">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -163,7 +177,8 @@
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
                     android:background="@color/white"
-                    app:img_post_key="sIDBPic">
+                    app:img_post_key="sIDBPic"
+                    app:img_url="@{data.sIDBPic}">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -198,7 +213,8 @@
                     android:layout_marginRight="@dimen/default_gap_30"
                     android:background="@color/white"
                     app:img_not_null="true"
-                    app:img_post_key="sCardFPic">
+                    app:img_post_key="sCardFPic"
+                    app:img_url="@{data.sCardFPic}">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -209,7 +225,8 @@
                     android:layout_marginRight="@dimen/default_gap_30"
                     android:background="@color/white"
                     app:img_not_null="true"
-                    app:img_post_key="sCardBPic">
+                    app:img_post_key="sCardBPic"
+                    app:img_url="@{data.sCardBPic}">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -267,7 +284,9 @@
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    app:img_post_key="@string/xxw_post_key"
+                    app:img_url="@{data.authenPic}">
 
 
                 </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -285,6 +304,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/hometown_hint"
+                app:input_edit_text="@{data.place}"
                 app:label_text="@string/hometown"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true" />

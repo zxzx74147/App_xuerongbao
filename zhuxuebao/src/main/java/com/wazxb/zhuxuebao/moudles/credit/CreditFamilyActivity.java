@@ -11,11 +11,9 @@ import com.wazxb.zhuxuebao.moudles.account.AccountManager;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.storage.data.UserAllData;
-import com.wazxb.zhuxuebao.widget.InputTextView;
+import com.wazxb.zhuxuebao.util.FillRqeustUtil;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
-import com.zxzx74147.devlib.utils.ZXStringUtil;
-import com.zxzx74147.devlib.utils.ZXViewHelper;
 
 public class CreditFamilyActivity extends ZXBBaseActivity {
     ActivityCreditFamilyBinding mBinding = null;
@@ -54,17 +52,7 @@ public class CreditFamilyActivity extends ZXBBaseActivity {
             }
         });
         mRequest.setPath(NetworkConfig.ADDRESS_CD_UPHOME);
-        ZXViewHelper.dfsViewGroup(getWindow().getDecorView(), new ZXViewHelper.IViewProcess() {
-            @Override
-            public void processView(View view) {
-                if (view instanceof InputTextView) {
-                    InputTextView input = (InputTextView) view;
-                    if (ZXStringUtil.checkString(input.getKey())) {
-                        mRequest.addParams(input.getKey(), input.getText());
-                    }
-                }
-            }
-        });
+        FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
         sendRequest(mRequest);
 
     }

@@ -40,6 +40,7 @@ public class InputTextView extends LinearLayout {
     private String mErrorHint;
 
 
+
     public InputTextView(Context context) {
         super(context);
         init(null);
@@ -121,6 +122,9 @@ public class InputTextView extends LinearLayout {
             if (drawableID != 0) {
                 mBinding.rightImg.setBackgroundResource(drawableID);
             }
+
+            String edit = a.getString(R.styleable.InputTextView_input_edit_text);
+            mBinding.edit.setText(edit);
             int width = a.getDimensionPixelSize(R.styleable.InputTextView_label_width, 0);
             if (width > 0) {
                 ViewGroup.LayoutParams lp = mBinding.labelLayout.getLayoutParams();
@@ -161,6 +165,10 @@ public class InputTextView extends LinearLayout {
 
     public void addTextChanged(TextWatcher watcher) {
         mBinding.edit.addTextChangedListener(watcher);
+    }
+
+    public void setContent(String edit){
+        mBinding.edit.setText(edit);
     }
 
     public void onPhoneSelected(int phoneId, Uri contactData) {

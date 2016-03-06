@@ -7,6 +7,10 @@
         <variable
             name="handler"
             type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseFragment2" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserCdData" />
     </data>
 
     <LinearLayout
@@ -25,6 +29,7 @@
             app:edit_hint="@string/mail_hint"
             app:label_text="@string/mail"
             app:label_width="@dimen/default_gap_150"
+            app:input_edit_text="@{data.mail}"
             app:not_null="true"
             app:post_key="@string/mail_post_key" />
 
@@ -39,6 +44,7 @@
             app:input_right_drawable="@drawable/reg_wx"
             app:label_text="@string/wechat"
             app:label_width="@dimen/default_gap_150"
+            app:input_edit_text="@{data.weixin}"
             app:not_null="true"
             app:post_key="@string/wechat_post_key" />
 
@@ -52,6 +58,7 @@
             app:edit_hint="@string/qq_hint"
             app:input_right_drawable="@drawable/reg_qq"
             app:label_text="@string/qq"
+            app:input_edit_text="@{data.qq}"
             app:label_width="@dimen/default_gap_150"
             app:not_null="true"
             app:post_key="@string/qq_post_key" />
@@ -64,6 +71,7 @@
             android:layout_marginRight="@dimen/default_gap_20"
             android:layout_marginTop="@dimen/default_gap_10"
             app:edit_hint="@string/weibo_hint"
+            app:input_edit_text="@{data.weibo}"
             app:input_right_drawable="@drawable/reg_wb"
             app:label_text="@string/weibo"
             app:label_width="@dimen/default_gap_150"

@@ -7,6 +7,10 @@
         <variable
             name="handler"
             type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseFragment1" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserCdData" />
     </data>
 
     <LinearLayout
@@ -29,6 +33,7 @@
                 android:layout_marginTop="@dimen/default_gap_10"
                 android:layout_weight="100"
                 app:edit_hint="@string/name_hint"
+                app:input_edit_text="@{data.name}"
                 app:label_text="@string/name"
                 app:not_null="true"
                 app:post_key="@string/name_post_key" />
@@ -42,6 +47,7 @@
                 android:layout_marginTop="@dimen/default_gap_10"
                 android:layout_weight="70"
                 app:error_hint="@string/sex_hint"
+                app:input_edit_text='@{data.sex==1? "男":"女"}'
                 app:input_right_drawable="@drawable/user_gray_right_arrow"
                 app:label_text="@string/sex"
                 app:not_null="true"
@@ -71,6 +77,7 @@
             android:layout_marginRight="@dimen/default_gap_20"
             android:layout_marginTop="@dimen/default_gap_10"
             app:edit_hint="@string/id_number_hint"
+            app:input_edit_text='@{data.pID}'
             app:label_text="@string/id_number"
             app:label_width="@dimen/default_gap_150"
             app:match_regex="@string/id_regex"
@@ -85,6 +92,7 @@
             android:layout_marginRight="@dimen/default_gap_20"
             android:layout_marginTop="@dimen/default_gap_10"
             app:edit_hint="@string/birthday_hint"
+            app:input_edit_text='@{data.birthday}'
             app:label_text="@string/birthday"
             app:label_width="@dimen/default_gap_150"
             app:match_regex="@string/id_regex"
@@ -117,7 +125,8 @@
                 android:layout_marginRight="@dimen/default_gap_30"
                 android:background="@color/white"
                 app:img_not_null="true"
-                app:img_post_key="pIDFPic">
+                app:img_post_key="pIDFPic"
+                app:img_url="@{data.pIDFPic}">
 
 
             </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -128,7 +137,8 @@
                 android:layout_marginRight="@dimen/default_gap_30"
                 android:background="@color/white"
                 app:img_not_null="true"
-                app:img_post_key="pIDBPic">
+                app:img_post_key="pIDBPic"
+                app:img_url="@{data.pIDBPic}">
 
 
             </com.wazxb.zhuxuebao.widget.UploadImageView>
@@ -144,9 +154,9 @@
             android:layout_marginRight="@dimen/default_gap_20"
             android:layout_marginTop="@dimen/default_gap_10"
             app:edit_hint="@string/account_address_hint"
+            app:input_edit_text="@{data.place}"
             app:label_text="@string/account_address"
             app:label_width="@dimen/default_gap_150"
-            app:match_regex="@string/id_regex"
             app:not_null="true"
             app:post_key="@string/account_address_post_key" />
 

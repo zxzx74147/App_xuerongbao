@@ -51,7 +51,8 @@ public class InfoTextView extends LinearLayout {
             } else {
                 mBinding.iconImg.setVisibility(GONE);
             }
-
+            boolean showRight = a.getBoolean(R.styleable.InfoTextView_info_show_right, true);
+            mBinding.rightImg.setVisibility(showRight ? VISIBLE : GONE);
             a.recycle();
         }
 

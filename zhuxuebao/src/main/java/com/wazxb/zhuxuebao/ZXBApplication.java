@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.alibaba.sdk.android.AlibabaSDK;
 import com.alibaba.sdk.android.callback.InitResultCallback;
+import com.wazxb.zhuxuebao.moudles.account.AccountManager;
 import com.wazxb.zhuxuebao.storage.StorageManager;
 import com.wazxb.zhuxuebao.storage.data.InitData;
 import com.zxzx74147.devlib.ZXApplicationDelegate;
@@ -33,7 +34,7 @@ public class ZXBApplication extends Application {
             }
         });
         StorageManager.sharedInstance();
-
+        AccountManager.sharedInstance().requestUserAllData();
 
     }
 

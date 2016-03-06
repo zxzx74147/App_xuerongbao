@@ -62,10 +62,21 @@ public class UploadImageView extends RelativeLayout {
             mPostKey = a.getString(R.styleable.UploadImageView_img_post_key);
             mIsNotNull = a.getBoolean(R.styleable.UploadImageView_img_not_null, false);
             mBinding.notNull.setVisibility(mIsNotNull ? VISIBLE : GONE);
+            mPicUrl = a.getString(R.styleable.UploadImageView_img_url);
+            if (ZXStringUtil.checkString(mPicUrl)) {
+                ImageUtil.loadImage(mPicUrl, mBinding.picture);
+            }
             a.recycle();
         }
     }
 
+    public void setImageUrl(String url){
+        mPicUrl = url;
+        if (ZXStringUtil.checkString(mPicUrl)) {
+            ImageUtil.loadImage(mPicUrl, mBinding.picture);
+        }
+
+    }
     public boolean checkDone() {
         if (!mIsNotNull) {
             return true;
@@ -81,9 +92,10 @@ public class UploadImageView extends RelativeLayout {
     }
 
 
-    public String getPicKey(){
+    public String getPicKey() {
         return mPicKey;
     }
+
     public void onCheckClick(View v) {
         ZXUtil.takePhoto((Activity) getContext(), PIC_REQUEST_ID);
     }

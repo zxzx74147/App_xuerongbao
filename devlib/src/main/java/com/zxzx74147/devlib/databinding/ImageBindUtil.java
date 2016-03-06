@@ -1,7 +1,6 @@
 package com.zxzx74147.devlib.databinding;
 
 import android.content.Context;
-import android.databinding.BindingAdapter;
 
 import com.squareup.picasso.Picasso;
 import com.zxzx74147.devlib.ZXApplicationDelegate;
@@ -18,7 +17,7 @@ import com.zxzx74147.devlib.utils.ZXStringUtil;
  */
 public class ImageBindUtil {
 
-    @BindingAdapter({"bind:imageUrl"})
+//    @BindingAdapter({"bind:imageUrl"})
     public static void loadImage(ZXImageView imageView, String url) {
         if (!ZXStringUtil.checkString(url)) {
             return;

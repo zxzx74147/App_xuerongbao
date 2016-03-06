@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.ActivityCreditBase1Binding;
+import com.wazxb.zhuxuebao.moudles.account.AccountManager;
+import com.wazxb.zhuxuebao.storage.data.UserAllData;
 import com.zxzx74147.devlib.widget.BaseFragment;
 
 /**
@@ -21,6 +23,8 @@ public class CreditBaseFragment1 extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.activity_credit_base_1, container, false);
+        UserAllData data = AccountManager.sharedInstance().getUserAllData();
+        mBinding.setData(data.cdBase);
         return mBinding.getRoot();
     }
 

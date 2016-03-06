@@ -8,8 +8,13 @@ import android.view.View;
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.base.ZXBBaseActivity;
 import com.wazxb.zhuxuebao.databinding.ActivityCreditBaseBinding;
+import com.wazxb.zhuxuebao.moudles.account.AccountManager;
+import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
-import com.wazxb.zhuxuebao.storage.data.UidData;
+import com.wazxb.zhuxuebao.storage.data.UserAllData;
+import com.wazxb.zhuxuebao.util.FillRqeustUtil;
+import com.zxzx74147.devlib.network.HttpResponse;
+import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.widget.BaseFragment;
 import com.zxzx74147.devlib.widget.tabhost.CommonFragmentTabIndicator;
 import com.zxzx74147.devlib.widget.tabhost.FragmentTabSpec;
@@ -18,7 +23,8 @@ import com.zxzx74147.devlib.widget.tabhost.FragmentTabStructure;
 public class CreditBaseActivity extends ZXBBaseActivity {
     ActivityCreditBaseBinding mBinding = null;
     private BaseFragment[] mFragmentTable = new BaseFragment[3];
-    ZXBHttpRequest<UidData> mRequest = null;
+    ZXBHttpRequest<UserAllData> mRequest = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +67,6 @@ public class CreditBaseActivity extends ZXBBaseActivity {
                         submit();
                         break;
                 }
-
             }
         });
 
@@ -69,7 +74,25 @@ public class CreditBaseActivity extends ZXBBaseActivity {
     }
 
     private void submit() {
-
+        if (mRequest != null) {
+            mRequest.cancel();
+            mRequest = null;
+        }
+        mRequest = new ZXBHttpRequest<>(UserAllData.class, new HttpResponseListener<UserAllData>() {
+            @Override
+            public void onResponse(HttpResponse<UserAllData> response) {
+                mRequest = null;
+                if (response.hasError()) {
+                    showToast(response.errorString);
+                    return;
+                }
+                AccountManager.sharedInstance().setUserAllData(response.result);
+                finish();
+            }
+        });
+        mRequest.setPath(NetworkConfig.ADDRESS_CD_BASE);
+        FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
+        sendRequest(mRequest);
     }
 
     private ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {
@@ -95,12 +118,14 @@ public class CreditBaseActivity extends ZXBBaseActivity {
     };
 
     private void addTabs() {
+
         mBinding.tabHost.setup(this, getSupportFragmentManager());
         {
             FragmentTabStructure structure = new FragmentTabStructure();
             structure.frag = new CreditBaseFragment1();
             createAndAddTabSpec(structure);
             mFragmentTable[0] = structure.frag;
+
         }
 
 
@@ -121,6 +146,8 @@ public class CreditBaseActivity extends ZXBBaseActivity {
 
         mBinding.tabHost.initViewPager();
         setTab(0);
+
+
     }
 
     private void createAndAddTabSpec(FragmentTabStructure fragTab) {
@@ -134,7 +161,6 @@ public class CreditBaseActivity extends ZXBBaseActivity {
         mInner.setPadding(0, getResources().getDimensionPixelSize(R.dimen.default_gap_7), 0, 0);
         mInner.setContentView(new View(CreditBaseActivity.this));
         tab.mWidget = mInner;
-
         mBinding.tabHost.addTabSpec(tab);
     }
 
