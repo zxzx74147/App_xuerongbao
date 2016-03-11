@@ -59,12 +59,11 @@ public class MainTabActivity extends ZXBBaseActivity {
         mTextView.setGravity(Gravity.CENTER);
         mTextView.setCompoundDrawablesWithIntrinsicBounds(0, fragTab.textDrawable, 0, 0);
         CommonFragmentTabIndicator mInner = new CommonFragmentTabIndicator(MainTabActivity.this);
+        mTextView.setTextColor(getResources().getColorStateList(R.color.tab_text_color));
         mInner.setPadding(0, getResources().getDimensionPixelSize(R.dimen.default_gap_7), 0, 0);
         mInner.setContentView(mTextView);
         tab.mWidget = mInner;
 
         mBinding.tabHost.addTabSpec(tab);
     }
-
-
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="@dimen/default_pix_213"
+    an
+    android:insetTop="@dimen/default_pix_0"
+
+    android:src="@drawable/star_0001" />

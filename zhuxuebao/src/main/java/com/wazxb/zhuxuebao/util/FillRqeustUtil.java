@@ -2,6 +2,7 @@ package com.wazxb.zhuxuebao.util;
 
 import android.view.View;
 
+import com.wazxb.zhuxuebao.base.ZXBBaseActivity;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.widget.InputTextView;
 import com.wazxb.zhuxuebao.widget.UploadImageView;
@@ -14,6 +15,28 @@ import java.util.HashMap;
  * Created by zhengxin on 16/3/6.
  */
 public class FillRqeustUtil {
+    private static boolean mLoginOk = true;
+
+    public static boolean checkLoginAbled(final ZXBBaseActivity activity) {
+        mLoginOk = true;
+        ZXViewHelper.dfsViewGroup(activity.getWindow().getDecorView(), new ZXViewHelper.IViewProcess() {
+            @Override
+            public void processView(View view) {
+                if (view instanceof InputTextView) {
+                    if (((InputTextView) view).isNotNull() && !((InputTextView) view).getIsFilled()) {
+                        activity.showToast(((InputTextView) view).getError());
+                        mLoginOk = false;
+                    }
+                } else if (view instanceof UploadImageView) {
+                    if (((UploadImageView) view).isNotNull() && !((UploadImageView) view).getIsFilled()) {
+                        activity.showToast(((UploadImageView) view).getError());
+                        mLoginOk = false;
+                    }
+                }
+            }
+        });
+        return mLoginOk;
+    }
 
     //填充字段
     public static void fillRequest(final ZXBHttpRequest request, View mRoot) {
@@ -28,7 +51,7 @@ public class FillRqeustUtil {
                     }
                 } else if (view instanceof UploadImageView) {
                     UploadImageView input = (UploadImageView) view;
-                    if (ZXStringUtil.checkString(input.getPostKey())) {
+                    if (input.getIsFilled()) {
                         Integer time = mMap.get(input.getPostKey());
                         if (time == null) {
                             time = 0;

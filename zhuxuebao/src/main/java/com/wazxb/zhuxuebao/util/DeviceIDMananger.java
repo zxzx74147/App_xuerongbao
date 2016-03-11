@@ -65,10 +65,15 @@ public class DeviceIDMananger {
     }
 
     private String generatePhoneNum() {
-        TelephonyManager telephonyManager;
-        telephonyManager = (TelephonyManager) ZXApplicationDelegate.getApplication()
-                .getSystemService(Context.TELEPHONY_SERVICE);
-        return telephonyManager.getLine1Number();
+        try {
+            TelephonyManager telephonyManager;
+            telephonyManager = (TelephonyManager) ZXApplicationDelegate.getApplication()
+                    .getSystemService(Context.TELEPHONY_SERVICE);
+            return telephonyManager.getLine1Number();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
 
     }
 

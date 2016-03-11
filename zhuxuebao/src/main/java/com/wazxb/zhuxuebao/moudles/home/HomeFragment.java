@@ -9,7 +9,10 @@ import android.widget.LinearLayout;
 
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.FragmentHomeBinding;
+import com.wazxb.zhuxuebao.moudles.borrow.BorrowActivity;
+import com.wazxb.zhuxuebao.moudles.calculate.CaculateActivity;
 import com.wazxb.zhuxuebao.moudles.credit.CreditActivity;
+import com.wazxb.zhuxuebao.moudles.payback.PaybackActivity;
 import com.wazxb.zhuxuebao.storage.StorageManager;
 import com.wazxb.zhuxuebao.storage.data.InitData;
 import com.wazxb.zhuxuebao.widget.BannerView;
@@ -54,12 +57,16 @@ public class HomeFragment extends BaseFragment {
         });
     }
 
-    public void onRepaymentClick(View v) {
+    public void onBorrowClick(View v) {
+        ZXActivityJumpHelper.startActivity(this, BorrowActivity.class);
+    }
 
+    public void onRepaymentClick(View v) {
+        ZXActivityJumpHelper.startActivity(this, PaybackActivity.class);
     }
 
     public void onInterestCalClick(View v) {
-
+        ZXActivityJumpHelper.startActivity(this, CaculateActivity.class);
     }
 
     public void onEvaluateClick(View v) {

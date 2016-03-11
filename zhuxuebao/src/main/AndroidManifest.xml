@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.CHANGEWIFISTATE" />
 
     <application
@@ -52,7 +53,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".moudles.account.LoginActivity" />
+        <activity
+            android:name=".moudles.account.LoginActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".moudles.account.RegitsterActivity"
 
             />
@@ -65,8 +68,13 @@
         <activity android:name=".moudles.credit.CreditContactActivity" />
         <activity android:name=".moudles.credit.CreditOtherActivity" />
         <activity android:name=".moudles.personal.PersonalInfoActivity" />
-
-
+        <activity android:name=".moudles.gesturepass.GesturePassrwordActivity" />
+        <activity android:name=".moudles.borrow.BorrowActivity" />
+        <activity android:name=".moudles.more.AboutActivity" />
+        <activity android:name=".moudles.calculate.CaculateActivity" />
+        <activity android:name=".moudles.borrow.BorrowApplyActivity" />
+        <activity android:name=".moudles.borrow.BorrowSuccActivity" />
+        <activity android:name=".moudles.payback.PaybackActivity" />
     </application>
 
 </manifest>

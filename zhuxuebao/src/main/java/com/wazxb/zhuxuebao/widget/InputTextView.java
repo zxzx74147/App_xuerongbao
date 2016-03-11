@@ -26,6 +26,7 @@ import com.wazxb.zhuxuebao.util.RequestCode;
 import com.wazxb.zhuxuebao.util.ZXDataPickerHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -201,6 +202,21 @@ public class InputTextView extends LinearLayout {
                     sexs.add("男");
                     sexs.add("女");
                     ZXDataPickerHelper.selectItem(getContext(), sexs, new ZXDataPickerHelper.IItemSelected() {
+                        @Override
+                        public void onSelected(String item) {
+                            mBinding.edit.setText(item);
+                        }
+                    });
+                }
+            });
+
+        } else if ("bank".equals(mPickType)) {
+            mBinding.edit.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    List<String> sexs = new LinkedList<>();
+                    String[] banks = getResources().getStringArray(R.array.bank_list);
+                    ZXDataPickerHelper.selectItem(getContext(), Arrays.asList(banks), new ZXDataPickerHelper.IItemSelected() {
                         @Override
                         public void onSelected(String item) {
                             mBinding.edit.setText(item);

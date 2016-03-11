@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="@dimen/default_pix_13"
+        android:height="@dimen/default_pix_18"
+        android:left="@dimen/default_pix_213">
+        <bitmap android:src="@drawable/star_0001" />
+    </item>
+
+
+</layer-list>

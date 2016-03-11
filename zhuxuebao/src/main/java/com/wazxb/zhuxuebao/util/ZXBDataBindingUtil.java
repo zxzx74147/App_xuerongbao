@@ -2,6 +2,8 @@ package com.wazxb.zhuxuebao.util;
 
 import android.databinding.BindingAdapter;
 
+import com.wazxb.zhuxuebao.storage.data.ProdData;
+import com.wazxb.zhuxuebao.widget.CashView;
 import com.wazxb.zhuxuebao.widget.InfoTextView;
 import com.wazxb.zhuxuebao.widget.InputTextView;
 import com.wazxb.zhuxuebao.widget.UploadImageView;
@@ -50,5 +52,10 @@ public class ZXBDataBindingUtil {
             return urls;
         }
         return null;
+    }
+
+    @BindingAdapter("app:prodData")
+    public static void setLayoutHeight(CashView view, ProdData prod) {
+        view.setProd(prod);
     }
 }

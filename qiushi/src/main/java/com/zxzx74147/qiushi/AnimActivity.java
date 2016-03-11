@@ -17,7 +17,7 @@ public class AnimActivity extends ZXBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anim);
+        setContentView(R.layout.starts_view);
         final RelativeLayout mRoot = (RelativeLayout) findViewById(R.id.root);
 
         for (int i = 0; i < 30; i++) {

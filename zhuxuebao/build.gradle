@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 22
     buildToolsVersion "23.0.2"
 
     dataBinding {
@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "com.wazxb.zhuxuebao"
-        minSdkVersion 14
-        targetSdkVersion 23
+        minSdkVersion 15
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -36,4 +36,6 @@ dependencies {
     compile project(':devlib')
     compile project(':OneSDK')
     compile 'com.github.citux:datetimepicker:0.2.0'
+    compile 'com.eftimoff:android-patternview:1.0.5@aar'
+
 }

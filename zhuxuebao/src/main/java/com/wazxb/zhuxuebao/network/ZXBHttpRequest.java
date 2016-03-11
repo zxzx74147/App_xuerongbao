@@ -11,6 +11,8 @@ import com.zxzx74147.devlib.utils.ZXStringUtil;
 public class ZXBHttpRequest<T> extends BaseHttpRequest<T> {
     private String mPath;
 
+    public boolean isRefresh = false;
+
     public ZXBHttpRequest(Class<T> dstClass, HttpResponseListener<T> listener) {
         super(dstClass, listener);
         if (ZXStringUtil.checkString(AccountManager.sharedInstance().getUid())) {

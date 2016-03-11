@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.calculate.CaculateFragment" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.ProdData" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.wazxb.zhuxuebao.widget.CashView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:prodData="@{data}" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@string/borrow_remind1"
+                    android:textColor="@color/text_color_black" />
+
+                <TextView
+                    android:id="@+id/borrow_remind1_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@{data.intro}"
+                    android:textColor="@color/text_color_black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@string/borrow_remind2"
+                    android:textColor="@color/text_color_black" />
+
+                <TextView
+                    android:id="@+id/borrow_remind2_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="@{data.lateIntro}"
+                    android:textColor="@color/text_color_black" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

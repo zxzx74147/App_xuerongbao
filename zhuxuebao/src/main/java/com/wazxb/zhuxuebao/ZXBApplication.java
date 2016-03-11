@@ -35,6 +35,7 @@ public class ZXBApplication extends Application {
         });
         StorageManager.sharedInstance();
         AccountManager.sharedInstance().requestUserAllData();
+        AccountManager.sharedInstance().requestCaculateData();
 
     }
 

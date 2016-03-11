@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="com.wazxb.zhuxuebao.util.ZXBStringUtil" />
+
         <variable
             name="data"
             type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
@@ -124,7 +126,8 @@
             android:id="@+id/beans_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:info_edit_text="@{String.valueOf(data.beans)}"
+
+            app:info_edit_text='@{String.valueOf(data.beans)}'
             app:info_label_text="@string/beans"
             app:info_show_right="false" />
 
@@ -140,6 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:info_edit_text="@{String.valueOf(data.quotaTotal)}"
+            app:info_content_drawable="@drawable/user_bean"
             app:info_label_text="@string/quotatotal"
             app:info_show_right="false" />
 
@@ -159,6 +163,7 @@
         <com.wazxb.zhuxuebao.widget.InfoTextView
             android:id="@+id/ge_pass_layout"
             android:layout_width="match_parent"
+            android:onClick="@{handler.onGesturePassClick}"
             android:layout_height="wrap_content"
             app:info_label_text="@string/ge_pass" />
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.zxzx74147.devlib.utils.TimerUtil" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.LoanHisData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/info_divider" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_gap_20">
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@{data.his}"
+                android:textColor="@{data.color|0xFF000000}"
+                android:textSize="@dimen/default_gap_28" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="@{TimerUtil.getTimeFormat(data.hisTime,TimerUtil.YMD)}"
+                android:textColor="@color/text_color_grey"
+                android:textSize="@dimen/default_gap_28" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

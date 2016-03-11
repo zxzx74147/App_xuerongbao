@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.personal.BindCradActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:background="@color/view_default_bg_grey"
+        android:orientation="vertical">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            app:text="@string/bind_bank_card" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/view_default_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_gap_30"
+            android:paddingLeft="@dimen/default_gap_20"
+            android:paddingRight="@dimen/default_gap_20"
+            android:paddingTop="@dimen/default_gap_30">
+
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/portrait"
+                android:textColor="@color/text_color_dark_black"
+                android:textSize="@dimen/default_size_30" />
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/head"
+                android:layout_width="@dimen/default_gap_120"
+                android:layout_height="@dimen/default_gap_120"
+                app:img_url="@{data.portrait}"
+                app:riv_border_color="@color/white"
+                app:riv_border_width="@dimen/default_gap_2"
+                app:riv_corner_radius="@dimen/default_gap_200" />
+
+            <ImageView
+                android:id="@+id/right_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/default_gap_15"
+                android:src="@drawable/user_gray_right_arrow" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:src="@color/info_divider" />
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:id="@+id/name_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_edit_text="@{data.name}"
+            app:info_label_text="@string/name"
+            app:info_show_right="false" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:src="@color/info_divider" />
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:id="@+id/account_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_edit_text="@{data.phone}"
+            app:info_label_text="@string/account"
+            app:info_show_right="false" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:src="@color/info_divider" />
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:id="@+id/quota_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_edit_text="@{String.valueOf(data.quota)}"
+            app:info_label_text="@string/quota"
+            app:info_show_right="false" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:src="@color/info_divider" />
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:id="@+id/beans_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_edit_text="@{String.valueOf(data.beans)}"
+            app:info_label_text="@string/beans"
+            app:info_show_right="false" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:src="@color/info_divider" />
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:id="@+id/quotatotal_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_edit_text="@{String.valueOf(data.quotaTotal)}"
+            app:info_label_text="@string/quotatotal"
+            app:info_show_right="false" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:src="@color/info_divider" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/default_gap_20"
+            android:background="@color/white"
+            android:src="@color/info_divider" />
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:id="@+id/ge_pass_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_label_text="@string/ge_pass" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:src="@color/info_divider" />
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:id="@+id/change_ge_pass_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_label_text="@string/change_ge_pass" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:src="@color/info_divider" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="@dimen/default_gap_20"
+            android:background="@color/white"
+            android:src="@color/info_divider" />
+
+        <TextView
+            android:id="@+id/logout_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/default_gap_30"
+            android:text="@string/logout"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/default_gap_30" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:src="@color/info_divider" />
+    </LinearLayout>
+</layout>

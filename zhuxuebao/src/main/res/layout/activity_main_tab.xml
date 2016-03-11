@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:bb="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:bb="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -14,8 +13,12 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:context="com.wazxb.zhuxuebao.MainTabActivity">
+        android:fitsSystemWindows="true">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110" />
+
 
         <com.zxzx74147.devlib.widget.tabhost.FragmentTabHost
             android:id="@+id/tab_host"
@@ -26,7 +29,7 @@
             bb:dividerHeight="1px"
             bb:scrollable="false"
             bb:smoothScroll="false"
-            bb:tabHeight="@dimen/default_gap_110"
+            bb:tabHeight="@dimen/default_gap_80"
             bb:tabPosition="bottom"
             bb:tabWigetBackground="@color/white" />
     </FrameLayout>

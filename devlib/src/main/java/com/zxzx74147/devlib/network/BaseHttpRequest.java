@@ -89,12 +89,12 @@ public class BaseHttpRequest<T> {
                     String url = mUrl + "?" + new String(mProxy.getBody());
                     Log.d("NETWORK URL = ", url);
                     Log.d("NETWORK RSP = ", response);
-                    T data = JSON.parseObject(response, mDstClass);
+                    T data = null;
                     try {
                         mError = JSON.toJavaObject(JSON.parseObject(response).getJSONObject("error"), ErrorData.class);
-
+                        data = JSON.parseObject(response, mDstClass);
                     } catch (Exception e) {
-
+                        e.printStackTrace();
                     }
                     return data;
                 }

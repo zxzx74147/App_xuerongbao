@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.widget.CashView" />
+
+
+    </data>
+
+    <merge
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/loan_bg">
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/default_gap_20"
+                    android:text="@string/borrow_amount" />
+
+                <cn.jeesoft.widget.pickerview.CharacterPickerView
+                    android:id="@+id/picker1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/default_gap_20"
+                    android:text="@string/borrow_time" />
+
+                <cn.jeesoft.widget.pickerview.CharacterPickerView
+                    android:id="@+id/picker2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_gap_20">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/borrow_plain"
+                android:textColor="@color/text_color_grey"
+                android:textSize="@dimen/default_size_30" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/value"
+                android:gravity="end"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/default_size_28" />
+
+            <TextView
+                android:id="@+id/day_per"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/30天"
+                android:textColor="@color/text_color_grey"
+                android:textSize="@dimen/default_size_24" />
+        </LinearLayout>
+    </merge>
+</layout>

@@ -70,13 +70,14 @@ public class UploadImageView extends RelativeLayout {
         }
     }
 
-    public void setImageUrl(String url){
+    public void setImageUrl(String url) {
         mPicUrl = url;
         if (ZXStringUtil.checkString(mPicUrl)) {
             ImageUtil.loadImage(mPicUrl, mBinding.picture);
         }
 
     }
+
     public boolean checkDone() {
         if (!mIsNotNull) {
             return true;
@@ -140,4 +141,11 @@ public class UploadImageView extends RelativeLayout {
         return mPostKey;
     }
 
+    public boolean isNotNull() {
+        return mIsNotNull;
+    }
+
+    public boolean getIsFilled() {
+        return ZXStringUtil.checkString(mPicKey);
+    }
 }

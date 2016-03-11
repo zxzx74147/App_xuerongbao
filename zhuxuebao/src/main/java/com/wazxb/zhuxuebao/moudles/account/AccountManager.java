@@ -1,8 +1,10 @@
 package com.wazxb.zhuxuebao.moudles.account;
 
+import com.wazxb.zhuxuebao.EventBusConfig;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.storage.StorageManager;
+import com.wazxb.zhuxuebao.storage.data.CalculatorData;
 import com.wazxb.zhuxuebao.storage.data.UserAllData;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
@@ -18,14 +20,19 @@ public class AccountManager {
 
     private static String SP_KEY_UID = "uid";
     private static String SP_KEY_USER_ALL_DATA = "user_all_data";
+    private static String SP_KEY_CAL_DATA = "user_cal_data";
+    private static String SP_KEY_USER_PASS_WORD = "user_pass_word";
     private static AccountManager mInstance = null;
     private ZXBHttpRequest<UserAllData> mRequest = null;
+    private ZXBHttpRequest<CalculatorData> mCalRequest = null;
     private String mUid = null;
     private UserAllData mUserAllData = null;
+    private String mPass = null;
+    private CalculatorData mCaculatorData = null;
 
     private AccountManager() {
-//        EventBus.getDefault().register(this);
         mUid = SharedPreferenceHelper.getString(SP_KEY_UID, null);
+        mPass = SharedPreferenceHelper.getString(SP_KEY_USER_PASS_WORD, null);
     }
 
     public static AccountManager sharedInstance() {
@@ -39,6 +46,13 @@ public class AccountManager {
         mUid = uid;
         SharedPreferenceHelper.saveString(SP_KEY_UID, uid);
         requestUserAllData();
+        requestCaculateData();
+    }
+
+    public void clearAll() {
+        clearUid();
+        mCaculatorData = null;
+        mUserAllData = null;
     }
 
     public void clearUid() {
@@ -63,6 +77,12 @@ public class AccountManager {
         EventBus.getDefault().post("user_all_data");
     }
 
+    public void setCalData(CalculatorData data) {
+        mCaculatorData = data;
+        StorageManager.sharedInstance().saveKVObjectAsync(SP_KEY_CAL_DATA, mCaculatorData);
+        EventBus.getDefault().post(EventBusConfig.EVENT_CAL_DATA_READY);
+    }
+
     public void logout() {
         saveUid(null);
         mUserAllData = null;
@@ -71,6 +91,19 @@ public class AccountManager {
 
     public UserAllData getUserAllData() {
         return mUserAllData;
+    }
+
+    public CalculatorData getCalData() {
+        return mCaculatorData;
+    }
+
+    public void setPassword(String pass) {
+        mPass = pass;
+        SharedPreferenceHelper.saveString(SP_KEY_USER_PASS_WORD, pass);
+    }
+
+    public String getPassword() {
+        return mPass;
     }
 
     public void requestUserAllData() {
@@ -96,5 +129,28 @@ public class AccountManager {
         mRequest.addParams("uId", mUid);
         mRequest.send();
 
+    }
+
+    public void requestCaculateData() {
+        if (mCalRequest != null) {
+            mCalRequest.cancel();
+            mCalRequest = null;
+            return;
+        }
+        if (mUid == null) {
+            return;
+        }
+        mCalRequest = new ZXBHttpRequest<>(CalculatorData.class, new HttpResponseListener<CalculatorData>() {
+            @Override
+            public void onResponse(HttpResponse<CalculatorData> response) {
+                mCalRequest = null;
+                if (response.hasError()) {
+                    return;
+                }
+                setCalData(response.result);
+            }
+        });
+        mCalRequest.setPath(NetworkConfig.ADDRESS_LN_CALCULATOR);
+        mCalRequest.send();
     }
 }

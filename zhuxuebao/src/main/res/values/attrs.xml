@@ -27,8 +27,18 @@
     <declare-styleable name="InfoTextView">
         <attr name="info_left_drawable" format="reference" />
         <attr name="info_show_right" format="boolean" />
+        <attr name="info_content_drawable" format="reference" />
         <attr name="info_label_text" format="string" />
         <attr name="content_text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CashView">
+        <attr name="amount_start" format="integer" />
+        <attr name="amount_end" format="integer" />
+        <attr name="time_start" format="integer" />
+        <attr name="time_end" format="integer" />
+        <attr name="borrow_mode" format="integer" />
+        <attr name="borrow_rate" format="float" />
     </declare-styleable>
 
 </resources>

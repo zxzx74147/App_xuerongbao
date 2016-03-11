@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 
 import com.zxzx74147.devlib.network.BaseHttpRequest;
 import com.zxzx74147.devlib.network.HttpManager;
+import com.zxzx74147.devlib.utils.CustomToast;
 import com.zxzx74147.devlib.utils.ZXUniqueIDGenerator;
 
 
@@ -31,11 +32,11 @@ public class ZXBaseActivity extends FragmentActivity {
     }
 
     public void showToast(String content) {
-
+        CustomToast.newInstance().showToast(content);
     }
 
     protected void showToast(int contentID) {
-
+        CustomToast.newInstance().showToast(contentID);
     }
 
     public void sendRequest(BaseHttpRequest request) {

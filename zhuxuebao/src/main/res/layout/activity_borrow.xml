@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.borrow.BorrowActivity" />
+
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            app:text="@string/borrow" />
+
+        <com.zxzx74147.devlib.widget.tabhost.FragmentTabHost
+            android:id="@+id/tab_host"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            app:dividerColor="@color/maintab_divider"
+            app:dividerHeight="1px"
+            app:scrollable="true"
+            app:tabHeight="@dimen/default_gap_90"
+            app:tabPosition="top"
+            app:tabWigetBackground="@color/white" />
+    </LinearLayout>
+</layout>

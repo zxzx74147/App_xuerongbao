@@ -13,15 +13,19 @@ import com.wazxb.zhuxuebao.util.RequestCode;
 import com.wazxb.zhuxuebao.widget.InputTextView;
 import com.wazxb.zhuxuebao.widget.UploadImageView;
 import com.zxzx74147.devlib.base.ZXBaseActivity;
+import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXViewHelper;
 
 /**
  * Created by zhengxin on 16/2/27.
  */
-public class ZXBBaseActivity extends ZXBaseActivity {
+public class ZXBBaseActivity<T> extends ZXBaseActivity {
 
     private ImageView mProgressBar;
 
+    protected T getParam(){
+        return (T) getIntent().getSerializableExtra(ZXActivityJumpHelper.INTENT_DATA);
+    }
     /**
      * 中心点为基点显示菊花
      */
@@ -91,5 +95,9 @@ public class ZXBBaseActivity extends ZXBaseActivity {
             });
         }
 
+    }
+
+    public void postRunnableDelyed(Runnable runnable, int time) {
+        getWindow().getDecorView().postDelayed(runnable, time);
     }
 }

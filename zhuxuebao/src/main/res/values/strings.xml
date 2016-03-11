@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">助学宝</string>
+    <string name="app_name">学融宝</string>
     <string name="action_settings">Settings</string>
     <string name="moudle_home">首页</string>
     <string name="moudle_personal">个人</string>
@@ -178,4 +178,37 @@
     <string name="portrait">头像</string>
     <string name="j_pickerview_cancel">取消</string>
     <string name="j_pickerview_submit">确定</string>
+    <string name="input_gesture_password">绘制手势密码</string>
+    <string name="borrow_amount">借款金额（元）</string>
+    <string name="borrow_time">借款期限</string>
+    <string name="borrow_now">马上借款</string>
+    <string name="borrow_remind1">产品及借款费用说明</string>
+    <string name="borrow_remind2">逾期费用说明</string>
+    <string name="borrow_fuli">福利贷</string>
+    <string name="borrow_huoli">活利贷</string>
+    <string name="borrow_yueli">月利贷</string>
+    <string name="borrow">贷款</string>
+    <string name="borrow_plain">计划还款</string>
+    <string name="caculate_title">费率计算</string>
+    <string name="borrow_apply">贷款申请</string>
+    <string name="borrow_amount_label">借款金额</string>
+    <string name="borrow_unit_label">元</string>
+    <string name="borrow_time_label">借款时间</string>
+    <string name="borrow_consult_label">咨询服务费</string>
+    <string name="borrow_bond_label">无逾期保证金</string>
+    <string name="borrow_receive_label">到账金额</string>
+    <string name="borrow_return_label">还款金额</string>
+    <string name="borrow_use">借款用途</string>
+    <string name="borrow_use_hint">请输入借款用途</string>
+    <string name="borrow_use_key">usage</string>
+    <string name="borrow_return_key">source</string>
+    <string name="borrow_return">还款来源</string>
+    <string name="borrow_return_hint">请输入还款来源</string>
+    <string name="agree">同意</string>
+    <string name="agreement">协议</string>
+    <string name="repayment_contract">《还款合同》</string>
+    <string name="borrow_succ">申请成功</string>
+    <string name="borrow_succ_remind">贷款申请成功\n学融宝会尽快完成审核</string>
+    <string name="payback">还款</string>
+
 </resources>

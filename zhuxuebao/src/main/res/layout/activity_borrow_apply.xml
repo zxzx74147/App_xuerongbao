@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.wazxb.zhuxuebao.moudles.borrow.BorrowConfig" />
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.borrow.BorrowApplyActivity" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.BorrowRequestData" />
+
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            app:text="@string/borrow_apply" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_gap_10"
+            android:background="@drawable/loan_bg"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/default_gap_20"
+            android:paddingRight="@dimen/default_gap_20"
+            android:paddingTop="@dimen/default_gap_20">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_gap_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_amount_label"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@{String.valueOf(data.money)}"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_unit_label"
+                    android:textColor="@color/text_color_black"
+
+                    android:textSize="@dimen/default_gap_24" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/info_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_gap_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_time_label"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@{data.lnProdId == BorrowConfig.BORROW_YUELI? String.valueOf(data.month):String.valueOf(data.day)}"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{data.lnProdId == BorrowConfig.BORROW_YUELI? "月":"天"}'
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_24" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/info_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_gap_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_consult_label"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text='@{String.format("%.2f",data.mProdData.consultRateFlt*data.money)}'
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_unit_label"
+                    android:textColor="@color/text_color_black"
+
+                    android:textSize="@dimen/default_gap_24" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/info_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_gap_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_bond_label"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text='@{String.format("%.2f",data.mProdData.bondRateFlt*data.money)}'
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_unit_label"
+                    android:textColor="@color/text_color_black"
+
+                    android:textSize="@dimen/default_gap_24" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/info_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_gap_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_receive_label"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text='@{String.format("%.2f",(float)data.money-data.mProdData.consultRateFlt*data.money-data.mProdData.bondRateFlt*data.money)}'
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_unit_label"
+                    android:textColor="@color/text_color_black"
+
+                    android:textSize="@dimen/default_gap_24" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/info_divider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_gap_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/borrow_return_label"
+                    android:textColor="@color/text_color_grey"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text='@{String.format("%.2f",data.returnNum)}'
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{data.lnProdId == BorrowConfig.BORROW_YUELI? "/月":"元"}'
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_24" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/borrow_use_hint"
+            app:label_text="@string/borrow_use"
+            app:label_width="@dimen/default_gap_150"
+            app:not_null="true"
+            app:post_key="@string/borrow_use_key" />
+
+        <com.wazxb.zhuxuebao.widget.InputTextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_input_layout"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_10"
+            app:edit_hint="@string/borrow_return_hint"
+            app:label_text="@string/borrow_return"
+            app:label_width="@dimen/default_gap_150"
+            app:not_null="true"
+            app:post_key="@string/borrow_return_key" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_20"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/repayment_contract_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_gap_10"
+                android:button="@drawable/common_check_box"
+                android:checked="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/agree"
+                android:textColor="@color/text_color_grey"
+                android:textSize="@dimen/default_size_20" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/repayment_contract"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/default_size_20" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/agreement"
+                android:textColor="@color/text_color_grey"
+                android:textSize="@dimen/default_size_20" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:layout_marginTop="@dimen/default_gap_20"
+            android:background="@drawable/common_button_bg"
+            android:onClick="@{handler.onApplyClick}"
+            android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_big" />
+
+    </LinearLayout>
+</layout>
