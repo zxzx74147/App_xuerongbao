@@ -73,6 +73,7 @@
             android:layout_height="wrap_content"
             app:content_text="@string/bind_bank_card"
             app:info_label_text="@string/my_bank_card"
+            android:onClick="@{handler.onBindBankClick}"
             app:info_left_drawable="@drawable/user_card" />
 
         <ImageView

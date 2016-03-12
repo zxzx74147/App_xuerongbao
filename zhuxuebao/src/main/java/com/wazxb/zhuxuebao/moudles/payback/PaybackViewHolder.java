@@ -3,6 +3,7 @@ package com.wazxb.zhuxuebao.moudles.payback;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
@@ -12,6 +13,7 @@ import com.wazxb.zhuxuebao.databinding.ItemLoanHistoryLayoutBinding;
 import com.wazxb.zhuxuebao.databinding.ItemLoanLayoutBinding;
 import com.wazxb.zhuxuebao.storage.data.LoanHisData;
 import com.wazxb.zhuxuebao.storage.data.LoanItemData;
+import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 
 /**
  * Created by zhengxin on 16/3/11.
@@ -23,8 +25,8 @@ public class PaybackViewHolder extends ZXBViewHolder<LoanItemData> {
     }
 
     @Override
-    protected void bindData(LoanItemData data) {
-        ItemLoanLayoutBinding binding = (ItemLoanLayoutBinding) mBinding;
+    protected void bindData(final LoanItemData data) {
+        final ItemLoanLayoutBinding binding = (ItemLoanLayoutBinding) mBinding;
         binding.setData(data);
         binding.executePendingBindings();
         binding.historyLayout.removeAllViews();
@@ -36,5 +38,11 @@ public class PaybackViewHolder extends ZXBViewHolder<LoanItemData> {
                 hisBinding.setData(his);
             }
         }
+        binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ZXActivityJumpHelper.startActivity(binding.getRoot().getContext(), PaybackDetailActivity.class, data);
+            }
+        });
     }
 }

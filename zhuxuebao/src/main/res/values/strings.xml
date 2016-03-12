@@ -210,5 +210,20 @@
     <string name="borrow_succ">申请成功</string>
     <string name="borrow_succ_remind">贷款申请成功\n学融宝会尽快完成审核</string>
     <string name="payback">还款</string>
+    <string name="bind_bank_card_num">银行卡号</string>
+    <string name="bind_bank_card_num_hint">仅支持储蓄卡</string>
+    <string name="bind_bank_card_num_post_key">bankCard</string>
+    <string name="bind_bank__hint">请选择</string>
+    <string name="bind_bank">银行</string>
+    <string name="bind_bank_post_key">bank</string>
+    <string name="bind_bank_name">开户行</string>
+    <string name="bind_bank_name_hint">例如xx支行</string>
+    <string name="bind_bank_name_post_key">bankBranch</string>
+    <string name="return_method">还款方式</string>
+    <string name="alipay">支付宝</string>
+    <string name="return_remind_title">还款选择任一种方式</string>
+    <string name="return_remind_content">银行卡转账需用当初注册的银行卡号转\n支付宝需要标注姓名手机号\n微信号需加公司财务微信账号转账</string>
+    <string name="pay_plan">计划还款</string>
+    <string name="loan_apply_time">申请时间</string>
 
 </resources>

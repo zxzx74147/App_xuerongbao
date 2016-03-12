@@ -10,7 +10,11 @@ import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 public class AccountInterface {
 
     public static boolean checkLogin(Context context) {
-        ZXActivityJumpHelper.startActivity(context, LoginActivity.class);
-        return true;
+        if (!AccountManager.sharedInstance().hasUid()) {
+            ZXActivityJumpHelper.startActivity(context, LoginActivity.class);
+            return false;
+        } else {
+            return true;
+        }
     }
 }

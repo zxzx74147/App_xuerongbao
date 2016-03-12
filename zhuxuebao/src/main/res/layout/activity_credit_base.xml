@@ -9,33 +9,38 @@
             type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseActivity" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/view_default_bg_grey"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <com.zxzx74147.devlib.widget.TitleBar
-            android:id="@+id/title_bar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/default_gap_110"
-            app:right_text="@string/next_step" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_gap_10"
-            android:layout_marginLeft="@dimen/default_gap_10"
-            android:layout_marginTop="@dimen/default_gap_10"
-            android:text="@string/info_remind"
-            android:textColor="@color/button_bg_red"
-            android:textSize="@dimen/default_size_15" />
-
-        <com.zxzx74147.devlib.widget.tabhost.FragmentTabHost
-            android:id="@+id/tab_host"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:scrollable="false"
-            app:tabHeight="0dip" />
-    </LinearLayout>
+            android:background="@color/view_default_bg_grey"
+            android:orientation="vertical">
+
+            <com.zxzx74147.devlib.widget.TitleBar
+                android:id="@+id/title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_gap_110"
+                app:right_text="@string/next_step" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_gap_10"
+                android:layout_marginLeft="@dimen/default_gap_10"
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:text="@string/info_remind"
+                android:textColor="@color/button_bg_red"
+                android:textSize="@dimen/default_size_15" />
+
+            <com.zxzx74147.devlib.widget.tabhost.FragmentTabHost
+                android:id="@+id/tab_host"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:scrollable="false"
+                app:tabHeight="0dip" />
+        </LinearLayout>
+    </ScrollView>
 </layout>

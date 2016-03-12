@@ -17,7 +17,7 @@ import java.util.HashMap;
 public class FillRqeustUtil {
     private static boolean mLoginOk = true;
 
-    public static boolean checkLoginAbled(final ZXBBaseActivity activity) {
+    public static boolean checkFill(final ZXBBaseActivity activity) {
         mLoginOk = true;
         ZXViewHelper.dfsViewGroup(activity.getWindow().getDecorView(), new ZXViewHelper.IViewProcess() {
             @Override

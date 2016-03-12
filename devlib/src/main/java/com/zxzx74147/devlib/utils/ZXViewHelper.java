@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
@@ -514,6 +515,20 @@ public class ZXViewHelper {
 
 
         return (int) (dipValue * displayMetricsDensity + 0.5f);
+    }
+
+
+    public static void showSoftKey(final EditText editText) {
+        editText.requestFocus();
+
+        editText.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                InputMethodManager mgr = (InputMethodManager) editText.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                mgr.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);
+            }
+        }, 200);
+
     }
 
 }

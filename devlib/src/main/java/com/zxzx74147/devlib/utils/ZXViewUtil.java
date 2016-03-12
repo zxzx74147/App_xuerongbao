@@ -3,6 +3,7 @@ package com.zxzx74147.devlib.utils;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.zxzx74147.devlib.callback.ICommonCallback;
 
@@ -45,6 +46,10 @@ public class ZXViewUtil {
                 progressView(view, callback);
             }
         }
+    }
+
+    public static void shoeSoftkeyBoard(EditText text) {
+
     }
 
 

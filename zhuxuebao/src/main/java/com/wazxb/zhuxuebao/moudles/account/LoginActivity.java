@@ -5,18 +5,18 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.wazxb.zhuxuebao.R;
+import com.wazxb.zhuxuebao.base.ZXBBaseActivity;
 import com.wazxb.zhuxuebao.databinding.ActivityLoginBinding;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.storage.data.UidData;
 import com.wazxb.zhuxuebao.util.FillRqeustUtil;
-import com.zxzx74147.devlib.base.ZXBaseActivity;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 
-public class LoginActivity extends ZXBaseActivity {
+public class LoginActivity extends ZXBBaseActivity {
     private ActivityLoginBinding mBinding = null;
     private ZXBHttpRequest mRequest = null;
 

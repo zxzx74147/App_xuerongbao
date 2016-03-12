@@ -17,7 +17,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/view_default_bg"
+        android:background="@color/view_default_bg_grey"
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 
@@ -29,6 +29,7 @@
         <com.zxzx74147.devlib.widget.list.ZXRecycleView
             android:id="@+id/list"
             android:layout_width="match_parent"
+
             android:layout_height="match_parent" />
     </LinearLayout>
 </layout>

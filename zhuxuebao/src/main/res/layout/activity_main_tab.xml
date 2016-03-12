@@ -19,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_gap_110" />
 
-
         <com.zxzx74147.devlib.widget.tabhost.FragmentTabHost
             android:id="@+id/tab_host"
             android:layout_width="fill_parent"
@@ -29,7 +28,7 @@
             bb:dividerHeight="1px"
             bb:scrollable="false"
             bb:smoothScroll="false"
-            bb:tabHeight="@dimen/default_gap_80"
+            bb:tabHeight="@dimen/default_gap_110"
             bb:tabPosition="bottom"
             bb:tabWigetBackground="@color/white" />
     </FrameLayout>

@@ -9,161 +9,166 @@
             type="com.wazxb.zhuxuebao.moudles.account.RegitsterActivity" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/view_default_bg"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/name_layout"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            app:edit_hint="@string/name_hint"
-            app:label_text="@string/name"
-            app:post_key="@string/name_post_key"
-            app:not_null="true" />
+            android:layout_height="match_parent"
+            android:background="@color/view_default_bg"
+            android:orientation="vertical">
 
 
-        <!--<com.wazxb.zhuxuebao.widget.InputTextView-->
-        <!--android:id="@+id/birthday_id"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="@dimen/size_input_layout"-->
-        <!--android:layout_marginLeft="@dimen/default_gap_20"-->
-        <!--android:layout_marginRight="@dimen/default_gap_20"-->
-        <!--android:layout_marginTop="@dimen/default_gap_10"-->
-        <!--app:edit_hint="@string/birthday_hint"-->
-        <!--app:label_text="@string/birthday"-->
-        <!--app:label_width="@dimen/default_gap_150"-->
-        <!--app:not_null="true" />-->
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/name_hint"
+                app:label_text="@string/name"
+                app:not_null="true"
+                app:post_key="@string/name_post_key" />
 
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/id_number_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            app:post_key="@string/id_number_post_key"
-            android:layout_marginTop="@dimen/default_gap_10"
-            app:edit_hint="@string/id_number_hint"
-            app:label_text="@string/id_number"
-            app:match_regex="@string/id_regex"
-            app:label_width="@dimen/default_gap_150"
-            app:not_null="true" />
-
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/school_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            app:edit_hint="@string/school_hint"
-            app:label_text="@string/school"
-            app:label_width="@dimen/default_gap_150"
-            app:post_key="@string/school_post_key"
-            app:not_null="true" />
-
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/college_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            app:post_key="@string/college_post_key"
-            app:edit_hint="@string/college_hint"
-            app:label_text="@string/college"
-            app:label_width="@dimen/default_gap_150"
-            app:not_null="true" />
-
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/major_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            app:edit_hint="@string/major_hint"
-            app:post_key="@string/major_post_key"
-            app:label_text="@string/major"
-            app:label_width="@dimen/default_gap_150"
-            app:not_null="true" />
+            <!--<com.wazxb.zhuxuebao.widget.InputTextView-->
+            <!--android:id="@+id/birthday_id"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/size_input_layout"-->
+            <!--android:layout_marginLeft="@dimen/default_gap_20"-->
+            <!--android:layout_marginRight="@dimen/default_gap_20"-->
+            <!--android:layout_marginTop="@dimen/default_gap_10"-->
+            <!--app:edit_hint="@string/birthday_hint"-->
+            <!--app:label_text="@string/birthday"-->
+            <!--app:label_width="@dimen/default_gap_150"-->
+            <!--app:not_null="true" />-->
 
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/student_num_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            app:post_key="@string/student_num_post_key"
-            android:layout_marginTop="@dimen/default_gap_10"
-            app:edit_hint="@string/student_num_hint"
-            app:label_text="@string/student_num"
-            app:label_width="@dimen/default_gap_150"
-            app:not_null="true" />
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/id_number_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/id_number_hint"
+                app:label_text="@string/id_number"
+                app:label_width="@dimen/default_gap_150"
+                app:match_regex="@string/id_regex"
+                app:not_null="true"
+                app:post_key="@string/id_number_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/school_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/school_hint"
+                app:label_text="@string/school"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/school_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/college_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/college_hint"
+                app:label_text="@string/college"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/college_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/major_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/major_hint"
+                app:label_text="@string/major"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/major_post_key" />
 
 
-        <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginLeft="@dimen/default_gap_20"-->
-
-        <!--android:layout_marginRight="@dimen/default_gap_20"-->
-
-        <!--android:layout_marginTop="@dimen/default_gap_10"-->
-        <!--android:background="@color/view_input_default_bg"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:paddingBottom="@dimen/default_gap_20"-->
-        <!--android:paddingLeft="@dimen/default_gap_30"-->
-        <!--android:paddingRight="@dimen/default_gap_30"-->
-        <!--android:paddingTop="@dimen/default_gap_20">-->
-
-        <!--<TextView-->
-        <!--android:layout_width="@dimen/default_gap_150"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginRight="@dimen/default_gap_50"-->
-        <!--android:text="@string/id_photo"-->
-        <!--android:textSize="@dimen/text_size_normal" />-->
-
-        <!--<com.wazxb.zhuxuebao.widget.UploadImageView-->
-        <!--android:layout_width="@dimen/default_gap_202"-->
-        <!--android:layout_height="@dimen/default_gap_148"-->
-        <!--android:layout_marginRight="@dimen/default_gap_30"-->
-        <!--android:background="@color/white">-->
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/student_num_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/student_num_hint"
+                app:label_text="@string/student_num"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/student_num_post_key" />
 
 
-        <!--</com.wazxb.zhuxuebao.widget.UploadImageView>-->
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="@dimen/default_gap_20"-->
 
-        <!--<com.wazxb.zhuxuebao.widget.UploadImageView-->
-        <!--android:layout_width="@dimen/default_gap_202"-->
-        <!--android:layout_height="@dimen/default_gap_148"-->
-        <!--android:layout_marginRight="@dimen/default_gap_30"-->
-        <!--android:background="@color/white">-->
+            <!--android:layout_marginRight="@dimen/default_gap_20"-->
+
+            <!--android:layout_marginTop="@dimen/default_gap_10"-->
+            <!--android:background="@color/view_input_default_bg"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingBottom="@dimen/default_gap_20"-->
+            <!--android:paddingLeft="@dimen/default_gap_30"-->
+            <!--android:paddingRight="@dimen/default_gap_30"-->
+            <!--android:paddingTop="@dimen/default_gap_20">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="@dimen/default_gap_150"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/default_gap_50"-->
+            <!--android:text="@string/id_photo"-->
+            <!--android:textSize="@dimen/text_size_normal" />-->
+
+            <!--<com.wazxb.zhuxuebao.widget.UploadImageView-->
+            <!--android:layout_width="@dimen/default_gap_202"-->
+            <!--android:layout_height="@dimen/default_gap_148"-->
+            <!--android:layout_marginRight="@dimen/default_gap_30"-->
+            <!--android:background="@color/white">-->
 
 
-        <!--</com.wazxb.zhuxuebao.widget.UploadImageView>-->
+            <!--</com.wazxb.zhuxuebao.widget.UploadImageView>-->
 
-        <!--</LinearLayout>-->
+            <!--<com.wazxb.zhuxuebao.widget.UploadImageView-->
+            <!--android:layout_width="@dimen/default_gap_202"-->
+            <!--android:layout_height="@dimen/default_gap_148"-->
+            <!--android:layout_marginRight="@dimen/default_gap_30"-->
+            <!--android:background="@color/white">-->
 
 
-        <!--<com.wazxb.zhuxuebao.widget.InputTextView-->
-        <!--android:id="@+id/hometown_id"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="@dimen/size_input_layout"-->
-        <!--android:layout_marginLeft="@dimen/default_gap_20"-->
-        <!--android:layout_marginRight="@dimen/default_gap_20"-->
-        <!--android:layout_marginTop="@dimen/default_gap_10"-->
-        <!--app:edit_hint="@string/hometown_hint"-->
-        <!--app:label_text="@string/hometown"-->
-        <!--app:label_width="@dimen/default_gap_150"-->
-        <!--app:not_null="true" />-->
+            <!--</com.wazxb.zhuxuebao.widget.UploadImageView>-->
 
-    </LinearLayout>
+            <!--</LinearLayout>-->
+
+
+            <!--<com.wazxb.zhuxuebao.widget.InputTextView-->
+            <!--android:id="@+id/hometown_id"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/size_input_layout"-->
+            <!--android:layout_marginLeft="@dimen/default_gap_20"-->
+            <!--android:layout_marginRight="@dimen/default_gap_20"-->
+            <!--android:layout_marginTop="@dimen/default_gap_10"-->
+            <!--app:edit_hint="@string/hometown_hint"-->
+            <!--app:label_text="@string/hometown"-->
+            <!--app:label_width="@dimen/default_gap_150"-->
+            <!--app:not_null="true" />-->
+
+        </LinearLayout>
+    </ScrollView>
 </layout>

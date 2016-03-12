@@ -35,7 +35,7 @@ public class BorrowApplyActivity extends ZXBBaseActivity {
 
 
     public void onApplyClick(View v) {
-        if (!FillRqeustUtil.checkLoginAbled(this)) {
+        if (!FillRqeustUtil.checkFill(this)) {
             return;
         }
         if (mRequest != null) {
@@ -57,7 +57,7 @@ public class BorrowApplyActivity extends ZXBBaseActivity {
         FillRqeustUtil.fillRequest(mRequest, mBinding.getRoot());
         mRequest.addParams("lnProdId", mRequestData.lnProdId);
         mRequest.addParams("money", mRequestData.money);
-        mRequest.addParams("time", mRequestData.day);
+        mRequest.addParams("day", mRequestData.day);
         mRequest.addParams("month", mRequestData.month);
         sendRequest(mRequest);
     }

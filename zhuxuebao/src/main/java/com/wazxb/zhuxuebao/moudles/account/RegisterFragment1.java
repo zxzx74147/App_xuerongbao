@@ -10,6 +10,7 @@ import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.ActivityRegitster1Binding;
 import com.wazxb.zhuxuebao.widget.InputTextView;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
+import com.zxzx74147.devlib.utils.ZXViewHelper;
 import com.zxzx74147.devlib.widget.BaseFragment;
 
 /**
@@ -23,6 +24,7 @@ public class RegisterFragment1 extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.activity_regitster_1, container, false);
+        ZXViewHelper.showSoftKey(mBinding.nameLayout.mEdit);
         return mBinding.getRoot();
     }
 

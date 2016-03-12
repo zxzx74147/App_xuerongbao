@@ -13,118 +13,123 @@
             type="com.wazxb.zhuxuebao.moudles.account.RegisterFragment4" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/view_default_bg"
-        android:orientation="vertical">
-
-
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/phone_num_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_20"
-            android:inputType="phone"
-            app:edit_hint="@string/phone_num_hint"
-            app:pick_type="phone"
-            app:label_text="@string/phone_num"
-            app:input_right_drawable="@drawable/about_tele"
-            app:label_width="@dimen/default_gap_150"
-            app:match_regex="@string/phone_num_regex"
-            app:not_null="true"
-            app:post_key="@string/phone_post_key" />
-
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            android:orientation="horizontal">
+            android:background="@color/view_default_bg"
+            android:orientation="vertical">
+
 
             <com.wazxb.zhuxuebao.widget.InputTextView
-                android:id="@+id/vcode_id"
-                android:layout_width="0dip"
+                android:id="@+id/phone_num_id"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
-                android:layout_weight="1"
-                app:edit_hint="@string/vcode_hint"
-                app:label_text="@string/vcode"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_20"
+                android:inputType="phone"
+                app:edit_hint="@string/phone_num_hint"
+                app:input_right_drawable="@drawable/about_tele"
+                app:label_text="@string/phone_num"
+                app:label_width="@dimen/default_gap_150"
+                app:match_regex="@string/phone_num_regex"
+                app:not_null="true"
+                app:pick_type="phone"
+                app:post_key="@string/phone_post_key" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:orientation="horizontal">
+
+                <com.wazxb.zhuxuebao.widget.InputTextView
+                    android:id="@+id/vcode_id"
+                    android:layout_width="0dip"
+                    android:layout_height="@dimen/size_input_layout"
+                    android:layout_weight="1"
+                    app:edit_hint="@string/vcode_hint"
+                    app:label_text="@string/vcode"
+                    app:label_width="@dimen/default_gap_150"
+                    app:not_null="true"
+                    app:post_key="@string/vcode_post_key" />
+
+                <com.wazxb.zhuxuebao.widget.CuntdownButton
+                    android:id="@+id/request_vcode"
+                    android:layout_width="@dimen/default_gap_200"
+                    android:layout_height="match_parent"
+                    android:background="@color/button_bg_red"
+                    android:onClick="@{fragment.onReqeustVcode}"
+                    android:text="@string/get_vcode"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_size_30" />
+            </LinearLayout>
+
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/password_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:inputType="textPassword"
+                app:edit_hint="@string/password_hint"
+                app:label_text="@string/password"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"
-                app:post_key="@string/vcode_post_key" />
+                app:post_key="@string/password_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.CuntdownButton
-                android:id="@+id/request_vcode"
-                android:layout_width="@dimen/default_gap_200"
-                android:layout_height="match_parent"
-                android:background="@color/button_bg_red"
-                android:onClick="@{fragment.onReqeustVcode}"
-                android:text="@string/get_vcode"
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/password_confirm_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:inputType="textPassword"
+                app:edit_hint="@string/password_confirm_hint"
+                app:label_text="@string/password_confirm"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true" />
+
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/invitation_code_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/invitation_code_hint"
+
+                app:label_text="@string/invitation_code"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="false"
+                app:post_key="@string/invitation_post_key" />
+
+
+            <Button
+                android:id="@+id/login_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_20"
+                android:background="@drawable/common_button_bg"
+                android:enabled="false"
+                android:onClick="@{fragment.onRegistClick}"
+                android:text="@string/register"
                 android:textColor="@color/white"
-                android:textSize="@dimen/default_size_30" />
+                android:textSize="@dimen/text_size_big" />
+
         </LinearLayout>
-
-
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/password_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            android:inputType="textPassword"
-            app:edit_hint="@string/password_hint"
-            app:label_text="@string/password"
-            app:label_width="@dimen/default_gap_150"
-            app:not_null="true"
-            app:post_key="@string/password_post_key" />
-
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/password_confirm_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            android:inputType="textPassword"
-            app:edit_hint="@string/password_confirm_hint"
-            app:label_text="@string/password_confirm"
-            app:label_width="@dimen/default_gap_150"
-            app:not_null="true" />
-
-
-        <com.wazxb.zhuxuebao.widget.InputTextView
-            android:id="@+id/invitation_code_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            app:edit_hint="@string/invitation_code_hint"
-
-            app:label_text="@string/invitation_code"
-            app:label_width="@dimen/default_gap_150"
-            app:not_null="false"
-            app:post_key="@string/invitation_post_key" />
-
-
-        <Button
-            android:id="@+id/login_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_20"
-            android:background="@drawable/common_button_bg"
-            android:enabled="false"
-            android:onClick="@{fragment.onRegistClick}"
-            android:text="@string/register"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_big" />
-
-    </LinearLayout>
+    </ScrollView>
 </layout>

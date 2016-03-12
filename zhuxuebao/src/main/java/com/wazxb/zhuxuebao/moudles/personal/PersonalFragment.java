@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.FragmentPersonalBinding;
+import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
 import com.wazxb.zhuxuebao.moudles.account.AccountManager;
 import com.wazxb.zhuxuebao.storage.data.UserAllData;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
@@ -60,7 +61,17 @@ public class PersonalFragment extends BaseFragment {
     }
 
     public void onPersonalInfoClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
         ZXActivityJumpHelper.startActivity(this, PersonalInfoActivity.class);
+    }
+
+    public void onBindBankClick(View v){
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
+        ZXActivityJumpHelper.startActivity(this, BindCradActivity.class);
     }
 
 }

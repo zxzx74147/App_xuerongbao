@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.FragmentHomeBinding;
+import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
 import com.wazxb.zhuxuebao.moudles.borrow.BorrowActivity;
 import com.wazxb.zhuxuebao.moudles.calculate.CaculateActivity;
 import com.wazxb.zhuxuebao.moudles.credit.CreditActivity;
@@ -58,14 +59,23 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void onBorrowClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
         ZXActivityJumpHelper.startActivity(this, BorrowActivity.class);
     }
 
     public void onRepaymentClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
         ZXActivityJumpHelper.startActivity(this, PaybackActivity.class);
     }
 
     public void onInterestCalClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
         ZXActivityJumpHelper.startActivity(this, CaculateActivity.class);
     }
 
@@ -74,6 +84,9 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void onCreditClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
         ZXActivityJumpHelper.startActivity(this, CreditActivity.class);
     }
 

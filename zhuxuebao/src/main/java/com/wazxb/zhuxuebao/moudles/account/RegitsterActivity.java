@@ -53,6 +53,7 @@ public class RegitsterActivity extends ZXBBaseActivity {
         });
 
         mBinding.tabHost.setOnScrollChangedListener(mOnPageChangeListener);
+
     }
 
     private ViewPager.OnPageChangeListener mOnPageChangeListener = new ViewPager.OnPageChangeListener() {

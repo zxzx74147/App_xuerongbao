@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.wazxb.zhuxuebao.base.ZXBBaseActivity;
 import com.wazxb.zhuxuebao.databinding.ActivityMainTabBinding;
-import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
 import com.wazxb.zhuxuebao.moudles.home.HomeDelegate;
 import com.wazxb.zhuxuebao.moudles.more.MoreDelegate;
 import com.wazxb.zhuxuebao.moudles.personal.PersonalDelegate;
@@ -25,7 +24,7 @@ public class MainTabActivity extends ZXBBaseActivity {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_tab);
         addTabs();
-        AccountInterface.checkLogin(this);
+//        AccountInterface.checkLogin(this);
 
     }
 

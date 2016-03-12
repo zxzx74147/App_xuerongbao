@@ -32,7 +32,13 @@ public class LoanItemData implements Serializable {
         return "申请额度￥ " + money;
     }
 
-    public String getStatus() {
+    public int getProgress()
+
+    {
+        return (int) (Float.valueOf(returnMoney) / Float.valueOf(returnTotal) * 100);
+    }
+
+    public String getStatusString() {
         switch (status) {
             case 0:
                 return "待审核";

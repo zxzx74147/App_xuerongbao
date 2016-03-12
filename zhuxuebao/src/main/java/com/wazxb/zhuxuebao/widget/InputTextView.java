@@ -13,9 +13,11 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.alibaba.sdk.android.util.Md5Utils;
@@ -25,6 +27,7 @@ import com.wazxb.zhuxuebao.util.IDUtil;
 import com.wazxb.zhuxuebao.util.RequestCode;
 import com.wazxb.zhuxuebao.util.ZXDataPickerHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
+import com.zxzx74147.devlib.utils.ZXViewHelper;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -45,6 +48,7 @@ public class InputTextView extends LinearLayout {
     private String mPickType = null;
     private String mErrorHint;
     private int inputType;
+    public EditText mEdit;
 
 
     public InputTextView(Context context) {
@@ -117,6 +121,14 @@ public class InputTextView extends LinearLayout {
 
     private void init(AttributeSet attrs) {
         mBinding = DataBindingUtil.inflate(LayoutInflater.from(this.getContext()), R.layout.input_text_view, this, true);
+        mEdit = mBinding.edit;
+        mEdit.setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                ZXViewHelper.showSoftKey(mEdit);
+                return false;
+            }
+        });
         setGravity(Gravity.CENTER);
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs,

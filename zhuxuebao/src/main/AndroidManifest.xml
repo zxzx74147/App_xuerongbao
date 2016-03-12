@@ -45,8 +45,7 @@
         <activity
             android:name=".MainTabActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,25 +55,54 @@
         <activity
             android:name=".moudles.account.LoginActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".moudles.account.RegitsterActivity"
-
-            />
-        <activity android:name=".moudles.account.FindPasswordActivity" />
-        <activity android:name=".moudles.account.ChangePasswordActivity" />
+        <activity
+            android:name=".moudles.account.RegitsterActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.account.FindPasswordActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.account.ChangePasswordActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".moudles.LogoActivity" />
-        <activity android:name=".moudles.credit.CreditBaseActivity" />
-        <activity android:name=".moudles.credit.CreditActivity" />
-        <activity android:name=".moudles.credit.CreditFamilyActivity" />
-        <activity android:name=".moudles.credit.CreditContactActivity" />
-        <activity android:name=".moudles.credit.CreditOtherActivity" />
-        <activity android:name=".moudles.personal.PersonalInfoActivity" />
+        <activity
+            android:name=".moudles.credit.CreditBaseActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.credit.CreditActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.credit.CreditFamilyActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.credit.CreditContactActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.credit.CreditOtherActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.personal.PersonalInfoActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".moudles.gesturepass.GesturePassrwordActivity" />
-        <activity android:name=".moudles.borrow.BorrowActivity" />
+        <activity
+            android:name=".moudles.borrow.BorrowActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".moudles.more.AboutActivity" />
         <activity android:name=".moudles.calculate.CaculateActivity" />
-        <activity android:name=".moudles.borrow.BorrowApplyActivity" />
-        <activity android:name=".moudles.borrow.BorrowSuccActivity" />
+        <activity
+            android:name=".moudles.borrow.BorrowApplyActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.borrow.BorrowSuccActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".moudles.payback.PaybackActivity" />
+        <activity
+            android:name=".moudles.personal.BindCradActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".moudles.payback.PaybackDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

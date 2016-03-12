@@ -9,4 +9,5 @@
     <color name="info_divider">#FFe9e9e9</color>
     <color name="j_wheel_timebtn_nor">#54a3fa</color>
     <color name="j_wheel_timebtn_pre">#CCCCCC</color>
+    <color name="grey_alpha_bg">#8ef7f7f7</color>
 </resources>
