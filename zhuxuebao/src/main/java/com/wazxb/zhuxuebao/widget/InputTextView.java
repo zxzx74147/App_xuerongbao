@@ -13,7 +13,6 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
@@ -122,13 +121,7 @@ public class InputTextView extends LinearLayout {
     private void init(AttributeSet attrs) {
         mBinding = DataBindingUtil.inflate(LayoutInflater.from(this.getContext()), R.layout.input_text_view, this, true);
         mEdit = mBinding.edit;
-        mEdit.setOnTouchListener(new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                ZXViewHelper.showSoftKey(mEdit);
-                return false;
-            }
-        });
+
         setGravity(Gravity.CENTER);
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs,
@@ -178,7 +171,8 @@ public class InputTextView extends LinearLayout {
                     ((Activity) getContext()).startActivityForResult(intent, PHONE_REQUEST_ID);
                 }
             });
-        } else if ("year".equals(mPickType)) {
+        }
+        if ("year".equals(mPickType)) {
             mBinding.edit.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -237,6 +231,14 @@ public class InputTextView extends LinearLayout {
                 }
             });
 
+        } else {
+            mEdit.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ZXViewHelper.showSoftKey(mEdit);
+                    return;
+                }
+            });
         }
 
     }

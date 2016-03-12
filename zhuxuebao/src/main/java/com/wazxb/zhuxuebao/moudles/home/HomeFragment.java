@@ -2,6 +2,7 @@ package com.wazxb.zhuxuebao.moudles.home;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +11,21 @@ import android.widget.LinearLayout;
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.FragmentHomeBinding;
 import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
+import com.wazxb.zhuxuebao.moudles.account.AccountManager;
 import com.wazxb.zhuxuebao.moudles.borrow.BorrowActivity;
 import com.wazxb.zhuxuebao.moudles.calculate.CaculateActivity;
 import com.wazxb.zhuxuebao.moudles.credit.CreditActivity;
 import com.wazxb.zhuxuebao.moudles.payback.PaybackActivity;
 import com.wazxb.zhuxuebao.storage.StorageManager;
 import com.wazxb.zhuxuebao.storage.data.InitData;
+import com.wazxb.zhuxuebao.storage.data.UserAllData;
 import com.wazxb.zhuxuebao.widget.BannerView;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.widget.BaseFragment;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by zhengxin on 16/2/20.
@@ -42,8 +47,13 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void initData() {
+        UserAllData user = AccountManager.sharedInstance().getUserAllData();
+        if (user != null) {
+            mBinding.creditCeilingValue.setNumber((int)user.user.quotaTotal);
+        }
         if (StorageManager.sharedInstance().getInitdat().ad != null) {
             mBannerView.setData(StorageManager.sharedInstance().getInitdat().ad.carousel);
+            return;
         }
         StorageManager.sharedInstance().requestInitData(new HttpResponseListener<InitData>() {
             @Override
@@ -88,6 +98,29 @@ public class HomeFragment extends BaseFragment {
             return;
         }
         ZXActivityJumpHelper.startActivity(this, CreditActivity.class);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        //注册EventBus
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        //取消EventBus
+        EventBus.getDefault().unregister(this);
+    }
+    //事件1接收者：在主线程接收
+    public void onEvent(String event) {
+        Log.e("event", event);
+        UserAllData user = AccountManager.sharedInstance().getUserAllData();
+        if (user != null) {
+            user.user.quotaTotal = user.user.quotaTotal>5000? 5000:user.user.quotaTotal;
+            mBinding.creditCeilingValue.setNumber((int)user.user.quotaTotal);
+        }
     }
 
 }

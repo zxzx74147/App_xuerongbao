@@ -225,5 +225,8 @@
     <string name="return_remind_content">银行卡转账需用当初注册的银行卡号转\n支付宝需要标注姓名手机号\n微信号需加公司财务微信账号转账</string>
     <string name="pay_plan">计划还款</string>
     <string name="loan_apply_time">申请时间</string>
+    <string name="loan_apply_amount">申请金额</string>
+    <string name="loan_apply_amount_left">剩余应还</string>
+    <string name="loan_payback_time">还款时间</string>
 
 </resources>

@@ -35,7 +35,7 @@ public class LoanItemData implements Serializable {
     public int getProgress()
 
     {
-        return (int) (Float.valueOf(returnMoney) / Float.valueOf(returnTotal) * 100);
+        return (int) (Float.valueOf(returnMoney) / Float.valueOf(money) * 100);
     }
 
     public String getStatusString() {

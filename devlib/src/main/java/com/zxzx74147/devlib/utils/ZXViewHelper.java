@@ -526,9 +526,13 @@ public class ZXViewHelper {
             public void run() {
                 InputMethodManager mgr = (InputMethodManager) editText.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 mgr.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);
+                locateCursur(editText);
             }
         }, 200);
 
+
     }
+
+
 
 }

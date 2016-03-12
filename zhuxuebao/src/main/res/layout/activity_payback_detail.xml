@@ -6,6 +6,8 @@
 
         <import type="android.view.View" />
 
+        <import type="com.zxzx74147.devlib.utils.TimerUtil" />
+
         <variable
             name="handler"
             type="com.wazxb.zhuxuebao.moudles.payback.PaybackDetailActivity" />
@@ -88,6 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/bank_branck"
                         android:layout_toRightOf="@+id/bank_img"
+                        android:layout_marginRight="@dimen/default_gap_10"
                         android:text="@{data.bankCard}"
                         android:textColor="@color/text_color_grey" />
 
@@ -201,7 +204,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/default_gap_30"
+                    android:paddingRight="@dimen/default_gap_30">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -215,6 +221,7 @@
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:gravity="right"
                         android:text="@string/pay_plan"
                         android:textColor="@color/text_color_grey"
                         android:textSize="@dimen/default_size_29" />
@@ -222,7 +229,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text='@{"￥"+loanData.returnTotal}'
+                        android:text='@{"￥"+String.valueOf(loanData.money)}'
                         android:textColor="@color/orange"
                         android:textSize="@dimen/default_size_30" />
                 </LinearLayout>
@@ -254,7 +261,10 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:paddingTop="@dimen/default_gap_20"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/default_gap_30"
+                    android:paddingRight="@dimen/default_gap_30">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -269,17 +279,91 @@
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@{String.valueOf(loanData.lnTime)}"
+                        android:text="@{TimerUtil.getTimeFormat(loanData.lnTime,TimerUtil.YMD)}"
                         android:textColor="@color/text_color_grey"
                         android:textSize="@dimen/default_size_29" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/default_gap_30"
+                    android:paddingRight="@dimen/default_gap_30">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text='@{"￥"+loanData.returnTotal}'
-                        android:textColor="@color/orange"
+                        android:layout_marginRight="@dimen/default_gap_60"
+                        android:text="@string/loan_apply_amount"
+                        android:textColor="@color/text_color_dark_black"
                         android:textSize="@dimen/default_size_30" />
+
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text='@{"￥"+String.valueOf(loanData.money)}'
+                        android:textColor="@color/text_color_grey"
+                        android:textSize="@dimen/default_size_29" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/default_gap_30"
+                    android:paddingRight="@dimen/default_gap_30">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/default_gap_60"
+                        android:text="@string/loan_apply_amount_left"
+                        android:textColor="@color/text_color_dark_black"
+                        android:textSize="@dimen/default_size_30" />
+
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text='@{"￥"+loanData.returnTotal}'
+                        android:textColor="@color/text_color_grey"
+                        android:textSize="@dimen/default_size_29" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/default_gap_20"
+                    android:paddingLeft="@dimen/default_gap_30"
+                    android:paddingRight="@dimen/default_gap_30">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/default_gap_60"
+                        android:text="@string/loan_payback_time"
+                        android:textColor="@color/text_color_dark_black"
+                        android:textSize="@dimen/default_size_30" />
+
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text='@{TimerUtil.getTimeFormat(loanData.returnTime,TimerUtil.YMD)}'
+                        android:textColor="@color/text_color_grey"
+                        android:textSize="@dimen/default_size_29" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="@color/view_default_bg_grey"
+                    android:layout_height="@dimen/default_gap_400"/>
             </LinearLayout>
         </ScrollView>
 
