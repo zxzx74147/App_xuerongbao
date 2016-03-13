@@ -74,7 +74,7 @@ public class AccountManager {
     public void setUserAllData(UserAllData data) {
         mUserAllData = data;
         StorageManager.sharedInstance().saveKVObjectAsync(SP_KEY_USER_ALL_DATA, mUserAllData);
-        EventBus.getDefault().post("user_all_data");
+        EventBus.getDefault().post(EventBusConfig.EVENT_FRESH_USER_DATA);
     }
 
     public void setCalData(CalculatorData data) {
@@ -86,7 +86,7 @@ public class AccountManager {
     public void logout() {
         saveUid(null);
         mUserAllData = null;
-        EventBus.getDefault().post("user_all_data");
+        EventBus.getDefault().post(EventBusConfig.EVENT_FRESH_USER_DATA);
     }
 
     public UserAllData getUserAllData() {
@@ -122,7 +122,7 @@ public class AccountManager {
                 }
                 mUserAllData = response.result;
                 setUserAllData(mUserAllData);
-                EventBus.getDefault().post("user_all_data");
+                EventBus.getDefault().post(EventBusConfig.EVENT_FRESH_USER_DATA);
             }
         });
         mRequest.setPath(NetworkConfig.ADDRESS_CD_INFO);

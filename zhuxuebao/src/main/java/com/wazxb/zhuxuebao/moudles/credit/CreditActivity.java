@@ -2,9 +2,9 @@ package com.wazxb.zhuxuebao.moudles.credit;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
+import com.wazxb.zhuxuebao.EventBusConfig;
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.base.ZXBBaseActivity;
 import com.wazxb.zhuxuebao.databinding.ActivityCreditBinding;
@@ -49,9 +49,10 @@ public class CreditActivity extends ZXBBaseActivity {
 
     //事件1接收者：在主线程接收
     public void onEvent(String event) {
-        Log.e("event", event);
-        UserAllData data = AccountManager.sharedInstance().getUserAllData();
-        mBinding.setData(data);
+        if (EventBusConfig.EVENT_FRESH_USER_DATA.equals(event)) {
+            UserAllData data = AccountManager.sharedInstance().getUserAllData();
+            mBinding.setData(data);
+        }
     }
 
     public void onCreditBaseClick(View v) {

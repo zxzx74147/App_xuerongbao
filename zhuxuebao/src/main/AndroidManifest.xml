@@ -112,6 +112,7 @@
             android:name=".moudles.evaluate.EvaluateSubmitActivity"
             android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".moudles.message.MessageListActivity" />
+        <activity android:name=".moudles.personal.BindCardShowActivity" />
     </application>
 
 </manifest>

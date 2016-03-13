@@ -88,6 +88,7 @@ public class CreditBaseActivity extends ZXBBaseActivity {
                     return;
                 }
                 AccountManager.sharedInstance().setUserAllData(response.result);
+                AccountManager.sharedInstance().requestUserAllData();
                 finish();
             }
         });

@@ -54,6 +54,7 @@ public class CreditContactActivity extends ZXBBaseActivity {
                     return;
                 }
                 AccountManager.sharedInstance().setUserAllData(response.result);
+                AccountManager.sharedInstance().requestUserAllData();
                 finish();
             }
         });

@@ -1,5 +1,7 @@
 package com.wazxb.zhuxuebao.storage.data;
 
+import com.zxzx74147.devlib.utils.ZXStringUtil;
+
 import java.io.Serializable;
 
 /**
@@ -17,4 +19,11 @@ public class UserBaseData implements Serializable {
     public String bank;     //银行名称
     public String bankBranch;     //开户行名称
     public String bankCard;     //银行卡号
+
+    public String getBankCard() {
+        if (ZXStringUtil.checkString(bankCard) && bankCard.length() >= 4) {
+            return bankCard.substring(bankCard.length() - 4);
+        }
+        return bankCard;
+    }
 }

@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.base.ZXBBaseActivity;
-import com.wazxb.zhuxuebao.databinding.ActivityBindCardBinding;
+import com.wazxb.zhuxuebao.databinding.ActivityBindCardShowBinding;
 import com.wazxb.zhuxuebao.moudles.account.AccountManager;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
@@ -18,27 +18,31 @@ import com.zxzx74147.devlib.network.HttpResponseListener;
 /**
  * Created by zhengxin on 16/3/6.
  */
-public class BindCradActivity extends ZXBBaseActivity {
+public class BindCardShowActivity extends ZXBBaseActivity {
 
-    ActivityBindCardBinding mBinding = null;
+    private ActivityBindCardShowBinding mBinding = null;
     private ZXBHttpRequest<Object> mRequest = null;
+    private UserAllData mData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_bind_card);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_bind_card_show);
         mBinding.setHandler(this);
-        UserAllData data = AccountManager.sharedInstance().getUserAllData();
-        if (data != null) {
-            mBinding.setData(data.user);
+        mData = AccountManager.sharedInstance().getUserAllData();
+        if (mData != null) {
+            mBinding.setData(mData.user);
         }
 
     }
 
-    public void onBindClick(View v) {
+    public void onUnBindClick(View v) {
         if (mRequest != null) {
             mRequest.cancel();
             mRequest = null;
+        }
+        if (mData == null) {
+            return;
         }
         mRequest = new ZXBHttpRequest<>(Object.class, new HttpResponseListener<Object>() {
             @Override
@@ -51,14 +55,16 @@ public class BindCradActivity extends ZXBBaseActivity {
                 finish();
             }
         });
-        mRequest.setPath(NetworkConfig.ADDRESS_U_BANK);
+        mRequest.setPath(NetworkConfig.ADDRESS_U_UNBANK);
         if (!FillRqeustUtil.checkFill(this)) {
             return;
         }
         if (!FillRqeustUtil.checkFill(this)) {
             return;
         }
-        FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
+
+        mRequest.addParams("bankCard", mData.user.bankCard);
+
         sendRequest(mRequest);
     }
 

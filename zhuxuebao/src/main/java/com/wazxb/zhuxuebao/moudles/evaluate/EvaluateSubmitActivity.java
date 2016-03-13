@@ -53,7 +53,7 @@ public class EvaluateSubmitActivity extends ZXBBaseActivity {
         mRequest.addParams("lnId", loan.lnId);
         mRequest.addParams("star", (int) (mBinding.starView.getRating()));
         mRequest.addParams("hide", mBinding.evaluateAnonymity.isChecked() ? 1 : 0);
-        mRequest.addParams("content", mBinding.content);
+        mRequest.addParams("content", mBinding.content.getText().toString());
         sendRequest(mRequest);
     }
 

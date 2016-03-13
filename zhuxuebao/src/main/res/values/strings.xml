@@ -245,5 +245,8 @@
     <string name="evaluate_anonymity">匿名评论</string>
     <string name="evaluate_submit">发布评价</string>
     <string name="message">消息</string>
+    <string name="unBind">解除绑定</string>
+    <string name="chuxu">储蓄卡</string>
+    <string name="four_star">****</string>
 
 </resources>
