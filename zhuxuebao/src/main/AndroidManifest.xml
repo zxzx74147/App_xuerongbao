@@ -113,6 +113,8 @@
             android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".moudles.message.MessageListActivity" />
         <activity android:name=".moudles.personal.BindCardShowActivity" />
+        <activity android:name=".moudles.more.FeedbackActivity" />
+        <activity android:name=".moudles.more.ContractActivity" />
     </application>
 
 </manifest>

@@ -36,6 +36,7 @@
                 android:id="@+id/about_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="@{handler.onAboutClick}"
                 app:info_label_text="@string/about_us" />
 
             <ImageView
@@ -48,6 +49,7 @@
             <com.wazxb.zhuxuebao.widget.InfoTextView
                 android:id="@+id/feedback_id"
                 android:layout_width="match_parent"
+                android:onClick="@{handler.onFeedBackClick}"
                 android:layout_height="wrap_content"
                 app:info_label_text="@string/feedback" />
 
@@ -60,6 +62,7 @@
 
             <com.wazxb.zhuxuebao.widget.InfoTextView
                 android:id="@+id/contact_us_id"
+                android:onClick="@{handler.onContractClick}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:info_label_text="@string/contact_us" />
@@ -80,6 +83,7 @@
             <com.wazxb.zhuxuebao.widget.InfoTextView
                 android:id="@+id/update_id"
                 android:layout_width="match_parent"
+                android:onClick="@{handler.onUpdateClick}"
                 android:layout_height="wrap_content"
                 app:info_label_text="@string/update_version" />
 
@@ -92,6 +96,7 @@
 
             <com.wazxb.zhuxuebao.widget.InfoTextView
                 android:id="@+id/clear_cache_id"
+                android:onClick="@{handler.onClearCacheClick}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:info_label_text="@string/clear_cache" />
@@ -113,6 +118,7 @@
                 android:id="@+id/green_hand_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="@{handler.onGreenHandClick}"
                 app:info_label_text="@string/green_hand" />
 
             <ImageView
@@ -125,6 +131,7 @@
             <com.wazxb.zhuxuebao.widget.InfoTextView
                 android:id="@+id/help_id"
                 android:layout_width="match_parent"
+                android:onClick="@{handler.onHelpClick}"
                 android:layout_height="wrap_content"
                 app:info_label_text="@string/help" />
 

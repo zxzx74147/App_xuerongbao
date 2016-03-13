@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.FragmentMoreBinding;
+import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
+import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.widget.BaseFragment;
 
 /**
@@ -20,6 +22,39 @@ public class MoreFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_more, container, true);
+        mBinding.setHandler(this);
         return mBinding.getRoot();
+    }
+
+    public void onAboutClick(View v) {
+        ZXActivityJumpHelper.startActivity(this, AboutActivity.class);
+    }
+
+    public void onFeedBackClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
+        ZXActivityJumpHelper.startActivity(this, FeedbackActivity.class);
+    }
+
+    public void onContractClick(View v) {
+        ZXActivityJumpHelper.startActivity(this, ContractActivity.class);
+    }
+
+
+    public void onUpdateClick(View v) {
+
+    }
+
+    public void onClearCacheClick(View v) {
+
+    }
+
+    public void onGreenHandClick(View v) {
+
+    }
+
+    public void onHelpClick(View v) {
+
     }
 }

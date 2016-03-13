@@ -188,8 +188,8 @@
                         android:layout_marginTop="@dimen/default_gap_10"
                         android:layout_weight="70"
                         app:error_hint="@string/sex_hint"
-                        app:input_sex="@{data.caSex}"
                         app:input_right_drawable="@drawable/user_gray_right_arrow"
+                        app:input_sex="@{data.caSex}"
                         app:label_text="@string/sex"
                         app:not_null="true"
                         app:pick_type="sex"
@@ -265,8 +265,8 @@
                         android:layout_marginTop="@dimen/default_gap_10"
                         android:layout_weight="70"
                         app:error_hint="@string/sex_hint"
-                        app:input_sex="@{data.cbSex}"
                         app:input_right_drawable="@drawable/user_gray_right_arrow"
+                        app:input_sex="@{data.cbSex}"
                         app:label_text="@string/sex"
                         app:not_null="true"
                         app:pick_type="sex"
@@ -341,7 +341,7 @@
                         android:background="@color/white"
                         app:img_not_null="true"
                         app:img_post_key="handPic"
-                        app:img_url="@{data.handPic}"/>
+                        app:img_url="@{data.handPic}" />
 
 
                 </LinearLayout>
@@ -375,7 +375,7 @@
                         app:img_label_text="@string/admission_hint"
                         app:img_not_null="false"
                         app:img_post_key="admissionPic"
-                        app:img_url="@{data.admissionPic}"/>
+                        app:img_url="@{data.admissionPic}" />
 
 
                 </LinearLayout>

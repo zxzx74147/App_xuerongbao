@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.InitData" />
+
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.more.ContractActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:background="@color/view_default_bg_grey"
+        android:orientation="vertical">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            app:text="@string/contact_us" />
+
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_gap_20"
+            app:info_edit_text="@{data.contact.weixin}"
+            app:info_label_text="@string/wechat"
+            app:info_left_drawable="@drawable/about_wx" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:src="@color/info_divider" />
+
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_edit_text="@{data.contact.qq}"
+            app:info_label_text="@string/wechat"
+            app:info_left_drawable="@drawable/about_qq" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:src="@color/info_divider" />
+
+        <com.wazxb.zhuxuebao.widget.InfoTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:info_edit_text="@{data.contact.tele}"
+            app:info_label_text="@string/wechat"
+            app:info_left_drawable="@drawable/about_tele" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/white"
+            android:src="@color/info_divider" />
+
+    </LinearLayout>
+</layout>

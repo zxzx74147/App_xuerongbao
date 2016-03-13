@@ -62,9 +62,5 @@ public class CreditContactActivity extends ZXBBaseActivity {
         FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
         sendRequest(mRequest);
         showProgressBar();
-
     }
-
-
-
 }

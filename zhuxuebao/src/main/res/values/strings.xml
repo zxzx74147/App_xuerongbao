@@ -248,5 +248,7 @@
     <string name="unBind">解除绑定</string>
     <string name="chuxu">储蓄卡</string>
     <string name="four_star">****</string>
+    <string name="feedback_hint">亲，您遇到什么问题啦？或者有什么好的建议给我们吗？欢迎提给我们！</string>
+    <string name="feedback_submit">提交反馈</string>
 
 </resources>
