@@ -26,7 +26,6 @@
     <style name="roomRatingBar">
         <item name="android:progressDrawable">@drawable/start_drawable</item>
 
-        <item name="android:minHeight">@dimen/default_gap_60</item>
 
         <item name="android:maxHeight">@dimen/default_gap_60</item>
 

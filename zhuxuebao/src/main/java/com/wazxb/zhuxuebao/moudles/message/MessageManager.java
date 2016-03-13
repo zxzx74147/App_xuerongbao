@@ -23,7 +23,7 @@ import com.zxzx74147.devlib.utils.ZXStringUtil;
 public class MessageManager {
     private static final int POLL_INV = 5000;
     private static final int POLL_MAX_INV = 10000;
-    private static final String KEY_MESSAGE = "key_message";
+    private static final String KEY_MESSAGE = "key_message_v2";
 
     private static MessageManager mInstance = null;
 

@@ -40,7 +40,9 @@ public class MessageListActivity extends ZXBBaseListActivity {
             return;
         }
         completeLoading();
-
+        if (MessageManager.sharedInstance().getMessageData().msgList != null) {
+            setData(MessageManager.sharedInstance().getMessageData().msgList.msg);
+        }
     }
 
 

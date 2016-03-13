@@ -1,6 +1,7 @@
 package com.wazxb.zhuxuebao.util;
 
 import android.databinding.BindingAdapter;
+import android.widget.ImageView;
 
 import com.wazxb.zhuxuebao.storage.data.ProdData;
 import com.wazxb.zhuxuebao.widget.CashView;
@@ -38,6 +39,11 @@ public class ZXBDataBindingUtil {
         } else {
             view.setContent("");
         }
+    }
+
+    @BindingAdapter("app:drawable_id")
+    public static void setLayoutHeight(ImageView view, int drawable) {
+        view.setImageResource(drawable);
     }
 
     @BindingAdapter("app:img_url")

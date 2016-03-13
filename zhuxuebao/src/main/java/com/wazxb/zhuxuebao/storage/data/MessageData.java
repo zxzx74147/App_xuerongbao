@@ -12,5 +12,11 @@ public class MessageData {
             return;
         }
         lastMId = Math.max(lastMId, data.lastMId);
+        if(msgList == null){
+            msgList = data.msgList;
+            return;
+        }
+        msgList.mergeData(data.msgList);
+
     }
 }

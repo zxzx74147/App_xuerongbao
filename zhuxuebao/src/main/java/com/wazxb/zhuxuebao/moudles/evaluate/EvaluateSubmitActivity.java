@@ -37,15 +37,20 @@ public class EvaluateSubmitActivity extends ZXBBaseActivity {
         if (loan == null) {
             return;
         }
+        showProgressBar();
         mRequest = new ZXBHttpRequest<>(Object.class, new HttpResponseListener<Object>() {
             @Override
             public void onResponse(HttpResponse<Object> response) {
-
+                hideProgressBar();
+                if(response.hasError()){
+                    showToast(response.errorString);
+                    return;
+                }
+                finish();
             }
         });
         mRequest.setPath(NetworkConfig.ADDRESS_LN_SEVALUATE);
         mRequest.addParams("lnId", loan.lnId);
-
         mRequest.addParams("star", (int) (mBinding.starView.getRating()));
         mRequest.addParams("hide", mBinding.evaluateAnonymity.isChecked() ? 1 : 0);
         mRequest.addParams("content", mBinding.content);
