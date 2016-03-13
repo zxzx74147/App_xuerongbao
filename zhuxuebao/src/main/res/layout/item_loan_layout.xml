@@ -11,6 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/view_default_bg_grey"
+        android:paddingTop="@dimen/default_gap_20"
         android:orientation="vertical">
 
         <LinearLayout
@@ -49,6 +51,7 @@
             android:id="@+id/history_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
             android:orientation="vertical" />
         <View
             android:layout_width="match_parent"

@@ -8,7 +8,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.payback.PaybackActivity" />
+            type="com.wazxb.zhuxuebao.moudles.history.HistoryActivity" />
 
 
     </data>
@@ -17,13 +17,14 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:fitsSystemWindows="true"
         android:orientation="vertical">
 
         <com.zxzx74147.devlib.widget.TitleBar
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_gap_110"
-            app:text="@string/payback" />
+            app:text="@string/history" />
 
         <com.zxzx74147.devlib.widget.list.ZXRecycleView
             android:id="@+id/list"

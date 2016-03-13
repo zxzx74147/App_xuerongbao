@@ -117,6 +117,7 @@
         <activity android:name=".moudles.more.ContractActivity" />
         <activity android:name=".common.portrait.EditPortraitActivity" />
         <activity android:name=".common.webview.CommonWebActivity" />
+        <activity android:name=".moudles.history.HistoryActivity" />
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ import com.wazxb.zhuxuebao.databinding.FragmentPersonalBinding;
 import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
 import com.wazxb.zhuxuebao.moudles.account.AccountManager;
 import com.wazxb.zhuxuebao.moudles.coin.CoinGiftActivity;
+import com.wazxb.zhuxuebao.moudles.history.HistoryActivity;
 import com.wazxb.zhuxuebao.moudles.message.MessageListActivity;
 import com.wazxb.zhuxuebao.storage.data.UserAllData;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
@@ -103,7 +104,7 @@ public class PersonalFragment extends BaseFragment {
         if (!AccountInterface.checkLogin(getActivity())) {
             return;
         }
-        ZXActivityJumpHelper.startActivity(this, MessageListActivity.class);
+        ZXActivityJumpHelper.startActivity(this, HistoryActivity.class);
     }
 
 
