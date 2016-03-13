@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.zxzx74147.devlib.utils.TimerUtil" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.GiftItemData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/default_gap_20">
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="@dimen/default_gap_280"
+            android:layout_height="@dimen/default_gap_280"
+            app:img_url="@{data.picUrl}"
+            app:riv_border_color="@color/white"
+            app:riv_border_width="@dimen/default_gap_2"
+            app:riv_corner_radius="@dimen/default_gap_200" />
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/head"
+            android:text="@{data.name}"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/default_gap_28" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_toRightOf="@+id/head"
+            android:text="@{data.content}" />
+
+        <TextView
+            android:id="@+id/coin_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/head"
+            android:text="@{String.valueOf(data.coinNum)}"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/default_gap_26" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/coin_num"
+            android:text="@string/coin"
+            android:textColor="@color/text_color_grey"
+            android:textSize="@dimen/default_gap_26" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:onClick="@{data.onClick}"
+            android:src="@drawable/mall_buy" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/default_gap_300"
+            android:background="@color/info_divider" />
+
+    </RelativeLayout>
+</layout>

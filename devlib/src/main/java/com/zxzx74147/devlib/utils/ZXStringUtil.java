@@ -12,7 +12,7 @@ public class ZXStringUtil {
         if (src == null) {
             return false;
         }
-        if (src.length() == 0) {
+        if (src.trim().length() == 0) {
             return false;
         }
         return true;

@@ -76,6 +76,8 @@ public class InputTextView extends LinearLayout {
         if (!ZXStringUtil.checkString(text)) {
             return text;
         }
+        text = text.trim();
+
         if ((inputType & InputType.TYPE_TEXT_VARIATION_PASSWORD) != 0) {
             text = Md5Utils.md5Digest(text.getBytes());
         }

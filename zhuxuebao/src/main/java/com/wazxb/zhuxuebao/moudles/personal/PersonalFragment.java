@@ -11,6 +11,8 @@ import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.FragmentPersonalBinding;
 import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
 import com.wazxb.zhuxuebao.moudles.account.AccountManager;
+import com.wazxb.zhuxuebao.moudles.coin.CoinGiftActivity;
+import com.wazxb.zhuxuebao.moudles.message.MessageListActivity;
 import com.wazxb.zhuxuebao.storage.data.UserAllData;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.widget.BaseFragment;
@@ -67,11 +69,32 @@ public class PersonalFragment extends BaseFragment {
         ZXActivityJumpHelper.startActivity(this, PersonalInfoActivity.class);
     }
 
-    public void onBindBankClick(View v){
+    public void onBindBankClick(View v) {
         if (!AccountInterface.checkLogin(getActivity())) {
             return;
         }
         ZXActivityJumpHelper.startActivity(this, BindCradActivity.class);
     }
+
+    public void onCoinGiftClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
+        ZXActivityJumpHelper.startActivity(this, CoinGiftActivity.class);
+    }
+
+    public void onMessageClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
+        ZXActivityJumpHelper.startActivity(this, MessageListActivity.class);
+    }
+    public void onHistoryClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
+        ZXActivityJumpHelper.startActivity(this, MessageListActivity.class);
+    }
+
 
 }

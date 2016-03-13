@@ -15,6 +15,7 @@ import com.wazxb.zhuxuebao.moudles.account.AccountManager;
 import com.wazxb.zhuxuebao.moudles.borrow.BorrowActivity;
 import com.wazxb.zhuxuebao.moudles.calculate.CaculateActivity;
 import com.wazxb.zhuxuebao.moudles.credit.CreditActivity;
+import com.wazxb.zhuxuebao.moudles.evaluate.EvaluateActivity;
 import com.wazxb.zhuxuebao.moudles.payback.PaybackActivity;
 import com.wazxb.zhuxuebao.storage.StorageManager;
 import com.wazxb.zhuxuebao.storage.data.InitData;
@@ -30,7 +31,7 @@ import de.greenrobot.event.EventBus;
 /**
  * Created by zhengxin on 16/2/20.
  */
-public class HomeFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment  {
     FragmentHomeBinding mBinding = null;
     private BannerView mBannerView;
 
@@ -47,14 +48,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void initData() {
-        UserAllData user = AccountManager.sharedInstance().getUserAllData();
-        if (user != null) {
-            mBinding.creditCeilingValue.setNumber((int)user.user.quotaTotal);
-        }
-        if (StorageManager.sharedInstance().getInitdat().ad != null) {
-            mBannerView.setData(StorageManager.sharedInstance().getInitdat().ad.carousel);
-            return;
-        }
+
         StorageManager.sharedInstance().requestInitData(new HttpResponseListener<InitData>() {
             @Override
             public void onResponse(HttpResponse<InitData> response) {
@@ -66,6 +60,14 @@ public class HomeFragment extends BaseFragment {
 
             }
         });
+        UserAllData user = AccountManager.sharedInstance().getUserAllData();
+        if (user != null) {
+            mBinding.creditCeilingValue.setNumber((int)user.user.quotaTotal);
+        }
+        if (StorageManager.sharedInstance().getInitdat().ad != null) {
+            mBannerView.setData(StorageManager.sharedInstance().getInitdat().ad.carousel);
+            return;
+        }
     }
 
     public void onBorrowClick(View v) {
@@ -90,7 +92,7 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void onEvaluateClick(View v) {
-
+        ZXActivityJumpHelper.startActivity(this, EvaluateActivity.class);
     }
 
     public void onCreditClick(View v) {

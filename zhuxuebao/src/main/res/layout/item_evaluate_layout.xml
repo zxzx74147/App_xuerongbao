@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.zxzx74147.devlib.utils.TimerUtil" />
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.EvaluateItemData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/default_gap_30">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/head"
+            android:layout_width="@dimen/default_gap_80"
+            android:layout_height="@dimen/default_gap_80"
+            app:img_url="@{data.portrait}"
+            app:riv_border_color="@color/white"
+            app:riv_border_width="@dimen/default_gap_2"
+            app:riv_corner_radius="@dimen/default_gap_200" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/head"
+            android:text="@{data.name}"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/default_gap_28" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@{TimerUtil.getTimeFormat(data.time,TimerUtil.YMD)}" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/head"
+            android:text="@{data.title}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:text="@{data.content}"
+            android:textColor="@color/text_color_grey"
+            android:textSize="@dimen/default_gap_26" />
+
+    </RelativeLayout>
+</layout>

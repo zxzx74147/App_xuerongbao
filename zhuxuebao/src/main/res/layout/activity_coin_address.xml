@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.coin.CoinAddressActivity" />
+
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:background="@color/view_default_bg_grey"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <com.zxzx74147.devlib.widget.TitleBar
+                android:id="@+id/title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_gap_110"
+                app:text="@string/add_new_addr" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:id="@+id/phone_num_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_20"
+                android:inputType="phone"
+                app:edit_hint="@string/phone_num_hint"
+                app:label_text="@string/phone_num"
+                app:label_width="@dimen/default_gap_150"
+                app:match_regex="@string/phone_num_regex"
+                app:not_null="true"
+                app:post_key="@string/phone_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/consignee_hint"
+                app:label_text="@string/consignee"
+                app:not_null="true"
+                app:post_key="@string/consignee_post_key" />
+
+            <com.wazxb.zhuxuebao.widget.InputTextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                app:edit_hint="@string/addr_hint"
+                app:label_text="@string/addr"
+                app:not_null="true"
+                app:post_key="@string/addr_post_key" />
+
+
+            <Button
+                android:id="@+id/login_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_20"
+                android:background="@drawable/common_button_bg"
+                android:onClick="@{handler.onOKClick}"
+                android:text="@string/ok"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_big" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

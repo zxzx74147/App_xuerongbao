@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alibaba.sdk.android.util.Md5Utils;
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.ActivityRegitster4Binding;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
@@ -149,11 +148,9 @@ public class RegisterFragment4 extends BaseFragment {
                 if (view instanceof InputTextView) {
                     InputTextView input = (InputTextView) view;
                     if (ZXStringUtil.checkString(input.getKey())) {
-                        if (input != mBinding.passwordId) {
+
                             mRequest.addParams(input.getKey(), input.getText());
-                        } else {
-                            mRequest.addParams(input.getKey(), Md5Utils.md5Digest(input.getText().getBytes()));
-                        }
+
                     }
                 } else if (view instanceof UploadImageView) {
 

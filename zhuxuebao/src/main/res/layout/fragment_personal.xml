@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="com.wazxb.zhuxuebao.moudles.message.MessageManager" />
+
         <variable
             name="handler"
             type="com.wazxb.zhuxuebao.moudles.personal.PersonalFragment" />
@@ -71,9 +73,9 @@
             android:id="@+id/bank_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{handler.onBindBankClick}"
             app:content_text="@string/bind_bank_card"
             app:info_label_text="@string/my_bank_card"
-            android:onClick="@{handler.onBindBankClick}"
             app:info_left_drawable="@drawable/user_card" />
 
         <ImageView
@@ -87,6 +89,7 @@
             android:id="@+id/gold_coin_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{handler.onCoinGiftClick}"
             app:info_label_text="@string/my_gold_coin"
             app:info_left_drawable="@drawable/user_coin" />
 
@@ -101,8 +104,10 @@
             android:id="@+id/my_message_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{handler.onMessageClick}"
             app:info_label_text="@string/my_message"
-            app:info_left_drawable="@drawable/user_msg" />
+            app:info_left_drawable="@drawable/user_msg"
+            app:info_remind_text="@{MessageManager.sharedInstance().getNewNum()}" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -115,6 +120,7 @@
             android:id="@+id/history_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{handler.onHistoryClick}"
             app:info_label_text="@string/history"
             app:info_left_drawable="@drawable/user_history" />
 

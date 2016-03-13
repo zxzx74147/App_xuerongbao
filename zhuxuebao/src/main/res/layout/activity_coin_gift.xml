@@ -6,7 +6,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.evaluate.EvaluateActivity" />
+            type="com.wazxb.zhuxuebao.moudles.coin.CoinGiftActivity" />
     </data>
 
     <LinearLayout
@@ -18,7 +18,7 @@
         <com.zxzx74147.devlib.widget.TitleBar
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_gap_110"
-            app:text="@string/user_evaluate" />
+            app:text="@string/coin_mall" />
 
         <com.zxzx74147.devlib.widget.list.ZXRecycleView
             android:id="@+id/list"

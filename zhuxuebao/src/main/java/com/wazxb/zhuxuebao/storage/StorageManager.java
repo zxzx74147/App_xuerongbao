@@ -52,6 +52,10 @@ public class StorageManager {
         return mInstance;
     }
 
+    public String getKVStringSync(String key) {
+        String value = KVStore.getInstance().get(key);
+        return value;
+    }
 
 
     public void saveKVObjectAsync(final String key, final Object value) {

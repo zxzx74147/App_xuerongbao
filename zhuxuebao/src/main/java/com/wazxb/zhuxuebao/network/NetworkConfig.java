@@ -17,8 +17,14 @@ public class NetworkConfig {
     public static final String ADDRESS_CD_BASE = "cd/upbase";
     public static final String ADDRESS_CD_INFO = "cd/info";
     public static final String ADDRESS_CD_UPSCHOOL = "cd/upschool";
+    public static final String ADDRESS_U_MSG = "u/msg";
 
     public static final String ADDRESS_LN_CALCULATOR = "ln/calculator";
     public static final String ADDRESS_LN_APPLY = "ln/apply";
     public static final String ADDRESS_LN_RETURN = "ln/return";
+    public static final String ADDRESS_LN_EVALUATE = "ln/evaluate";
+    public static final String ADDRESS_LN_SEVALUATE = "ln/sevaluate";
+
+    public static final String ADDRESS_MALL_LIST = "mall/list";
+    public static final String ADDRESS_MALL_BUY = "mall/buy";
 }

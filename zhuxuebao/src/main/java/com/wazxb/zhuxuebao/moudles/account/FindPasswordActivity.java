@@ -6,7 +6,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 
-import com.alibaba.sdk.android.util.Md5Utils;
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.ActivityFindPasswordBinding;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
@@ -139,11 +138,8 @@ public class FindPasswordActivity extends ZXBaseActivity {
                 if (view instanceof InputTextView) {
                     InputTextView input = (InputTextView) view;
                     if (ZXStringUtil.checkString(input.getKey())) {
-                        if (input != mBinding.passwordId) {
-                            mRequest.addParams(input.getKey(), input.getText());
-                        } else {
-                            mRequest.addParams(input.getKey(), Md5Utils.md5Digest(input.getText().getBytes()));
-                        }
+
+                        mRequest.addParams(input.getKey(), input.getText());
                     }
                 } else if (view instanceof UploadImageView) {
 

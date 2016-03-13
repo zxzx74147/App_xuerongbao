@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.databinding.DataBindingUtil;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import com.wazxb.zhuxuebao.R;
@@ -65,5 +66,14 @@ public class InfoTextView extends LinearLayout {
 
     public void setContent(String edit) {
         mBinding.content.setText(edit);
+    }
+
+    public void setRemind(int num) {
+        mBinding.infoRemind.setText(String.valueOf(num));
+        if (num > 0) {
+            mBinding.infoRemind.setVisibility(View.VISIBLE);
+        } else {
+            mBinding.infoRemind.setVisibility(View.GONE);
+        }
     }
 }

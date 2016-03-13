@@ -23,4 +23,13 @@
         <item name="android:windowExitAnimation">@anim/j_anim_exit_bottom</item> <!-- 指定消失的动画xml -->
     </style>
 
+    <style name="roomRatingBar">
+        <item name="android:progressDrawable">@drawable/start_drawable</item>
+
+        <item name="android:minHeight">@dimen/default_gap_60</item>
+
+        <item name="android:maxHeight">@dimen/default_gap_60</item>
+
+    </style>
+
 </resources>

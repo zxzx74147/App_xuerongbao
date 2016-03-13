@@ -228,5 +228,22 @@
     <string name="loan_apply_amount">申请金额</string>
     <string name="loan_apply_amount_left">剩余应还</string>
     <string name="loan_payback_time">还款时间</string>
+    <string name="user_evaluate">用户评价</string>
+    <string name="coin">金币</string>
+    <string name="buy_now">立即兑换</string>
+    <string name="coin_mall">金币商城</string>
+    <string name="consignee">收货人</string>
+    <string name="consignee_hint">请输入收货人姓名</string>
+    <string name="consignee_post_key">name</string>
+    <string name="addr_post_key">addr</string>
+    <string name="addr">收货地址</string>
+    <string name="addr_hint">请输入收货地址</string>
+    <string name="add_new_addr">添加新地址</string>
+    <string name="user_evaluate_submit">发布评价</string>
+    <string name="evaluate_hint">请写下对产品的感受吧，对他人帮助很大哦。</string>
+    <string name="evaluate">评价</string>
+    <string name="evaluate_anonymity">匿名评论</string>
+    <string name="evaluate_submit">发布评价</string>
+    <string name="message">消息</string>
 
 </resources>

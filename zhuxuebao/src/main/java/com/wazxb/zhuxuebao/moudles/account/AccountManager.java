@@ -153,4 +153,5 @@ public class AccountManager {
         mCalRequest.setPath(NetworkConfig.ADDRESS_LN_CALCULATOR);
         mCalRequest.send();
     }
+
 }

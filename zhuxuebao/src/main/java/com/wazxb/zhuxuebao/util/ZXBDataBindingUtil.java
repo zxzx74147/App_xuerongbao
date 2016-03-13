@@ -24,6 +24,11 @@ public class ZXBDataBindingUtil {
         view.setContent(edit);
     }
 
+    @BindingAdapter("app:info_remind_text")
+    public static void setLayoutHeight(InfoTextView view, int num) {
+        view.setRemind(num);
+    }
+
     @BindingAdapter("app:input_sex")
     public static void setLayoutHeight(InputTextView view, int sex) {
         if (sex == 1) {

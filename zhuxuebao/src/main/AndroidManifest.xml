@@ -103,6 +103,15 @@
         <activity
             android:name=".moudles.payback.PaybackDetailActivity"
             android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".moudles.evaluate.EvaluateActivity" />
+        <activity android:name=".moudles.coin.CoinGiftActivity" />
+        <activity
+            android:name=".moudles.coin.CoinAddressActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".moudles.evaluate.EvaluateSubmitActivity"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".moudles.message.MessageListActivity" />
     </application>
 
 </manifest>

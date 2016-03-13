@@ -75,6 +75,10 @@ public abstract class ZXBBaseListActivity extends ZXBBaseActivity {
         mAdapter.setData(mData);
     }
 
+    protected void completeLoading(){
+        mRecycleView.mPtrFrameLayout.refreshComplete();
+    }
+
     protected void addData(List<? extends Object> mData) {
         mRecycleView.mPtrFrameLayout.refreshComplete();
         mAdapter.addData(mData);
