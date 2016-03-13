@@ -149,7 +149,7 @@ public class BannerView extends BaseView<List<CarouselData>> {
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            CarouselData ad = (CarouselData) v.getTag();
+            CarouselData ad = (CarouselData) v.getTag(R.id.tag_common);
             //TODO
         }
     };
@@ -182,7 +182,7 @@ public class BannerView extends BaseView<List<CarouselData>> {
             }
             int index_t = position % mList.size();
             CarouselData ad = mList.get(index_t);
-            imageView.setTag(ad);
+            imageView.setTag(R.id.tag_common,ad);
 
             ImageUtil.loadImage(ad.picUrl, imageView);
             return imageView;

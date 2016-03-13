@@ -7,8 +7,10 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.http.BdHttpManager2;
 import com.wazxb.zhuxuebao.network.http.HttpContext2;
@@ -49,10 +51,11 @@ public class ImageUtil {
         if (imageView == null) {
             return false;
         }
-        Picasso.with(imageView.getContext())
-                .load(uri)
-                .resize(IMAGE_MAX_SIZE, IMAGE_MAX_SIZE)
-                .into(imageView);
+//        Picasso.with(imageView.getContext())
+//                .load(uri)
+//                .resize(IMAGE_MAX_SIZE, IMAGE_MAX_SIZE)
+//                .into(imageView);
+        Glide.with(imageView.getContext()).load(uri).into(imageView);
         return true;
     }
 
@@ -60,10 +63,11 @@ public class ImageUtil {
         if (imageView == null) {
             return false;
         }
-        Picasso.with(imageView.getContext())
-                .load(path)
-                .resize(IMAGE_MAX_SIZE, IMAGE_MAX_SIZE)
-                .into(imageView);
+        Glide.with(imageView.getContext()).load(path).override(IMAGE_MAX_SIZE, IMAGE_MAX_SIZE).into(imageView);
+//        Picasso.with(imageView.getContext())
+//                .load(path)
+//                .resize(IMAGE_MAX_SIZE, IMAGE_MAX_SIZE)
+//                .into(imageView);
         return true;
     }
 
@@ -190,7 +194,7 @@ public class ImageUtil {
 
         };
         if (imageView != null) {
-            imageView.setTag(target);
+            imageView.setTag(R.id.tag_common, target);
         }
         Picasso.with(context)
                 .load(uri).resize(IMAGE_MAX_SIZE, IMAGE_MAX_SIZE)

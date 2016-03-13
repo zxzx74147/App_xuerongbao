@@ -22,23 +22,54 @@ public class ZXFileUtil {
         DIVIDER = File.pathSeparator;
     }
 
-    private static String splicePath(String str1,String str2){
-        if (str1.endsWith(DIVIDER)){
-            str1 = str1.substring(0,str1.length()-1);
+    private static String splicePath(String str1, String str2) {
+        if (str1.endsWith(DIVIDER)) {
+            str1 = str1.substring(0, str1.length() - 1);
         }
-        if(str2.startsWith(DIVIDER)){
-            str2 = str1.substring(0,str2.length()-1);
+        if (str2.startsWith(DIVIDER)) {
+            str2 = str1.substring(0, str2.length() - 1);
         }
-        String path = str1+DIVIDER+str2;
+        String path = str1 + DIVIDER + str2;
         return path;
     }
 
-    public static boolean hasSDCard(){
+    public static boolean hasSDCard() {
         return HAS_SDCARD;
     }
 
-    public File getInnerPathFile(String path){
+    public File getInnerPathFile(String path) {
         return null;
+    }
+
+    public static int getFileSize(File file) {
+        int result = 0;
+        if (file == null) {
+            return result;
+        }
+        if (file.listFiles() == null) {
+            return result;
+        }
+        for (File item : file.listFiles()) {
+            result += getFileSize(item);
+        }
+        return result;
+    }
+
+    public static void deleteFile(File file) {
+        if (file == null) {
+            return;
+        }
+        if (file.isDirectory() && file.listFiles() != null) {
+            for (File item : file.listFiles()) {
+                deleteFile(item);
+            }
+        }
+        try {
+            file.delete();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return;
     }
 
 
