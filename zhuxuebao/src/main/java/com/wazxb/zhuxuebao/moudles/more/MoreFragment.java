@@ -8,8 +8,11 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.wazxb.zhuxuebao.R;
+import com.wazxb.zhuxuebao.common.webview.CommonWebActivity;
 import com.wazxb.zhuxuebao.databinding.FragmentMoreBinding;
 import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
+import com.wazxb.zhuxuebao.storage.StorageManager;
+import com.wazxb.zhuxuebao.storage.data.InitData;
 import com.zxzx74147.devlib.utils.AsyncHelper;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXFileUtil;
@@ -75,10 +78,16 @@ public class MoreFragment extends BaseFragment {
     }
 
     public void onGreenHandClick(View v) {
-
+        InitData initData = StorageManager.sharedInstance().getInitdat();
+        if (initData != null && initData.contract != null) {
+            CommonWebActivity.startActivity(getActivity(), null, initData.contract.guide);
+        }
     }
 
     public void onHelpClick(View v) {
-
+        InitData initData = StorageManager.sharedInstance().getInitdat();
+        if (initData != null && initData.contract != null) {
+            CommonWebActivity.startActivity(getActivity(), null, initData.contract.help);
+        }
     }
 }

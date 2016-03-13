@@ -83,6 +83,83 @@ public class ImageUtil {
         return baos.toByteArray();
     }
 
+    public static boolean uploadImage(Bitmap bitmap, final ImageUploadCallback callback) {
+
+        final HttpResponseListener<UploadPicData> listener = new HttpResponseListener<UploadPicData>() {
+            @Override
+            public void onResponse(HttpResponse<UploadPicData> response) {
+                if (callback == null) {
+                    return;
+                }
+                if (response.error != 0) {
+                    callback.onFail();
+                    return;
+                }
+                UploadPicData rsp = response.result;
+                callback.onSucc(rsp.picKey, rsp.picUrl);
+            }
+        };
+
+        final byte[] rawData = bitmap2Byte(bitmap, 85);
+        AsyncHelper.executeAsyncTask(new AsyncHelper.BDTask<UploadPicData>() {
+            @Override
+            public UploadPicData executeBackGround() {
+                try {
+                    HttpContext2 context = new HttpContext2();
+                    context.getRequest().setUrl(NetworkConfig.HOST + ADDRESS_UP_IMAGE);
+                    context.getRequest().setMethod(HttpRequest2.HTTP_METHOD.POST);
+                    HashMap<String, Object> mParams = new HashMap<String, Object>();
+                    mParams.put("file", rawData);
+                    List<Map.Entry<String, Object>> data = encodeInBackGround(new ArrayList<Map.Entry<String, Object>>(mParams.entrySet()));
+                    context.getRequest().setPostData(data);
+                    BdHttpManager2 httpCore2 = new BdHttpManager2(context);
+
+                    httpCore2.post(2, 10000, 10000);
+
+                    String errString = "";
+
+                    if (context.getStatList().size() > 0) {
+                        errString = context.getStatList().get(context.getStatList().size() - 1).exception;
+                    }
+                    if (context.getResponse().isNetOK()) {
+                        HttpResponsedMessage responsedMessage = new HttpResponsedMessage();
+                        responsedMessage.setStatusCode(context.getResponse().responseCode, errString);
+                        responsedMessage.setHeader(context.getResponse().heads);
+                        responsedMessage.setContentEncoding(context.getResponse().contentEncoding);
+                        responsedMessage.setContentLength(context.getResponse().contentLength);
+                        responsedMessage.setContentType(context.getResponse().contentType);
+                        responsedMessage.decodeInBackGround(context.getResponse().retBytes);
+                        String rsp = responsedMessage.mRet;
+                        UploadPicData uploadData = ZXJsonUtil.fromJsonString(rsp, UploadPicData.class);
+
+                        return uploadData;
+                    } else {
+                        return null;
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            public void postExecute(UploadPicData result) {
+                if (callback != null) {
+                    if (result == null) {
+                        callback.onFail();
+                    } else {
+                        callback.onSucc(result.picKey, result.picUrl);
+                    }
+                }
+
+            }
+
+
+        });
+
+        return true;
+    }
+
     public static boolean uploadImage(Uri uri, final ImageView imageView, final ImageUploadCallback callback) {
         final Context context = imageView == null ? ZXApplicationDelegate.getApplication() : imageView.getContext();
 

@@ -13,4 +13,11 @@ public class ZXUtil {
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         activity.startActivityForResult(intent, requestCode);
     }
+
+
+    public static void takePhoto(android.support.v4.app.Fragment fragment, int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        fragment.startActivityForResult(intent, requestCode);
+    }
 }

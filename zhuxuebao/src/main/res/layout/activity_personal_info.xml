@@ -56,6 +56,7 @@
                 android:id="@+id/head"
                 android:layout_width="@dimen/default_gap_120"
                 android:layout_height="@dimen/default_gap_120"
+                android:onClick="@{handler.onChangePortraitClick}"
                 app:img_url="@{data.portrait}"
                 app:riv_border_color="@color/white"
                 app:riv_border_width="@dimen/default_gap_2"
@@ -142,8 +143,8 @@
             android:id="@+id/quotatotal_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:info_edit_text="@{String.valueOf(data.quotaTotal)}"
             app:info_content_drawable="@drawable/user_bean"
+            app:info_edit_text="@{String.valueOf(data.quotaTotal)}"
             app:info_label_text="@string/quotatotal"
             app:info_show_right="false" />
 
@@ -163,8 +164,8 @@
         <com.wazxb.zhuxuebao.widget.InfoTextView
             android:id="@+id/ge_pass_layout"
             android:layout_width="match_parent"
-            android:onClick="@{handler.onGesturePassClick}"
             android:layout_height="wrap_content"
+            android:onClick="@{handler.onGesturePassClick}"
             app:info_label_text="@string/ge_pass" />
 
         <ImageView
