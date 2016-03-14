@@ -10,10 +10,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.wazxb.zhuxuebao.R;
+import com.wazxb.zhuxuebao.common.webview.CommonWebActivity;
+import com.wazxb.zhuxuebao.moudles.coin.CoinActivity;
+import com.wazxb.zhuxuebao.moudles.red.RedActivity;
 import com.wazxb.zhuxuebao.storage.data.CarouselData;
 import com.wazxb.zhuxuebao.util.ImageUtil;
 import com.zxzx74147.devlib.base.BaseView;
+import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -150,7 +156,18 @@ public class BannerView extends BaseView<List<CarouselData>> {
         @Override
         public void onClick(View v) {
             CarouselData ad = (CarouselData) v.getTag(R.id.tag_common);
-            //TODO
+            try {
+                URL url = new URL(ad.url);
+                if ("/checkin".equals(url.getPath())) {
+                    ZXActivityJumpHelper.startActivity(mContext, CoinActivity.class);
+                } else if ("/luckybag".equals(url.getPath())) {
+                    ZXActivityJumpHelper.startActivity(mContext, RedActivity.class);
+                } else {
+                    CommonWebActivity.startActivity(mContext, null, ad.url);
+                }
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
     };
 
@@ -182,7 +199,7 @@ public class BannerView extends BaseView<List<CarouselData>> {
             }
             int index_t = position % mList.size();
             CarouselData ad = mList.get(index_t);
-            imageView.setTag(R.id.tag_common,ad);
+            imageView.setTag(R.id.tag_common, ad);
 
             ImageUtil.loadImage(ad.picUrl, imageView);
             return imageView;

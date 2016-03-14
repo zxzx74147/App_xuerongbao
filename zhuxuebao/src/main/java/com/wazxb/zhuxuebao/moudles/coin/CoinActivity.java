@@ -58,7 +58,7 @@ public class CoinActivity extends ZXBBaseActivity {
         sendRequest(mRedRequest);
     }
 
-    public void onRedClick(View v) {
+    public void onSignClick(View v) {
         if (mSredRequest != null) {
             mSredRequest.cancel();
             mSredRequest = null;
@@ -71,6 +71,7 @@ public class CoinActivity extends ZXBBaseActivity {
                     return;
                 }
                 AccountManager.sharedInstance().requestUserAllData();
+                mBinding.setCoindata(response.result);
             }
         });
         mSredRequest.setPath(NetworkConfig.ADDRESS_SYS_SSIGN);

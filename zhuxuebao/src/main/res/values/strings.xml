@@ -263,5 +263,6 @@
     <string name="pass_succ">设置成功</string>
     <string name="pass_error">密码错误，还可输入%d次</string>
     <string name="pass_check_succ">解锁成功</string>
+    <string name="credit_amount_view">额度查看</string>
 
 </resources>

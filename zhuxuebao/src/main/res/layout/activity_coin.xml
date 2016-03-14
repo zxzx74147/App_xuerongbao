@@ -47,7 +47,9 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/sign_btn" />
+                android:background="@{coindata.isSigned==0? @drawable/sign_btn:@drawable/sign_gray}"
+                android:onClick="@{coindata.isSigned==0? handler.onSignClick:null}"
+                android:text='@{coindata.isSigned==0? "":"已签到"}' />
         </LinearLayout>
 
         <LinearLayout

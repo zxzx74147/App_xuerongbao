@@ -125,6 +125,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/default_gap_20"
                         android:layout_weight="1"
+                        android:layout_marginRight="@dimen/default_gap_20"
                         android:background="@drawable/index_func_bg"
                         android:onClick="@{handler.onEvaluateClick}"
                         android:orientation="vertical">
@@ -178,14 +179,14 @@
 
                     <Button
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/default_gap_30"
+                        android:layout_height="@dimen/default_gap_50"
                         android:layout_marginTop="@dimen/default_gap_30"
                         android:background="@drawable/index_ellipse"
                         android:drawableRight="@drawable/index_right_arrow"
                         android:onClick="@{handler.onCreditClick}"
                         android:paddingLeft="@dimen/default_gap_15"
                         android:paddingRight="@dimen/default_gap_15"
-                        android:text="@string/credit_amount"
+                        android:text="@string/credit_amount_view"
                         android:textColor="@color/white"
                         android:textSize="@dimen/default_size_24" />
                 </LinearLayout>
