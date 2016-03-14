@@ -39,7 +39,7 @@ public class GesturePassManager {
         boolean isBackGround = ActivityStateManager.sharedInstance().getIsBackGround();
         Activity activity = ActivityStateManager.sharedInstance().getTopActivity();
         if (!isBackGround && activity != null) {
-            ZXActivityJumpHelper.startActivity(activity, GesturePassrwordActivity.class,GesturePassrwordActivity.MODE_CHECK);
+            ZXActivityJumpHelper.startActivity(activity, GesturePasswordActivity.class, GesturePasswordActivity.MODE_CHECK);
         }
     }
 }

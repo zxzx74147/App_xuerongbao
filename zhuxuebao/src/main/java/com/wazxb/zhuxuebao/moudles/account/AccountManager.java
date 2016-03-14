@@ -106,6 +106,9 @@ public class AccountManager {
 
     public void setPassword(String pass) {
         mPass = pass;
+        if (mUserAllData != null && mUserAllData.user != null) {
+            mUserAllData.user.gesture = pass;
+        }
         SharedPreferenceHelper.saveString(SP_KEY_USER_PASS_WORD, pass);
     }
 

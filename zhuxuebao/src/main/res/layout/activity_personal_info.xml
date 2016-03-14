@@ -179,7 +179,7 @@
             android:id="@+id/change_ge_pass_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:info_label_text="@string/change_ge_pass" />
+            app:info_label_text="@string/change_pass" />
 
         <ImageView
             android:layout_width="match_parent"

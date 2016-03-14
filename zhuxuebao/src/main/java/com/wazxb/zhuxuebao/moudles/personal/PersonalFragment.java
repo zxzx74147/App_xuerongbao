@@ -2,7 +2,6 @@ package com.wazxb.zhuxuebao.moudles.personal;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +57,6 @@ public class PersonalFragment extends BaseFragment {
 
     //事件1接收者：在主线程接收
     public void onEvent(String event) {
-        Log.e("event", event);
         if (EventBusConfig.EVENT_FRESH_USER_DATA.equals(event)) {
             UserAllData data = AccountManager.sharedInstance().getUserAllData();
             if (data != null) {

@@ -83,7 +83,7 @@
         <activity
             android:name=".moudles.personal.PersonalInfoActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".moudles.gesturepass.GesturePassrwordActivity" />
+        <activity android:name=".moudles.gesturepass.GesturePasswordActivity" />
         <activity
             android:name=".moudles.borrow.BorrowActivity"
             android:windowSoftInputMode="adjustResize" />
@@ -120,6 +120,7 @@
         <activity android:name=".moudles.history.HistoryActivity" />
         <activity android:name=".moudles.red.RedActivity" />
         <activity android:name=".moudles.coin.CoinActivity" />
+        <activity android:name=".moudles.gesturepass.GestureActivity" />
 
 
         <!--分享-->

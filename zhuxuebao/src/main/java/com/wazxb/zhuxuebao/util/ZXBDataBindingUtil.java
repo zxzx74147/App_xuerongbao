@@ -1,6 +1,7 @@
 package com.wazxb.zhuxuebao.util;
 
 import android.databinding.BindingAdapter;
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import com.wazxb.zhuxuebao.storage.data.ProdData;
@@ -18,6 +19,11 @@ public class ZXBDataBindingUtil {
     @BindingAdapter("app:input_edit_text")
     public static void setLayoutHeight(InputTextView view, String edit) {
         view.setContent(edit);
+    }
+
+    @BindingAdapter("app:info_content_drawable")
+    public static void setRightDrawable(InfoTextView view, Drawable edit) {
+        view.setRightDrawable(edit);
     }
 
     @BindingAdapter("app:info_edit_text")

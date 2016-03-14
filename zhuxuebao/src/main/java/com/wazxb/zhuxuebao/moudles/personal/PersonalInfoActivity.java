@@ -11,7 +11,7 @@ import com.wazxb.zhuxuebao.base.ZXBBaseActivity;
 import com.wazxb.zhuxuebao.common.portrait.EditPortraitActivity;
 import com.wazxb.zhuxuebao.databinding.ActivityPersonalInfoBinding;
 import com.wazxb.zhuxuebao.moudles.account.AccountManager;
-import com.wazxb.zhuxuebao.moudles.gesturepass.GesturePassrwordActivity;
+import com.wazxb.zhuxuebao.moudles.gesturepass.GestureActivity;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.storage.data.UserAllData;
@@ -53,7 +53,7 @@ public class PersonalInfoActivity extends ZXBBaseActivity {
     }
 
     public void onGesturePassClick(View v) {
-        ZXActivityJumpHelper.startActivity(this, GesturePassrwordActivity.class, GesturePassrwordActivity.MODE_SET);
+        ZXActivityJumpHelper.startActivity(this, GestureActivity.class);
     }
 
 

@@ -3,6 +3,7 @@ package com.wazxb.zhuxuebao.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.databinding.DataBindingUtil;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,5 +76,9 @@ public class InfoTextView extends LinearLayout {
         } else {
             mBinding.infoRemind.setVisibility(View.GONE);
         }
+    }
+
+    public void setRightDrawable(Drawable drawable) {
+        mBinding.icon.setImageDrawable(drawable);
     }
 }

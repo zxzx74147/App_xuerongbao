@@ -9,7 +9,12 @@ import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.base.ZXBBaseActivity;
 import com.wazxb.zhuxuebao.databinding.ActivityGesturePasswordBinding;
 import com.wazxb.zhuxuebao.moudles.account.AccountManager;
+import com.wazxb.zhuxuebao.network.NetworkConfig;
+import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
+import com.wazxb.zhuxuebao.storage.data.UidData;
 import com.wazxb.zhuxuebao.storage.data.UserAllData;
+import com.zxzx74147.devlib.network.HttpResponse;
+import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.BdLog;
 import com.zxzx74147.devlib.utils.SharedPreferenceHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
@@ -17,7 +22,7 @@ import com.zxzx74147.devlib.utils.ZXStringUtil;
 /**
  * Created by zhengxin on 16/3/7.
  */
-public class GesturePassrwordActivity extends ZXBBaseActivity {
+public class GesturePasswordActivity extends ZXBBaseActivity {
 
     private int mMode = MODE_SET;
     public static final int MODE_SET = 0;
@@ -25,6 +30,7 @@ public class GesturePassrwordActivity extends ZXBBaseActivity {
     private String mOldPass = null;
     private int mLastNum = 5;
     private ActivityGesturePasswordBinding mBinding = null;
+    private ZXBHttpRequest mRequest = null;
 
 
     @Override
@@ -91,13 +97,9 @@ public class GesturePassrwordActivity extends ZXBBaseActivity {
                         }
                         if (mOldPass.equals(pass)) {
                             mBinding.remind.setText(R.string.pass_succ);
-                            AccountManager.sharedInstance().setPassword(pass);
-                            postRunnableDelyed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    finish();
-                                }
-                            }, 400);
+
+                            submit(pass);
+
 
                         } else {
                             mBinding.remind.setText(R.string.pass_second_error);
@@ -109,5 +111,30 @@ public class GesturePassrwordActivity extends ZXBBaseActivity {
 
             }
         });
+    }
+
+    public void submit(final String pass) {
+        if (mRequest != null) {
+            mRequest.cancel();
+        }
+        mRequest = new ZXBHttpRequest<>(UidData.class, new HttpResponseListener<UidData>() {
+            @Override
+            public void onResponse(HttpResponse<UidData> response) {
+                if (response.hasError()) {
+                    showToast(response.errorString);
+                    return;
+                }
+                AccountManager.sharedInstance().setPassword(pass);
+                postRunnableDelyed(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
+                    }
+                }, 200);
+            }
+        });
+        mRequest.addParams("gesture", pass);
+        mRequest.setPath(NetworkConfig.ADDRESS_U_GESTURE);
+        sendRequest(mRequest);
     }
 }
