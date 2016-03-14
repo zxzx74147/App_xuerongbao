@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.wazxb.zhuxuebao.R;
+import com.wazxb.zhuxuebao.util.ActivityStateManager;
 import com.wazxb.zhuxuebao.util.RequestCode;
 import com.wazxb.zhuxuebao.widget.InputTextView;
 import com.wazxb.zhuxuebao.widget.UploadImageView;
@@ -99,5 +100,17 @@ public class ZXBBaseActivity<T> extends ZXBaseActivity {
 
     public void postRunnableDelyed(Runnable runnable, int time) {
         getWindow().getDecorView().postDelayed(runnable, time);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        ActivityStateManager.sharedInstance().onPause(this);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        ActivityStateManager.sharedInstance().onResume(this);
     }
 }

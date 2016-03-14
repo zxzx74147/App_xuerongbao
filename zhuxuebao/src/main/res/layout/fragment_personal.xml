@@ -37,6 +37,7 @@
                 android:layout_width="@dimen/default_gap_120"
                 android:layout_height="@dimen/default_gap_120"
                 android:layout_marginRight="@dimen/default_gap_40"
+                android:src="@drawable/user_head"
                 app:img_url="@{data.portrait}"
                 app:riv_border_color="@color/white"
                 app:riv_border_width="@dimen/default_gap_2"
@@ -47,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/head"
-                android:text="@{data.name}"
+                android:text='@{data==null? "亲，你还没有登陆哦~":data.name}'
                 android:textColor="@color/text_color_black"
                 android:textSize="@dimen/default_gap_30" />
 

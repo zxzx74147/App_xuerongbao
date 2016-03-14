@@ -51,6 +51,9 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 mBinding.titleBar.setRightText(R.drawable.index_no_msg);
+                if (!AccountInterface.checkLogin(getActivity())) {
+                    return;
+                }
                 ZXActivityJumpHelper.startActivity(getActivity(), MessageListActivity.class);
             }
         });

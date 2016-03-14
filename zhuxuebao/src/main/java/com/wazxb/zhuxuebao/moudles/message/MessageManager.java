@@ -3,6 +3,7 @@ package com.wazxb.zhuxuebao.moudles.message;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import com.alibaba.sdk.android.event.EventBus;
 import com.lusfold.androidkeyvaluestore.KVStore;
@@ -11,6 +12,7 @@ import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.storage.StorageManager;
 import com.wazxb.zhuxuebao.storage.data.MessageData;
+import com.wazxb.zhuxuebao.util.ActivityStateManager;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.AsyncHelper;
@@ -47,7 +49,7 @@ public class MessageManager {
                     mHandler.removeMessages(MSG_CHECK);
                     if (!mHasStop) {
                         mHandler.sendEmptyMessageDelayed(MSG_CHECK, POLL_INV);
-                    }else{
+                    } else {
                         return false;
                     }
                     if (!mHasInit) {
@@ -70,6 +72,7 @@ public class MessageManager {
     });
 
     private MessageManager() {
+        de.greenrobot.event.EventBus.getDefault().register(this);
         doInit();
     }
 
@@ -151,5 +154,17 @@ public class MessageManager {
 
     public void clearNew() {
         newNum = 0;
+    }
+
+    public void onEvent(String event) {
+        Log.e("event", event);
+        if (EventBusConfig.EVENT_FRONT_BACK_CHANGED.equals(event)) {
+            boolean isBackGround = ActivityStateManager.sharedInstance().getIsBackGround();
+            if (isBackGround) {
+                stopPoll();
+            } else {
+                startPoll();
+            }
+        }
     }
 }
