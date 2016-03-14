@@ -34,6 +34,10 @@
         <attr name="left_text" format="string" />
         <attr name="divColor" format="color" />
     </declare-styleable>
-
+    <declare-styleable name="StrokeTextView">
+        <attr name="stroke_width" format="dimension" />
+        <attr name="stroke_color" format="color" />
+        <attr name="inner_color" format="color" />
+    </declare-styleable>
 
 </resources>

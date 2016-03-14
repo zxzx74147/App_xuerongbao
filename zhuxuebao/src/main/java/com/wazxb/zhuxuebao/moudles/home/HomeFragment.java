@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.wazxb.zhuxuebao.EventBusConfig;
 import com.wazxb.zhuxuebao.R;
 import com.wazxb.zhuxuebao.databinding.FragmentHomeBinding;
 import com.wazxb.zhuxuebao.moudles.account.AccountInterface;
@@ -16,6 +17,8 @@ import com.wazxb.zhuxuebao.moudles.borrow.BorrowActivity;
 import com.wazxb.zhuxuebao.moudles.calculate.CaculateActivity;
 import com.wazxb.zhuxuebao.moudles.credit.CreditActivity;
 import com.wazxb.zhuxuebao.moudles.evaluate.EvaluateActivity;
+import com.wazxb.zhuxuebao.moudles.message.MessageListActivity;
+import com.wazxb.zhuxuebao.moudles.message.MessageManager;
 import com.wazxb.zhuxuebao.moudles.payback.PaybackActivity;
 import com.wazxb.zhuxuebao.storage.StorageManager;
 import com.wazxb.zhuxuebao.storage.data.InitData;
@@ -31,7 +34,7 @@ import de.greenrobot.event.EventBus;
 /**
  * Created by zhengxin on 16/2/20.
  */
-public class HomeFragment extends BaseFragment  {
+public class HomeFragment extends BaseFragment {
     FragmentHomeBinding mBinding = null;
     private BannerView mBannerView;
 
@@ -44,6 +47,16 @@ public class HomeFragment extends BaseFragment  {
         mBannerView = new BannerView(getContext());
         mBinding.bannerLayout.addView(mBannerView.getRootView(), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         initData();
+        mBinding.titleBar.setRightClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mBinding.titleBar.setRightText(R.drawable.index_no_msg);
+                ZXActivityJumpHelper.startActivity(getActivity(), MessageListActivity.class);
+            }
+        });
+        if (MessageManager.sharedInstance().getNewNum() > 0) {
+            mBinding.titleBar.setRightText(R.drawable.index_has_msg);
+        }
         return mBinding.getRoot();
     }
 
@@ -62,7 +75,7 @@ public class HomeFragment extends BaseFragment  {
         });
         UserAllData user = AccountManager.sharedInstance().getUserAllData();
         if (user != null) {
-            mBinding.creditCeilingValue.setNumber((int)user.user.quotaTotal);
+            mBinding.creditCeilingValue.setNumber((int) user.user.quotaTotal);
         }
         if (StorageManager.sharedInstance().getInitdat().ad != null) {
             mBannerView.setData(StorageManager.sharedInstance().getInitdat().ad.carousel);
@@ -115,13 +128,18 @@ public class HomeFragment extends BaseFragment  {
         //取消EventBus
         EventBus.getDefault().unregister(this);
     }
+
     //事件1接收者：在主线程接收
     public void onEvent(String event) {
         Log.e("event", event);
-        UserAllData user = AccountManager.sharedInstance().getUserAllData();
-        if (user != null) {
-            user.user.quotaTotal = user.user.quotaTotal>5000? 5000:user.user.quotaTotal;
-            mBinding.creditCeilingValue.setNumber((int)user.user.quotaTotal);
+        if (EventBusConfig.EVENT_FRESH_USER_DATA.equals(event)) {
+            UserAllData user = AccountManager.sharedInstance().getUserAllData();
+            if (user != null) {
+                user.user.quotaTotal = user.user.quotaTotal > 5000 ? 5000 : user.user.quotaTotal;
+                mBinding.creditCeilingValue.setNumber((int) user.user.quotaTotal);
+            }
+        } else if (EventBusConfig.EVENT_MESSAGE_REFRESH.equals(event)) {
+            mBinding.titleBar.setRightText(R.drawable.index_has_msg);
         }
     }
 

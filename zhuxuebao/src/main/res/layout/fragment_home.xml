@@ -19,6 +19,7 @@
             android:id="@+id/title_bar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_gap_110"
+            app:right_drawable="@drawable/index_no_msg"
             app:showBack="false"
             app:text="@string/app_name" />
 
@@ -61,33 +62,93 @@
                     android:layout_marginTop="@dimen/default_gap_20">
 
 
-                    <ImageView
+                    <LinearLayout
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/default_gap_20"
                         android:layout_weight="1"
                         android:background="@drawable/index_func_bg"
                         android:onClick="@{handler.onRepaymentClick}"
-                        android:src="@drawable/index_pig" />
+                        android:orientation="vertical">
 
-                    <ImageView
+                        <ImageView
+                            android:layout_width="@dimen/default_gap_110"
+                            android:layout_height="@dimen/default_gap_110"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:src="@drawable/index_pig" />
+
+                        <com.zxzx74147.devlib.widget.StrokeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="@dimen/default_gap_20"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:text="@string/payback"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/default_gap_35"
+                            app:stroke_color="@color/orange"
+                            app:stroke_width="@dimen/default_gap_2" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/default_gap_20"
-                        android:layout_marginRight="@dimen/default_gap_20"
                         android:layout_weight="1"
                         android:background="@drawable/index_func_bg"
                         android:onClick="@{handler.onInterestCalClick}"
-                        android:src="@drawable/index_calculator" />
+                        android:orientation="vertical">
 
-                    <ImageView
+                        <ImageView
+                            android:layout_width="@dimen/default_gap_110"
+                            android:layout_height="@dimen/default_gap_110"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:src="@drawable/index_calculator" />
+
+                        <com.zxzx74147.devlib.widget.StrokeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="@dimen/default_gap_20"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:text="@string/calculate"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/default_gap_35"
+                            app:stroke_color="@color/orange"
+                            app:stroke_width="@dimen/default_gap_2" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/default_gap_20"
+                        android:layout_marginLeft="@dimen/default_gap_20"
                         android:layout_weight="1"
                         android:background="@drawable/index_func_bg"
                         android:onClick="@{handler.onEvaluateClick}"
-                        android:src="@drawable/index_evaluate" />
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/default_gap_110"
+                            android:layout_height="@dimen/default_gap_110"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:src="@drawable/index_evaluate" />
+
+                        <com.zxzx74147.devlib.widget.StrokeTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="@dimen/default_gap_20"
+                            android:layout_marginTop="@dimen/default_gap_20"
+
+                            android:text="@string/evaluate"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/default_gap_35"
+                            app:stroke_color="@color/orange"
+                            app:stroke_width="@dimen/default_gap_2" />
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -117,13 +178,14 @@
 
                     <Button
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/default_gap_30"
                         android:layout_marginTop="@dimen/default_gap_30"
                         android:background="@drawable/index_ellipse"
                         android:drawableRight="@drawable/index_right_arrow"
                         android:onClick="@{handler.onCreditClick}"
                         android:paddingLeft="@dimen/default_gap_15"
                         android:paddingRight="@dimen/default_gap_15"
+                        android:text="@string/credit_amount"
                         android:textColor="@color/white"
                         android:textSize="@dimen/default_size_24" />
                 </LinearLayout>

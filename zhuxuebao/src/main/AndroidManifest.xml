@@ -119,6 +119,7 @@
         <activity android:name=".common.webview.CommonWebActivity" />
         <activity android:name=".moudles.history.HistoryActivity" />
         <activity android:name=".moudles.red.RedActivity" />
+        <activity android:name=".moudles.coin.CoinActivity" />
 
 
         <!--分享-->

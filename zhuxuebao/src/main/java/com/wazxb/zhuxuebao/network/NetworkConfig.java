@@ -34,4 +34,7 @@ public class NetworkConfig {
 
     public static final String ADDRESS_SYS_SRED = "app/sred";
     public static final String ADDRESS_SYS_RED = "app/red";
+
+    public static final String ADDRESS_SYS_SIGN = "app/sign";
+    public static final String ADDRESS_SYS_SSIGN = "app/ssign";
 }

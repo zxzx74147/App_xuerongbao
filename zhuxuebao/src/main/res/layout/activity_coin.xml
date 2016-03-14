@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+
+        <variable
+            name="coindata"
+            type="com.wazxb.zhuxuebao.storage.data.CoinData" />
+
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.coin.CoinActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            app:text="@string/sign" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sign_bg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap_50"
+            android:layout_marginRight="@dimen/default_gap_50"
+            android:layout_marginTop="-50dip"
+            android:background="@color/white"
+            android:padding="@dimen/default_gap_20">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sign_btn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/default_gap_50"
+            android:paddingRight="@dimen/default_gap_50">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:background="@drawable/sign_day">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="x1"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_margin="@dimen/default_gap_10"
+                    android:text="1天"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:background="@drawable/sign_day">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="x2"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_margin="@dimen/default_gap_10"
+                    android:text="2天"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:background="@drawable/sign_day">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="x3"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_margin="@dimen/default_gap_10"
+                    android:text="3天"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+            </FrameLayout>
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sign_day">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|top"
+                    android:layout_margin="@dimen/default_gap_20"
+                    android:text="x4"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_margin="@dimen/default_gap_10"
+                    android:text="4天"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

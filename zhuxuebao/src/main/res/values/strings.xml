@@ -254,5 +254,8 @@
     <string name="red_remind">学融宝抢红包活动限时开始\n赶快试试你的手气</string>
     <string name="red_free_money">免费额度</string>
     <string name="red_free_money_remind">可在福利贷中使用，赶快试试吧！</string>
+    <string name="sign">签到</string>
+    <string name="credit_amount">信用额度</string>
+    <string name="calculate">费率计算</string>
 
 </resources>
