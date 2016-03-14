@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+
+        <variable
+            name="reddata"
+            type="com.wazxb.zhuxuebao.storage.data.RedData" />
+
+
+        <variable
+            name="handler"
+            type="com.wazxb.zhuxuebao.moudles.red.RedActivity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical">
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            app:text="@string/red" />
+
+        <RelativeLayout
+            android:id="@+id/red_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_bar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_gap_800"
+                android:background="@drawable/red_bg"
+                android:clipChildren="false">
+
+
+                <TextView
+                    android:id="@+id/money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/default_gap_50"
+                    android:text='@{String.valueOf(reddata.money)+"元"}'
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_size_150" />
+
+                <TextView
+                    android:id="@+id/free_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/money"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/default_gap_50"
+                    android:gravity="center_horizontal"
+                    android:text="@string/red_free_money"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_size_35" />
+
+
+                <TextView
+                    android:id="@+id/free_money_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/free_money"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/default_gap_50"
+                    android:gravity="center_horizontal"
+                    android:text="@string/red_free_money_remind"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_size_30" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/free_money_id"
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginBottom="-50dip"
+                    android:layout_marginTop="@dimen/default_gap_120"
+                    android:background="@null"
+                    android:onClick="@{handler.onFinishClick}"
+                    android:src="@drawable/red_use" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sred_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/title_bar"
+            android:background="@color/red"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/top_bg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_gap_800"
+                android:background="@drawable/red_bg"
+                android:clipChildren="false">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/head"
+                    android:layout_width="@dimen/default_gap_200"
+                    android:layout_height="@dimen/default_gap_200"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/default_gap_120"
+                    app:riv_border_color="@color/white" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/head"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/default_gap_50"
+                    android:text="@{data.name}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_size_40" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/default_gap_50"
+                    android:gravity="center_horizontal"
+                    android:text="@string/red_remind"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_size_30" />
+
+            </RelativeLayout>
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/top_bg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-50dip"
+                android:layout_marginTop="@dimen/default_gap_20"
+                android:background="@null"
+                android:onClick="@{handler.onRedClick}"
+                android:src="@drawable/red_open" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

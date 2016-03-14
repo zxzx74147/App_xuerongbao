@@ -31,4 +31,7 @@ public class NetworkConfig {
 
     public static final String ADDRESS_MALL_LIST = "mall/list";
     public static final String ADDRESS_MALL_BUY = "mall/buy";
+
+    public static final String ADDRESS_SYS_SRED = "app/sred";
+    public static final String ADDRESS_SYS_RED = "app/red";
 }

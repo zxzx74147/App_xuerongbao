@@ -250,5 +250,9 @@
     <string name="four_star">****</string>
     <string name="feedback_hint">亲，您遇到什么问题啦？或者有什么好的建议给我们吗？欢迎提给我们！</string>
     <string name="feedback_submit">提交反馈</string>
+    <string name="red">红包</string>
+    <string name="red_remind">学融宝抢红包活动限时开始\n赶快试试你的手气</string>
+    <string name="red_free_money">免费额度</string>
+    <string name="red_free_money_remind">可在福利贷中使用，赶快试试吧！</string>
 
 </resources>

@@ -37,5 +37,4 @@ dependencies {
     compile project(':OneSDK')
     compile 'com.github.citux:datetimepicker:0.2.0'
     compile 'com.eftimoff:android-patternview:1.0.5@aar'
-    compile files('libs/photoview.jar')
 }
