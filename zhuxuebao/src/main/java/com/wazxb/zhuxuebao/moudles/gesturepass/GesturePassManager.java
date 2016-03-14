@@ -27,15 +27,19 @@ public class GesturePassManager {
 
     public void onEvent(String event) {
         if (EventBusConfig.EVENT_FRONT_BACK_CHANGED.equals(event)) {
-            String mPass = AccountManager.sharedInstance().getPassword();
-            if (!ZXStringUtil.checkString(mPass)) {
-                return;
-            }
-            boolean isBackGround = ActivityStateManager.sharedInstance().getIsBackGround();
-            Activity activity = ActivityStateManager.sharedInstance().getTopActivity();
-            if (!isBackGround && activity != null) {
-                ZXActivityJumpHelper.startActivity(activity, GesturePassrwordActivity.class,GesturePassrwordActivity.MODE_CHECK);
-            }
+            checkPass();
+        }
+    }
+
+    public void checkPass(){
+        String mPass = AccountManager.sharedInstance().getPassword();
+        if (!ZXStringUtil.checkString(mPass)) {
+            return;
+        }
+        boolean isBackGround = ActivityStateManager.sharedInstance().getIsBackGround();
+        Activity activity = ActivityStateManager.sharedInstance().getTopActivity();
+        if (!isBackGround && activity != null) {
+            ZXActivityJumpHelper.startActivity(activity, GesturePassrwordActivity.class,GesturePassrwordActivity.MODE_CHECK);
         }
     }
 }

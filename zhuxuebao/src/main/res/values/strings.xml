@@ -257,5 +257,10 @@
     <string name="sign">签到</string>
     <string name="credit_amount">信用额度</string>
     <string name="calculate">费率计算</string>
+    <string name="pass_second_error">与上次绘制不一致，请重新绘制</string>
+    <string name="pass_second">再次绘制解锁图案</string>
+    <string name="pass_succ">设置成功</string>
+    <string name="pass_error">密码错误，还可输入%d次</string>
+    <string name="pass_check_succ">解锁成功</string>
 
 </resources>

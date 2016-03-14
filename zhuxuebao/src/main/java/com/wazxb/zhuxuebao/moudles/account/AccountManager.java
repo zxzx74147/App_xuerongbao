@@ -1,6 +1,7 @@
 package com.wazxb.zhuxuebao.moudles.account;
 
 import com.wazxb.zhuxuebao.EventBusConfig;
+import com.wazxb.zhuxuebao.moudles.gesturepass.GesturePassManager;
 import com.wazxb.zhuxuebao.network.NetworkConfig;
 import com.wazxb.zhuxuebao.network.ZXBHttpRequest;
 import com.wazxb.zhuxuebao.storage.StorageManager;
@@ -75,6 +76,12 @@ public class AccountManager {
         mUserAllData = data;
         StorageManager.sharedInstance().saveKVObjectAsync(SP_KEY_USER_ALL_DATA, mUserAllData);
         EventBus.getDefault().post(EventBusConfig.EVENT_FRESH_USER_DATA);
+        if (mUserAllData != null && mUserAllData.user != null) {
+            if (mPass == null || !mPass.equals(mUserAllData.user.gesture)) {
+                setPassword(mUserAllData.user.gesture);
+                GesturePassManager.sharedInstance().checkPass();
+            }
+        }
     }
 
     public void setCalData(CalculatorData data) {
