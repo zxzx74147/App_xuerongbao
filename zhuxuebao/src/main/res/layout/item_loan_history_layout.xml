@@ -7,7 +7,7 @@
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.LoanHisData" />
+            type="com.wazxb.xuerongbao.storage.data.LoanHisData" />
     </data>
 
     <LinearLayout

@@ -6,11 +6,11 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseFragment1" />
+            type="com.wazxb.xuerongbao.moudles.credit.CreditBaseFragment1" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserCdData" />
+            type="com.wazxb.xuerongbao.storage.data.UserCdData" />
     </data>
 
     <ScrollView
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/name_layout"
                     android:layout_width="0dip"
                     android:layout_height="@dimen/size_input_layout"
@@ -42,7 +42,7 @@
                     app:not_null="true"
                     app:post_key="@string/name_post_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/sex_layout"
                     android:layout_width="0dip"
                     android:layout_height="@dimen/size_input_layout"
@@ -73,7 +73,7 @@
             <!--app:not_null="true" />-->
 
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/id_number_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -88,7 +88,7 @@
                 app:not_null="true"
                 app:post_key="@string/id_number_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/birthday_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -124,7 +124,7 @@
                     android:text="@string/id_photo"
                     android:textSize="@dimen/text_size_normal" />
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
@@ -134,9 +134,9 @@
                     app:img_url="@{data.pIDFPic}">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
@@ -146,11 +146,11 @@
                     app:img_url="@{data.pIDBPic}">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
             </LinearLayout>
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/account_address_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"

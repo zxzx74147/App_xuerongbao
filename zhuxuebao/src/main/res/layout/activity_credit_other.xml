@@ -4,16 +4,16 @@
 
     <data>
 
-        <import type="com.wazxb.zhuxuebao.util.ZXBDataBindingUtil" />
+        <import type="com.wazxb.xuerongbao.util.ZXBDataBindingUtil" />
 
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.credit.CreditOtherActivity" />
+            type="com.wazxb.xuerongbao.moudles.credit.CreditOtherActivity" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserLifeData" />
+            type="com.wazxb.xuerongbao.storage.data.UserLifeData" />
     </data>
 
     <LinearLayout
@@ -68,7 +68,7 @@
                         android:text="@string/mobile_telecom_carrier"
                         android:textSize="@dimen/text_size_normal" />
 
-                    <com.wazxb.zhuxuebao.widget.UploadImageView
+                    <com.wazxb.xuerongbao.widget.UploadImageView
                         android:layout_width="@dimen/default_gap_202"
                         android:layout_height="@dimen/default_gap_148"
                         android:layout_marginRight="@dimen/default_gap_30"
@@ -105,7 +105,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
 
-                        <com.wazxb.zhuxuebao.widget.UploadImageView
+                        <com.wazxb.xuerongbao.widget.UploadImageView
                             android:id="@+id/bank_1"
                             android:layout_width="@dimen/default_gap_202"
                             android:layout_height="@dimen/default_gap_148"
@@ -115,7 +115,7 @@
                             app:img_post_key="bankPics"
                             app:img_url="@{ZXBDataBindingUtil.splitUrl(data.bankPics,0)}" />
 
-                        <com.wazxb.zhuxuebao.widget.UploadImageView
+                        <com.wazxb.xuerongbao.widget.UploadImageView
                             android:id="@+id/bank_2"
                             android:layout_width="@dimen/default_gap_202"
                             android:layout_height="@dimen/default_gap_148"
@@ -125,7 +125,7 @@
                             app:img_post_key="bankPics"
                             app:img_url="@{ZXBDataBindingUtil.splitUrl(data.bankPics,1)}" />
 
-                        <com.wazxb.zhuxuebao.widget.UploadImageView
+                        <com.wazxb.xuerongbao.widget.UploadImageView
                             android:id="@+id/bank_3"
                             android:layout_width="@dimen/default_gap_202"
                             android:layout_height="@dimen/default_gap_148"
@@ -153,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.wazxb.zhuxuebao.widget.InputTextView
+                    <com.wazxb.xuerongbao.widget.InputTextView
                         android:id="@+id/teacher1_name_layout"
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
@@ -167,7 +167,7 @@
                         app:not_null="true"
                         app:post_key="@string/teacher1_name_post_key" />
 
-                    <com.wazxb.zhuxuebao.widget.InputTextView
+                    <com.wazxb.xuerongbao.widget.InputTextView
                         android:id="@+id/teacher1_sex_layout"
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
@@ -184,7 +184,7 @@
                         app:post_key="@string/teacher1_sex_post_key" />
                 </LinearLayout>
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/teacher1_phone_num_id"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -203,7 +203,7 @@
                     app:pick_type="phone"
                     app:post_key="@string/teacher1_phone_post_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/teacher1_duty_id"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -230,7 +230,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.wazxb.zhuxuebao.widget.InputTextView
+                    <com.wazxb.xuerongbao.widget.InputTextView
                         android:id="@+id/teacher2_name_layout"
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
@@ -244,7 +244,7 @@
                         app:not_null="true"
                         app:post_key="@string/teacher2_name_post_key" />
 
-                    <com.wazxb.zhuxuebao.widget.InputTextView
+                    <com.wazxb.xuerongbao.widget.InputTextView
                         app:input_sex="@{data.tbSex}"
                         android:id="@+id/teacher2_sex_layout"
                         android:layout_width="0dip"
@@ -261,7 +261,7 @@
                         app:post_key="@string/teacher2_sex_post_key" />
                 </LinearLayout>
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/teacher2_phone_num_id"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -279,7 +279,7 @@
                     app:pick_type="phone"
                     app:post_key="@string/teacher2_phone_post_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/teacher2_duty_id"
                     android:layout_width="match_parent"
                     app:input_edit_text="@{data.tbDuty}"

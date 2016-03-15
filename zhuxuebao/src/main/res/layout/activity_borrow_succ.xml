@@ -8,7 +8,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.borrow.BorrowSuccActivity" />
+            type="com.wazxb.xuerongbao.moudles.borrow.BorrowSuccActivity" />
 
 
     </data>

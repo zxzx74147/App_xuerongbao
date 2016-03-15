@@ -11,7 +11,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.wazxb.zhuxuebao.R;
+import com.wazxb.xuerongbao.R;
 
 import java.util.List;
 import java.util.Timer;

@@ -6,12 +6,12 @@
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+            type="com.wazxb.xuerongbao.storage.data.UserBaseData" />
 
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.personal.BindCradActivity" />
+            type="com.wazxb.xuerongbao.moudles.personal.BindCradActivity" />
     </data>
 
     <LinearLayout
@@ -27,7 +27,7 @@
             android:layout_height="@dimen/default_gap_110"
             app:text="@string/bind_bank_card" />
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
             android:layout_marginBottom="@dimen/default_gap_20"
@@ -39,7 +39,7 @@
             app:not_null="true"
             app:post_key="@string/bind_bank_card_num_post_key" />
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
             android:layout_marginBottom="@dimen/default_gap_20"
@@ -53,7 +53,7 @@
             app:input_right_drawable="@drawable/user_gray_right_arrow"
             app:post_key="@string/bind_bank_post_key" />
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
             android:layout_marginBottom="@dimen/default_gap_20"

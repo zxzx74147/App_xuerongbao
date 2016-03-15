@@ -6,11 +6,11 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.calculate.CaculateFragment" />
+            type="com.wazxb.xuerongbao.moudles.calculate.CaculateFragment" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.ProdData" />
+            type="com.wazxb.xuerongbao.storage.data.ProdData" />
     </data>
 
 
@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.wazxb.zhuxuebao.widget.CashView
+        <com.wazxb.xuerongbao.widget.CashView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"

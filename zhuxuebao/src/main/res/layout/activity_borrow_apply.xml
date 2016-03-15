@@ -6,15 +6,15 @@
 
         <import type="android.view.View" />
 
-        <import type="com.wazxb.zhuxuebao.moudles.borrow.BorrowConfig" />
+        <import type="com.wazxb.xuerongbao.moudles.borrow.BorrowConfig" />
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.borrow.BorrowApplyActivity" />
+            type="com.wazxb.xuerongbao.moudles.borrow.BorrowApplyActivity" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.BorrowRequestData" />
+            type="com.wazxb.xuerongbao.storage.data.BorrowRequestData" />
 
 
     </data>
@@ -266,7 +266,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
                     android:layout_marginLeft="@dimen/default_gap_20"
@@ -278,7 +278,7 @@
                     app:not_null="true"
                     app:post_key="@string/borrow_use_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
                     android:layout_marginLeft="@dimen/default_gap_20"

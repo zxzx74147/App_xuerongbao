@@ -6,16 +6,16 @@
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+            type="com.wazxb.xuerongbao.storage.data.UserBaseData" />
 
         <variable
             name="reddata"
-            type="com.wazxb.zhuxuebao.storage.data.RedData" />
+            type="com.wazxb.xuerongbao.storage.data.RedData" />
 
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.red.RedActivity" />
+            type="com.wazxb.xuerongbao.moudles.red.RedActivity" />
     </data>
 
     <RelativeLayout

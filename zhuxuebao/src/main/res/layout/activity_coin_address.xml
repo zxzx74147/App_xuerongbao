@@ -6,7 +6,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.coin.CoinAddressActivity" />
+            type="com.wazxb.xuerongbao.moudles.coin.CoinAddressActivity" />
 
 
     </data>
@@ -28,7 +28,7 @@
                 android:layout_height="@dimen/default_gap_110"
                 app:text="@string/add_new_addr" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/phone_num_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -43,7 +43,7 @@
                 app:not_null="true"
                 app:post_key="@string/phone_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
                 android:layout_marginLeft="@dimen/default_gap_20"
@@ -54,7 +54,7 @@
                 app:not_null="true"
                 app:post_key="@string/consignee_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
                 android:layout_marginLeft="@dimen/default_gap_20"

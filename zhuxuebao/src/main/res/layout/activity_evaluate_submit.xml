@@ -6,7 +6,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.evaluate.EvaluateSubmitActivity" />
+            type="com.wazxb.xuerongbao.moudles.evaluate.EvaluateSubmitActivity" />
     </data>
 
     <LinearLayout

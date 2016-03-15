@@ -6,12 +6,12 @@
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.InitData" />
+            type="com.wazxb.xuerongbao.storage.data.InitData" />
 
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.more.AboutActivity" />
+            type="com.wazxb.xuerongbao.moudles.more.AboutActivity" />
     </data>
 
     <LinearLayout

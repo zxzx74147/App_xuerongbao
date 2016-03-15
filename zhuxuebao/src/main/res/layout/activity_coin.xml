@@ -6,16 +6,16 @@
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+            type="com.wazxb.xuerongbao.storage.data.UserBaseData" />
 
         <variable
             name="coindata"
-            type="com.wazxb.zhuxuebao.storage.data.CoinData" />
+            type="com.wazxb.xuerongbao.storage.data.CoinData" />
 
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.coin.CoinActivity" />
+            type="com.wazxb.xuerongbao.moudles.coin.CoinActivity" />
     </data>
 
     <LinearLayout

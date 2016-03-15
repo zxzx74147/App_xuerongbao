@@ -6,11 +6,11 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseFragment2" />
+            type="com.wazxb.xuerongbao.moudles.credit.CreditBaseFragment2" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserCdData" />
+            type="com.wazxb.xuerongbao.storage.data.UserCdData" />
     </data>
 
     <ScrollView
@@ -23,7 +23,7 @@
             android:background="@color/view_default_bg_grey"
             android:orientation="vertical">
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/mail_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -37,7 +37,7 @@
                 app:not_null="true"
                 app:post_key="@string/mail_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/wechat_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -52,7 +52,7 @@
                 app:not_null="true"
                 app:post_key="@string/wechat_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/qq_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -67,7 +67,7 @@
                 app:not_null="true"
                 app:post_key="@string/qq_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/weibo_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"

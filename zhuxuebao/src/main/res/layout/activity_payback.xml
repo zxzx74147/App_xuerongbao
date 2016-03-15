@@ -8,7 +8,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.payback.PaybackActivity" />
+            type="com.wazxb.xuerongbao.moudles.payback.PaybackActivity" />
 
 
     </data>

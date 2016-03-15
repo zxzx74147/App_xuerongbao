@@ -6,7 +6,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.more.MoreFragment" />
+            type="com.wazxb.xuerongbao.moudles.more.MoreFragment" />
     </data>
 
     <ScrollView
@@ -32,7 +32,7 @@
                 android:layout_marginTop="@dimen/default_gap_20"
                 android:src="@color/info_divider" />
 
-            <com.wazxb.zhuxuebao.widget.InfoTextView
+            <com.wazxb.xuerongbao.widget.InfoTextView
                 android:id="@+id/about_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
                 android:paddingLeft="@dimen/default_gap_30"
                 android:src="@color/info_divider" />
 
-            <com.wazxb.zhuxuebao.widget.InfoTextView
+            <com.wazxb.xuerongbao.widget.InfoTextView
                 android:id="@+id/feedback_id"
                 android:layout_width="match_parent"
                 android:onClick="@{handler.onFeedBackClick}"
@@ -60,7 +60,7 @@
                 android:paddingLeft="@dimen/default_gap_30"
                 android:src="@color/info_divider" />
 
-            <com.wazxb.zhuxuebao.widget.InfoTextView
+            <com.wazxb.xuerongbao.widget.InfoTextView
                 android:id="@+id/contact_us_id"
                 android:onClick="@{handler.onContractClick}"
                 android:layout_width="match_parent"
@@ -80,7 +80,7 @@
                 android:layout_marginTop="@dimen/default_gap_20"
                 android:src="@color/info_divider" />
 
-            <com.wazxb.zhuxuebao.widget.InfoTextView
+            <com.wazxb.xuerongbao.widget.InfoTextView
                 android:id="@+id/update_id"
                 android:layout_width="match_parent"
                 android:onClick="@{handler.onUpdateClick}"
@@ -94,7 +94,7 @@
                 android:paddingLeft="@dimen/default_gap_30"
                 android:src="@color/info_divider" />
 
-            <com.wazxb.zhuxuebao.widget.InfoTextView
+            <com.wazxb.xuerongbao.widget.InfoTextView
                 android:id="@+id/clear_cache_id"
                 android:onClick="@{handler.onClearCacheClick}"
                 android:layout_width="match_parent"
@@ -114,7 +114,7 @@
                 android:background="@color/white"
                 android:src="@color/info_divider" />
 
-            <com.wazxb.zhuxuebao.widget.InfoTextView
+            <com.wazxb.xuerongbao.widget.InfoTextView
                 android:id="@+id/green_hand_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,7 +128,7 @@
                 android:paddingLeft="@dimen/default_gap_30"
                 android:src="@color/info_divider" />
 
-            <com.wazxb.zhuxuebao.widget.InfoTextView
+            <com.wazxb.xuerongbao.widget.InfoTextView
                 android:id="@+id/help_id"
                 android:layout_width="match_parent"
                 android:onClick="@{handler.onHelpClick}"

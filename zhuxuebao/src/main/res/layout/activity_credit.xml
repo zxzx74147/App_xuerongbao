@@ -6,11 +6,11 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.credit.CreditActivity" />
+            type="com.wazxb.xuerongbao.moudles.credit.CreditActivity" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserAllData" />
+            type="com.wazxb.xuerongbao.storage.data.UserAllData" />
     </data>
 
     <LinearLayout

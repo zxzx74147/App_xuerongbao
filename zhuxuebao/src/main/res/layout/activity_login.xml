@@ -6,7 +6,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.account.LoginActivity" />
+            type="com.wazxb.xuerongbao.moudles.account.LoginActivity" />
     </data>
 
     <LinearLayout
@@ -22,7 +22,7 @@
             app:right_text="@string/register"
             app:text="@string/login" />
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:id="@+id/phone_num_id"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
@@ -38,7 +38,7 @@
             app:post_key="@string/phone_post_key"
             app:show_not_null="false" />
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:id="@+id/password_id"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"

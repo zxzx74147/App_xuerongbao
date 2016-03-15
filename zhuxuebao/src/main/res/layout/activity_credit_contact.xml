@@ -6,11 +6,11 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.credit.CreditContactActivity" />
+            type="com.wazxb.xuerongbao.moudles.credit.CreditContactActivity" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserSchoolData" />
+            type="com.wazxb.xuerongbao.storage.data.UserSchoolData" />
     </data>
 
     <LinearLayout
@@ -53,7 +53,7 @@
                     android:textColor="@color/text_color_black"
                     android:textSize="@dimen/default_gap_20" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/father_company_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -65,7 +65,7 @@
                     app:not_null="true"
                     app:post_key="@string/father_company_post_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/father_company_address_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -79,7 +79,7 @@
                     app:post_key="@string/father_company_address_post_key" />
 
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/father_duty_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -100,7 +100,7 @@
                     android:textColor="@color/text_color_black"
                     android:textSize="@dimen/default_gap_20" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/mothor_company_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -112,7 +112,7 @@
                     app:not_null="true"
                     app:post_key="@string/mother_company_post_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/mother_company_address_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -126,7 +126,7 @@
                     app:post_key="@string/mother_company_address_post_key" />
 
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/mother_duty_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -139,7 +139,7 @@
                     app:not_null="true"
                     app:post_key="@string/mother_duty_post_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/address_layout"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -165,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.wazxb.zhuxuebao.widget.InputTextView
+                    <com.wazxb.xuerongbao.widget.InputTextView
                         android:id="@+id/mate1_name_layout"
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
@@ -179,7 +179,7 @@
                         app:not_null="true"
                         app:post_key="@string/mate1_name_post_key" />
 
-                    <com.wazxb.zhuxuebao.widget.InputTextView
+                    <com.wazxb.xuerongbao.widget.InputTextView
                         android:id="@+id/mate1_sex_layout"
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
@@ -196,7 +196,7 @@
                         app:post_key="@string/mate1_sex_post_key" />
                 </LinearLayout>
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/mate1_phone_num_id"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -214,7 +214,7 @@
                     app:pick_type="phone"
                     app:post_key="@string/mate1_phone_post_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/mate1_address_num_id"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -242,7 +242,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <com.wazxb.zhuxuebao.widget.InputTextView
+                    <com.wazxb.xuerongbao.widget.InputTextView
                         android:id="@+id/mate2_name_layout"
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
@@ -256,7 +256,7 @@
                         app:not_null="true"
                         app:post_key="@string/mate2_name_post_key" />
 
-                    <com.wazxb.zhuxuebao.widget.InputTextView
+                    <com.wazxb.xuerongbao.widget.InputTextView
                         android:id="@+id/mate2_sex_layout"
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
@@ -273,7 +273,7 @@
                         app:post_key="@string/mate2_sex_post_key" />
                 </LinearLayout>
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/mate2_phone_num_id"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -291,7 +291,7 @@
                     app:pick_type="phone"
                     app:post_key="@string/mate2_phone_post_key" />
 
-                <com.wazxb.zhuxuebao.widget.InputTextView
+                <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/mate2_address_num_id"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_input_layout"
@@ -334,7 +334,7 @@
                         android:text="@string/hold_id_photo"
                         android:textSize="@dimen/text_size_normal" />
 
-                    <com.wazxb.zhuxuebao.widget.UploadImageView
+                    <com.wazxb.xuerongbao.widget.UploadImageView
                         android:layout_width="@dimen/default_gap_202"
                         android:layout_height="@dimen/default_gap_148"
                         android:layout_marginRight="@dimen/default_gap_30"
@@ -367,7 +367,7 @@
                         android:text="@string/admission_photo"
                         android:textSize="@dimen/text_size_normal" />
 
-                    <com.wazxb.zhuxuebao.widget.UploadImageView
+                    <com.wazxb.xuerongbao.widget.UploadImageView
                         android:layout_width="@dimen/default_gap_202"
                         android:layout_height="@dimen/default_gap_148"
                         android:layout_marginRight="@dimen/default_gap_30"

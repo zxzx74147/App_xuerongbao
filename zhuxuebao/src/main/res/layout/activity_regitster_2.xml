@@ -5,7 +5,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.account.RegitsterActivity" />
+            type="com.wazxb.xuerongbao.moudles.account.RegitsterActivity" />
     </data>
 
     <ScrollView
@@ -220,14 +220,14 @@
                     android:text="@string/student_id_photo"
                     android:textSize="@dimen/text_size_normal" />
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
                     android:background="@color/white">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
             </LinearLayout>
 
@@ -253,23 +253,23 @@
                     android:text="@string/one_card_photo"
                     android:textSize="@dimen/text_size_normal" />
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
                     android:background="@color/white">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
                     android:background="@color/white">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
             </LinearLayout>
         </LinearLayout>

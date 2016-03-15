@@ -6,11 +6,11 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.credit.CreditFamilyActivity" />
+            type="com.wazxb.xuerongbao.moudles.credit.CreditFamilyActivity" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserHomeData" />
+            type="com.wazxb.xuerongbao.storage.data.UserHomeData" />
     </data>
 
     <LinearLayout
@@ -37,7 +37,7 @@
             android:textSize="@dimen/default_size_15" />
 
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:id="@+id/father_name_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
@@ -50,7 +50,7 @@
             app:not_null="true"
             app:post_key="@string/father_name_post_key" />
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:id="@+id/father_phone_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
@@ -65,7 +65,7 @@
             app:pick_type="phone"
             app:post_key="@string/father_phone_post_key" />
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:id="@+id/mother_name_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
@@ -78,7 +78,7 @@
             app:not_null="true"
             app:post_key="@string/mother_name_post_key" />
 
-        <com.wazxb.zhuxuebao.widget.InputTextView
+        <com.wazxb.xuerongbao.widget.InputTextView
             android:id="@+id/mother_phone_layout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"

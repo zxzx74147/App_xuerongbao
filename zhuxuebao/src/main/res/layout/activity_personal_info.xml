@@ -4,16 +4,16 @@
 
     <data>
 
-        <import type="com.wazxb.zhuxuebao.util.ZXBStringUtil" />
+        <import type="com.wazxb.xuerongbao.util.ZXBStringUtil" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+            type="com.wazxb.xuerongbao.storage.data.UserBaseData" />
 
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.personal.PersonalInfoActivity" />
+            type="com.wazxb.xuerongbao.moudles.personal.PersonalInfoActivity" />
     </data>
 
     <LinearLayout
@@ -78,7 +78,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/name_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/account_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,7 +108,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/quota_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/beans_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/quotatotal_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
             android:background="@color/white"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/ge_pass_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -175,7 +175,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/change_ge_pass_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

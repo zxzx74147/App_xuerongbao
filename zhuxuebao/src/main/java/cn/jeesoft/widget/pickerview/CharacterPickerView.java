@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.wazxb.zhuxuebao.R;
+import com.wazxb.xuerongbao.R;
 
 import java.util.List;
 

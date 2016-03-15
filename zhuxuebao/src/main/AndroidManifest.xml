@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wazxb.zhuxuebao">
+    package="com.wazxb.xuerongbao">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,7 +20,7 @@
     <uses-permission android:name="android.permission.CHANGEWIFISTATE" />
 
     <application
-        android:name=".ZXBApplication"
+        android:name="com.wazxb.xuerongbao.ZXBApplication"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
@@ -43,7 +43,7 @@
 
 
         <activity
-            android:name=".MainTabActivity"
+            android:name="com.wazxb.xuerongbao.MainTabActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask">
             <intent-filter>
@@ -53,74 +53,74 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".moudles.account.LoginActivity"
+            android:name="com.wazxb.xuerongbao.moudles.account.LoginActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.account.RegitsterActivity"
+            android:name="com.wazxb.xuerongbao.moudles.account.RegitsterActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.account.FindPasswordActivity"
+            android:name="com.wazxb.xuerongbao.moudles.account.FindPasswordActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.account.ChangePasswordActivity"
+            android:name="com.wazxb.xuerongbao.moudles.account.ChangePasswordActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".moudles.LogoActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.LogoActivity" />
         <activity
-            android:name=".moudles.credit.CreditBaseActivity"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".moudles.credit.CreditActivity"
+            android:name="com.wazxb.xuerongbao.moudles.credit.CreditBaseActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.credit.CreditFamilyActivity"
+            android:name="com.wazxb.xuerongbao.moudles.credit.CreditActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.credit.CreditContactActivity"
+            android:name="com.wazxb.xuerongbao.moudles.credit.CreditFamilyActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.credit.CreditOtherActivity"
+            android:name="com.wazxb.xuerongbao.moudles.credit.CreditContactActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.personal.PersonalInfoActivity"
-            android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".moudles.gesturepass.GesturePasswordActivity" />
-        <activity
-            android:name=".moudles.borrow.BorrowActivity"
-            android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".moudles.more.AboutActivity" />
-        <activity android:name=".moudles.calculate.CaculateActivity" />
-        <activity
-            android:name=".moudles.borrow.BorrowApplyActivity"
+            android:name="com.wazxb.xuerongbao.moudles.credit.CreditOtherActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.borrow.BorrowSuccActivity"
+            android:name="com.wazxb.xuerongbao.moudles.personal.PersonalInfoActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".moudles.payback.PaybackActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.gesturepass.GesturePasswordActivity" />
         <activity
-            android:name=".moudles.personal.BindCradActivity"
+            android:name="com.wazxb.xuerongbao.moudles.borrow.BorrowActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.more.AboutActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.calculate.CaculateActivity" />
+        <activity
+            android:name="com.wazxb.xuerongbao.moudles.borrow.BorrowApplyActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.wazxb.xuerongbao.moudles.borrow.BorrowSuccActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.payback.PaybackActivity" />
+        <activity
+            android:name="com.wazxb.xuerongbao.moudles.personal.BindCradActivity"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".moudles.payback.PaybackDetailActivity"
+            android:name="com.wazxb.xuerongbao.moudles.payback.PaybackDetailActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".moudles.evaluate.EvaluateActivity" />
-        <activity android:name=".moudles.coin.CoinGiftActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.evaluate.EvaluateActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.coin.CoinGiftActivity" />
         <activity
-            android:name=".moudles.coin.CoinAddressActivity"
+            android:name="com.wazxb.xuerongbao.moudles.coin.CoinAddressActivity"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".moudles.evaluate.EvaluateSubmitActivity"
+            android:name="com.wazxb.xuerongbao.moudles.evaluate.EvaluateSubmitActivity"
             android:windowSoftInputMode="adjustNothing" />
-        <activity android:name=".moudles.message.MessageListActivity" />
-        <activity android:name=".moudles.personal.BindCardShowActivity" />
-        <activity android:name=".moudles.more.FeedbackActivity" />
-        <activity android:name=".moudles.more.ContractActivity" />
-        <activity android:name=".common.portrait.EditPortraitActivity" />
-        <activity android:name=".common.webview.CommonWebActivity" />
-        <activity android:name=".moudles.history.HistoryActivity" />
-        <activity android:name=".moudles.red.RedActivity" />
-        <activity android:name=".moudles.coin.CoinActivity" />
-        <activity android:name=".moudles.gesturepass.GestureActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.message.MessageListActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.personal.BindCardShowActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.more.FeedbackActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.more.ContractActivity" />
+        <activity android:name="com.wazxb.xuerongbao.common.portrait.EditPortraitActivity" />
+        <activity android:name="com.wazxb.xuerongbao.common.webview.CommonWebActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.history.HistoryActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.red.RedActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.coin.CoinActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.gesturepass.GestureActivity" />
 
 
         <!--分享-->

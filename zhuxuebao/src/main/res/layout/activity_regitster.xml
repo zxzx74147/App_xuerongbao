@@ -6,7 +6,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.account.RegitsterActivity" />
+            type="com.wazxb.xuerongbao.moudles.account.RegitsterActivity" />
     </data>
 
     <LinearLayout

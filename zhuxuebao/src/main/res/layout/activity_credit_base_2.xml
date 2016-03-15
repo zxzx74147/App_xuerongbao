@@ -6,12 +6,12 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.credit.CreditBaseFragment2" />
+            type="com.wazxb.xuerongbao.moudles.credit.CreditBaseFragment2" />
 
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserCdData" />
+            type="com.wazxb.xuerongbao.storage.data.UserCdData" />
     </data>
 
 
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/school_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -39,7 +39,7 @@
                 app:not_null="true"
                 app:post_key="@string/school_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/college_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -53,7 +53,7 @@
                 app:not_null="true"
                 app:post_key="@string/college_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/major_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -67,7 +67,7 @@
                 app:not_null="true"
                 app:post_key="@string/major_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/degree_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -81,7 +81,7 @@
                 app:not_null="true"
                 app:post_key="@string/degree_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/enrollment_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -97,7 +97,7 @@
                 app:post_key="@string/enrollment_post_key" />
 
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/student_num_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -111,7 +111,7 @@
                 app:not_null="true"
                 app:post_key="@string/student_num_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/collage_class_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -125,7 +125,7 @@
                 app:not_null="true"
                 app:post_key="@string/collage_class_post_key" />
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/dorm_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"
@@ -160,7 +160,7 @@
                     android:text="@string/student_id_photo"
                     android:textSize="@dimen/text_size_normal" />
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
@@ -170,9 +170,9 @@
                     app:img_url="@{data.sIDAPic}">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
@@ -181,7 +181,7 @@
                     app:img_url="@{data.sIDBPic}">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
             </LinearLayout>
 
@@ -207,7 +207,7 @@
                     android:text="@string/one_card_photo"
                     android:textSize="@dimen/text_size_normal" />
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
@@ -217,9 +217,9 @@
                     app:img_url="@{data.sCardFPic}">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
@@ -229,7 +229,7 @@
                     app:img_url="@{data.sCardBPic}">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
             </LinearLayout>
 
@@ -280,7 +280,7 @@
                         android:textSize="@dimen/default_size_15" />
                 </RelativeLayout>
 
-                <com.wazxb.zhuxuebao.widget.UploadImageView
+                <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
                     android:layout_height="@dimen/default_gap_148"
                     android:layout_marginRight="@dimen/default_gap_30"
@@ -289,13 +289,13 @@
                     app:img_url="@{data.authenPic}">
 
 
-                </com.wazxb.zhuxuebao.widget.UploadImageView>
+                </com.wazxb.xuerongbao.widget.UploadImageView>
 
 
             </LinearLayout>
 
 
-            <com.wazxb.zhuxuebao.widget.InputTextView
+            <com.wazxb.xuerongbao.widget.InputTextView
                 android:id="@+id/hometown_id"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_input_layout"

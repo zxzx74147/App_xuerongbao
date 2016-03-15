@@ -8,7 +8,7 @@
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.MessageItemData" />
+            type="com.wazxb.xuerongbao.storage.data.MessageItemData" />
     </data>
 
     <RelativeLayout

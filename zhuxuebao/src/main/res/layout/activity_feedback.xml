@@ -6,7 +6,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.more.FeedbackActivity" />
+            type="com.wazxb.xuerongbao.moudles.more.FeedbackActivity" />
     </data>
 
     <LinearLayout

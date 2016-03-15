@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.wazxb.zhuxuebao.MainTabActivity" tools:showIn="@layout/activity_main_tab">
+    tools:context="com.wazxb.xuerongbao.MainTabActivity" tools:showIn="@layout/activity_main_tab">
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:text="Hello World!" />

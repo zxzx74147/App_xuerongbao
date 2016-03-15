@@ -6,12 +6,12 @@
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+            type="com.wazxb.xuerongbao.storage.data.UserBaseData" />
 
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.personal.BindCardShowActivity" />
+            type="com.wazxb.xuerongbao.moudles.personal.BindCardShowActivity" />
     </data>
 
     <LinearLayout

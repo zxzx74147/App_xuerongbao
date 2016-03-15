@@ -6,7 +6,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.home.HomeFragment" />
+            type="com.wazxb.xuerongbao.moudles.home.HomeFragment" />
     </data>
 
     <LinearLayout
@@ -171,7 +171,7 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/default_size_40" />
 
-                    <com.wazxb.zhuxuebao.widget.NumberView
+                    <com.wazxb.xuerongbao.widget.NumberView
                         android:id="@+id/credit_ceiling_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

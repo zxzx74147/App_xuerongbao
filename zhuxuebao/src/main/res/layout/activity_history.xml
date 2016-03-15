@@ -8,7 +8,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.history.HistoryActivity" />
+            type="com.wazxb.xuerongbao.moudles.history.HistoryActivity" />
 
 
     </data>

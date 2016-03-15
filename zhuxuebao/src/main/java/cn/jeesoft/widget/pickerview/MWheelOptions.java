@@ -2,7 +2,7 @@ package cn.jeesoft.widget.pickerview;
 
 import android.view.View;
 
-import com.wazxb.zhuxuebao.R;
+import com.wazxb.xuerongbao.R;
 
 import java.util.ArrayList;
 import java.util.List;

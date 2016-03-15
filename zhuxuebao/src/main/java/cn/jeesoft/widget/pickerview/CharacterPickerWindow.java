@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
-import com.wazxb.zhuxuebao.R;
+import com.wazxb.xuerongbao.R;
 
 import java.util.List;
 

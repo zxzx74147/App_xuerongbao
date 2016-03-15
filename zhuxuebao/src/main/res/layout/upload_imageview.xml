@@ -5,7 +5,7 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.widget.UploadImageView" />
+            type="com.wazxb.xuerongbao.widget.UploadImageView" />
     </data>
 
     <merge

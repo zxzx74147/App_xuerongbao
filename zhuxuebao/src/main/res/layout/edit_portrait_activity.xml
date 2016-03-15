@@ -18,7 +18,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/title_bar">
 
-        <com.wazxb.zhuxuebao.common.portrait.widget.RectSelectImageView
+        <com.wazxb.xuerongbao.common.portrait.widget.RectSelectImageView
             android:id="@+id/photo_editor"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

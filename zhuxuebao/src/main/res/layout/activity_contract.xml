@@ -6,12 +6,12 @@
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.InitData" />
+            type="com.wazxb.xuerongbao.storage.data.InitData" />
 
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.more.ContractActivity" />
+            type="com.wazxb.xuerongbao.moudles.more.ContractActivity" />
     </data>
 
     <LinearLayout
@@ -28,7 +28,7 @@
             app:text="@string/contact_us" />
 
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_gap_20"
@@ -43,7 +43,7 @@
             android:src="@color/info_divider" />
 
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:info_edit_text="@{data.contact.qq}"
@@ -56,7 +56,7 @@
             android:background="@color/white"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:info_edit_text="@{data.contact.tele}"

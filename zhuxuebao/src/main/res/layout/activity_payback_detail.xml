@@ -10,16 +10,16 @@
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.payback.PaybackDetailActivity" />
+            type="com.wazxb.xuerongbao.moudles.payback.PaybackDetailActivity" />
 
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.ReturnWayData" />
+            type="com.wazxb.xuerongbao.storage.data.ReturnWayData" />
 
         <variable
             name="loanData"
-            type="com.wazxb.zhuxuebao.storage.data.LoanItemData" />
+            type="com.wazxb.xuerongbao.storage.data.LoanItemData" />
 
 
     </data>

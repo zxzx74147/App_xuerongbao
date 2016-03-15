@@ -4,15 +4,15 @@
 
     <data>
 
-        <import type="com.wazxb.zhuxuebao.moudles.message.MessageManager" />
+        <import type="com.wazxb.xuerongbao.moudles.message.MessageManager" />
 
         <variable
             name="handler"
-            type="com.wazxb.zhuxuebao.moudles.personal.PersonalFragment" />
+            type="com.wazxb.xuerongbao.moudles.personal.PersonalFragment" />
 
         <variable
             name="data"
-            type="com.wazxb.zhuxuebao.storage.data.UserBaseData" />
+            type="com.wazxb.xuerongbao.storage.data.UserBaseData" />
 
     </data>
 
@@ -70,7 +70,7 @@
 
         </RelativeLayout>
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/bank_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/gold_coin_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,7 +101,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/my_message_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
             android:paddingLeft="@dimen/default_gap_30"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/history_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
             android:background="@color/white"
             android:src="@color/info_divider" />
 
-        <com.wazxb.zhuxuebao.widget.InfoTextView
+        <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/invite_friend_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
