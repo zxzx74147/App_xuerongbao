@@ -1,14 +1,19 @@
 package com.wazxb.xuerongbao.network.http;
 
 import android.os.Build;
+import android.os.Handler;
 
 import com.wazxb.xuerongbao.network.http.BdHttpStat.ExecuteStatus;
 import com.wazxb.xuerongbao.network.http.BdNetUtil.NetTpyeEnmu;
 import com.zxzx74147.devlib.utils.BdLog;
+import com.zxzx74147.devlib.utils.ZXFileUtil;
 
 import org.apache.http.HttpStatus;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
@@ -84,7 +89,7 @@ class BdHttpImpl2 {
     /**
      * 连接服务器, 获取连接
      *
-     * @param url         地址
+     * @param url 地址
      * @return HttpURLConnection null表示失败
      */
     private HttpURLConnection getConnect(URL url) {
@@ -382,6 +387,153 @@ class BdHttpImpl2 {
         } finally {
             BdCloseHelper.close(mConn);
         }
+    }
+
+
+    /**
+     * 下载文件
+     *
+     * @return true：成功； false：失败
+     */
+    @SuppressWarnings("resource")
+    public boolean downloadFile(String name, Handler handler, int what, int readTimeout, int conntimeout) throws Exception {
+        InputStream in = null;
+        boolean ret = false;
+        long time = 0;
+        FileOutputStream fileStream = null;
+        try {
+            URL url = new URL(context.getRequest().getUrl());
+            mConn = getConnect(url);
+            if (mConn == null) {
+                throw new java.net.SocketException();
+            }
+            mConn.setConnectTimeout(conntimeout);
+            mConn.setReadTimeout(readTimeout);
+            mConn.setInstanceFollowRedirects(true);
+            if (context.getResponse().isCancel == true) {
+                return false;
+            }
+            time = new Date().getTime();
+
+            File file = ZXFileUtil.createFileIfNotFound(name);
+            if (file == null) {
+                throw new FileNotFoundException();
+            }
+            long file_length = file.length();
+            fileStream = new FileOutputStream(file, true);
+//			if (context.getRequest().mIsLimited == true) {
+//				mConn.addRequestProperty(
+//						"Range",
+//						"bytes=" + String.valueOf(file_length) + "-"
+//								+ String.valueOf(file_length + 200000));
+//			} else {
+            mConn.addRequestProperty("Range",
+                    "bytes=" + String.valueOf(file_length) + "-");
+//			}
+
+            mConn.connect();
+
+//            while(mConn.getResponseCode()==302){
+//                mConn.disconnect();
+//                context.getRequest().setUrl(mConn.getHeaderField("location"));
+//                mConn.connect();
+//            }
+
+            context.getResponse().responseCode = mConn.getResponseCode();
+            if (!isFileSegSuccess()) {
+                throw new UnsupportedOperationException();
+            }
+
+            /**
+             * 判断是否是移动的提示信息
+             */
+            if (mConn.getContentType().contains("text/vnd.wap.wml") == true) {
+                mConn.disconnect();
+                context.getResponse().responseCode = 0;
+                return downloadFile(name, handler, what, readTimeout, conntimeout);
+            }
+            int contentLen = 0;
+            String range = mConn.getHeaderField("Content-Range");
+            if (range != null) {
+                int index = range.indexOf("/");
+                if (index != -1) {
+                    contentLen = toInt(range.substring(index + 1), 0);
+                }
+            }
+            if (contentLen == 0
+                    && context.getResponse().responseCode == HttpStatus.SC_OK) {
+                String length = mConn.getHeaderField("Content-Length");
+                if (length != null) {
+                    contentLen = toInt(length, 0);
+                } else {
+                    length = mConn.getHeaderField("Accept-Length");
+                    if (length != null) {
+                        contentLen = toInt(length, 0);
+                    }
+                }
+            }
+            contentLen = contentLen == 0 ? 1 : contentLen;
+            if (file_length >= contentLen) {
+                return true;
+            }
+            in = mConn.getInputStream();
+            byte[] buf = new byte[BUFFERSIZE];
+            int num = -1;
+            int datalenth = 0;
+            int notify_num = 0;
+            if (contentLen > 0) {
+                notify_num = contentLen / 50;
+            }
+            int notify_tmp = 0;
+            if (handler != null && file_length > 0) {
+                handler.sendMessage(handler.obtainMessage(what,
+                        (int) file_length, contentLen));
+            }
+            while (context.getResponse().isCancel == false && (num = in.read(buf)) != -1) {
+                try {
+                    fileStream.write(buf, 0, num);
+                } catch (Exception ex) {
+                    throw new FileNotFoundException();
+                }
+                datalenth += num;
+                notify_tmp += num;
+                if (handler != null
+                        && (notify_tmp > notify_num || datalenth == contentLen)) {
+                    notify_tmp = 0;
+                    handler.sendMessage(handler.obtainMessage(what,
+                            (int) (datalenth + file_length), contentLen));
+                }
+            }
+            try {
+                fileStream.flush();
+            } catch (Exception ex) {
+                throw new FileNotFoundException();
+            }
+            time = new Date().getTime() - time;
+            BdLog.i("NetWork", "downloadFile",
+                    "time = " + String.valueOf(time) + "ms");
+            if (contentLen != -1) {
+                BdLog.i("NetWork", "downloadFile",
+                        "data.zise = " + String.valueOf(contentLen));
+            }
+            if (datalenth + file_length >= contentLen) {
+                ret = true;
+            }
+        } finally {
+            BdCloseHelper.close(in);
+            BdCloseHelper.close(mConn);
+            BdCloseHelper.close(fileStream);
+        }
+        return ret;
+    }
+
+    private int toInt(String length, int i) {
+        try {
+            return Integer.valueOf(length);
+        } catch (Exception e) {
+
+        }
+        return i;
     }
 
 }

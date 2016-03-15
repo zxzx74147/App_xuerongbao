@@ -283,4 +283,8 @@
     <string name="share_test">发个假的测试</string>
     <string name="share_tip">发送出去的信息60秒自动销毁</string>
     <string name="share_to">分享到</string>
+    <string name="font_has_download">已下载</string>
+    <string name="downloading">下载中</string>
+    <string name="yuan">元</string>
+    <string name="amount_total">总额度</string>
 </resources>

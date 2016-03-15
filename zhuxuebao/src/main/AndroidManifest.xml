@@ -121,6 +121,9 @@
         <activity android:name="com.wazxb.xuerongbao.moudles.red.RedActivity" />
         <activity android:name="com.wazxb.xuerongbao.moudles.coin.CoinActivity" />
         <activity android:name="com.wazxb.xuerongbao.moudles.gesturepass.GestureActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.update.UpdateDialog" />
+
+        <service android:name="com.wazxb.xuerongbao.moudles.update.UpdateService" />
 
 
         <!--分享-->

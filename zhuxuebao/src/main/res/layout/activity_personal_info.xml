@@ -127,7 +127,7 @@
             android:id="@+id/beans_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            app:info_content_drawable="@drawable/user_bean"
             app:info_edit_text='@{String.valueOf(data.beans)}'
             app:info_label_text="@string/beans"
             app:info_show_right="false" />
@@ -143,7 +143,7 @@
             android:id="@+id/quotatotal_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:info_content_drawable="@drawable/user_bean"
+
             app:info_edit_text="@{String.valueOf(data.quotaTotal)}"
             app:info_label_text="@string/quotatotal"
             app:info_show_right="false" />

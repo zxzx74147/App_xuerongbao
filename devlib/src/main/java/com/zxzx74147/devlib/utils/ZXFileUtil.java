@@ -14,6 +14,8 @@ public class ZXFileUtil {
     private static String SD_PATH;
     private static String INNER_PATH;
     private static String DIVIDER;
+    public static final File EXTERNAL_STORAGE_DIRECTORY = Environment.getExternalStorageDirectory();
+    private static String APP_DIR = "xrb";
 
     static {
         HAS_SDCARD = Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
@@ -72,5 +74,72 @@ public class ZXFileUtil {
         return;
     }
 
+    public static String getFilePath(String appath, String filename) {
+        String file = null;
+        if (filename != null && filename.startsWith("/")) {
+            filename = filename.substring(1, filename.length());
+        }
+        if (appath != null && appath.startsWith("/")) {
+            appath = appath.substring(1, appath.length());
+        }
+        if (appath != null && appath.length() > 0) {
+            file = EXTERNAL_STORAGE_DIRECTORY + "/" + APP_DIR + "/" + appath + "/" + filename;
+        } else {
+            file = EXTERNAL_STORAGE_DIRECTORY + "/" + APP_DIR + "/" + filename;
+        }
+        return file;
+    }
 
+
+    public static File getFile(String fileName) {
+        try {
+            String file = getFilePath(null, fileName);
+            File fileObj = new File(file);
+            return fileObj;
+        } catch (SecurityException ex) {
+            BdLog.e("FileHelper", "GetFile", "error = " + ex.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * 获得文件夹中的文件对象（不区分文件是否存在）
+     *
+     * @param filename 文件名
+     * @return 成功：File； 失败：空
+     */
+    public static File getFile(String appath, String filename) {
+
+
+        try {
+            String file = getFilePath(appath, filename);
+            File fileObj = new File(file);
+            return fileObj;
+        } catch (SecurityException ex) {
+            BdLog.e("FileHelper", "GetFile", "error = " + ex.getMessage());
+            return null;
+        }
+    }
+
+    public static File createFileIfNotFound(String appath, String filename) {
+        try {
+            File file = getFile(appath, filename);
+            if (file.exists()) {
+                return file;
+            } else {
+                if (file.createNewFile() == true) {
+                    return file;
+                } else {
+                    return null;
+                }
+            }
+        } catch (Exception ex) {
+            BdLog.e("FileHelper", "CreateFile", "error = " + ex.getMessage());
+            return null;
+        }
+    }
+
+    public static File createFileIfNotFound(String file) {
+        return createFileIfNotFound(null, file);
+    }
 }

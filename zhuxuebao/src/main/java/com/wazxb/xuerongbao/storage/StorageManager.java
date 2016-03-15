@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 
 import com.lusfold.androidkeyvaluestore.KVStore;
+import com.wazxb.xuerongbao.EventBusConfig;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
@@ -17,6 +18,8 @@ import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.AsyncHelper;
 import com.zxzx74147.devlib.utils.ZXJsonUtil;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Created by zhengxin on 16/3/4.
@@ -110,7 +113,7 @@ public class StorageManager {
         return null;
     }
 
-    public void requestInitData(HttpResponseListener<InitData> listener) {
+    public void requestInitData(final HttpResponseListener<InitData> listener) {
         ZXBHttpRequest<InitData> request = new ZXBHttpRequest<>(InitData.class, new HttpResponseListener<InitData>() {
             @Override
             public void onResponse(HttpResponse<InitData> response) {
@@ -119,6 +122,8 @@ public class StorageManager {
                 }
                 mInitData = response.result;
                 saveKVObjectAsync(KEY_INIT_DATA, mInitData);
+                EventBus.getDefault().post(EventBusConfig.EVENT_INIT_DONE);
+                listener.onResponse(response);
             }
         });
         request.addParams("uid", AccountManager.sharedInstance().getUid());

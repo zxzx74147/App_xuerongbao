@@ -4,7 +4,12 @@
 
     <data>
 
+
         <import type="com.wazxb.xuerongbao.moudles.message.MessageManager" />
+
+        <import type="com.zxzx74147.devlib.utils.ZXStringUtil" />
+
+        <import type="android.view.View" />
 
         <variable
             name="handler"
@@ -36,7 +41,7 @@
                 android:id="@+id/head"
                 android:layout_width="@dimen/default_gap_120"
                 android:layout_height="@dimen/default_gap_120"
-                android:layout_marginRight="@dimen/default_gap_40"
+                android:layout_marginRight="@dimen/default_gap_20"
                 android:src="@drawable/user_head"
                 app:img_url="@{data.portrait}"
                 app:riv_border_color="@color/white"
@@ -55,8 +60,75 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_below="@+id/user_name"
+                android:layout_marginTop="@dimen/default_gap_50"
+                android:layout_toRightOf="@+id/head"
+                android:orientation="horizontal"
+                android:visibility='@{data==null? View.INVISIBLE:View.VISIBLE}'>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/amount"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_10"
+                    android:text="@{String.valueOf(data.quota)}"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yuan"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_24" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_10"
+                    android:layout_height="wrap_content"
+                    android:text="@string/beans"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_10"
+                    android:drawableLeft="@drawable/user_bean"
+                    android:text="@{String.valueOf(data.beans)}"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_10"
+                    android:text="@string/amount_total"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_10"
+                    android:text="@{String.valueOf(data.quotaTotal)}"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_gap_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yuan"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_24" />
             </LinearLayout>
 
 
@@ -75,7 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{handler.onBindBankClick}"
-            app:content_text="@string/bind_bank_card"
+            app:content_text='@{ZXStringUtil.checkString(data.bank)? data.bank+"(尾号"+data.getBankCard()+")":@string/bind_bank_card}'
             app:info_label_text="@string/my_bank_card"
             app:info_left_drawable="@drawable/user_card" />
 

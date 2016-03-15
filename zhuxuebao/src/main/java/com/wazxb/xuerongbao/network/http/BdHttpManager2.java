@@ -1,8 +1,12 @@
 package com.wazxb.xuerongbao.network.http;
 
+import android.os.Handler;
+
 import com.zxzx74147.devlib.utils.BdLog;
 
 import org.apache.http.HttpStatus;
+
+import java.io.FileNotFoundException;
 
 /**
  * 网络请求
@@ -228,4 +232,31 @@ public class BdHttpManager2 {
 			}
 		}
 	}
+
+	/**
+	 * 下载文件
+	 *
+	 * @param path
+	 *            保存文件的全路径
+	 * @return true：成功； false：失败
+	 */
+	public boolean downloadFile(String name, final Handler handler, int what, int maxRetryCount, int readTimeout,
+								int connTimeout) {
+
+		boolean ret = false;
+		BdHttpImpl2 impl2 = new BdHttpImpl2(context);
+		for (int i = 0; i < maxRetryCount; i++) {
+			try {
+				ret = impl2.downloadFile(name, handler, what, readTimeout, connTimeout);
+				break;
+			} catch (FileNotFoundException ex) {
+				context.getResponse().responseCode = BdNetWorkError.FILE_NOT_FOUND;
+			} catch (Exception ex) {
+				context.getResponse().responseCode = BdNetWorkError.NETWORK_UNKNOWN;
+				BdLog.e("NetWork", "downloadFile", "error = " + ex.getMessage());
+			}
+		}
+		return ret;
+	}
+
 }

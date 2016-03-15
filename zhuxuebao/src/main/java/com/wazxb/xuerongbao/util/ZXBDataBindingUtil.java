@@ -26,6 +26,11 @@ public class ZXBDataBindingUtil {
         view.setRightDrawable(edit);
     }
 
+    @BindingAdapter("app:content_text")
+    public static void setRightDrawable(InfoTextView view, String edit) {
+        view.setContent(edit);
+    }
+
     @BindingAdapter("app:info_edit_text")
     public static void setLayoutHeight(InfoTextView view, String edit) {
         view.setContent(edit);
