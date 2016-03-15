@@ -8,12 +8,15 @@ import android.view.ViewGroup;
 
 import com.wazxb.xuerongbao.EventBusConfig;
 import com.wazxb.xuerongbao.R;
+import com.wazxb.xuerongbao.common.share.CommonShareDialog;
 import com.wazxb.xuerongbao.databinding.FragmentPersonalBinding;
 import com.wazxb.xuerongbao.moudles.account.AccountInterface;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.moudles.coin.CoinGiftActivity;
 import com.wazxb.xuerongbao.moudles.history.HistoryActivity;
 import com.wazxb.xuerongbao.moudles.message.MessageListActivity;
+import com.wazxb.xuerongbao.storage.StorageManager;
+import com.wazxb.xuerongbao.storage.data.InitData;
 import com.wazxb.xuerongbao.storage.data.UserAllData;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
@@ -103,6 +106,12 @@ public class PersonalFragment extends BaseFragment {
             return;
         }
         ZXActivityJumpHelper.startActivity(this, HistoryActivity.class);
+    }
+
+    public void onShareClick(View v) {
+        InitData data = StorageManager.sharedInstance().getInitdat();
+        CommonShareDialog dialog = new CommonShareDialog(getActivity());
+        dialog.setShareData(data.share);
     }
 
 

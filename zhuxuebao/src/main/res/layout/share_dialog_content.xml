@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#F2ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/share_dialog_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 分享按钮区域：第一行 -->
+
+        <LinearLayout
+            android:id="@+id/share_dialog_line_1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:paddingTop="@dimen/default_gap_40">
+
+            <!-- 微信 -->
+
+            <TextView
+                android:id="@+id/share_weixin_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/default_gap_20"
+                android:drawableTop="@drawable/icon_share_wx"
+                android:gravity="center_horizontal"
+                android:text="@string/share_weixin"
+                android:textColor="#FF4c4c4d"
+                android:textSize="@dimen/default_size_28" />
+            <!-- 微信朋友圈 -->
+
+            <TextView
+                android:id="@+id/share_weixin_friend_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/default_gap_20"
+                android:drawableTop="@drawable/icon_share_frd"
+                android:gravity="center_horizontal"
+                android:text="@string/share_weixin_friend"
+                android:textColor="#FF4c4c4d"
+                android:textSize="@dimen/default_size_28" />
+            <!-- 新浪微博 -->
+
+            <TextView
+                android:id="@+id/share_weibo_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/default_gap_20"
+                android:drawableTop="@drawable/icon_share_sinaweibo"
+                android:gravity="center_horizontal"
+                android:text="@string/share_weibo"
+                android:textColor="#FF4c4c4d"
+                android:textSize="@dimen/default_size_28" />
+        </LinearLayout>
+
+        <!-- 分享按钮区域：第二行 -->
+
+        <LinearLayout
+            android:id="@+id/share_dialog_line_2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/default_gap_30"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:paddingTop="@dimen/default_gap_40">
+
+            <!-- QQ好友 -->
+
+            <TextView
+                android:id="@+id/share_qq_friend_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/default_gap_20"
+                android:drawableTop="@drawable/icon_share_qq"
+                android:gravity="center_horizontal"
+                android:text="@string/share_qq_friend"
+                android:textColor="#FF4c4c4d"
+                android:textSize="@dimen/default_size_28" />
+            <!-- Qzone -->
+
+            <TextView
+                android:id="@+id/share_qzone_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="@dimen/default_gap_20"
+                android:drawableTop="@drawable/icon_share_qzone"
+                android:gravity="center_horizontal"
+                android:text="@string/share_qzone"
+                android:textColor="#FF4c4c4d"
+                android:textSize="@dimen/default_size_28" />
+            <!-- 人人 -->
+
+            <TextView
+                android:id="@+id/share_copy_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:drawablePadding="@dimen/default_gap_20"
+                android:gravity="center_horizontal"
+                android:textColor="#FF4c4c4d"
+                android:textSize="@dimen/default_size_28"
+                android:visibility="invisible" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnShareCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#efefef" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/default_gap_100"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/default_size_32" />
+    </LinearLayout>
+</LinearLayout>

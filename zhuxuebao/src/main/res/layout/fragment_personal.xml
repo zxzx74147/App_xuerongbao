@@ -142,6 +142,7 @@
             android:id="@+id/invite_friend_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{handler.onShareClick}"
             app:info_label_text="@string/invite_friend"
             app:info_left_drawable="@drawable/user_invite" />
 

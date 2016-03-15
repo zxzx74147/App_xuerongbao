@@ -272,5 +272,15 @@
     <string name="password_new_hint">请输入新密码</string>
     <string name="password_new_2">确认新密码</string>
     <string name="password_new_2_hint">请重新输入新密码</string>
-
+    <string name="share_fail">分享失败</string>
+    <string name="share_weixin">微信好友</string>
+    <string name="share_weixin_2">微信</string>
+    <string name="share_weixin_friend">微信朋友圈</string>
+    <string name="share_weibo">微博</string>
+    <string name="share_qq_friend">QQ好友</string>
+    <string name="share_qzone">QQ空间</string>
+    <string name="share_renren">人人</string>
+    <string name="share_test">发个假的测试</string>
+    <string name="share_tip">发送出去的信息60秒自动销毁</string>
+    <string name="share_to">分享到</string>
 </resources>

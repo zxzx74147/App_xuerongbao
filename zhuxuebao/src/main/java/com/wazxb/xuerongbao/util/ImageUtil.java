@@ -2,6 +2,7 @@ package com.wazxb.xuerongbao.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.AsyncHelper;
 import com.zxzx74147.devlib.utils.BdLog;
+import com.zxzx74147.devlib.utils.ZXBitmapUtil;
 import com.zxzx74147.devlib.utils.ZXJsonUtil;
 
 import java.io.ByteArrayOutputStream;
@@ -81,6 +83,12 @@ public class ImageUtil {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bm.compress(Bitmap.CompressFormat.JPEG, quality, baos);
         return baos.toByteArray();
+    }
+
+    public static Bitmap getBitmap(int id, int width) {
+        Bitmap bm = BitmapFactory.decodeResource(ZXApplicationDelegate.getApplication().getResources(), id);
+        bm = ZXBitmapUtil.resize(bm, width);
+        return bm;
     }
 
     public static boolean uploadImage(Bitmap bitmap, final ImageUploadCallback callback) {
