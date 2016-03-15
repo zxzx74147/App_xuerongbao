@@ -5,38 +5,61 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.wazxb.xuerongbao.R;
-import com.wazxb.xuerongbao.databinding.ActivityLoginBinding;
-import com.zxzx74147.devlib.base.ZXBaseActivity;
-import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
+import com.wazxb.xuerongbao.base.ZXBBaseActivity;
+import com.wazxb.xuerongbao.databinding.ActivityChangePasswordBinding;
+import com.wazxb.xuerongbao.network.NetworkConfig;
+import com.wazxb.xuerongbao.network.ZXBHttpRequest;
+import com.wazxb.xuerongbao.storage.data.UidData;
+import com.wazxb.xuerongbao.util.FillRqeustUtil;
+import com.zxzx74147.devlib.network.HttpResponse;
+import com.zxzx74147.devlib.network.HttpResponseListener;
+import com.zxzx74147.devlib.utils.ZXStringUtil;
 
-public class ChangePasswordActivity extends ZXBaseActivity {
-    ActivityLoginBinding mBinding = null;
+public class ChangePasswordActivity extends ZXBBaseActivity {
+    private ActivityChangePasswordBinding mBinding = null;
+    private ZXBHttpRequest mRequest = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_change_password);
+        mBinding.setHandler(this);
+    }
+
+    public void onChangeClick(View view) {
+        submit();
+    }
 
 
-        mBinding.titleBar.setRightClickListener(new View.OnClickListener() {
+    public void submit() {
+        if (!FillRqeustUtil.checkFill(this)) {
+            return;
+        }
+        String new1 = mBinding.newPasswordId.getText();
+        String new2 = mBinding.newPassword2Id.getText();
+        if (!ZXStringUtil.checkString(new1) || new1.length() < 6) {
+            showToast("请填写6位以上密码！");
+            return;
+        }
+        if (!new1.equals(new2)) {
+            showToast("两次密码不一致");
+            return;
+        }
+        if (mRequest != null) {
+            mRequest.cancel();
+        }
+        mRequest = new ZXBHttpRequest<>(UidData.class, new HttpResponseListener<UidData>() {
             @Override
-            public void onClick(View v) {
-                ZXActivityJumpHelper.startActivity(ChangePasswordActivity.this, RegitsterActivity.class);
+            public void onResponse(HttpResponse<UidData> response) {
+                if (response.hasError()) {
+                    showToast(response.errorString);
+                    return;
+                }
+                finish();
             }
         });
-    }
-
-    public void onLoginClick(View view) {
-
-    }
-
-    public void onForgetClick(View view) {
-
-    }
-
-
-    public void login() {
-        String password = mBinding.passwordId.getText();
-        String phoneNum = mBinding.passwordId.getText();
+        FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
+        mRequest.setPath(NetworkConfig.ADDRESS_PW_MODIFY);
+        sendRequest(mRequest);
     }
 }
