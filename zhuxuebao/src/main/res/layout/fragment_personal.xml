@@ -52,6 +52,7 @@
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_gap_30"
                 android:layout_toRightOf="@+id/head"
                 android:text='@{data==null? "亲，你还没有登陆哦~":data.name}'
                 android:textColor="@color/text_color_black"
@@ -61,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/user_name"
-                android:layout_marginTop="@dimen/default_gap_50"
+                android:layout_marginTop="@dimen/default_gap_20"
                 android:layout_toRightOf="@+id/head"
                 android:orientation="horizontal"
                 android:visibility='@{data==null? View.INVISIBLE:View.VISIBLE}'>
@@ -91,8 +92,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_marginLeft="@dimen/default_gap_10"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_10"
                     android:text="@string/beans"
                     android:textColor="@color/text_color_black"
                     android:textSize="@dimen/default_gap_24" />
