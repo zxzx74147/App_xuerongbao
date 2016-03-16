@@ -8,9 +8,11 @@ import android.widget.TextView;
 
 import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityMainTabBinding;
+import com.wazxb.xuerongbao.moudles.LogoActivity;
 import com.wazxb.xuerongbao.moudles.home.HomeDelegate;
 import com.wazxb.xuerongbao.moudles.more.MoreDelegate;
 import com.wazxb.xuerongbao.moudles.personal.PersonalDelegate;
+import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.widget.tabhost.CommonFragmentTabIndicator;
 import com.zxzx74147.devlib.widget.tabhost.FragmentTabSpec;
 import com.zxzx74147.devlib.widget.tabhost.FragmentTabStructure;
@@ -24,7 +26,12 @@ public class MainTabActivity extends ZXBBaseActivity {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_tab);
         addTabs();
-//        AccountInterface.checkLogin(this);
+        ZXActivityJumpHelper.startActivity(this, LogoActivity.class);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
 
     }
 

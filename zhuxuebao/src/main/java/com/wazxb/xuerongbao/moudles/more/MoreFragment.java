@@ -11,7 +11,6 @@ import com.wazxb.xuerongbao.EventBusConfig;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
 import com.wazxb.xuerongbao.databinding.FragmentMoreBinding;
-import com.wazxb.xuerongbao.moudles.account.AccountInterface;
 import com.wazxb.xuerongbao.moudles.update.UpdateDialog;
 import com.wazxb.xuerongbao.storage.StorageManager;
 import com.wazxb.xuerongbao.storage.data.InitData;
@@ -64,9 +63,7 @@ public class MoreFragment extends BaseFragment {
     }
 
     public void onFeedBackClick(View v) {
-        if (!AccountInterface.checkLogin(getActivity())) {
-            return;
-        }
+
         ZXActivityJumpHelper.startActivity(this, FeedbackActivity.class);
     }
 

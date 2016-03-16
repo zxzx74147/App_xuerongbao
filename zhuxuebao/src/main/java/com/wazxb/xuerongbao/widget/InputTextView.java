@@ -203,7 +203,21 @@ public class InputTextView extends LinearLayout {
                 }
             });
         } else if ("sex".equals(mPickType)) {
-            mBinding.edit.setOnClickListener(new OnClickListener() {
+            mBinding.rightImg.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    List<String> sexs = new LinkedList<>();
+                    sexs.add("男");
+                    sexs.add("女");
+                    ZXDataPickerHelper.selectItem(getContext(), sexs, new ZXDataPickerHelper.IItemSelected() {
+                        @Override
+                        public void onSelected(String item) {
+                            mBinding.edit.setText(item);
+                        }
+                    });
+                }
+            });
+            mBinding.getRoot().setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     List<String> sexs = new LinkedList<>();
