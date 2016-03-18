@@ -14,6 +14,7 @@ import com.wazxb.xuerongbao.storage.data.UserAllData;
 import com.wazxb.xuerongbao.util.FillRqeustUtil;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
+import com.zxzx74147.devlib.utils.ZXDialogUtil;
 
 /**
  * Created by zhengxin on 16/3/6.
@@ -37,35 +38,37 @@ public class BindCardShowActivity extends ZXBBaseActivity {
     }
 
     public void onUnBindClick(View v) {
-        if (mRequest != null) {
-            mRequest.cancel();
-            mRequest = null;
-        }
-        if (mData == null) {
-            return;
-        }
-        mRequest = new ZXBHttpRequest<>(Object.class, new HttpResponseListener<Object>() {
+        ZXDialogUtil.showCheckDialog(this, R.string.unbind_remind, new Runnable() {
             @Override
-            public void onResponse(HttpResponse<Object> response) {
-                if (response.hasError()) {
-                    showToast(response.errorString);
+            public void run() {
+                if (mRequest != null) {
+                    mRequest.cancel();
+                    mRequest = null;
+                }
+                if (mData == null) {
                     return;
                 }
-                AccountManager.sharedInstance().requestUserAllData();
-                finish();
+                mRequest = new ZXBHttpRequest<>(Object.class, new HttpResponseListener<Object>() {
+                    @Override
+                    public void onResponse(HttpResponse<Object> response) {
+                        if (response.hasError()) {
+                            showToast(response.errorString);
+                            return;
+                        }
+                        AccountManager.sharedInstance().requestUserAllData();
+                        finish();
+                    }
+                });
+                mRequest.setPath(NetworkConfig.ADDRESS_U_UNBANK);
+                if (!FillRqeustUtil.checkFill(BindCardShowActivity.this)) {
+                    return;
+                }
+                mRequest.addParams("bankCard", mData.user.bankCard);
+
+                sendRequest(mRequest);
             }
         });
-        mRequest.setPath(NetworkConfig.ADDRESS_U_UNBANK);
-        if (!FillRqeustUtil.checkFill(this)) {
-            return;
-        }
-        if (!FillRqeustUtil.checkFill(this)) {
-            return;
-        }
 
-        mRequest.addParams("bankCard", mData.user.bankCard);
-
-        sendRequest(mRequest);
     }
 
 

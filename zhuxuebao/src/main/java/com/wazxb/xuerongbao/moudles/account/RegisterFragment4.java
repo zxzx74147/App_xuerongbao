@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wazxb.xuerongbao.R;
+import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityRegitster4Binding;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
@@ -17,6 +18,7 @@ import com.wazxb.xuerongbao.storage.StorageManager;
 import com.wazxb.xuerongbao.storage.data.InitData;
 import com.wazxb.xuerongbao.storage.data.UidData;
 import com.wazxb.xuerongbao.util.DeviceIDMananger;
+import com.wazxb.xuerongbao.util.FillRqeustUtil;
 import com.wazxb.xuerongbao.widget.InputTextView;
 import com.wazxb.xuerongbao.widget.UploadImageView;
 import com.zxzx74147.devlib.network.HttpResponse;
@@ -56,6 +58,12 @@ public class RegisterFragment4 extends BaseFragment {
         if (init != null) {
             mBinding.setData(init.contract);
         }
+        FillRqeustUtil.addWatcher((ZXBBaseActivity) getActivity(), new FillRqeustUtil.CheckFilledListener() {
+            @Override
+            public void onChecked(boolean isReady) {
+                mBinding.loginId.setEnabled(isReady);
+            }
+        });
         return mBinding.getRoot();
     }
 

@@ -17,8 +17,8 @@
 
     <color name="title_bar_bg">@color/major_color</color>
     <color name="title_divider">#FFdcddde</color>
-    <color name="title_bar_text">@color/black_p50</color>
-    <color name="title_bar_right">@color/black_p50</color>
+    <color name="title_bar_text">#000000</color>
+    <color name="title_bar_right">#000000</color>
     <color name="title_bar_second_text">@color/black_p50</color>
     <color name="title_bar_second_text_disable">#ffb3b3b3</color>
 </resources>

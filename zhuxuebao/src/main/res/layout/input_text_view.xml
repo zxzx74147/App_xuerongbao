@@ -19,7 +19,7 @@
 
         <LinearLayout
             android:id="@+id/label_layout"
-            android:layout_width="@dimen/default_gap_140"
+            android:layout_width="@dimen/default_gap_160"
             android:layout_height="match_parent">
 
             <TextView

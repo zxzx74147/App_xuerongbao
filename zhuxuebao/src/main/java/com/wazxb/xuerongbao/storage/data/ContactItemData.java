@@ -1,12 +1,11 @@
 package com.wazxb.xuerongbao.storage.data;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.io.Serializable;
 
 /**
  * Created by zhengxin on 16/3/18.
  */
-public class ContactItemData {
+public class ContactItemData implements Serializable {
     public String name = null;
-    public List<String> phones  = new LinkedList<>();
+    public String phone;
 }

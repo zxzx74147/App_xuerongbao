@@ -22,6 +22,7 @@ import com.wazxb.xuerongbao.util.ZXUtil;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
+import com.zxzx74147.devlib.utils.ZXDialogUtil;
 
 /**
  * Created by zhengxin on 16/3/6.
@@ -45,8 +46,14 @@ public class PersonalInfoActivity extends ZXBBaseActivity {
     }
 
     public void onLogoutClick(View v) {
-        AccountManager.sharedInstance().logout();
-        finish();
+        ZXDialogUtil.showCheckDialog(this, R.string.unbind_remind, new Runnable() {
+            @Override
+            public void run() {
+                AccountManager.sharedInstance().logout();
+                finish();
+            }
+        });
+
     }
 
     public void onChangePortraitClick(View v) {

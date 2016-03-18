@@ -41,6 +41,7 @@ public class PersonalFragment extends BaseFragment {
         } else {
             mBinding.setData(null);
         }
+        EventBus.getDefault().register(this);
         return mBinding.getRoot();
     }
 
@@ -48,22 +49,26 @@ public class PersonalFragment extends BaseFragment {
     public void onStart() {
         super.onStart();
         //注册EventBus
-        EventBus.getDefault().register(this);
+
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        //取消EventBus
-        EventBus.getDefault().unregister(this);
     }
 
     //事件1接收者：在主线程接收
     public void onEvent(String event) {
         if (EventBusConfig.EVENT_FRESH_USER_DATA.equals(event)) {
             UserAllData data = AccountManager.sharedInstance().getUserAllData();
-            if (data != null) {
+            if (data == null) {
+                mBinding.setData(null);
+            } else {
                 mBinding.setData(data.user);
+            }
+            if (data == null) {
+                mBinding.head.setImageResource(R.drawable.user_head);
+
             }
         }
     }

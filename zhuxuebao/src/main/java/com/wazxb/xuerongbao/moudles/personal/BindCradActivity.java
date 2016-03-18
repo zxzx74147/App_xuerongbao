@@ -32,6 +32,12 @@ public class BindCradActivity extends ZXBBaseActivity {
         if (data != null) {
             mBinding.setData(data.user);
         }
+        FillRqeustUtil.addWatcher(this, new FillRqeustUtil.CheckFilledListener() {
+            @Override
+            public void onChecked(boolean isReady) {
+                mBinding.bindCard.setEnabled(isReady);
+            }
+        });
 
     }
 

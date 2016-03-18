@@ -42,7 +42,7 @@
         android:paddingRight="@dimen/default_gap_150"
         android:singleLine="true"
         android:textColor="@color/title_bar_text"
-        android:textSize="@dimen/default_size_36" />
+        android:textSize="@dimen/default_size_42" />
 
     <LinearLayout
         android:id="@+id/right_box"

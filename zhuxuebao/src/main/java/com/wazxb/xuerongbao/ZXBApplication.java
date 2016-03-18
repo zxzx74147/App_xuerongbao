@@ -115,9 +115,12 @@ public class ZXBApplication extends Application {
             while (phone.moveToNext()) { //取得电话号码(可能存在多个号码)
                 int phoneFieldColumnIndex = phone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
                 String phoneNumber = phone.getString(phoneFieldColumnIndex);
-                item.phones.add(phoneNumber);
+                item.phone = phoneNumber;
+                break;
             }
-            data.add(item);
+            if (ZXStringUtil.checkString(item.phone)) {
+                data.add(item);
+            }
             //建立一个Log，使得可以在LogCat视图查看结果
         }
         return data;

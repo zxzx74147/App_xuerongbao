@@ -293,4 +293,6 @@
     <string name="regist_1">《隐私条款》</string>
     <string name="and">及</string>
     <string name="regist_2">《注册协议》</string>
+    <string name="unbind_remind">确认解除绑定吗？</string>
+    <string name="click_to_login">点击登录</string>
 </resources>

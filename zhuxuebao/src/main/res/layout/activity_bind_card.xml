@@ -47,10 +47,10 @@
             android:layout_marginRight="@dimen/default_gap_20"
             android:layout_marginTop="@dimen/default_gap_10"
             app:edit_hint="@string/bind_bank__hint"
+            app:input_right_drawable="@drawable/user_gray_right_arrow"
             app:label_text="@string/bind_bank"
             app:not_null="true"
             app:pick_type="bank"
-            app:input_right_drawable="@drawable/user_gray_right_arrow"
             app:post_key="@string/bind_bank_post_key" />
 
         <com.wazxb.xuerongbao.widget.InputTextView
@@ -66,16 +66,16 @@
             app:post_key="@string/bind_bank_name_post_key" />
 
         <Button
-            android:id="@+id/login_id"
+            android:id="@+id/bind_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_gap_20"
             android:background="@drawable/common_button_bg"
+            android:enabled="false"
             android:onClick="@{handler.onBindClick}"
             android:text="@string/ok"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_big" />
-
 
 
     </LinearLayout>
