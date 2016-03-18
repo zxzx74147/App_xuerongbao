@@ -167,4 +167,8 @@ public class MessageManager {
             }
         }
     }
+
+    public void saveMsg() {
+        StorageManager.sharedInstance().saveKVObjectAsync(KEY_MESSAGE, mData);
+    }
 }

@@ -45,7 +45,7 @@ public class NewShareProxy {
     private IWeiboShareAPI mWeiboShareAPI = null;
     private CustomToast mToast = null;
 
-    private static final String IMG_URL = "https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png";
+    private static final String IMG_URL = "http://www.kkxlclub.com/forum.php?mod=viewthread&tid=648&from=timeline&isappinstalled=0";
 
     public NewShareProxy(Activity activity) {
         mActivity = activity;

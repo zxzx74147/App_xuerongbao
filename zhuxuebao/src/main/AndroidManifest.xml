@@ -123,7 +123,9 @@
         <activity android:name="com.wazxb.xuerongbao.moudles.gesturepass.GestureActivity" />
         <activity android:name="com.wazxb.xuerongbao.moudles.update.UpdateDialog" />
 
+        <activity android:name="com.wazxb.xuerongbao.moudles.account.InitActivity" />
         <service android:name="com.wazxb.xuerongbao.moudles.update.UpdateService" />
+
 
 
         <!--分享-->

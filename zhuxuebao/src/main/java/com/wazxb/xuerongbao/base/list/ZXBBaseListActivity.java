@@ -71,20 +71,29 @@ public abstract class ZXBBaseListActivity extends ZXBBaseActivity {
     protected abstract void refreshData();
 
     protected void setData(List<? extends Object> mData) {
+
         mRecycleView.mPtrFrameLayout.refreshComplete();
         mAdapter.setData(mData);
+        if (mData == null | mData.size() == 0) {
+            showEmptyView();
+        } else {
+            hideEmptyView();
+        }
+        hideProgressBar();
     }
 
-    protected void completeLoading(){
+    protected void completeLoading() {
         mRecycleView.mPtrFrameLayout.refreshComplete();
     }
 
     protected void addData(List<? extends Object> mData) {
+        hideProgressBar();
         mRecycleView.mPtrFrameLayout.refreshComplete();
         mAdapter.addData(mData);
     }
 
     private void refreshingString() {
+        showProgressBar();
         MaterialHeader materialHeader = new MaterialHeader(this);
 
         StoreHouseHeader storeHouseHeader = new StoreHouseHeader(this);

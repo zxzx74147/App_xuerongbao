@@ -6,6 +6,7 @@ import android.view.View;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.moudles.credit.CreditActivity;
 import com.wazxb.xuerongbao.moudles.evaluate.EvaluateSubmitActivity;
+import com.wazxb.xuerongbao.moudles.message.MessageManager;
 import com.wazxb.xuerongbao.moudles.payback.PaybackActivity;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXJsonUtil;
@@ -30,6 +31,7 @@ public class MessageItemData implements Serializable {
     public String title;     //消息标题
     public String content;     //消息内容
     public String url;     //消息url（mType==6时，客
+    public boolean mHasRead = false;
 
     public int getDrawableId() {
         int result = 0;
@@ -49,6 +51,7 @@ public class MessageItemData implements Serializable {
         return result;
     }
 
+
     public void onClick(View v) {
         Context context = v.getContext();
         LoanItemData loan = null;
@@ -58,6 +61,10 @@ public class MessageItemData implements Serializable {
                 url = url.replace("loan#", "");
                 loan = ZXJsonUtil.fromJsonString(url, LoanItemData.class);
             }
+        }
+        if (!mHasRead) {
+            mHasRead = true;
+            MessageManager.sharedInstance().saveMsg();
         }
         switch (mType) {
             case 1:

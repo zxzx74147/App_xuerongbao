@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/view_input_default_bg"
+        android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/default_gap_30"
@@ -44,8 +44,8 @@
             android:layout_width="0dip"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center_vertical"
             android:background="@null"
+            android:gravity="center_vertical"
             android:inputType="textPassword"
             android:textColorHint="@color/text_color_hint"
             android:textSize="@dimen/text_size_normal" />

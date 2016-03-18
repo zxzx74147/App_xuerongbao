@@ -23,10 +23,12 @@ import com.zxzx74147.devlib.utils.ZXViewHelper;
 public class ZXBBaseActivity<T> extends ZXBaseActivity {
 
     private ImageView mProgressBar;
+    private ImageView mEmptyView = null;
 
-    protected T getParam(){
+    protected T getParam() {
         return (T) getIntent().getSerializableExtra(ZXActivityJumpHelper.INTENT_DATA);
     }
+
     /**
      * 中心点为基点显示菊花
      */
@@ -47,6 +49,24 @@ public class ZXBBaseActivity<T> extends ZXBaseActivity {
         mProgressBar.setPadding(ZXViewHelper.dip2px(this, xDp), ZXViewHelper.dip2px(this, yDp), 0, 0);
         mProgressBar.setVisibility(View.VISIBLE);
         ZXViewHelper.startFramAnim(mProgressBar);
+    }
+
+    public void showEmptyView() {
+        if (mEmptyView == null) {
+            mEmptyView = new ImageView(this);
+            mEmptyView.setImageResource(R.drawable.error_tip);
+            FrameLayout content = (FrameLayout) findViewById(android.R.id.content);
+            content.addView(mEmptyView,
+                    new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
+        }
+        mEmptyView.setVisibility(View.VISIBLE);
+    }
+
+    public void hideEmptyView() {
+        if(mEmptyView != null) {
+            mEmptyView.setVisibility(View.GONE);
+        }
     }
 
     /**
@@ -103,13 +123,13 @@ public class ZXBBaseActivity<T> extends ZXBaseActivity {
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         super.onPause();
         ActivityStateManager.sharedInstance().onPause(this);
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         ActivityStateManager.sharedInstance().onResume(this);
     }

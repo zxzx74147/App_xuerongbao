@@ -9,6 +9,20 @@ public class MessageListData {
     public int num;   //消息数
     public List<MessageItemData> msg;  //消息
 
+    public int getUnReadNum() {
+        int count = 0;
+        if (msg == null) {
+            return 0;
+        }
+        for (MessageItemData data : msg) {
+            if (!data.mHasRead) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
     public void mergeData(MessageListData data) {
         if (data == null) {
             return;

@@ -9,9 +9,11 @@ import android.widget.TextView;
 import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityMainTabBinding;
 import com.wazxb.xuerongbao.moudles.LogoActivity;
+import com.wazxb.xuerongbao.moudles.account.InitActivity;
 import com.wazxb.xuerongbao.moudles.home.HomeDelegate;
 import com.wazxb.xuerongbao.moudles.more.MoreDelegate;
 import com.wazxb.xuerongbao.moudles.personal.PersonalDelegate;
+import com.zxzx74147.devlib.utils.SharedPreferenceHelper;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.widget.tabhost.CommonFragmentTabIndicator;
 import com.zxzx74147.devlib.widget.tabhost.FragmentTabSpec;
@@ -26,13 +28,19 @@ public class MainTabActivity extends ZXBBaseActivity {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main_tab);
         addTabs();
-        ZXActivityJumpHelper.startActivity(this, LogoActivity.class);
+
+        boolean isFisrt = SharedPreferenceHelper.getBoolean("is_first", true);
+        if (isFisrt) {
+            ZXActivityJumpHelper.startActivity(this, InitActivity.class);
+        } else {
+            ZXActivityJumpHelper.startActivity(this, LogoActivity.class);
+        }
+        SharedPreferenceHelper.saveBoolean("is_first", false);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
     }
 
     private void addTabs() {
