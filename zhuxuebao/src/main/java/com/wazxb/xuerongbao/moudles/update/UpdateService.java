@@ -145,7 +145,7 @@ public class UpdateService extends Service {
                 context = new HttpContext2();
                 Boolean ret = false;
                 try {
-                    context.getRequest().setUrl(mData.downloadUrl);
+                    context.getRequest().setUrl(mData.url);
                     context.getRequest().setMethod(HttpRequest2.HTTP_METHOD.GET);
 
                     BdHttpManager2 httpCore2 = new BdHttpManager2(context);

@@ -53,6 +53,8 @@ public class MessageItemData implements Serializable {
 
 
     public void onClick(View v) {
+        mHasRead = true;
+        MessageManager.sharedInstance().saveMsg();
         Context context = v.getContext();
         LoanItemData loan = null;
         if (ZXStringUtil.checkString(url)) {

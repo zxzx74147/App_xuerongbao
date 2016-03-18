@@ -24,6 +24,12 @@ public class ChangePasswordActivity extends ZXBBaseActivity {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_change_password);
         mBinding.setHandler(this);
+        FillRqeustUtil.addWatcher(this, new FillRqeustUtil.CheckFilledListener() {
+            @Override
+            public void onChecked(boolean isReady) {
+                mBinding.change.setEnabled(isReady);
+            }
+        });
     }
 
     public void onChangeClick(View view) {

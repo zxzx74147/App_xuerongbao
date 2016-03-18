@@ -106,6 +106,15 @@ public class TitleBar extends LinearLayout {
         mRightText.setText(id);
     }
 
+    public void setRightDrawable(int id) {
+        mRight.removeAllViews();
+        ImageView image = new ImageView(getContext());
+        image.setId(R.id.right_image);
+        mRight.addView(image);
+        image.setPadding(getResources().getDimensionPixelSize(R.dimen.default_gap_15),0,getResources().getDimensionPixelSize(R.dimen.default_gap_15),0);
+        image.setImageResource(id);
+    }
+
     public void setRightText(String text) {
         mRightText.setText(text);
     }

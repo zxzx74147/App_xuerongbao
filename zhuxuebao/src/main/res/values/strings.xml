@@ -295,4 +295,7 @@
     <string name="regist_2">《注册协议》</string>
     <string name="unbind_remind">确认解除绑定吗？</string>
     <string name="click_to_login">点击登录</string>
+    <string name="logout_remind">确定退出登录吗？</string>
+    <string name="reset_pass_remind">确定取消手势密码吗？</string>
+    <string name="forget_pass_remind">忘记手势密码，需重新登录并设置</string>
 </resources>

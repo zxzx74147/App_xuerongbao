@@ -31,6 +31,12 @@ public class LoginActivity extends ZXBBaseActivity {
                 ZXActivityJumpHelper.startActivity(LoginActivity.this, RegitsterActivity.class);
             }
         });
+        FillRqeustUtil.addWatcher(this, new FillRqeustUtil.CheckFilledListener() {
+            @Override
+            public void onChecked(boolean isReady) {
+                mBinding.loginId.setEnabled(isReady);
+            }
+        });
     }
 
 
@@ -65,9 +71,11 @@ public class LoginActivity extends ZXBBaseActivity {
         if (mRequest != null) {
             mRequest.cancel();
         }
+        showProgressBar();
         mRequest = new ZXBHttpRequest<>(UidData.class, new HttpResponseListener<UidData>() {
             @Override
             public void onResponse(HttpResponse<UidData> response) {
+                hideProgressBar();
                 if (response.hasError()) {
                     showToast(response.errorString);
                     return;

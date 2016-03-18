@@ -7,8 +7,6 @@ import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.base.list.ZXBBaseListActivity;
 import com.wazxb.xuerongbao.base.list.ZXBViewBinder;
 import com.wazxb.xuerongbao.databinding.ActivityMessageListBinding;
-import com.wazxb.xuerongbao.network.ZXBHttpRequest;
-import com.wazxb.xuerongbao.storage.data.MessageData;
 
 import de.greenrobot.event.EventBus;
 
@@ -18,7 +16,6 @@ import de.greenrobot.event.EventBus;
 public class MessageListActivity extends ZXBBaseListActivity {
 
     private ActivityMessageListBinding mBinding;
-    private ZXBHttpRequest<MessageData> mRequest = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +33,6 @@ public class MessageListActivity extends ZXBBaseListActivity {
 
     @Override
     protected void refreshData() {
-        if (mRequest != null) {
-            return;
-        }
         completeLoading();
         if (MessageManager.sharedInstance().getMessageData().msgList != null) {
             setData(MessageManager.sharedInstance().getMessageData().msgList.msg);
@@ -55,6 +49,13 @@ public class MessageListActivity extends ZXBBaseListActivity {
         super.onStart();
         //注册EventBus
         EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //注册EventBus
+        refreshData();
     }
 
     @Override

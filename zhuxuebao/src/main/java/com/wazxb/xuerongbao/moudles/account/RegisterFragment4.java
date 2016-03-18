@@ -145,9 +145,11 @@ public class RegisterFragment4 extends BaseFragment {
             showToast("两次密码输入不一致！");
             return;
         }
+        ((ZXBBaseActivity)getActivity()).showProgressBar();
         mRequest = new ZXBHttpRequest<>(UidData.class, new HttpResponseListener<UidData>() {
             @Override
             public void onResponse(HttpResponse<UidData> response) {
+                ((ZXBBaseActivity)getActivity()).hideProgressBar();
                 if (response.hasError()) {
                     showToast(response.errorString);
                     return;

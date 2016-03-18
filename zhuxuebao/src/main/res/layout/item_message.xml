@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <import type="com.zxzx74147.devlib.utils.TimerUtil" />
 
         <variable
@@ -11,54 +13,79 @@
             type="com.wazxb.xuerongbao.storage.data.MessageItemData" />
     </data>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:onClick="@{data.onClick}"
-        android:padding="@dimen/default_gap_20">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/head"
-            android:layout_width="@dimen/default_gap_120"
-            android:layout_height="@dimen/default_gap_120"
-            app:drawable_id="@{data.getDrawableId}"
-            app:riv_border_color="@color/white"
-            app:riv_border_width="0px"
-            app:riv_corner_radius="@dimen/default_gap_200" />
+        android:paddingTop="@dimen/default_gap_15"
+        android:orientation="vertical">
 
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/head"
-            android:text="@{data.title}"
-            android:textColor="@color/text_color_black"
-            android:textSize="@dimen/default_gap_28" />
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
+            android:onClick="@{data.onClick}">
 
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="@{TimerUtil.getTimeFormat(data.time,TimerUtil.YMD)}" />
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/head"
+                android:layout_width="@dimen/default_gap_120"
+                android:layout_height="@dimen/default_gap_120"
+                android:layout_marginBottom="@dimen/default_gap_10"
+                android:layout_marginRight="@dimen/default_gap_10"
+                app:drawable_id="@{data.getDrawableId}"
+                app:riv_border_color="@color/white"
+                app:riv_border_width="0px"
+                app:riv_corner_radius="@dimen/default_gap_200" />
 
 
-        <TextView
-            android:id="@+id/content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
-            android:layout_toRightOf="@+id/head"
-            android:text="@{data.content}" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_gap_180"
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:layout_toRightOf="@+id/head"
+                android:text="@{data.title}"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/default_gap_28" />
 
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@{TimerUtil.getTimeFormat(data.time,TimerUtil.YMD)}" />
+
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginRight="@dimen/default_gap_180"
+                android:layout_toRightOf="@+id/head"
+                android:text="@{data.content}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/default_gap_10"
+                android:layout_toLeftOf="@+id/time"
+                android:text="*"
+                android:textColor="@color/red"
+                android:visibility='@{data.mHasRead? View.INVISIBLE:View.VISIBLE}' />
+
+
+        </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
             android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/default_gap_15"
             android:background="@color/info_divider" />
-
-    </RelativeLayout>
+    </LinearLayout>
 </layout>

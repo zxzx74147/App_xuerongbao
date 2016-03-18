@@ -2,7 +2,6 @@ package com.wazxb.xuerongbao.moudles.home;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,9 +56,7 @@ public class HomeFragment extends BaseFragment {
                 ZXActivityJumpHelper.startActivity(getActivity(), MessageListActivity.class);
             }
         });
-        if (MessageManager.sharedInstance().getNewNum() > 0) {
-            mBinding.titleBar.setRightText(R.drawable.index_has_msg);
-        }
+        EventBus.getDefault().register(this);
         return mBinding.getRoot();
     }
 
@@ -122,19 +119,27 @@ public class HomeFragment extends BaseFragment {
     public void onStart() {
         super.onStart();
         //注册EventBus
-        EventBus.getDefault().register(this);
+
     }
 
     @Override
     public void onStop() {
         super.onStop();
         //取消EventBus
-        EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if (MessageManager.sharedInstance().getNewNum() > 0) {
+            mBinding.titleBar.setRightDrawable(R.drawable.index_has_msg);
+        }else{
+            mBinding.titleBar.setRightDrawable(R.drawable.index_no_msg);
+        }
     }
 
     //事件1接收者：在主线程接收
     public void onEvent(String event) {
-        Log.e("event", event);
         if (EventBusConfig.EVENT_FRESH_USER_DATA.equals(event)) {
             UserAllData user = AccountManager.sharedInstance().getUserAllData();
             if (user != null) {
@@ -142,7 +147,11 @@ public class HomeFragment extends BaseFragment {
                 mBinding.creditCeilingValue.setNumber((int) user.user.quotaTotal);
             }
         } else if (EventBusConfig.EVENT_MESSAGE_REFRESH.equals(event)) {
-            mBinding.titleBar.setRightText(R.drawable.index_has_msg);
+            if (MessageManager.sharedInstance().getNewNum() > 0) {
+                mBinding.titleBar.setRightDrawable(R.drawable.index_has_msg);
+            }else{
+                mBinding.titleBar.setRightDrawable(R.drawable.index_no_msg);
+            }
         }
     }
 

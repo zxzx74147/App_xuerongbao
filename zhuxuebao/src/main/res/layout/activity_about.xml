@@ -29,10 +29,10 @@
 
 
         <ImageView
-            android:layout_width="@dimen/default_gap_150"
-            android:layout_height="@dimen/default_gap_150"
+            android:layout_width="@dimen/default_gap_130"
+            android:layout_height="@dimen/default_gap_130"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/default_gap_200"
+            android:layout_marginTop="@dimen/default_gap_100"
             android:src="@drawable/logo" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/default_gap_100"
-            android:gravity="center_horizontal"
+            android:gravity="left"
             android:text="@{data.contact.content}"
             android:textColor="@color/text_color_black"
             android:textSize="@dimen/default_size_25" />

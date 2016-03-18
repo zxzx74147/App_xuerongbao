@@ -15,6 +15,7 @@ import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.moudles.coin.CoinGiftActivity;
 import com.wazxb.xuerongbao.moudles.history.HistoryActivity;
 import com.wazxb.xuerongbao.moudles.message.MessageListActivity;
+import com.wazxb.xuerongbao.moudles.message.MessageManager;
 import com.wazxb.xuerongbao.storage.StorageManager;
 import com.wazxb.xuerongbao.storage.data.InitData;
 import com.wazxb.xuerongbao.storage.data.UserAllData;
@@ -50,6 +51,17 @@ public class PersonalFragment extends BaseFragment {
         super.onStart();
         //注册EventBus
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        int num = MessageManager.sharedInstance().getNewNum();
+        if (num == 0) {
+            mBinding.myMessageId.setRemind(null);
+        } else {
+            mBinding.myMessageId.setRemind(String.valueOf(MessageManager.sharedInstance().getNewNum()));
+        }
     }
 
     @Override

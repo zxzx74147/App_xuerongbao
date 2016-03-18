@@ -46,7 +46,7 @@ public class PersonalInfoActivity extends ZXBBaseActivity {
     }
 
     public void onLogoutClick(View v) {
-        ZXDialogUtil.showCheckDialog(this, R.string.unbind_remind, new Runnable() {
+        ZXDialogUtil.showCheckDialog(this, R.string.logout_remind, new Runnable() {
             @Override
             public void run() {
                 AccountManager.sharedInstance().logout();
@@ -119,5 +119,13 @@ public class PersonalInfoActivity extends ZXBBaseActivity {
         mRequest.setPath(NetworkConfig.ADDRESS_U_UPPORTRAIT);
         mRequest.addParams("picKey", key);
         sendRequest(mRequest);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if(AccountManager.sharedInstance().getUid() == null){
+            finish();
+        }
     }
 }

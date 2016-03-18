@@ -2,6 +2,7 @@ package com.wazxb.xuerongbao.moudles.gesturepass;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.View;
 
 import com.alibaba.sdk.android.util.Md5Utils;
 import com.eftimoff.patternview.PatternView;
@@ -17,6 +18,7 @@ import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.BdLog;
 import com.zxzx74147.devlib.utils.SharedPreferenceHelper;
+import com.zxzx74147.devlib.utils.ZXDialogUtil;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 
 /**
@@ -136,5 +138,15 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
         mRequest.addParams("gesture", pass);
         mRequest.setPath(NetworkConfig.ADDRESS_U_GESTURE);
         sendRequest(mRequest);
+    }
+
+    public void onForgetpassword(View v){
+        ZXDialogUtil.showCheckDialog(this, R.string.forget_pass_remind, new Runnable() {
+            @Override
+            public void run() {
+                AccountManager.sharedInstance().logout();
+                finish();
+            }
+        });
     }
 }

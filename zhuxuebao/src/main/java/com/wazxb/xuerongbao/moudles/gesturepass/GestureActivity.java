@@ -15,6 +15,7 @@ import com.wazxb.xuerongbao.storage.data.UserAllData;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
+import com.zxzx74147.devlib.utils.ZXDialogUtil;
 
 /**
  * Created by zhengxin on 16/3/7.
@@ -37,7 +38,13 @@ public class GestureActivity extends ZXBBaseActivity {
     }
 
     public void onClearPassClick(View v) {
-        submit("");
+        ZXDialogUtil.showCheckDialog(this, R.string.reset_pass_remind, new Runnable() {
+            @Override
+            public void run() {
+                submit("");
+            }
+        });
+
     }
 
     @Override
