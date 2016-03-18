@@ -21,6 +21,8 @@ public class NetworkConfig {
     public static final String ADDRESS_U_FEEDBACK = "u/feedback";
     public static final String ADDRESS_U_UPPORTRAIT = "u/upportrait";
     public static final String ADDRESS_U_GESTURE = "u/gesture";
+    public static final String ADDRESS_U_BOOK = "u/book";
+
 
 
     public static final String ADDRESS_LN_CALCULATOR = "ln/calculator";

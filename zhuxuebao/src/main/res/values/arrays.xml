@@ -1,22 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="bank_list">
+        <item>中国工商银行</item>
+        <item>中国农业银行</item>
         <item>中国银行</item>
-        <item>工商银行</item>
-        <item>农业银行</item>
-        <item>建设银行</item>
+        <item>中国建设银行</item>
         <item>交通银行</item>
-        <item>招商银行</item>
-        <item>民生银行</item>
-        <item>光大银行</item>
-        <item>中信银行</item>
-        <item>兴业银行</item>
-        <item>浦东发展银行</item>
-        <item>华夏银行</item>
-        <item>深圳发展银行</item>
-        <item>广东发展银行</item>
-        <item>北京银行</item>
-        <item>上海银行</item>
         <item>中国邮政储蓄银行</item>
+        <item>招商银行</item>
+        <item>中信银行</item>
+        <item>中国光大银行</item>
+        <item>华夏银行</item>
+        <item>上海浦东发展银行</item>
+        <item>中国民生银行</item>
+        <item>广发银行</item>
+        <item>兴业银行</item>
+        <item>平安银行</item>
+        <item>浙商银行</item>
+        <item>渤海银行</item>
+        <item>东亚银行</item>
+        <item>大华银行</item>
+        <item>韩亚银行</item>
+        <item>吉林银行</item>
+        <item>盛京银行</item>
+        <item>锦州银行</item>
+        <item>葫芦岛银行</item>
+        <item>大连银行</item>
+        <item>鞍山银行</item>
+        <item>抚顺银行</item>
+        <item>丹东银行</item>
+        <item>营口银行</item>
+        <item>盘锦银行</item>
+        <item>阜新银行</item>
+        <item>辽阳银行</item>
+        <item>铁岭银行</item>
+        <item>朝阳银行</item>
+        <item>哈尔滨银行</item>
+        <item>龙江银行</item>
+        <item>沈阳农商银行</item>
     </array>
 </resources>

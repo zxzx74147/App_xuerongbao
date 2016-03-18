@@ -9,7 +9,9 @@ import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityBorrowApplyBinding;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
+import com.wazxb.xuerongbao.storage.StorageManager;
 import com.wazxb.xuerongbao.storage.data.BorrowRequestData;
+import com.wazxb.xuerongbao.storage.data.InitData;
 import com.wazxb.xuerongbao.util.FillRqeustUtil;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
@@ -31,6 +33,10 @@ public class BorrowApplyActivity extends ZXBBaseActivity {
         mRequestData = (BorrowRequestData) getParam();
         mBinding.setData(mRequestData);
         mBinding.setHandler(this);
+        InitData init = StorageManager.sharedInstance().getInitdat();
+        if (init != null) {
+            mBinding.setContract(init.contract);
+        }
     }
 
 

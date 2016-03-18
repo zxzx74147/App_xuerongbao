@@ -31,6 +31,7 @@ public class CreditBaseActivity extends ZXBBaseActivity {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_credit_base);
         addTabs();
+        mBinding.titleBar.setRightText(R.string.done);
     }
 
     private void setTab(int index) {
@@ -51,22 +52,23 @@ public class CreditBaseActivity extends ZXBBaseActivity {
         mBinding.titleBar.setRightClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int index = mBinding.tabHost.getCurrentTabIndex();
-                switch (index) {
-                    case 0:
-                        if (((CreditBaseFragment1) mFragmentTable[0]).checkDone()) {
-                            mBinding.tabHost.setCurrentIndex(index + 1);
-                        }
-                        break;
-                    case 1:
-                        if (((CreditBaseFragment2) mFragmentTable[1]).checkDone()) {
-                            mBinding.tabHost.setCurrentIndex(index + 1);
-                        }
-                        break;
-                    case 2:
-                        submit();
-                        break;
-                }
+                submit();
+//                int index = mBinding.tabHost.getCurrentTabIndex();
+//                switch (index) {
+//                    case 0:
+//                        if (((CreditBaseFragment1) mFragmentTable[0]).checkDone()) {
+//                            mBinding.tabHost.setCurrentIndex(index + 1);
+//                        }
+//                        break;
+//                    case 1:
+//                        if (((CreditBaseFragment2) mFragmentTable[1]).checkDone()) {
+//                            mBinding.tabHost.setCurrentIndex(index + 1);
+//                        }
+//                        break;
+//                    case 2:
+//                        submit();
+//                        break;
+//                }
             }
         });
 
@@ -107,11 +109,7 @@ public class CreditBaseActivity extends ZXBBaseActivity {
         @Override
         public void onPageSelected(int position) {
             mBinding.titleBar.setText(getResources().getString(R.string.credit_base) + "(" + (position + 1) + "/3)");
-            if (position == 2) {
-                mBinding.titleBar.setRightText(R.string.done);
-            } else {
-                mBinding.titleBar.setRightText(R.string.next_step);
-            }
+
         }
 
         @Override

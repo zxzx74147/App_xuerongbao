@@ -13,6 +13,8 @@ import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.databinding.ActivityRegitster4Binding;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
+import com.wazxb.xuerongbao.storage.StorageManager;
+import com.wazxb.xuerongbao.storage.data.InitData;
 import com.wazxb.xuerongbao.storage.data.UidData;
 import com.wazxb.xuerongbao.util.DeviceIDMananger;
 import com.wazxb.xuerongbao.widget.InputTextView;
@@ -50,6 +52,10 @@ public class RegisterFragment4 extends BaseFragment {
                 }
             }
         });
+        InitData init = StorageManager.sharedInstance().getInitdat();
+        if (init != null) {
+            mBinding.setData(init.contract);
+        }
         return mBinding.getRoot();
     }
 
@@ -149,7 +155,7 @@ public class RegisterFragment4 extends BaseFragment {
                     InputTextView input = (InputTextView) view;
                     if (ZXStringUtil.checkString(input.getKey())) {
 
-                            mRequest.addParams(input.getKey(), input.getText());
+                        mRequest.addParams(input.getKey(), input.getText());
 
                     }
                 } else if (view instanceof UploadImageView) {

@@ -2,8 +2,11 @@ package com.wazxb.xuerongbao.util;
 
 import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
 import com.wazxb.xuerongbao.storage.data.ProdData;
 import com.wazxb.xuerongbao.widget.CashView;
 import com.wazxb.xuerongbao.widget.InfoTextView;
@@ -31,13 +34,33 @@ public class ZXBDataBindingUtil {
         view.setContent(edit);
     }
 
+    @BindingAdapter("app:click_url")
+    public static void setRightDrawable(final View view, final String url) {
+        if (view == null || !ZXStringUtil.checkString(url)) {
+            return;
+        }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String title = null;
+                if (view instanceof TextView) {
+                    title = ((TextView) view).getText().toString();
+                    title = title.replace("《", "");
+                    title = title.replace("》", "");
+                }
+                CommonWebActivity.startActivity(view.getContext(), title, url);
+            }
+        });
+    }
+
     @BindingAdapter("app:info_edit_text")
-    public static void setLayoutHeight(InfoTextView view, String edit) {
+    public static void setLayoutHeig(InfoTextView view, String edit) {
         view.setContent(edit);
     }
 
     @BindingAdapter("app:info_remind_text")
-    public static void setLayoutHeight(InfoTextView view, int num) {
+    public static void setRemind(InfoTextView view, String num) {
         view.setRemind(num);
     }
 

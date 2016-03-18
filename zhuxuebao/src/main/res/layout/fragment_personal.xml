@@ -181,7 +181,7 @@
             android:onClick="@{handler.onMessageClick}"
             app:info_label_text="@string/my_message"
             app:info_left_drawable="@drawable/user_msg"
-            app:info_remind_text="@{MessageManager.sharedInstance().getNewNum()}" />
+            app:info_remind_text="@{String.valueOf(MessageManager.sharedInstance().getNewNum())}" />
 
         <ImageView
             android:layout_width="match_parent"

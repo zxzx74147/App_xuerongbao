@@ -13,4 +13,5 @@ public class ContractData implements Serializable {
     public String help;           //帮助引导Url
     public String xuexin;          //学信网引导Url
     public String mobile;          //运营商引导Url
+    public String hand;     //手持身份证引导Url
 }

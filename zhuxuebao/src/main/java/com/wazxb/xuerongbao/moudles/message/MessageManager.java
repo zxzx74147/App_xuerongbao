@@ -149,7 +149,10 @@ public class MessageManager {
     }
 
     public int getNewNum() {
-        return newNum;
+        if(mData == null || mData.msgList == null){
+            return 0;
+        }
+        return mData.msgList.getUnReadNum();
     }
 
     public void clearNew() {

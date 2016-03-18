@@ -69,9 +69,9 @@ public class InfoTextView extends LinearLayout {
         mBinding.content.setText(edit);
     }
 
-    public void setRemind(int num) {
-        mBinding.infoRemind.setText(String.valueOf(num));
-        if (num > 0) {
+    public void setRemind(String num) {
+        mBinding.infoRemind.setText(num);
+        if (ZXStringUtil.checkString(num)) {
             mBinding.infoRemind.setVisibility(View.VISIBLE);
         } else {
             mBinding.infoRemind.setVisibility(View.GONE);

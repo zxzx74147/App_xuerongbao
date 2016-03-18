@@ -289,4 +289,8 @@
     <string name="amount_total">总额度</string>
     <string name="slogen">学生校园生活助手</string>
     <string name="xxxx">xxxxx</string>
+    <string name="regist_agree">我已阅读并同意</string>
+    <string name="regist_1">《隐私条款》</string>
+    <string name="and">及</string>
+    <string name="regist_2">《注册协议》</string>
 </resources>

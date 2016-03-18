@@ -18,6 +18,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.CHANGEWIFISTATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name="com.wazxb.xuerongbao.ZXBApplication"
@@ -121,11 +122,15 @@
         <activity android:name="com.wazxb.xuerongbao.moudles.red.RedActivity" />
         <activity android:name="com.wazxb.xuerongbao.moudles.coin.CoinActivity" />
         <activity android:name="com.wazxb.xuerongbao.moudles.gesturepass.GestureActivity" />
-        <activity android:name="com.wazxb.xuerongbao.moudles.update.UpdateDialog" />
+        <!-- 读联系人权限 -->
+
+        <activity
+            android:name="com.wazxb.xuerongbao.moudles.update.UpdateDialog"
+            android:theme="@android:style/Theme.Translucent" />
 
         <activity android:name="com.wazxb.xuerongbao.moudles.account.InitActivity" />
-        <service android:name="com.wazxb.xuerongbao.moudles.update.UpdateService" />
 
+        <service android:name="com.wazxb.xuerongbao.moudles.update.UpdateService" />
 
 
         <!--分享-->
