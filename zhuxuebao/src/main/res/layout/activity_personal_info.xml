@@ -84,7 +84,8 @@
             android:layout_height="wrap_content"
             app:info_edit_text="@{data.name}"
             app:info_label_text="@string/name"
-            app:info_show_right="false" />
+            app:info_show_right="false"
+            app:right_text_color="@color/black" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -96,6 +97,7 @@
         <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/account_layout"
             android:layout_width="match_parent"
+            app:right_text_color="@color/black"
             android:layout_height="wrap_content"
             app:info_edit_text="@{data.phone}"
             app:info_label_text="@string/account"
@@ -114,6 +116,7 @@
             android:layout_height="wrap_content"
             app:info_edit_text="@{String.valueOf(data.quota)}"
             app:info_label_text="@string/quota"
+            app:right_text_color="@color/black"
             app:info_show_right="false" />
 
         <ImageView
@@ -126,6 +129,7 @@
         <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/beans_layout"
             android:layout_width="match_parent"
+            app:right_text_color="@color/black"
             android:layout_height="wrap_content"
             app:info_content_drawable="@drawable/user_bean"
             app:info_edit_text='@{String.valueOf(data.beans)}'
@@ -142,6 +146,7 @@
         <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/quotatotal_layout"
             android:layout_width="match_parent"
+            app:right_text_color="@color/black"
             android:layout_height="wrap_content"
 
             app:info_edit_text="@{String.valueOf(data.quotaTotal)}"
@@ -163,6 +168,7 @@
 
         <com.wazxb.xuerongbao.widget.InfoTextView
             android:id="@+id/ge_pass_layout"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{handler.onGesturePassClick}"

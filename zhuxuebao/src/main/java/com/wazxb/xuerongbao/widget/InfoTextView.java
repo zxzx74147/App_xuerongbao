@@ -53,7 +53,10 @@ public class InfoTextView extends LinearLayout {
             } else {
                 mBinding.iconImg.setVisibility(GONE);
             }
-
+            int color = a.getColor(R.styleable.InfoTextView_right_text_color, 0);
+            if (color != 0) {
+                mBinding.content.setTextColor(color);
+            }
             int contentDrawable = a.getResourceId(R.styleable.InfoTextView_info_content_drawable, 0);
             if (contentDrawable != 0) {
                 mBinding.icon.setImageResource(contentDrawable);

@@ -34,12 +34,13 @@
 
 
         <Button
+            android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/submit"
             android:layout_margin="0dip"
             android:layout_marginTop="@dimen/default_gap_40"
             android:background="@drawable/orange_btn_color"
+            android:enabled="false"
             android:onClick="@{handler.onSubmitClick}"
             android:text="@string/feedback_submit"
             android:textColor="@color/white"

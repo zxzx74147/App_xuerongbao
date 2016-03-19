@@ -93,16 +93,16 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
                         }
                         break;
                     case MODE_SET:
-
+                        if(splis.length<4){
+                            mBinding.remind.setText(R.string.pass_small_error);
+                            return;
+                        }
                         if (!ZXStringUtil.checkString(mOldPass)) {
                             mBinding.remind.setText(R.string.pass_second);
                             mOldPass = pass;
                             return;
                         }
-                        if(splis.length<4){
-                            mBinding.remind.setText(R.string.pass_small_error);
-                            return;
-                        }
+
                         if (mOldPass.equals(pass)) {
                             mBinding.remind.setText(R.string.pass_succ);
 
