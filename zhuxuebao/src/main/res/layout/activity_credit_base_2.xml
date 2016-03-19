@@ -34,6 +34,7 @@
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/school_hint"
                 app:input_edit_text="@{data.university}"
+                app:pick_type="school"
                 app:label_text="@string/school"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"

@@ -22,9 +22,11 @@ import android.widget.LinearLayout;
 import com.alibaba.sdk.android.util.Md5Utils;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.databinding.InputTextViewBinding;
+import com.wazxb.xuerongbao.moudles.common.SchoolSelActivity;
 import com.wazxb.xuerongbao.util.IDUtil;
 import com.wazxb.xuerongbao.util.RequestCode;
 import com.wazxb.xuerongbao.util.ZXDataPickerHelper;
+import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 import com.zxzx74147.devlib.utils.ZXViewHelper;
 
@@ -44,6 +46,7 @@ public class InputTextView extends LinearLayout {
     private String mRegex = null;
     private String mKey = null;
     private final int PHONE_REQUEST_ID = IDUtil.genID() + RequestCode.REQUEST_PICK_PHONE;
+    private final int PHONE_REQUEST_SCHOOL = IDUtil.genID() + RequestCode.REQUEST_MSG_SCHOOL;
     private String mPickType = null;
     private String mErrorHint;
     private int inputType;
@@ -247,6 +250,14 @@ public class InputTextView extends LinearLayout {
                 }
             });
 
+        } else if ("school".equals(mPickType)) {
+            mBinding.edit.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ZXActivityJumpHelper.startActivityForResult((Activity) getContext(), PHONE_REQUEST_SCHOOL, SchoolSelActivity.class);
+                }
+            });
+
         } else {
             mEdit.setOnClickListener(new OnClickListener() {
                 @Override
@@ -265,6 +276,13 @@ public class InputTextView extends LinearLayout {
 
     public void setContent(String edit) {
         mBinding.edit.setText(edit);
+    }
+
+    public void onSchoolSelected(int schoolId, String school) {
+        if (schoolId != PHONE_REQUEST_SCHOOL || school == null) {
+            return;
+        }
+        mBinding.edit.setText(school);
     }
 
     public void onPhoneSelected(int phoneId, Uri contactData) {

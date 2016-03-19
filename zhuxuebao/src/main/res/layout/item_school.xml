@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.zxzx74147.devlib.utils.TimerUtil" />
+
+        <variable
+            name="data"
+            type="com.wazxb.xuerongbao.storage.data.SchoolItemData" />
+
+        <variable
+            name="match"
+            type="java.lang.String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:onClick="@{data.onClick}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_gap_20"
+            android:text="@{data.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/default_gap_28" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@color/info_divider" />
+    </RelativeLayout>
+</layout>

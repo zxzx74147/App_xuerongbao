@@ -4,6 +4,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,7 +24,7 @@ public class ZXNetworkUtil {
             }
             sb.append(item.getKey());
             sb.append("=");
-            sb.append(item.getValue());
+            sb.append(URLEncoder.encode(item.getValue().toString()));
         }
         return sb.toString();
     }

@@ -44,6 +44,7 @@ public class CreditBar extends RelativeLayout {
         ((TextView) v.findViewById(R.id.credit)).setText(String.valueOf(edit));
         mBinding.progressBar.setThumb(getViewDrawble(v));
         mBinding.progressBar.setProgress(edit);
+        mBinding.progressBar.setEnabled(false);
     }
 
     public static BitmapDrawable getViewDrawble(View view) {

@@ -64,7 +64,7 @@ public class ZXBBaseActivity<T> extends ZXBaseActivity {
     }
 
     public void hideEmptyView() {
-        if(mEmptyView != null) {
+        if (mEmptyView != null) {
             mEmptyView.setVisibility(View.GONE);
         }
     }
@@ -111,6 +111,22 @@ public class ZXBBaseActivity<T> extends ZXBaseActivity {
                 public void processView(View view) {
                     if (view instanceof InputTextView) {
                         ((InputTextView) view).onPhoneSelected(requestCode, uri);
+                    }
+                }
+            });
+        }
+
+        if (requestCode / RequestCode.REQUEST_MSG_SCHOOL == 1) {
+            View root = getWindow().getDecorView();
+            final String school = data.getStringExtra("data");
+            if (school == null) {
+                return;
+            }
+            ZXViewHelper.dfsViewGroup(root, new ZXViewHelper.IViewProcess() {
+                @Override
+                public void processView(View view) {
+                    if (view instanceof InputTextView) {
+                        ((InputTextView) view).onSchoolSelected(requestCode, school);
                     }
                 }
             });
