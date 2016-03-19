@@ -2,6 +2,7 @@ package com.wazxb.xuerongbao;
 
 import android.app.Application;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
@@ -9,6 +10,8 @@ import android.util.Log;
 
 import com.alibaba.sdk.android.AlibabaSDK;
 import com.alibaba.sdk.android.callback.InitResultCallback;
+import com.alibaba.sdk.android.push.CloudPushService;
+import com.alibaba.sdk.android.push.CommonCallback;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.moudles.gesturepass.GesturePassManager;
 import com.wazxb.xuerongbao.moudles.message.MessageManager;
@@ -42,6 +45,7 @@ public class ZXBApplication extends Application {
             @Override
             public void onSuccess() {
                 Log.d(TAG, "init onesdk success");
+                initCloudChannel(ZXBApplication.this);
             }
 
             @Override
@@ -124,6 +128,34 @@ public class ZXBApplication extends Application {
             //建立一个Log，使得可以在LogCat视图查看结果
         }
         return data;
+    }
+
+    /**
+     * 初始化移动推送通道
+     * @param applicationContext
+     */
+    private void initCloudChannel(Context applicationContext) {
+        final CloudPushService cloudPushService = AlibabaSDK.getService(CloudPushService.class);
+        if(cloudPushService != null) {
+            cloudPushService.register(applicationContext,  new CommonCallback() {
+
+                @Override
+                public void onSuccess() {
+                    Log.d(TAG, "init cloudchannel success");
+                    String id = cloudPushService.getDeviceId();
+                    Log.d(TAG, "init cloudchannel id="+id);
+                    StorageManager.sharedInstance().setPushId(id);
+                    StorageManager.sharedInstance().requestInitData(null);
+                }
+
+                @Override
+                public void onFailed(String errorCode, String errorMessage) {
+                    Log.d(TAG, "init cloudchannel fail" + "err:" + errorCode + " - message:"+ errorMessage);
+                }
+            });
+        }else{
+            Log.i(TAG, "CloudPushService is null");
+        }
     }
 
 }

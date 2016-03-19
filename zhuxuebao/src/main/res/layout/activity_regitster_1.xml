@@ -68,6 +68,8 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/school_hint"
+                app:pick_type="school"
+                app:input_right_drawable="@drawable/user_gray_right_arrow"
                 app:label_text="@string/school"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="true"

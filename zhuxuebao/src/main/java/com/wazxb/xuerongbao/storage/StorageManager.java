@@ -28,6 +28,7 @@ public class StorageManager {
     private static final String KEY_INIT_DATA = "key_init_data";
 
     private static StorageManager mInstance;
+    private static String mPushDeviceId = null;
     private InitData mInitData = new InitData();
 
     private StorageManager() {
@@ -113,6 +114,10 @@ public class StorageManager {
         return null;
     }
 
+    public void setPushId(String id) {
+        mPushDeviceId = id;
+    }
+
     public void requestInitData(final HttpResponseListener<InitData> listener) {
         ZXBHttpRequest<InitData> request = new ZXBHttpRequest<>(InitData.class, new HttpResponseListener<InitData>() {
             @Override
@@ -123,7 +128,9 @@ public class StorageManager {
                 mInitData = response.result;
                 saveKVObjectAsync(KEY_INIT_DATA, mInitData);
                 EventBus.getDefault().post(EventBusConfig.EVENT_INIT_DONE);
-                listener.onResponse(response);
+                if (listener != null) {
+                    listener.onResponse(response);
+                }
             }
         });
         request.addParams("uid", AccountManager.sharedInstance().getUid());
@@ -132,6 +139,7 @@ public class StorageManager {
         request.addParams("deviceType", Build.MODEL);
         request.addParams("deviceOp", Build.VERSION.RELEASE);
         request.addParams("version", getVersionInfo());
+        request.addParams("deviceToken", mPushDeviceId);
         request.setPath(NetworkConfig.ADDRESS_SYS_INIT);
         request.send();
     }

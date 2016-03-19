@@ -47,9 +47,9 @@ public class CreditBar extends RelativeLayout {
         mBinding.progressBar.setEnabled(false);
     }
 
-    public static BitmapDrawable getViewDrawble(View view) {
-        int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-        int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+    public BitmapDrawable getViewDrawble(View view) {
+        int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(getResources().getDimensionPixelSize(R.dimen.default_gap_160), MeasureSpec.EXACTLY);
+        int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(getResources().getDimensionPixelSize(R.dimen.default_gap_190), MeasureSpec.EXACTLY);
         view.measure(widthMeasureSpec, heightMeasureSpec);
         int width = view.getMeasuredWidth();
         int height = view.getMeasuredHeight();

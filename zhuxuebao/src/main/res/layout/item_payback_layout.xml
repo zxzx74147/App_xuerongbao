@@ -62,13 +62,13 @@
                 android:textSize="@dimen/default_size_30" />
         </LinearLayout>
 
-        <SeekBar
+        <com.wazxb.xuerongbao.widget.PaybackBar
+            android:id="@+id/pay_progress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:max='100'
-            android:progress="@{loanData.getProgress()}" />
+            android:layout_height="@dimen/default_gap_100"
+            android:layout_marginLeft="@dimen/default_gap_30"
+            android:layout_marginRight="@dimen/default_gap_30" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -87,9 +87,9 @@
             android:background="@color/info_divider" />
 
         <LinearLayout
-            android:layout_marginBottom="@dimen/default_gap_15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_gap_15"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/default_gap_30"
             android:paddingRight="@dimen/default_gap_30"
@@ -116,9 +116,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_gap_15"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/default_gap_30"
-            android:layout_marginBottom="@dimen/default_gap_15"
             android:paddingRight="@dimen/default_gap_30">
 
             <TextView
@@ -142,8 +142,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginBottom="@dimen/default_gap_15"
+            android:orientation="horizontal"
             android:paddingLeft="@dimen/default_gap_30"
             android:paddingRight="@dimen/default_gap_30"
             android:visibility='@{loanData.lnId==3? View.VISIBLE:View.GONE}'>
@@ -169,9 +169,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_gap_15"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/default_gap_30"
-            android:layout_marginBottom="@dimen/default_gap_15"
             android:paddingRight="@dimen/default_gap_30">
 
             <TextView
@@ -195,9 +195,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_gap_15"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/default_gap_20"
-            android:layout_marginBottom="@dimen/default_gap_15"
             android:paddingLeft="@dimen/default_gap_30"
             android:paddingRight="@dimen/default_gap_30">
 
