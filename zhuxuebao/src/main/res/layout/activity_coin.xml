@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
@@ -18,20 +17,15 @@
             type="com.wazxb.xuerongbao.moudles.coin.CoinActivity" />
     </data>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/white">
 
-        <com.zxzx74147.devlib.widget.TitleBar
-            android:id="@+id/title_bar"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/default_gap_110"
-            app:text="@string/sign" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -50,7 +44,7 @@
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/default_gap_130"
                     android:background="@{coindata.isSigned==0? @drawable/sign_btn:@drawable/sign_gray}"
                     android:onClick="@{coindata.isSigned==0? handler.onSignClick:null}"
                     android:text='@{coindata.isSigned==0? "":"已签到"}' />
@@ -58,7 +52,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/default_gap_200"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/default_gap_50"
                 android:paddingRight="@dimen/default_gap_50">
@@ -176,23 +170,135 @@
                         android:textColor="@color/orange"
                         android:textSize="@dimen/default_gap_24" />
                 </FrameLayout>
+
+
             </LinearLayout>
 
-            <FrameLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#8e000000">
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_gap_30"
 
-                <RelativeLayout
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/default_gap_60"
+                android:paddingRight="@dimen/default_gap_60">
+
+                <View
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/sign_succ">
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    android:background="@drawable/sing_remind_rect" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/sign_gray"
+                    android:gravity="center"
+                    android:text="@string/sing_remind"
+                    android:textColor="#666666"
+                    android:textSize="@dimen/default_size_30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginBottom="@dimen/default_gap_30"
+                    android:layout_marginLeft="@dimen/default_gap_10"
+                    android:layout_marginRight="@dimen/default_gap_10"
+                    android:layout_marginTop="@dimen/default_gap_30"
+                    android:text="@string/sign_remind_content"
+
+                    android:textColor="#c3c3c3"
+                    android:textSize="@dimen/default_gap_24" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:id="@+id/coin_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#8e000000"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/sign_succ"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_gap_200"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </RelativeLayout>
-            </FrameLayout>
+                        android:layout_height="wrap_content"
+                        android:text="@string/sign_succ_1"
+                        android:textColor="@color/text_color_dark_black"
+
+                        android:textSize="@dimen/default_gap_30" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(coindata.coins)}"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/default_gap_30" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ge"
+                        android:textColor="@color/text_color_dark_black"
+                        android:textSize="@dimen/default_gap_30" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_gap_30"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sign_succ_2"
+                        android:textColor="@color/text_color_dark_black"
+                        android:textSize="@dimen/default_gap_30" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(coindata.totalCoins)}"
+                        android:textColor="@color/orange"
+                        android:textSize="@dimen/default_gap_30" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ge"
+                        android:textColor="@color/text_color_dark_black"
+                        android:textSize="@dimen/default_gap_30" />
+                </LinearLayout>
+            </LinearLayout>
         </FrameLayout>
-    </LinearLayout>
+
+        <com.zxzx74147.devlib.widget.TitleBar
+            android:id="@+id/title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_gap_110"
+            android:background="@android:color/transparent" />
+    </FrameLayout>
 </layout>

@@ -59,11 +59,7 @@ public class MessageItemData implements Serializable {
         Context context = v.getContext();
         LoanItemData loan = null;
         if (ZXStringUtil.checkString(url)) {
-            url = url.replaceFirst("comments://", "");
-            if (url.startsWith("loan#")) {
-                url = url.replace("loan#", "");
-                loan = ZXJsonUtil.fromJsonString(url, LoanItemData.class);
-            }
+            loan = ZXJsonUtil.fromJsonString(url, LoanItemData.class);
         }
         if (!mHasRead) {
             mHasRead = true;
@@ -83,7 +79,7 @@ public class MessageItemData implements Serializable {
                 ZXActivityJumpHelper.startActivity(context, CreditActivity.class);
                 break;
             case 5:
-                ZXActivityJumpHelper.startActivity(context, CreditActivity.class);
+                ZXActivityJumpHelper.startActivity(context, PaybackActivity.class);
                 break;
             case 6:
                 if (loan != null) {

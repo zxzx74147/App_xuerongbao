@@ -40,7 +40,7 @@ public class TitleBar extends LinearLayout {
 
     private void init(AttributeSet attrs) {
         mRoot = LayoutInflater.from(this.getContext()).inflate(R.layout.title_bar_layout, this);
-        setBackgroundColor(getResources().getColor(R.color.title_bar_bg));
+
         mBack = (ImageButton) findViewById(R.id.back);
         mTitle = (TextView) findViewById(R.id.title);
         mRight = (LinearLayout) findViewById(R.id.right_box);
@@ -56,15 +56,20 @@ public class TitleBar extends LinearLayout {
                 }
             }
         });
+        if (getBackground() == null) {
+            setBackgroundColor(getResources().getColor(R.color.title_bar_bg));
+        } else {
+            mTitldDiv.setVisibility(View.GONE);
+        }
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs,
                     R.styleable.TitleBar, 0, 0);
             String title = a.getString(R.styleable.TitleBar_text);
             String rightText = a.getString(R.styleable.TitleBar_right_text);
             String leftText = a.getString(R.styleable.TitleBar_left_text);
-            boolean has_text_title = a.getBoolean(R.styleable.TitleBar_text_title,true);
+            boolean has_text_title = a.getBoolean(R.styleable.TitleBar_text_title, true);
 
-            if (has_text_title){
+            if (has_text_title) {
                 mTitle.setVisibility(VISIBLE);
             }
             Drawable rightDrawable = a.getDrawable(R.styleable.TitleBar_right_drawable);
@@ -86,7 +91,7 @@ public class TitleBar extends LinearLayout {
                 ImageView image = new ImageView(getContext());
                 image.setId(R.id.right_image);
                 mRight.addView(image);
-                image.setPadding(getResources().getDimensionPixelSize(R.dimen.default_gap_15),0,getResources().getDimensionPixelSize(R.dimen.default_gap_15),0);
+                image.setPadding(getResources().getDimensionPixelSize(R.dimen.default_gap_15), 0, getResources().getDimensionPixelSize(R.dimen.default_gap_15), 0);
                 image.setImageDrawable(rightDrawable);
             }
             a.recycle();
@@ -111,7 +116,7 @@ public class TitleBar extends LinearLayout {
         ImageView image = new ImageView(getContext());
         image.setId(R.id.right_image);
         mRight.addView(image);
-        image.setPadding(getResources().getDimensionPixelSize(R.dimen.default_gap_15),0,getResources().getDimensionPixelSize(R.dimen.default_gap_15),0);
+        image.setPadding(getResources().getDimensionPixelSize(R.dimen.default_gap_15), 0, getResources().getDimensionPixelSize(R.dimen.default_gap_15), 0);
         image.setImageResource(id);
     }
 
@@ -132,7 +137,7 @@ public class TitleBar extends LinearLayout {
         mLeft.setOnClickListener(listener);
     }
 
-    public ImageButton getBackView(){
+    public ImageButton getBackView() {
         return mBack;
     }
 

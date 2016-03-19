@@ -129,11 +129,11 @@ public class HomeFragment extends BaseFragment {
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         if (MessageManager.sharedInstance().getNewNum() > 0) {
             mBinding.titleBar.setRightDrawable(R.drawable.index_has_msg);
-        }else{
+        } else {
             mBinding.titleBar.setRightDrawable(R.drawable.index_no_msg);
         }
     }
@@ -143,13 +143,12 @@ public class HomeFragment extends BaseFragment {
         if (EventBusConfig.EVENT_FRESH_USER_DATA.equals(event)) {
             UserAllData user = AccountManager.sharedInstance().getUserAllData();
             if (user != null) {
-                user.user.quotaTotal = user.user.quotaTotal > 5000 ? 5000 : user.user.quotaTotal;
-                mBinding.creditCeilingValue.setNumber((int) user.user.quotaTotal);
+                mBinding.creditCeilingValue.setNumber(user.user.quotaTotal);
             }
         } else if (EventBusConfig.EVENT_MESSAGE_REFRESH.equals(event)) {
             if (MessageManager.sharedInstance().getNewNum() > 0) {
                 mBinding.titleBar.setRightDrawable(R.drawable.index_has_msg);
-            }else{
+            } else {
                 mBinding.titleBar.setRightDrawable(R.drawable.index_no_msg);
             }
         }

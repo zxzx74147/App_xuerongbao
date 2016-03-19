@@ -299,4 +299,11 @@
     <string name="reset_pass_remind">确定取消手势密码吗？</string>
     <string name="forget_pass_remind">忘记手势密码，需重新登录并设置</string>
     <string name="add_school_info">添加学校信息</string>
+    <string name="pass_small_error">至少绘制4个点，请重新绘制</string>
+    <string name="loan_apply_amount_every_left">每期应还</string>
+    <string name="sing_remind">签到规则及说明</string>
+    <string name="sign_remind_content">当日签到获得一枚金币，连续签到获得几笔的速度提高，金币不能提现，但可以兑换为金币商城的商品，当年累积金币不使用下一年自动清零。</string>
+    <string name="sign_succ_1">今日签到获得金币</string>
+    <string name="ge">个</string>
+    <string name="sign_succ_2">累积获得金币</string>
 </resources>

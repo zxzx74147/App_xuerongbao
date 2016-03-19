@@ -172,7 +172,7 @@
                     android:layout_marginRight="@dimen/default_gap_35"
                     android:layout_marginTop="@dimen/default_gap_20"
                     android:text="@string/return_remind_content"
-                    android:textColor="@color/text_color_dark_black"
+                    android:textColor="@color/text_color_grey"
                     android:textSize="@dimen/default_size_30" />
             </LinearLayout>
         </LinearLayout>

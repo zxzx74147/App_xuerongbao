@@ -70,8 +70,15 @@ public class CoinActivity extends ZXBBaseActivity {
                     showToast(response.errorString);
                     return;
                 }
+                mBinding.coinLayout.setVisibility(View.VISIBLE);
                 AccountManager.sharedInstance().requestUserAllData();
                 mBinding.setCoindata(response.result);
+                mBinding.getRoot().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
+                    }
+                }, 1500);
             }
         });
         mSredRequest.setPath(NetworkConfig.ADDRESS_SYS_SSIGN);

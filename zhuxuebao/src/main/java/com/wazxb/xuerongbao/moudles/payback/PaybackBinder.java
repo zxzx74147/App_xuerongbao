@@ -1,7 +1,7 @@
 package com.wazxb.xuerongbao.moudles.payback;
 
 import com.wazxb.xuerongbao.base.list.ZXBViewBinder;
-import com.wazxb.xuerongbao.databinding.ItemLoanLayoutBinding;
+import com.wazxb.xuerongbao.databinding.ItemPaybackLayoutBinding;
 import com.wazxb.xuerongbao.storage.data.LoanItemData;
 
 /**
@@ -10,7 +10,7 @@ import com.wazxb.xuerongbao.storage.data.LoanItemData;
 public class PaybackBinder extends ZXBViewBinder<LoanItemData> {
 
     public PaybackBinder() {
-        registeItem(0, ItemLoanLayoutBinding.class, PaybackViewHolder.class);
+        registeItem(0, ItemPaybackLayoutBinding.class, PaybackViewHolder.class);
     }
 
     @Override

@@ -32,7 +32,7 @@
             <LinearLayout
                 android:id="@+id/banner_layout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/default_gap_300"
+                android:layout_height="@dimen/default_gap_330"
                 android:orientation="horizontal">
 
             </LinearLayout>

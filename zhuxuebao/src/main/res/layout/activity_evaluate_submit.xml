@@ -81,8 +81,8 @@
                 android:id="@+id/evaluate_anonymity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/default_gap_10"
                 android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_10"
                 android:button="@drawable/common_check_box"
                 android:checked="true" />
 
@@ -100,10 +100,12 @@
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/submit_btn"
                 android:layout_width="@dimen/default_gap_250"
                 android:layout_height="match_parent"
                 android:layout_margin="0dip"
                 android:background="@drawable/orange_btn_color"
+                android:enabled="false"
                 android:onClick="@{handler.onSubmitClick}"
                 android:padding="0dip"
                 android:text="@string/evaluate_submit"

@@ -104,8 +104,11 @@ public abstract class ZXBBaseListActivity extends ZXBBaseActivity {
         StoreHouseHeader storeHouseHeader = new StoreHouseHeader(this);
 
         storeHouseHeader.initWithString("zxb");
-        mRecycleView.mPtrFrameLayout.setHeaderView(storeHouseHeader);
-        mRecycleView.mPtrFrameLayout.addPtrUIHandler(storeHouseHeader);
+        PullView pullView = new PullView(this);
+//        mRecycleView.mPtrFrameLayout.setHeaderView(storeHouseHeader);
+//        mRecycleView.mPtrFrameLayout.addPtrUIHandler(storeHouseHeader);
+        mRecycleView.mPtrFrameLayout.setHeaderView(pullView);
+        mRecycleView.mPtrFrameLayout.addPtrUIHandler(pullView);
         mRecycleView.mPtrFrameLayout.autoRefresh(false);
         mRecycleView.mPtrFrameLayout.setPtrHandler(new PtrHandler() {
             @Override

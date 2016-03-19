@@ -192,7 +192,7 @@ public class BannerView extends BaseView<List<CarouselData>> {
         public Object instantiateItem(ViewGroup container, int position) {
             ImageView imageView = new ImageView(mContext);
             container.addView(imageView);
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
             imageView.setOnClickListener(mOnClickListener);
             if (mList.size() == 0) {
                 return imageView;

@@ -50,11 +50,13 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
             @Override
             public void onPatternDetected() {
                 String pass = mBinding.patternView.getPatternString();
+                mBinding.patternView.clearPattern(300);
                 if (!ZXStringUtil.checkString(pass)) {
                     BdLog.e("PASS=" + pass);
                     return;
                 }
                 String[] splis = pass.split("&");
+
                 StringBuilder sb = new StringBuilder();
                 for (String item : splis) {
                     String[] temp = item.split("-");
@@ -69,7 +71,6 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
                     sb.append(String.valueOf(temp1 * 3 + temp2));
                 }
                 pass = Md5Utils.md5Digest(sb.toString().getBytes());
-                mBinding.patternView.clearPattern(300);
                 switch (mMode) {
                     case MODE_CHECK:
                         if (pass.equals(AccountManager.sharedInstance().getPassword())) {
@@ -92,9 +93,14 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
                         }
                         break;
                     case MODE_SET:
+
                         if (!ZXStringUtil.checkString(mOldPass)) {
                             mBinding.remind.setText(R.string.pass_second);
                             mOldPass = pass;
+                            return;
+                        }
+                        if(splis.length<4){
+                            mBinding.remind.setText(R.string.pass_small_error);
                             return;
                         }
                         if (mOldPass.equals(pass)) {
