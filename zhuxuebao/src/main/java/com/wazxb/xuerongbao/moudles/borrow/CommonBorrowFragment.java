@@ -46,7 +46,7 @@ public class CommonBorrowFragment extends BaseFragment {
     public void onBorrowClick(View v) {
         UserAllData user = AccountManager.sharedInstance().getUserAllData();
         if (user == null || user.user == null || !ZXStringUtil.checkString(user.user.bank)) {
-            ZXDialogUtil.showCheckDialog(getActivity(), R.string.logout_remind, new Runnable() {
+            ZXDialogUtil.showCheckDialog(getActivity(), R.string.bind_bank_remind, new Runnable() {
                 @Override
                 public void run() {
                     ZXActivityJumpHelper.startActivity(getActivity(), BindCradActivity.class);

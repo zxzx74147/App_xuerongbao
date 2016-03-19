@@ -306,4 +306,5 @@
     <string name="sign_succ_1">今日签到获得金币</string>
     <string name="ge">个</string>
     <string name="sign_succ_2">累积获得金币</string>
+    <string name="bind_bank_remind">您还没有绑定银行卡</string>
 </resources>

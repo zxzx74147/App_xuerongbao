@@ -40,13 +40,12 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/default_size_30" />
 
-            <com.wazxb.xuerongbao.widget.CreditBar
+            <ImageView
+                android:id="@+id/credit_bg"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/default_gap_150"
-                android:layout_marginBottom="@dimen/default_gap_20"
-                android:layout_marginTop="@dimen/default_gap_150"
-                android:max="5000"
-                app:progress="@{data.user.quota}" />
+                android:layout_height="@dimen/default_gap_200"
+                android:layout_marginBottom="@dimen/default_gap_50"
+                android:layout_marginTop="@dimen/default_gap_150" />
         </RelativeLayout>
 
         <TextView

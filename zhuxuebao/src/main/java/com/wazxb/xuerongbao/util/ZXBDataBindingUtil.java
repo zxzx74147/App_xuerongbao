@@ -7,11 +7,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
+import com.wazxb.xuerongbao.storage.data.LoanItemData;
 import com.wazxb.xuerongbao.storage.data.ProdData;
 import com.wazxb.xuerongbao.widget.CashView;
 import com.wazxb.xuerongbao.widget.CreditBar;
 import com.wazxb.xuerongbao.widget.InfoTextView;
 import com.wazxb.xuerongbao.widget.InputTextView;
+import com.wazxb.xuerongbao.widget.PaybackBar;
 import com.wazxb.xuerongbao.widget.UploadImageView;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 import com.zxzx74147.devlib.widget.StrokeTextView;
@@ -114,5 +116,20 @@ public class ZXBDataBindingUtil {
     @BindingAdapter("app:prodData")
     public static void setLayoutHeight(CashView view, ProdData prod) {
         view.setProd(prod);
+    }
+
+    @BindingAdapter("app:int_max")
+    public static void setPaybackBarMax(PaybackBar view, int max) {
+        view.setMax(max);
+    }
+
+    @BindingAdapter("app:int_process")
+    public static void setPaybackBarProgress(PaybackBar view, int process) {
+        view.setProcess(process);
+    }
+
+    @BindingAdapter("app:loan_process")
+    public static void setPaybackBarProgress(PaybackBar view, LoanItemData data) {
+        view.setLoanData(data);
     }
 }

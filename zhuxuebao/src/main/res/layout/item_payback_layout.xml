@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -15,6 +16,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:clipChildren="false"
         android:orientation="vertical">
 
         <View
@@ -30,6 +32,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clipChildren="false"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/default_gap_20"
@@ -62,24 +65,24 @@
                 android:textSize="@dimen/default_size_30" />
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/info_divider" />
+
         <com.wazxb.xuerongbao.widget.PaybackBar
             android:id="@+id/pay_progress"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/default_gap_100"
+            android:layout_height="@dimen/default_gap_80"
             android:layout_marginLeft="@dimen/default_gap_30"
-            android:layout_marginRight="@dimen/default_gap_30" />
+            android:layout_marginRight="@dimen/default_gap_30"
+            app:loan_process="@{loanData}" />
 
-
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10">
+            android:layout_height="1px"
+            android:background="@color/info_divider" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

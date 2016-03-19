@@ -29,6 +29,17 @@ public class CreditActivity extends ZXBBaseActivity {
         UserAllData data = AccountManager.sharedInstance().getUserAllData();
         if (data != null) {
             mBinding.setData(data);
+            if (data.user.quotaTotal >= 5000) {
+                mBinding.creditBg.setImageResource(R.drawable.credit_5000);
+            } else if (data.user.quotaTotal >= 3000) {
+                mBinding.creditBg.setImageResource(R.drawable.credit_3000);
+            } else if (data.user.quotaTotal >= 1000) {
+                mBinding.creditBg.setImageResource(R.drawable.credit_1000);
+            } else if (data.user.quotaTotal >= 500) {
+                mBinding.creditBg.setImageResource(R.drawable.credit_500);
+            } else {
+                mBinding.creditBg.setImageResource(R.drawable.credit_0);
+            }
         }
     }
 
