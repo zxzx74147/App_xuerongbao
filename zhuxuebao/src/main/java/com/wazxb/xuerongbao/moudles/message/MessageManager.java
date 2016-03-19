@@ -149,7 +149,7 @@ public class MessageManager {
     }
 
     public int getNewNum() {
-        if(mData == null || mData.msgList == null){
+        if (mData == null || mData.msgList == null) {
             return 0;
         }
         return mData.msgList.getUnReadNum();
@@ -173,5 +173,12 @@ public class MessageManager {
 
     public void saveMsg() {
         StorageManager.sharedInstance().saveKVObjectAsync(KEY_MESSAGE, mData);
+    }
+
+    public void clear() {
+        mData.msgList = null;
+        mData.lastMId = 0;
+        StorageManager.sharedInstance().saveKVObjectAsync(KEY_MESSAGE, mData);
+        EventBus.getDefault().sendEvent(EventBusConfig.EVENT_MESSAGE_REFRESH);
     }
 }

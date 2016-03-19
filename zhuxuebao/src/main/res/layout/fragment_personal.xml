@@ -115,6 +115,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/default_gap_10"
                     android:drawableLeft="@drawable/user_bean"
+                    android:drawablePadding="@dimen/default_gap_5"
                     android:text="@{String.valueOf(data.beans)}"
                     android:textColor="@color/orange"
                     android:textSize="@dimen/default_gap_24" />
@@ -176,6 +177,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{handler.onCoinGiftClick}"
+            app:content_text='@{String.valueOf(data.coins)+"个"}'
             app:info_label_text="@string/my_gold_coin"
             app:info_left_drawable="@drawable/user_coin" />
 

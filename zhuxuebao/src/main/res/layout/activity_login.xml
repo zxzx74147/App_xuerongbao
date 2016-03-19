@@ -75,6 +75,7 @@
             android:onClick="@{handler.onLoginClick}"
             android:text="@string/login"
             android:textColor="@color/white"
+            android:enabled="false"
             android:textSize="@dimen/text_size_big" />
 
 

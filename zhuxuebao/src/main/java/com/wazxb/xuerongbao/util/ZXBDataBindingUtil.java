@@ -9,10 +9,12 @@ import android.widget.TextView;
 import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
 import com.wazxb.xuerongbao.storage.data.ProdData;
 import com.wazxb.xuerongbao.widget.CashView;
+import com.wazxb.xuerongbao.widget.CreditBar;
 import com.wazxb.xuerongbao.widget.InfoTextView;
 import com.wazxb.xuerongbao.widget.InputTextView;
 import com.wazxb.xuerongbao.widget.UploadImageView;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
+import com.zxzx74147.devlib.widget.StrokeTextView;
 
 /**
  * Created by zhengxin on 16/3/6.
@@ -32,6 +34,11 @@ public class ZXBDataBindingUtil {
     @BindingAdapter("app:content_text")
     public static void setRightDrawable(InfoTextView view, String edit) {
         view.setContent(edit);
+    }
+
+    @BindingAdapter("app:progress")
+    public static void setCreditProgress(CreditBar view, int edit) {
+        view.setProgress(edit);
     }
 
     @BindingAdapter("app:click_url")
@@ -62,6 +69,11 @@ public class ZXBDataBindingUtil {
     @BindingAdapter("app:info_remind_text")
     public static void setRemind(InfoTextView view, String num) {
         view.setRemind(num);
+    }
+
+    @BindingAdapter("app:inner_color")
+    public static void setInnerColor(StrokeTextView view, int num) {
+        view.setInnerColor(num);
     }
 
     @BindingAdapter("app:input_sex")

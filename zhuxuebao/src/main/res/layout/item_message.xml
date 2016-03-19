@@ -18,8 +18,8 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
 
-        android:paddingTop="@dimen/default_gap_15"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="@dimen/default_gap_15">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -40,23 +40,43 @@
                 app:riv_corner_radius="@dimen/default_gap_200" />
 
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/default_gap_180"
-                android:layout_marginTop="@dimen/default_gap_10"
+
                 android:layout_toRightOf="@+id/head"
-                android:text="@{data.title}"
-                android:textColor="@color/text_color_black"
-                android:textSize="@dimen/default_gap_28" />
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    android:text="@{data.title}"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="@dimen/default_gap_28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/title"
+                    android:text="."
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/default_size_60"
+                    android:visibility='@{data.mHasRead? View.INVISIBLE:View.VISIBLE}' />
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="@{TimerUtil.getTimeFormat(data.time,TimerUtil.YMD)}" />
+                android:text="@{TimerUtil.getTimeFormat(data.time,TimerUtil.YMD)}"
+                android:textSize="@dimen/default_size_24" />
 
 
             <TextView
@@ -67,16 +87,6 @@
                 android:layout_marginRight="@dimen/default_gap_180"
                 android:layout_toRightOf="@+id/head"
                 android:text="@{data.content}" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="@dimen/default_gap_10"
-                android:layout_toLeftOf="@+id/time"
-                android:text="*"
-                android:textColor="@color/red"
-                android:visibility='@{data.mHasRead? View.INVISIBLE:View.VISIBLE}' />
 
 
         </RelativeLayout>

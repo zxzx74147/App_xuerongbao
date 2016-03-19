@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="handler"
+            type="com.wazxb.xuerongbao.widget.CreditBar" />
+
+
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap_30"
+            android:layout_marginRight="@dimen/default_gap_30"
+            android:layout_marginTop="@dimen/default_gap_45"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/progress_bar"
+                style="@style/credit_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="5000" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

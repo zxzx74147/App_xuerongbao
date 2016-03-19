@@ -37,6 +37,12 @@ public class BorrowApplyActivity extends ZXBBaseActivity {
         if (init != null) {
             mBinding.setContract(init.contract);
         }
+        FillRqeustUtil.addWatcher(this, new FillRqeustUtil.CheckFilledListener() {
+            @Override
+            public void onChecked(boolean isReady) {
+                mBinding.borrow.setEnabled(isReady);
+            }
+        });
     }
 
 

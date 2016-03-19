@@ -333,13 +333,14 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/login_id"
+                    android:id="@+id/borrow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginRight="@dimen/default_gap_20"
+                    android:enabled="false"
                     android:layout_marginTop="@dimen/default_gap_20"
-                    android:background="@drawable/common_button_bg"
+                    android:background="@drawable/common_button_orange_bg"
                     android:onClick="@{handler.onApplyClick}"
                     android:text="@string/ok"
                     android:textColor="@color/white"

@@ -23,7 +23,7 @@
             android:id="@+id/title_bar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/default_gap_110"
-            app:text="@string/credit" />
+            app:text="@string/credit_amount" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -40,16 +40,19 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/default_size_30" />
 
-            <SeekBar
+            <com.wazxb.xuerongbao.widget.CreditBar
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/default_gap_60"
-                android:layout_marginTop="@dimen/default_gap_150" />
+                android:layout_height="@dimen/default_gap_150"
+                android:layout_marginBottom="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_150"
+                android:max="5000"
+                app:progress="@{data.user.quota}" />
         </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_gap_30"
             android:layout_marginTop="@dimen/default_gap_30"
             android:text="@string/fill_info_remind"
             android:textColor="@color/text_color_black"
@@ -59,6 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingLeft="@dimen/default_gap_30"
+            android:paddingRight="@dimen/default_gap_30"
             android:paddingTop="@dimen/default_gap_70">
 
             <FrameLayout
@@ -77,7 +82,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/default_gap_10"
                     android:src='@{data.cdBase.audit == 0? @drawable/credit_base_black:@drawable/credit_base}' />
+
+                <com.zxzx74147.devlib.widget.StrokeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="@dimen/default_gap_13"
+                    android:text="@string/credit_base"
+                    android:textSize="@dimen/default_gap_24"
+                    app:inner_color='@{data.cdBase.audit == 0? @color/text_color_grey:@color/orange}'
+                    app:stroke_color="@color/white" />
             </FrameLayout>
 
             <FrameLayout
@@ -96,7 +112,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/default_gap_10"
                     android:src='@{data.cdHome.audit == 0? @drawable/credit_home_black:@drawable/credit_home}' />
+
+                <com.zxzx74147.devlib.widget.StrokeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="@dimen/default_gap_13"
+                    android:text="@string/family_info"
+                    android:textSize="@dimen/default_gap_24"
+                    app:inner_color='@{data.cdHome.audit == 0? @color/text_color_grey:@color/orange}'
+                    app:stroke_color="@color/white" />
             </FrameLayout>
 
             <FrameLayout
@@ -115,7 +142,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/default_gap_10"
                     android:src='@{data.cdSchool.audit == 0? @drawable/credit_contacts_black:@drawable/credit_contacts}' />
+
+                <com.zxzx74147.devlib.widget.StrokeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="@dimen/default_gap_13"
+                    android:text="@string/contact_info"
+                    android:textSize="@dimen/default_gap_24"
+                    app:inner_color='@{data.cdSchool.audit == 0? @color/text_color_grey:@color/orange}'
+                    app:stroke_color="@color/white" />
             </FrameLayout>
 
             <FrameLayout
@@ -134,7 +172,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/default_gap_10"
                     android:src='@{data.cdLife.audit == 0? @drawable/credit_consume_black:@drawable/credit_consume}' />
+
+                <com.zxzx74147.devlib.widget.StrokeTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="@dimen/default_gap_13"
+                    android:text="@string/other_info_title"
+                    android:textSize="@dimen/default_gap_24"
+                    app:inner_color='@{data.cdLife.audit == 0? @color/text_color_grey:@color/orange}'
+                    app:stroke_color="@color/white" />
             </FrameLayout>
 
 

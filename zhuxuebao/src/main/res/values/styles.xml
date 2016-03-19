@@ -36,4 +36,12 @@
         <item name="@android:windowExitAnimation">@anim/down</item>
     </style>
 
+    <style name="credit_progress">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/credit_progress</item><!-- progress_horizontal -->
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:minHeight">@dimen/default_gap_3</item>
+        <item name="android:maxHeight">@dimen/default_gap_3</item>
+    </style>
+
 </resources>

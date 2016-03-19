@@ -2,6 +2,8 @@ package com.wazxb.xuerongbao.storage.data;
 
 import android.view.View;
 
+import com.wazxb.xuerongbao.base.ZXBBaseActivity;
+import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.moudles.coin.CoinAddressActivity;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 
@@ -18,6 +20,11 @@ public class GiftItemData implements Serializable {
     public int coinNum;   //金币价格
 
     public void onClick(View v){
+        UserAllData user = AccountManager.sharedInstance().getUserAllData();
+        if(user.user.coins<coinNum){
+            ((ZXBBaseActivity)v.getContext()).showToast("金币不足");
+            return;
+        }
         ZXActivityJumpHelper.startActivity(v.getContext(), CoinAddressActivity.class,this);
     }
 }

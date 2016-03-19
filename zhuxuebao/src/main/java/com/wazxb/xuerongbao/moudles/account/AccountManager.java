@@ -2,6 +2,7 @@ package com.wazxb.xuerongbao.moudles.account;
 
 import com.wazxb.xuerongbao.EventBusConfig;
 import com.wazxb.xuerongbao.moudles.gesturepass.GesturePassManager;
+import com.wazxb.xuerongbao.moudles.message.MessageManager;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
 import com.wazxb.xuerongbao.storage.StorageManager;
@@ -93,6 +94,7 @@ public class AccountManager {
     public void logout() {
         saveUid(null);
         mUserAllData = null;
+        MessageManager.sharedInstance().clear();
         EventBus.getDefault().post(EventBusConfig.EVENT_FRESH_USER_DATA);
     }
 

@@ -9,10 +9,14 @@ import android.view.ViewGroup;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.databinding.FragmentCommonBorrowBinding;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
+import com.wazxb.xuerongbao.moudles.personal.BindCradActivity;
 import com.wazxb.xuerongbao.storage.data.BorrowRequestData;
 import com.wazxb.xuerongbao.storage.data.CalculatorData;
 import com.wazxb.xuerongbao.storage.data.ProdData;
+import com.wazxb.xuerongbao.storage.data.UserAllData;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
+import com.zxzx74147.devlib.utils.ZXDialogUtil;
+import com.zxzx74147.devlib.utils.ZXStringUtil;
 import com.zxzx74147.devlib.widget.BaseFragment;
 
 /**
@@ -40,7 +44,16 @@ public class CommonBorrowFragment extends BaseFragment {
     }
 
     public void onBorrowClick(View v) {
-
+        UserAllData user = AccountManager.sharedInstance().getUserAllData();
+        if (user == null || user.user == null || !ZXStringUtil.checkString(user.user.bank)) {
+            ZXDialogUtil.showCheckDialog(getActivity(), R.string.logout_remind, new Runnable() {
+                @Override
+                public void run() {
+                    ZXActivityJumpHelper.startActivity(getActivity(), BindCradActivity.class);
+                }
+            });
+            return;
+        }
         mBinding.cashView.fillRequestData(mRequestData);
         ZXActivityJumpHelper.startActivity(getActivity(), BorrowApplyActivity.class, mRequestData);
     }

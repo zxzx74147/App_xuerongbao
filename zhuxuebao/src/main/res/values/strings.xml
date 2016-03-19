@@ -90,7 +90,7 @@
     <string name="wechat_post_key">weixin</string>
     <string name="qq_post_key">qq</string>
     <string name="weibo_post_key">weibo</string>
-    <string name="family_info">家庭信息</string>
+    <string name="family_info">家庭资料</string>
     <string name="father_name_hint">请输入父亲姓名</string>
     <string name="father_name">父亲姓名</string>
     <string name="father_name_post_key">faName</string>
@@ -105,7 +105,7 @@
     <string name="mother_phone_hint">请输入母亲电话</string>
     <string name="cancel">取消</string>
     <string name="ok">确认</string>
-    <string name="contact_info">联系信息</string>
+    <string name="contact_info">联系资料</string>
     <string name="father_info">父亲信息：</string>
     <string name="company">工作单位</string>
     <string name="company_hint">请输入工作单位</string>
@@ -151,7 +151,7 @@
     <string name="teacher2_phone_post_key">tbPhone</string>
     <string name="teacher2_duty_post_key">tbDuty</string>
     <string name="bank_info">银行流水</string>
-    <string name="other_info_title">其它信息</string>
+    <string name="other_info_title">其它资料</string>
     <string name="my_bank_card">我的银行卡</string>
     <string name="bind_bank_card">绑定银行卡</string>
     <string name="my_gold_coin">我的金币</string>

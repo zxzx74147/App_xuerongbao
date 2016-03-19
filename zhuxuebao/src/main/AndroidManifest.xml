@@ -122,6 +122,7 @@
         <activity android:name="com.wazxb.xuerongbao.moudles.red.RedActivity" />
         <activity android:name="com.wazxb.xuerongbao.moudles.coin.CoinActivity" />
         <activity android:name="com.wazxb.xuerongbao.moudles.gesturepass.GestureActivity" />
+        <activity android:name="com.wazxb.xuerongbao.moudles.message.MessageItemActivity" />
         <!-- 读联系人权限 -->
 
         <activity
