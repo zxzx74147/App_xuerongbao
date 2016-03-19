@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.zxzx74147.devlib.utils.TimerUtil" />
+
+
+        <variable
+            name="data"
+            type="com.wazxb.xuerongbao.storage.data.ReturnWayData" />
+
+        <variable
+            name="loanData"
+            type="com.wazxb.xuerongbao.storage.data.LoanItemData" />
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            android:src="@drawable/return_bg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_gap_120"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/default_gap_30"
+                android:text="@string/return_method"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/default_size_35" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/info_divider" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/default_gap_45">
+
+                <ImageView
+                    android:id="@+id/bank_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_40"
+                    android:layout_marginRight="@dimen/default_gap_30"
+                    android:src="@drawable/return_bank" />
+
+                <TextView
+                    android:id="@+id/bank_branck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    android:layout_toRightOf="@+id/bank_img"
+                    android:text="@{data.bankBranch}"
+                    android:textColor="@color/text_color_dark_black" />
+
+                <TextView
+                    android:id="@+id/bank_bankcard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bank_branck"
+                    android:layout_marginRight="@dimen/default_gap_10"
+                    android:layout_toRightOf="@+id/bank_img"
+                    android:text="@{data.bankCard}"
+                    android:textColor="@color/text_color_grey" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bank_branck"
+                    android:layout_toRightOf="@+id/bank_bankcard"
+                    android:text="@{data.bankUser}"
+                    android:textColor="@color/text_color_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/default_gap_40">
+
+                <ImageView
+                    android:id="@+id/alipay_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_40"
+                    android:layout_marginRight="@dimen/default_gap_30"
+                    android:src="@drawable/return_alipay" />
+
+                <TextView
+                    android:id="@+id/alipay_branck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    android:layout_toRightOf="@+id/alipay_img"
+                    android:text="@string/alipay"
+                    android:textColor="@color/text_color_dark_black" />
+
+                <TextView
+                    android:id="@+id/alipay_bankcard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/alipay_branck"
+                    android:layout_toRightOf="@+id/alipay_img"
+                    android:text="@{data.aliPay}"
+                    android:textColor="@color/text_color_grey" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/default_gap_40">
+
+                <ImageView
+                    android:id="@+id/weixin_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_40"
+                    android:layout_marginRight="@dimen/default_gap_30"
+                    android:src="@drawable/return_weixin" />
+
+                <TextView
+                    android:id="@+id/weixin_branck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    android:layout_toRightOf="@+id/weixin_img"
+                    android:text="@string/alipay"
+                    android:textColor="@color/text_color_dark_black" />
+
+                <TextView
+                    android:id="@+id/weixin_bankcard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/weixin_branck"
+                    android:layout_toRightOf="@+id/weixin_img"
+                    android:text="@{data.weixinPay}"
+                    android:textColor="@color/text_color_grey" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_gap_30"
+                android:background="@drawable/round_alpha_grey"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/default_gap_20"
+                    android:layout_marginLeft="@dimen/default_gap_35"
+                    android:layout_marginRight="@dimen/default_gap_35"
+                    android:layout_marginTop="@dimen/default_gap_20"
+                    android:text="@string/return_remind_content"
+                    android:textColor="@color/text_color_dark_black"
+                    android:textSize="@dimen/default_size_30" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

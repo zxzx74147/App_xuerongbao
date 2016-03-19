@@ -223,7 +223,7 @@
     <string name="return_method">还款方式</string>
     <string name="alipay">支付宝</string>
     <string name="return_remind_title">还款选择任一种方式</string>
-    <string name="return_remind_content">银行卡转账需用当初注册的银行卡号转\n支付宝需要标注姓名手机号\n微信号需加公司财务微信账号转账</string>
+    <string name="return_remind_content">您可任选上述一种方式进行还款，请您在还款时备注姓名、手机号及选择的贷款产品。\n银行转账需选用已绑定的银行卡进行转账。</string>
     <string name="pay_plan">计划还款</string>
     <string name="loan_apply_time">申请时间</string>
     <string name="loan_apply_amount">申请金额</string>

@@ -19,6 +19,8 @@ public class ZXNetworkUtil {
         }
         StringBuffer sb = new StringBuffer(params.size() * 20);
         for (Map.Entry<String, Object> item : params.entrySet()) {
+            if (item.getValue() == null)
+                continue;
             if (sb.length() != 0) {
                 sb.append("&");
             }

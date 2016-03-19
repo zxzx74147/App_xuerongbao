@@ -42,6 +42,7 @@ public abstract class ZXBBaseListActivity extends ZXBBaseActivity {
 
         mRecycleView.setOnLoadMoreListener(mLoadMoreListener);
 
+
         refreshingString();
     }
 
@@ -64,11 +65,15 @@ public abstract class ZXBBaseListActivity extends ZXBBaseActivity {
     private ZXRecycleView.OnLoadMoreListener mLoadMoreListener = new ZXRecycleView.OnLoadMoreListener() {
         @Override
         public void loadMore(int i, int i1) {
-
+            loadMoreData();
         }
     };
 
     protected abstract void refreshData();
+
+    protected void loadMoreData() {
+
+    }
 
     protected void setData(List<? extends Object> mData) {
 
