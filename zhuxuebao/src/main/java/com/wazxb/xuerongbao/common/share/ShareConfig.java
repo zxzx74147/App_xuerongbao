@@ -5,6 +5,6 @@ package com.wazxb.xuerongbao.common.share;
  */
 public class ShareConfig {
     public static final String WXAPPID = "wxb3a57bfdcf620670";
-    public static final String WBAPPID = "2878429629";
+    public static final String WBAPPID = "1077680923";
     public static final String QQAPPID = "1105256096";
 }

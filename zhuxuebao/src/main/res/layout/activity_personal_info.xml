@@ -59,8 +59,8 @@
                 android:onClick="@{handler.onChangePortraitClick}"
                 app:img_url="@{data.portrait}"
                 app:riv_border_color="@color/white"
-                app:riv_border_width="@dimen/default_gap_3"
-                app:riv_corner_radius="@dimen/default_gap_200" />
+                app:riv_oval="true"
+                app:riv_border_width="@dimen/default_gap_3"/>
 
             <ImageView
                 android:id="@+id/right_img"
