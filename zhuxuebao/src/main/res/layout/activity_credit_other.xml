@@ -14,6 +14,10 @@
         <variable
             name="data"
             type="com.wazxb.xuerongbao.storage.data.UserLifeData" />
+
+        <variable
+            name="contract"
+            type="com.wazxb.xuerongbao.storage.data.ContractData" />
     </data>
 
     <LinearLayout
@@ -61,12 +65,25 @@
                     android:paddingRight="@dimen/default_gap_30"
                     android:paddingTop="@dimen/default_gap_20">
 
-                    <TextView
-                        android:layout_width="@dimen/default_gap_150"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/default_gap_50"
-                        android:text="@string/mobile_telecom_carrier"
-                        android:textSize="@dimen/text_size_normal" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="@dimen/default_gap_150"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/default_gap_50"
+                            android:text="@string/mobile_telecom_carrier"
+                            android:textSize="@dimen/text_size_normal" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/orange"
+                            android:text="@string/mobile_upload_remind"
+                            app:click_url="@{contract.mobile}"
+                            android:textSize="@dimen/default_gap_20"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
 
                     <com.wazxb.xuerongbao.widget.UploadImageView
                         android:layout_width="@dimen/default_gap_202"
@@ -93,12 +110,18 @@
                     android:paddingRight="@dimen/default_gap_30"
                     android:paddingTop="@dimen/default_gap_20">
 
-                    <TextView
-                        android:layout_width="@dimen/default_gap_150"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/default_gap_50"
-                        android:text="@string/bank_info"
-                        android:textSize="@dimen/text_size_normal" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="@dimen/default_gap_150"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/default_gap_50"
+                            android:text="@string/bank_info"
+                            android:textSize="@dimen/text_size_normal" />
+                    </LinearLayout>
 
                     <RelativeLayout
                         android:layout_width="0dip"
@@ -136,6 +159,43 @@
                             app:img_not_null="false"
                             app:img_post_key="bankPics"
                             app:img_url="@{ZXBDataBindingUtil.splitUrl(data.bankPics,2)}" />
+
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/bank_4"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_below="@+id/bank_2"
+                            android:layout_toRightOf="@+id/bank_3"
+                            android:background="@color/white"
+                            app:img_not_null="false"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            app:img_post_key="bankPics"
+                            app:img_url="@{ZXBDataBindingUtil.splitUrl(data.bankPics,3)}" />
+
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/bank_5"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_below="@+id/bank_3"
+                            android:layout_marginRight="@dimen/default_gap_30"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:background="@color/white"
+                            app:img_not_null="false"
+                            app:img_post_key="bankPics"
+                            app:img_url="@{ZXBDataBindingUtil.splitUrl(data.bankPics,4)}" />
+
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/bank_6"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_below="@+id/bank_4"
+                            android:layout_toRightOf="@+id/bank_5"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:background="@color/white"
+                            app:img_not_null="true"
+                            app:img_post_key="bankPics"
+                            app:img_url="@{ZXBDataBindingUtil.splitUrl(data.bankPics,5)}" />
+
 
                     </RelativeLayout>
                 </LinearLayout>
@@ -194,7 +254,6 @@
                     android:inputType="phone"
                     app:edit_hint="@string/phone_num_hint"
                     app:input_edit_text="@{data.taPhone}"
-
                     app:input_right_drawable="@drawable/about_tele"
                     app:label_text="@string/phone_num"
                     app:label_width="@dimen/default_gap_150"
@@ -235,17 +294,16 @@
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
                         android:layout_marginLeft="@dimen/default_gap_20"
-                        app:input_edit_text="@{data.tbName}"
                         android:layout_marginRight="@dimen/default_gap_5"
                         android:layout_marginTop="@dimen/default_gap_10"
                         android:layout_weight="100"
                         app:edit_hint="@string/name_hint"
+                        app:input_edit_text="@{data.tbName}"
                         app:label_text="@string/name"
                         app:not_null="true"
                         app:post_key="@string/teacher2_name_post_key" />
 
                     <com.wazxb.xuerongbao.widget.InputTextView
-                        app:input_sex="@{data.tbSex}"
                         android:id="@+id/teacher2_sex_layout"
                         android:layout_width="0dip"
                         android:layout_height="@dimen/size_input_layout"
@@ -255,6 +313,7 @@
                         android:layout_weight="70"
                         app:error_hint="@string/sex_hint"
                         app:input_right_drawable="@drawable/user_gray_right_arrow"
+                        app:input_sex="@{data.tbSex}"
                         app:label_text="@string/sex"
                         app:not_null="true"
                         app:pick_type="sex"
@@ -267,10 +326,10 @@
                     android:layout_height="@dimen/size_input_layout"
                     android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginRight="@dimen/default_gap_20"
-                    app:input_edit_text="@{data.tbPhone}"
                     android:layout_marginTop="@dimen/default_gap_10"
                     android:inputType="phone"
                     app:edit_hint="@string/phone_num_hint"
+                    app:input_edit_text="@{data.tbPhone}"
                     app:input_right_drawable="@drawable/about_tele"
                     app:label_text="@string/phone_num"
                     app:label_width="@dimen/default_gap_150"
@@ -282,13 +341,13 @@
                 <com.wazxb.xuerongbao.widget.InputTextView
                     android:id="@+id/teacher2_duty_id"
                     android:layout_width="match_parent"
-                    app:input_edit_text="@{data.tbDuty}"
                     android:layout_height="@dimen/size_input_layout"
                     android:layout_marginBottom="@dimen/default_gap_20"
                     android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_10"
                     app:edit_hint="@string/duty_hint"
+                    app:input_edit_text="@{data.tbDuty}"
                     app:label_text="@string/duty"
                     app:label_width="@dimen/default_gap_150"
                     app:not_null="true"

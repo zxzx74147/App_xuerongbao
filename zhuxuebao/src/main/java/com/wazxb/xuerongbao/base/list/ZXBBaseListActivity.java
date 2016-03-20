@@ -16,7 +16,6 @@ import java.util.List;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.PtrHandler;
-import in.srain.cube.views.ptr.header.MaterialHeader;
 import in.srain.cube.views.ptr.header.StoreHouseHeader;
 
 /**
@@ -76,13 +75,14 @@ public abstract class ZXBBaseListActivity extends ZXBBaseActivity {
     }
 
     protected void setData(List<? extends Object> mData) {
-
         mRecycleView.mPtrFrameLayout.refreshComplete();
         mAdapter.setData(mData);
         if (mData == null | mData.size() == 0) {
             showEmptyView();
+            mRecycleView.setVisibility(View.INVISIBLE);
         } else {
             hideEmptyView();
+            mRecycleView.setVisibility(View.VISIBLE);
         }
         hideProgressBar();
     }
@@ -95,18 +95,14 @@ public abstract class ZXBBaseListActivity extends ZXBBaseActivity {
         hideProgressBar();
         mRecycleView.mPtrFrameLayout.refreshComplete();
         mAdapter.addData(mData);
+
     }
 
     private void refreshingString() {
         showProgressBar();
-        MaterialHeader materialHeader = new MaterialHeader(this);
-
         StoreHouseHeader storeHouseHeader = new StoreHouseHeader(this);
-
         storeHouseHeader.initWithString("zxb");
         PullView pullView = new PullView(this);
-//        mRecycleView.mPtrFrameLayout.setHeaderView(storeHouseHeader);
-//        mRecycleView.mPtrFrameLayout.addPtrUIHandler(storeHouseHeader);
         mRecycleView.mPtrFrameLayout.setHeaderView(pullView);
         mRecycleView.mPtrFrameLayout.addPtrUIHandler(pullView);
         mRecycleView.mPtrFrameLayout.autoRefresh(false);

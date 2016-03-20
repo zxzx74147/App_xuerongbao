@@ -80,4 +80,9 @@ public class HistoryActivity extends ZXBBaseListActivity {
     protected int getLayoutID() {
         return R.layout.activity_history;
     }
+
+    @Override
+    protected int getEmptyStringID(){
+        return R.string.empty_history;
+    }
 }

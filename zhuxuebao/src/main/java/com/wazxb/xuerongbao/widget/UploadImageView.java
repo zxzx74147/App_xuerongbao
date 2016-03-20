@@ -148,4 +148,9 @@ public class UploadImageView extends RelativeLayout {
     public boolean getIsFilled() {
         return ZXStringUtil.checkString(mPicKey);
     }
+
+    public void setIsNotNull(boolean isNotNull) {
+        mIsNotNull = isNotNull;
+        mBinding.notNull.setVisibility(mIsNotNull ? VISIBLE : GONE);
+    }
 }

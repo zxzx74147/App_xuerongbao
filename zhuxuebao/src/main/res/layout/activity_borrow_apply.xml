@@ -298,6 +298,47 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/default_gap_20"
+
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    android:background="@color/view_input_default_bg"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/default_gap_20"
+                    android:paddingLeft="@dimen/default_gap_30"
+                    android:paddingRight="@dimen/default_gap_30"
+                    android:paddingTop="@dimen/default_gap_20"
+                    android:visibility='@{data.money>=3000? View.VISIBLE:View.GONE}'>
+
+                    <TextView
+                        android:layout_width="@dimen/default_gap_150"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/default_gap_50"
+                        android:text="@string/contract_photo"
+                        android:textSize="@dimen/text_size_normal" />
+
+                    <com.wazxb.xuerongbao.widget.UploadImageView
+                        android:layout_width="@dimen/default_gap_202"
+                        android:layout_height="@dimen/default_gap_148"
+                        android:layout_marginRight="@dimen/default_gap_30"
+                        android:background="@color/white"
+                        app:img_not_null='@{data.money>=3000? true:false}'
+                        app:img_post_key="contPics" />
+
+
+                    <com.wazxb.xuerongbao.widget.UploadImageView
+                        android:layout_width="@dimen/default_gap_202"
+                        android:layout_height="@dimen/default_gap_148"
+                        android:layout_marginRight="@dimen/default_gap_30"
+                        android:background="@color/white"
+                        app:img_not_null='@{data.money>=3000? true:false}'
+                        app:img_post_key="contPics" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_20"
                     android:orientation="horizontal">
 
@@ -319,10 +360,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:click_url="@{contract.loan}"
                         android:text="@string/repayment_contract"
                         android:textColor="@color/orange"
-                        android:textSize="@dimen/default_size_20" />
+                        android:textSize="@dimen/default_size_20"
+                        app:click_url="@{contract.loan}" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -338,9 +379,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginRight="@dimen/default_gap_20"
-                    android:enabled="false"
                     android:layout_marginTop="@dimen/default_gap_20"
                     android:background="@drawable/common_button_orange_bg"
+                    android:enabled="false"
                     android:onClick="@{handler.onApplyClick}"
                     android:text="@string/ok"
                     android:textColor="@color/white"

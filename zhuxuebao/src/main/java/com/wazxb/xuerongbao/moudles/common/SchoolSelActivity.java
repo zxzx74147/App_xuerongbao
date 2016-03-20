@@ -19,6 +19,7 @@ import com.zxzx74147.devlib.network.HttpResponseListener;
  */
 public class SchoolSelActivity extends ZXBBaseListActivity {
 
+    public static String SELECT = null;
     private ZXBHttpRequest<SchoolSelListData> mRequest;
     private ActivitySelSchoolBinding mBinding;
 
@@ -60,7 +61,7 @@ public class SchoolSelActivity extends ZXBBaseListActivity {
                         }
                     }
                 });
-
+                SELECT = s.toString().trim();
                 mRequest.addParams("school", s.toString().trim());
                 mRequest.setPath(NetworkConfig.ADDRESS_SE_SCHOOL);
                 sendRequest(mRequest);

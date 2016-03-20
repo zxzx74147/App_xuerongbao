@@ -117,12 +117,26 @@
                 android:paddingRight="@dimen/default_gap_30"
                 android:paddingTop="@dimen/default_gap_20">
 
-                <TextView
-                    android:layout_width="@dimen/default_gap_150"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/default_gap_50"
-                    android:text="@string/id_photo"
-                    android:textSize="@dimen/text_size_normal" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="@dimen/default_gap_150"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/id_photo"
+                        android:textSize="@dimen/text_size_normal" />
+                    <TextView
+                        android:id="@+id/not_null"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/default_gap_40"
+                        android:layout_marginTop="@dimen/default_gap_25"
+                        android:gravity="top"
+                        android:text="*"
+                        android:textColor="@color/button_bg_red" />
+                </LinearLayout>
 
                 <com.wazxb.xuerongbao.widget.UploadImageView
                     android:layout_width="@dimen/default_gap_202"
@@ -158,11 +172,11 @@
                 android:layout_marginLeft="@dimen/default_gap_20"
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
-                app:error_hint="@string/address_error_toast"
                 app:edit_hint="@string/account_address_hint"
+                app:error_hint="@string/address_error_toast"
                 app:input_edit_text="@{data.place}"
                 app:label_text="@string/account_address"
-                app:label_width="@dimen/default_gap_150"
+                app:label_width="@dimen/default_gap_180"
                 app:not_null="true"
                 app:post_key="@string/account_address_post_key" />
 

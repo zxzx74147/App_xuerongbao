@@ -312,4 +312,12 @@
     <string name="address_error_toast">请输入户口所在地</string>
     <string name="student_id_1">封面照片上传</string>
     <string name="student_id_2">内容照片上传</string>
+    <string name="empty_evaluate">暂无评论</string>
+    <string name="empty_messge">暂无消息</string>
+    <string name="empty_payback">暂不需要还款</string>
+    <string name="empty_history">暂无历史记录</string>
+    <string name="contract_photo">合同照片</string>
+    <string name="credit_fill">需要点亮全部资料才能申请贷款</string>
+    <string name="mobile_upload_remind">点击查看上传方法</string>
+    <string name="id_upload_remind">点击查看上传方法</string>
 </resources>

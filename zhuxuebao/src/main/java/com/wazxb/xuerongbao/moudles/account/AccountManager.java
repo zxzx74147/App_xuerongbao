@@ -27,10 +27,12 @@ public class AccountManager {
     private static AccountManager mInstance = null;
     private ZXBHttpRequest<UserAllData> mRequest = null;
     private ZXBHttpRequest<CalculatorData> mCalRequest = null;
+    private ZXBHttpRequest<CalculatorData> mProdRequest = null;
     private String mUid = null;
     private UserAllData mUserAllData = null;
     private String mPass = null;
     private CalculatorData mCaculatorData = null;
+    private CalculatorData mProdData = null;
 
     private AccountManager() {
         mUid = SharedPreferenceHelper.getString(SP_KEY_UID, null);
@@ -106,6 +108,10 @@ public class AccountManager {
         return mCaculatorData;
     }
 
+    public CalculatorData getProdData() {
+        return mProdData;
+    }
+
     public void setPassword(String pass) {
         mPass = pass;
         if (mUserAllData != null && mUserAllData.user != null) {
@@ -164,6 +170,27 @@ public class AccountManager {
         });
         mCalRequest.setPath(NetworkConfig.ADDRESS_LN_CALCULATOR);
         mCalRequest.send();
+    }
+
+    public void requestProdData() {
+        if (mProdRequest != null) {
+            mProdRequest.cancel();
+            mProdRequest = null;
+            return;
+        }
+
+        mProdRequest = new ZXBHttpRequest<>(CalculatorData.class, new HttpResponseListener<CalculatorData>() {
+            @Override
+            public void onResponse(HttpResponse<CalculatorData> response) {
+                mProdRequest = null;
+                if (response.hasError()) {
+                    return;
+                }
+                mProdData = response.result;
+            }
+        });
+        mProdRequest.setPath(NetworkConfig.ADDRESS_LN_PROD);
+        mProdRequest.send();
     }
 
 }

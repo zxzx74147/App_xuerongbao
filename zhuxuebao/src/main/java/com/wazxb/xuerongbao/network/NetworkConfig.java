@@ -26,6 +26,7 @@ public class NetworkConfig {
 
     public static final String ADDRESS_LN_CALCULATOR = "ln/calculator";
     public static final String ADDRESS_LN_APPLY = "ln/apply";
+    public static final String ADDRESS_LN_PROD = "ln/prod";
     public static final String ADDRESS_LN_RETURN = "ln/return";
     public static final String ADDRESS_LN_HISTORY = "ln/history";
     public static final String ADDRESS_LN_EVALUATE = "ln/evaluate";

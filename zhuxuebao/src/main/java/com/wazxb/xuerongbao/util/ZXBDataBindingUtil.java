@@ -38,6 +38,14 @@ public class ZXBDataBindingUtil {
         view.setContent(edit);
     }
 
+
+    @BindingAdapter("app:img_not_null")
+    public static void setRightDrawable(UploadImageView view, boolean isNotNull) {
+        view.setIsNotNull(isNotNull);
+    }
+
+
+
     @BindingAdapter("app:progress")
     public static void setCreditProgress(CreditBar view, int edit) {
         view.setProgress(edit);

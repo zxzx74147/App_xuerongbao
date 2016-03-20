@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.databinding.FragmentCommonBorrowBinding;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
+import com.wazxb.xuerongbao.moudles.credit.CreditActivity;
 import com.wazxb.xuerongbao.moudles.personal.BindCradActivity;
 import com.wazxb.xuerongbao.storage.data.BorrowRequestData;
 import com.wazxb.xuerongbao.storage.data.CalculatorData;
@@ -50,6 +51,15 @@ public class CommonBorrowFragment extends BaseFragment {
                 @Override
                 public void run() {
                     ZXActivityJumpHelper.startActivity(getActivity(), BindCradActivity.class);
+                }
+            });
+            return;
+        }
+        if (mRequestData.money > user.user.quotaTotal) {
+            ZXDialogUtil.showCheckDialog(getActivity(), R.string.credit_fill, new Runnable() {
+                @Override
+                public void run() {
+                    ZXActivityJumpHelper.startActivity(getActivity(), CreditActivity.class);
                 }
             });
             return;

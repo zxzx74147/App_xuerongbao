@@ -10,6 +10,8 @@ import com.wazxb.xuerongbao.databinding.ActivityCreditOtherBinding;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
+import com.wazxb.xuerongbao.storage.StorageManager;
+import com.wazxb.xuerongbao.storage.data.InitData;
 import com.wazxb.xuerongbao.storage.data.UserAllData;
 import com.wazxb.xuerongbao.util.FillRqeustUtil;
 import com.zxzx74147.devlib.network.HttpResponse;
@@ -26,6 +28,10 @@ public class CreditOtherActivity extends ZXBBaseActivity {
         UserAllData data = AccountManager.sharedInstance().getUserAllData();
         if (data != null) {
             mBinding.setData(data.cdLife);
+        }
+        InitData init = StorageManager.sharedInstance().getInitdat();
+        if (init != null) {
+            mBinding.setContract(init.contract);
         }
         init();
     }

@@ -47,6 +47,7 @@ public class EvaluateActivity extends ZXBBaseListActivity {
                     showToast(response.errorString);
                     return;
                 }
+                response.result.evaluateList.evaluate.clear();
                 setData(response.result.evaluateList.evaluate);
             }
         });
@@ -79,5 +80,10 @@ public class EvaluateActivity extends ZXBBaseListActivity {
 
     protected int getLayoutID() {
         return R.layout.activity_evaluate;
+    }
+
+    @Override
+    protected int getEmptyStringID(){
+        return R.string.empty_evaluate;
     }
 }

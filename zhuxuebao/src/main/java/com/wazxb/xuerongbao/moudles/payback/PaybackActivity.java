@@ -93,4 +93,9 @@ public class PaybackActivity extends ZXBBaseListActivity {
     protected int getLayoutID() {
         return R.layout.activity_payback;
     }
+
+    @Override
+    protected int getEmptyStringID(){
+        return R.string.empty_payback;
+    }
 }

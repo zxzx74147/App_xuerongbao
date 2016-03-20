@@ -56,6 +56,7 @@ public class ZXBApplication extends Application {
         StorageManager.sharedInstance();
         AccountManager.sharedInstance().requestUserAllData();
         AccountManager.sharedInstance().requestCaculateData();
+        AccountManager.sharedInstance().requestProdData();
         MessageManager.sharedInstance().startPoll();
         GesturePassManager.sharedInstance();
 

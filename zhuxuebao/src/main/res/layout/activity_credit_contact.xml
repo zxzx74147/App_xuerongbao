@@ -9,8 +9,12 @@
             type="com.wazxb.xuerongbao.moudles.credit.CreditContactActivity" />
 
         <variable
+            name="url"
+            type="com.wazxb.xuerongbao.storage.data.ContractData" />
+        <variable
             name="data"
             type="com.wazxb.xuerongbao.storage.data.UserSchoolData" />
+
     </data>
 
     <LinearLayout
@@ -327,12 +331,27 @@
                     android:paddingRight="@dimen/default_gap_30"
                     android:paddingTop="@dimen/default_gap_20">
 
-                    <TextView
-                        android:layout_width="@dimen/default_gap_150"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/default_gap_50"
-                        android:text="@string/hold_id_photo"
-                        android:textSize="@dimen/text_size_normal" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="@dimen/default_gap_150"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/default_gap_50"
+                            android:text="@string/hold_id_photo"
+                            android:textSize="@dimen/text_size_normal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:textColor="@color/orange"
+                            android:text="@string/id_upload_remind"
+                            app:click_url="@{contract.hand}"
+                            android:textSize="@dimen/default_gap_20"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
 
                     <com.wazxb.xuerongbao.widget.UploadImageView
                         android:layout_width="@dimen/default_gap_202"

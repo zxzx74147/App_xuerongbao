@@ -9,9 +9,14 @@ import android.widget.TextView;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityBorrowBinding;
+import com.wazxb.xuerongbao.moudles.account.AccountManager;
+import com.wazxb.xuerongbao.storage.data.CalculatorData;
+import com.wazxb.xuerongbao.storage.data.ProdData;
 import com.zxzx74147.devlib.widget.tabhost.CommonFragmentTabIndicator;
 import com.zxzx74147.devlib.widget.tabhost.FragmentTabSpec;
 import com.zxzx74147.devlib.widget.tabhost.FragmentTabStructure;
+
+import java.util.List;
 
 /**
  * Created by zhengxin on 16/3/8.
@@ -20,41 +25,52 @@ public class BorrowActivity extends ZXBBaseActivity {
 
     private ActivityBorrowBinding mBinding;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_borrow);
-        addTabs();
+        CalculatorData data = AccountManager.sharedInstance().getProdData();
+        addTabs(data);
     }
 
-    private void addTabs() {
+    private void addTabs(CalculatorData data) {
         mBinding.tabHost.setup(this, getSupportFragmentManager());
-        {
-            FragmentTabStructure structure = new FragmentTabStructure();
-            CommonBorrowFragment fragment = new CommonBorrowFragment();
-            fragment.setMode(BorrowConfig.BORROW_FULI);
-            structure.frag = fragment;
-            structure.textResId = R.string.borrow_fuli;
-            createAndAddTabSpec(structure);
+        if (data.lnProdList == null || data.lnProdList.prod == null) {
+            return;
+        }
+        List<ProdData> pords = data.lnProdList.prod;
+        FragmentTabStructure structure;
+        CommonBorrowFragment fragment;
+        for (ProdData pord : pords) {
+            switch (pord.lnProdId) {
+                case BorrowConfig.BORROW_FULI:
+                    structure = new FragmentTabStructure();
+                    fragment = new CommonBorrowFragment();
+                    fragment.setMode(BorrowConfig.BORROW_FULI);
+                    structure.frag = fragment;
+                    structure.textResId = R.string.borrow_fuli;
+                    createAndAddTabSpec(structure);
+                    break;
+                case BorrowConfig.BORROW_HUOLI:
+                    structure = new FragmentTabStructure();
+                    fragment = new CommonBorrowFragment();
+                    fragment.setMode(BorrowConfig.BORROW_HUOLI);
+                    structure.frag = fragment;
+                    structure.textResId = R.string.borrow_huoli;
+                    createAndAddTabSpec(structure);
+                    break;
+                case BorrowConfig.BORROW_YUELI:
+                    structure = new FragmentTabStructure();
+                    fragment = new CommonBorrowFragment();
+                    fragment.setMode(BorrowConfig.BORROW_YUELI);
+                    structure.frag = fragment;
+                    structure.textResId = R.string.borrow_yueli;
+                    createAndAddTabSpec(structure);
+                    break;
+            }
         }
 
-        {
-            FragmentTabStructure structure = new FragmentTabStructure();
-            CommonBorrowFragment fragment = new CommonBorrowFragment();
-            fragment.setMode(BorrowConfig.BORROW_HUOLI);
-            structure.frag = fragment;
-            structure.textResId = R.string.borrow_huoli;
-            createAndAddTabSpec(structure);
-        }
-
-        {
-            FragmentTabStructure structure = new FragmentTabStructure();
-            CommonBorrowFragment fragment = new CommonBorrowFragment();
-            fragment.setMode(BorrowConfig.BORROW_YUELI);
-            structure.frag = fragment;
-            structure.textResId = R.string.borrow_yueli;
-            createAndAddTabSpec(structure);
-        }
         mBinding.tabHost.initViewPager();
     }
 
@@ -80,4 +96,6 @@ public class BorrowActivity extends ZXBBaseActivity {
         tab.mWidget = mInner;
         mBinding.tabHost.addTabSpec(tab);
     }
+
+
 }

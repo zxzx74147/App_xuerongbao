@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.util.ActivityStateManager;
@@ -23,7 +24,7 @@ import com.zxzx74147.devlib.utils.ZXViewHelper;
 public class ZXBBaseActivity<T> extends ZXBaseActivity {
 
     private ImageView mProgressBar;
-    private ImageView mEmptyView = null;
+    private TextView mEmptyView = null;
 
     protected T getParam() {
         return (T) getIntent().getSerializableExtra(ZXActivityJumpHelper.INTENT_DATA);
@@ -53,8 +54,15 @@ public class ZXBBaseActivity<T> extends ZXBaseActivity {
 
     public void showEmptyView() {
         if (mEmptyView == null) {
-            mEmptyView = new ImageView(this);
-            mEmptyView.setImageResource(R.drawable.error_tip);
+            mEmptyView = new TextView(this);
+            mEmptyView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.error_tip, 0, 0);
+            mEmptyView.setCompoundDrawablePadding(20);
+            mEmptyView.setGravity(Gravity.CENTER_HORIZONTAL);
+            mEmptyView.setTextColor(getResources().getColor(R.color.text_color_grey));
+            int id = getEmptyStringID();
+            if(id>0){
+                mEmptyView.setText(id);
+            }
             FrameLayout content = (FrameLayout) findViewById(android.R.id.content);
             content.addView(mEmptyView,
                     new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -148,5 +156,9 @@ public class ZXBBaseActivity<T> extends ZXBaseActivity {
     public void onResume() {
         super.onResume();
         ActivityStateManager.sharedInstance().onResume(this);
+    }
+
+    protected int getEmptyStringID() {
+        return 0;
     }
 }

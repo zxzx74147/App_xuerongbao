@@ -73,4 +73,9 @@ public class MessageListActivity extends ZXBBaseListActivity {
             }
         }
     }
+
+    @Override
+    protected int getEmptyStringID(){
+        return R.string.empty_messge;
+    }
 }
