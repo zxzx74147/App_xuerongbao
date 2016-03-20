@@ -347,7 +347,7 @@
                             android:layout_width="wrap_content"
                             android:textColor="@color/orange"
                             android:text="@string/id_upload_remind"
-                            app:click_url="@{contract.hand}"
+                            app:click_url="@{url.hand}"
                             android:textSize="@dimen/default_gap_20"
                             android:layout_height="wrap_content" />
 

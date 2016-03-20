@@ -43,7 +43,7 @@
             <ImageView
                 android:id="@+id/credit_bg"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/default_gap_200"
+                android:layout_height="@dimen/default_gap_230"
                 android:layout_marginBottom="@dimen/default_gap_50"
                 android:layout_marginTop="@dimen/default_gap_150" />
         </RelativeLayout>

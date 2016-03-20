@@ -2,26 +2,24 @@ package com.wazxb.xuerongbao.moudles.account;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 
 import com.wazxb.xuerongbao.R;
+import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityFindPasswordBinding;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
 import com.wazxb.xuerongbao.storage.data.UidData;
-import com.wazxb.xuerongbao.util.DeviceIDMananger;
+import com.wazxb.xuerongbao.util.FillRqeustUtil;
 import com.wazxb.xuerongbao.widget.InputTextView;
 import com.wazxb.xuerongbao.widget.UploadImageView;
-import com.zxzx74147.devlib.base.ZXBaseActivity;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 import com.zxzx74147.devlib.utils.ZXViewHelper;
 
-public class FindPasswordActivity extends ZXBaseActivity {
+public class FindPasswordActivity extends ZXBBaseActivity {
     private ActivityFindPasswordBinding mBinding = null;
     private ZXBHttpRequest mRequest = null;
     private boolean mLoginOk = true;
@@ -38,35 +36,17 @@ public class FindPasswordActivity extends ZXBaseActivity {
                 ZXActivityJumpHelper.startActivity(FindPasswordActivity.this, RegitsterActivity.class);
             }
         });
-
-        ZXViewHelper.dfsViewGroup(mBinding.getRoot(), new ZXViewHelper.IViewProcess() {
+        FillRqeustUtil.addWatcher(this, new FillRqeustUtil.CheckFilledListener() {
             @Override
-            public void processView(View view) {
-                if (view instanceof InputTextView) {
-                    if (((InputTextView) view).isNotNull() && !((InputTextView) view).getIsFilled()) {
-                        ((InputTextView) view).addTextChanged(mTextWatcher);
-                    }
-                }
+            public void onChecked(boolean isReady) {
+                mBinding.confirmId.setEnabled(isReady);
             }
         });
+
     }
 
-    private TextWatcher mTextWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        }
 
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-            checkLoginAbled();
-        }
-    };
 
     public void checkLoginAbled() {
         mLoginOk = true;
@@ -146,8 +126,8 @@ public class FindPasswordActivity extends ZXBaseActivity {
                 }
             }
         });
-        mRequest.setPath(NetworkConfig.ADDRESS_U_REG);
-        mRequest.addParams("deviceId", DeviceIDMananger.sharedInstance().getDeviceID());
+        FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());
+        mRequest.setPath(NetworkConfig.ADDRESS_PW_FIND);
         sendRequest(mRequest);
     }
 }
