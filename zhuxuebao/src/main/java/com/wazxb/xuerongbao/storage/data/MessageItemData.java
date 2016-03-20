@@ -7,6 +7,7 @@ import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
 import com.wazxb.xuerongbao.moudles.credit.CreditActivity;
 import com.wazxb.xuerongbao.moudles.evaluate.EvaluateSubmitActivity;
+import com.wazxb.xuerongbao.moudles.message.MessageItemActivity;
 import com.wazxb.xuerongbao.moudles.message.MessageManager;
 import com.wazxb.xuerongbao.moudles.payback.PaybackActivity;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
@@ -71,8 +72,11 @@ public class MessageItemData implements Serializable {
         }
         switch (mType) {
             case 1:
-                CommonWebActivity.startActivity(context,title,url);
-//                ZXActivityJumpHelper.startActivity(context, MessageItemActivity.class, this);
+                if (ZXStringUtil.checkString(url)) {
+                    CommonWebActivity.startActivity(context, title, url);
+                } else {
+                    ZXActivityJumpHelper.startActivity(context, MessageItemActivity.class, this);
+                }
                 break;
             case 2:
                 ZXActivityJumpHelper.startActivity(context, PaybackActivity.class);

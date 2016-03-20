@@ -55,7 +55,7 @@
         </activity>
         <activity
             android:name="com.wazxb.xuerongbao.moudles.account.LoginActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name="com.wazxb.xuerongbao.moudles.account.RegitsterActivity"
             android:windowSoftInputMode="adjustResize" />

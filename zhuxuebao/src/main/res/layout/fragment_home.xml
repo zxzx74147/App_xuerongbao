@@ -55,7 +55,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_gap_20">
+                android:layout_marginTop="@dimen/default_gap_17">
 
 
                 <LinearLayout
@@ -154,7 +154,7 @@
                 android:layout_marginBottom="@dimen/default_gap_10"
                 android:layout_marginLeft="@dimen/default_gap_20"
                 android:layout_marginRight="@dimen/default_gap_20"
-                android:layout_marginTop="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_17"
                 android:background="@drawable/index_credit_bg"
                 android:gravity="center_horizontal"
                 android:onClick="@{handler.onCreditClick}"
@@ -186,7 +186,7 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/default_gap_50"
-                    android:layout_marginTop="@dimen/default_gap_30"
+                    android:layout_marginTop="@dimen/default_gap_25"
                     android:background="@drawable/index_ellipse"
                     android:drawableRight="@drawable/index_right_arrow"
                     android:onClick="@{handler.onCreditClick}"

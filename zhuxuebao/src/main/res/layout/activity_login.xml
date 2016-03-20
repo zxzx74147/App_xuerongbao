@@ -22,62 +22,77 @@
             app:right_text="@string/register"
             app:text="@string/login" />
 
-        <com.wazxb.xuerongbao.widget.InputTextView
-            android:id="@+id/phone_num_id"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_20"
-            android:inputType="phone"
-            app:edit_hint="@string/phone_num_hint"
-            app:label_text="@string/phone_num"
-            app:label_width="@dimen/default_gap_150"
-            app:match_regex="@string/phone_num_regex"
-            app:not_null="true"
-            app:post_key="@string/phone_post_key"
-            app:show_not_null="false" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <com.wazxb.xuerongbao.widget.InputTextView
-            android:id="@+id/password_id"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_input_layout"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            android:inputType="textPassword"
-            app:edit_hint="@string/password_hint"
-            app:label_text="@string/password"
-            app:label_width="@dimen/default_gap_150"
-            app:not_null="true"
-            app:post_key="@string/password_post_key"
-            app:show_not_null="false" />
+            <com.wazxb.xuerongbao.widget.InputTextView
+                android:id="@+id/phone_num_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_20"
+                android:inputType="phone"
+                app:edit_hint="@string/phone_num_hint"
+                app:label_text="@string/phone_num"
+                app:label_width="@dimen/default_gap_150"
+                app:match_regex="@string/phone_num_regex"
+                app:not_null="true"
+                app:post_key="@string/phone_post_key"
+                app:show_not_null="false" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_10"
-            android:gravity="right|center_vertical"
-            android:onClick="@{handler.onForgetClick}"
-            android:text="@string/forget_password"
-            android:textColor="@color/orange"
-            android:textSize="@dimen/text_size_mini" />
+            <com.wazxb.xuerongbao.widget.InputTextView
+                android:id="@+id/password_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_input_layout"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:inputType="textPassword"
+                app:edit_hint="@string/password_hint"
+                app:label_text="@string/password"
+                app:label_width="@dimen/default_gap_150"
+                app:not_null="true"
+                app:post_key="@string/password_post_key"
+                app:show_not_null="false" />
 
-        <Button
-            android:id="@+id/login_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/default_gap_20"
-            android:layout_marginRight="@dimen/default_gap_20"
-            android:layout_marginTop="@dimen/default_gap_20"
-            android:background="@drawable/common_button_bg"
-            android:onClick="@{handler.onLoginClick}"
-            android:text="@string/login"
-            android:textColor="@color/white"
-            android:enabled="false"
-            android:textSize="@dimen/text_size_big" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_10"
+                android:gravity="right|center_vertical"
+                android:onClick="@{handler.onForgetClick}"
+                android:text="@string/forget_password"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/text_size_mini" />
 
+            <Button
+                android:id="@+id/login_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_20"
+                android:background="@drawable/common_button_bg"
+                android:enabled="false"
+                android:onClick="@{handler.onLoginClick}"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_big" />
 
+            <View
+                android:layout_width="1dip"
+                android:layout_height="0dip"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_gap_200"
+                android:src="@drawable/login_500" />
+        </LinearLayout>
     </LinearLayout>
 </layout>

@@ -40,12 +40,12 @@ public class CreditBaseActivity extends ZXBBaseActivity {
         mBinding.titleBar.setBackClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int index = mBinding.tabHost.getCurrentTabIndex();
-                if (index <= 0) {
+//                int index = mBinding.tabHost.getCurrentTabIndex();
+//                if (index <= 0) {
                     finish();
-                } else {
-                    mBinding.tabHost.setCurrentIndex(index - 1);
-                }
+//                } else {
+//                    mBinding.tabHost.setCurrentIndex(index - 1);
+//                }
             }
         });
 

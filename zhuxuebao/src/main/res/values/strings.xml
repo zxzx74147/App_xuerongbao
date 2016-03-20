@@ -72,10 +72,10 @@
     <string name="credit">信用</string>
     <string name="credit_base">基本信息</string>
     <string name="birthday_post_key">birthday</string>
-    <string name="account_address_hint">请输入户口所在地</string>
+    <string name="account_address_hint">x省x市(县)x区x乡(镇)</string>
     <string name="account_address">户口所在地</string>
     <string name="account_address_post_key">place</string>
-    <string name="info_remind">注：填写全部必填信息才能点亮图标</string>
+    <string name="info_remind">注：填写全部必填信息才能点亮图标\n手机号码我们不会主动拨打，仅作为紧急联系使用</string>
     <string name="degree_post_key">education</string>
     <string name="enrollment_post_key">enrollment</string>
     <string name="collage_class">班级</string>
@@ -309,4 +309,7 @@
     <string name="bind_bank_remind">您还没有绑定银行卡</string>
     <string name="evaluate_point">评分</string>
     <string name="login_to_check">（登录/注册  查看)</string>
+    <string name="address_error_toast">请输入户口所在地</string>
+    <string name="student_id_1">封面照片上传</string>
+    <string name="student_id_2">内容照片上传</string>
 </resources>
