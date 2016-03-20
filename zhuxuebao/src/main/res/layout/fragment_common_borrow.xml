@@ -46,7 +46,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingTop="@dimen/default_gap_10">
 
                 <TextView
                     android:layout_width="match_parent"

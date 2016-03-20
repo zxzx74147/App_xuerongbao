@@ -32,7 +32,7 @@
             android:layout_width="@dimen/default_gap_130"
             android:layout_height="@dimen/default_gap_130"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/default_gap_100"
+            android:layout_marginTop="@dimen/default_gap_50"
             android:src="@drawable/logo" />
 
         <TextView
@@ -40,7 +40,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/default_gap_100"
+            android:layout_marginTop="@dimen/default_gap_50"
+            android:layout_marginLeft="@dimen/default_gap_20"
+            android:layout_marginRight="@dimen/default_gap_20"
             android:gravity="left"
             android:text="@{data.contact.content}"
             android:textColor="@color/text_color_black"
