@@ -7,6 +7,7 @@ import android.view.View;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityRedBinding;
+import com.wazxb.xuerongbao.moudles.account.AccountInterface;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
@@ -66,6 +67,9 @@ public class RedActivity extends ZXBBaseActivity {
     }
 
     public void onRedClick(View v) {
+        if (!AccountInterface.checkLogin(this)) {
+            return;
+        }
         if (mSredRequest != null) {
             mSredRequest.cancel();
             mSredRequest = null;

@@ -58,7 +58,8 @@
                 android:paddingRight="@dimen/default_gap_50">
 
                 <FrameLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:background="@drawable/sign_day">
@@ -82,13 +83,10 @@
                         android:textSize="@dimen/default_gap_24" />
                 </FrameLayout>
 
-                <View
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
 
                 <FrameLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:background="@drawable/sign_day">
@@ -112,13 +110,10 @@
                         android:textSize="@dimen/default_gap_24" />
                 </FrameLayout>
 
-                <View
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
 
                 <FrameLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/default_gap_20"
                     android:background="@drawable/sign_day">
@@ -142,13 +137,11 @@
                         android:textSize="@dimen/default_gap_24" />
                 </FrameLayout>
 
-                <View
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+
 
                 <FrameLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dip"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/sign_day">
 

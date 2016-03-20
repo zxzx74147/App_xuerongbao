@@ -172,7 +172,16 @@
                     android:id="@+id/credit_ceiling_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/default_gap_30" />
+                    android:layout_marginTop="@dimen/default_gap_25" />
+
+                <TextView
+                    android:id="@+id/login_to_check"
+                    android:layout_marginTop="@dimen/default_gap_25"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/default_gap_40"
+                    android:text="@string/login_to_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
                 <Button
                     android:layout_width="wrap_content"

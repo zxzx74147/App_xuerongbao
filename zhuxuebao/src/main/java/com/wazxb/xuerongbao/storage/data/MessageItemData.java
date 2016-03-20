@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 
 import com.wazxb.xuerongbao.R;
+import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
 import com.wazxb.xuerongbao.moudles.credit.CreditActivity;
 import com.wazxb.xuerongbao.moudles.evaluate.EvaluateSubmitActivity;
-import com.wazxb.xuerongbao.moudles.message.MessageItemActivity;
 import com.wazxb.xuerongbao.moudles.message.MessageManager;
 import com.wazxb.xuerongbao.moudles.payback.PaybackActivity;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
@@ -59,7 +59,11 @@ public class MessageItemData implements Serializable {
         Context context = v.getContext();
         LoanItemData loan = null;
         if (ZXStringUtil.checkString(url)) {
-            loan = ZXJsonUtil.fromJsonString(url, LoanItemData.class);
+            url = url.replaceFirst("comments://", "");
+            if (url.startsWith("loan#")) {
+                url = url.replace("loan#", "");
+                loan = ZXJsonUtil.fromJsonString(url, LoanItemData.class);
+            }
         }
         if (!mHasRead) {
             mHasRead = true;
@@ -67,7 +71,8 @@ public class MessageItemData implements Serializable {
         }
         switch (mType) {
             case 1:
-                ZXActivityJumpHelper.startActivity(context, MessageItemActivity.class, this);
+                CommonWebActivity.startActivity(context,title,url);
+//                ZXActivityJumpHelper.startActivity(context, MessageItemActivity.class, this);
                 break;
             case 2:
                 ZXActivityJumpHelper.startActivity(context, PaybackActivity.class);

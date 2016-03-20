@@ -41,7 +41,7 @@ public class HomeFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, true);
-        mBinding.creditCeilingValue.setNumber(500);
+
         mBinding.setHandler(this);
         mBannerView = new BannerView(getContext());
         mBinding.bannerLayout.addView(mBannerView.getRootView(), new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -73,14 +73,8 @@ public class HomeFragment extends BaseFragment {
 
             }
         });
-        UserAllData user = AccountManager.sharedInstance().getUserAllData();
-        if (user != null) {
-            mBinding.creditCeilingValue.setNumber((int) user.user.quotaTotal);
-        }
-        if (StorageManager.sharedInstance().getInitdat().ad != null) {
-            mBannerView.setData(StorageManager.sharedInstance().getInitdat().ad.carousel);
-            return;
-        }
+        refreshData();
+
     }
 
     public void onBorrowClick(View v) {
@@ -141,16 +135,30 @@ public class HomeFragment extends BaseFragment {
     //事件1接收者：在主线程接收
     public void onEvent(String event) {
         if (EventBusConfig.EVENT_FRESH_USER_DATA.equals(event)) {
-            UserAllData user = AccountManager.sharedInstance().getUserAllData();
-            if (user != null) {
-                mBinding.creditCeilingValue.setNumber(user.user.quotaTotal);
-            }
+            refreshData();
         } else if (EventBusConfig.EVENT_MESSAGE_REFRESH.equals(event)) {
-            if (MessageManager.sharedInstance().getNewNum() > 0) {
-                mBinding.titleBar.setRightDrawable(R.drawable.index_has_msg);
-            } else {
-                mBinding.titleBar.setRightDrawable(R.drawable.index_no_msg);
-            }
+            refreshData();
+        }
+    }
+
+    private void refreshData() {
+        UserAllData user = AccountManager.sharedInstance().getUserAllData();
+        if (user != null) {
+            mBinding.creditCeilingValue.setVisibility(View.VISIBLE);
+            mBinding.creditCeilingValue.setNumber(user.user.quotaTotal);
+            mBinding.loginToCheck.setVisibility(View.GONE);
+        } else {
+            mBinding.creditCeilingValue.setVisibility(View.GONE);
+            mBinding.loginToCheck.setVisibility(View.VISIBLE);
+        }
+        if (StorageManager.sharedInstance().getInitdat().ad != null) {
+            mBannerView.setData(StorageManager.sharedInstance().getInitdat().ad.carousel);
+            return;
+        }
+        if (MessageManager.sharedInstance().getNewNum() > 0) {
+            mBinding.titleBar.setRightDrawable(R.drawable.index_has_msg);
+        } else {
+            mBinding.titleBar.setRightDrawable(R.drawable.index_no_msg);
         }
     }
 

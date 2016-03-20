@@ -30,7 +30,6 @@
         <com.wazxb.xuerongbao.widget.InputTextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
-            android:layout_marginBottom="@dimen/default_gap_20"
             android:layout_marginLeft="@dimen/default_gap_20"
             android:layout_marginRight="@dimen/default_gap_20"
             android:layout_marginTop="@dimen/default_gap_10"
@@ -42,7 +41,6 @@
         <com.wazxb.xuerongbao.widget.InputTextView
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_input_layout"
-            android:layout_marginBottom="@dimen/default_gap_20"
             android:layout_marginLeft="@dimen/default_gap_20"
             android:layout_marginRight="@dimen/default_gap_20"
             android:layout_marginTop="@dimen/default_gap_10"
