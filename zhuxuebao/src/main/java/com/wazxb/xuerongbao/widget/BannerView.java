@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
+import com.wazxb.xuerongbao.moudles.account.AccountInterface;
 import com.wazxb.xuerongbao.moudles.coin.CoinActivity;
 import com.wazxb.xuerongbao.moudles.red.RedActivity;
 import com.wazxb.xuerongbao.storage.data.CarouselData;
@@ -104,7 +105,9 @@ public class BannerView extends BaseView<List<CarouselData>> {
 
     public void setData(List<CarouselData> data) {
         super.setData(data);
-        clear();
+//        if (data == mData) {
+//            return;
+//        }
         if (data == null || data.size() == 0) {
             return;
         }
@@ -159,8 +162,14 @@ public class BannerView extends BaseView<List<CarouselData>> {
             try {
                 URL url = new URL(ad.url);
                 if ("/checkin".equals(url.getPath())) {
+                    if (!AccountInterface.checkLogin(mContext)) {
+                        return;
+                    }
                     ZXActivityJumpHelper.startActivity(mContext, CoinActivity.class);
                 } else if ("/luckybag".equals(url.getPath())) {
+                    if (!AccountInterface.checkLogin(mContext)) {
+                        return;
+                    }
                     ZXActivityJumpHelper.startActivity(mContext, RedActivity.class);
                 } else {
                     CommonWebActivity.startActivity(mContext, null, ad.url);

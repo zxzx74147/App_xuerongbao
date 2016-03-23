@@ -91,7 +91,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_gap_200"
+                android:layout_marginBottom="@dimen/default_gap_5"
                 android:src="@drawable/login_500" />
         </LinearLayout>
     </LinearLayout>

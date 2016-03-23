@@ -3,6 +3,7 @@ package com.wazxb.xuerongbao.moudles.payback;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.base.list.ZXBBaseListActivity;
@@ -38,6 +39,7 @@ public class PaybackActivity extends ZXBBaseListActivity {
             mHeadBinding.setData(returnWayData);
         }
         getRecyclerView().setNormalHeader(mHeadBinding.getRoot());
+        getRecyclerView().setVisibility(View.INVISIBLE);
 
     }
 

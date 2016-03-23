@@ -62,9 +62,13 @@ public class ZXBDataBindingUtil {
             public void onClick(View v) {
                 String title = null;
                 if (view instanceof TextView) {
+
                     title = ((TextView) view).getText().toString();
                     title = title.replace("《", "");
                     title = title.replace("》", "");
+                    if(title.length()>5){
+                        title =title.substring(title.length()-4);
+                    }
                 }
                 CommonWebActivity.startActivity(view.getContext(), title, url);
             }

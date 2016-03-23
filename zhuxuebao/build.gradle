@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "22.0.1"
 
     dataBinding {
         enabled = true
@@ -44,4 +44,5 @@ dependencies {
     compile project(':OneSDK')
     compile 'com.github.citux:datetimepicker:0.2.0'
     compile 'com.eftimoff:android-patternview:1.0.5@aar'
+
 }

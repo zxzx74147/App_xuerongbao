@@ -11,7 +11,11 @@ import android.webkit.WebViewClient;
 
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.base.ZXBBaseActivity;
+import com.wazxb.xuerongbao.common.pdf.PdfActivity;
+import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.widget.TitleBar;
+
+import java.io.Serializable;
 
 public class CommonWebActivity extends ZXBBaseActivity {
     private static final String URL = "url";
@@ -21,7 +25,23 @@ public class CommonWebActivity extends ZXBBaseActivity {
     private String mUrl = null;
     private TitleBar mTitle = null;
 
+    public static class PDFData implements Serializable {
+       public String url;
+       public  String title;
+    }
+
     public static void startActivity(Context context, String title, String url) {
+        if (url == null) {
+            return;
+        }
+        if (url.endsWith("pdf")) {
+            PDFData data = new PDFData();
+            data.url = url;
+            data.title = title;
+
+            ZXActivityJumpHelper.startActivity(context, PdfActivity.class, data);
+            return;
+        }
         Intent intent = new Intent(context, CommonWebActivity.class);
         if (!(context instanceof Activity)) {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

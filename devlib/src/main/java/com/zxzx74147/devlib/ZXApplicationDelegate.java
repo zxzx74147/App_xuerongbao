@@ -20,10 +20,10 @@ public class ZXApplicationDelegate {
     public static void onCreate(Application application) {
         mApplication = application;
         ImageModelInterface.init(mApplication);
-//        OrmInterface.init(mApplication);
         NetworkInterface.init(mApplication);
         KVStore.init(mApplication, "zx_lib.db");
         KVStore.getInstance().setDebug(true);
+
     }
 
 }

@@ -37,7 +37,7 @@
                 android:layout_marginTop="@dimen/default_gap_20"
                 android:inputType="phone"
                 app:edit_hint="@string/phone_num_hint"
-                app:input_right_drawable="@drawable/about_tele"
+                app:input_right_drawable="@drawable/reg_phone"
                 app:label_text="@string/phone_num"
                 app:label_width="@dimen/default_gap_150"
                 app:match_regex="@string/phone_num_regex"

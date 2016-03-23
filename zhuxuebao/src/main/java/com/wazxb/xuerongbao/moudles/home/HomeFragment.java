@@ -151,7 +151,8 @@ public class HomeFragment extends BaseFragment {
             mBinding.creditCeilingValue.setVisibility(View.GONE);
             mBinding.loginToCheck.setVisibility(View.VISIBLE);
         }
-        if (StorageManager.sharedInstance().getInitdat().ad != null) {
+        InitData initData = StorageManager.sharedInstance().getInitdat();
+        if (initData != null && initData.ad != null && initData.ad.carousel != null) {
             mBannerView.setData(StorageManager.sharedInstance().getInitdat().ad.carousel);
             return;
         }

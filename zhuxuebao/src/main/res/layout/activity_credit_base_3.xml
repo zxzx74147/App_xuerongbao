@@ -30,6 +30,7 @@
                 android:layout_marginLeft="@dimen/default_gap_20"
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
+                app:input_right_drawable="@drawable/about_mail"
                 app:edit_hint="@string/mail_hint"
                 app:input_edit_text="@{data.mail}"
                 app:label_text="@string/mail"
@@ -79,7 +80,7 @@
                 app:input_right_drawable="@drawable/reg_wb"
                 app:label_text="@string/weibo"
                 app:label_width="@dimen/default_gap_150"
-                app:not_null="true"
+                app:not_null="false"
                 app:post_key="@string/weibo_post_key" />
         </LinearLayout>
     </ScrollView>

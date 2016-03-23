@@ -154,7 +154,7 @@ public class RegisterFragment4 extends BaseFragment {
                     showToast(response.errorString);
                     return;
                 }
-                AccountManager.sharedInstance().saveUid(response.result.uId);
+//                AccountManager.sharedInstance().saveUid(response.result.uId);
                 mActivity.finish();
             }
         });

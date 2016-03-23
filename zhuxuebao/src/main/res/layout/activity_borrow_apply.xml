@@ -309,30 +309,137 @@
                     android:paddingTop="@dimen/default_gap_20"
                     android:visibility='@{data.money>=3000? View.VISIBLE:View.GONE}'>
 
-                    <TextView
-                        android:layout_width="@dimen/default_gap_150"
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/default_gap_200"
+                        android:layout_height="@dimen/default_gap_200">
+
+                        <TextView
+                            android:id="@+id/remind"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contract_photo"
+                            android:textSize="@dimen/text_size_normal" />
+
+                        <TextView
+                            android:id="@+id/not_null"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/remind"
+                            android:gravity="top"
+                            android:text="*"
+                            android:textColor="@color/button_bg_red" />
+
+                        <LinearLayout
+                            android:id="@+id/line1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/remind"
+                            android:layout_marginTop="@dimen/default_gap_5"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/download"
+                                android:textColor="@color/text_color_grey"
+                                android:textSize="@dimen/default_size_20" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/repayment_contract_2"
+                                android:textColor="@color/orange"
+                                android:textSize="@dimen/default_size_20"
+                                app:click_url="@{contract.loan}" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/and_upload_1"
+                                android:textColor="@color/text_color_grey"
+                                android:textSize="@dimen/default_size_20" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/line1"
+                            android:text="@string/and_upload_2"
+                            android:textColor="@color/text_color_grey"
+                            android:textSize="@dimen/default_size_20" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dip"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/default_gap_50"
-                        android:text="@string/contract_photo"
-                        android:textSize="@dimen/text_size_normal" />
+                        android:layout_weight="1">
 
-                    <com.wazxb.xuerongbao.widget.UploadImageView
-                        android:layout_width="@dimen/default_gap_202"
-                        android:layout_height="@dimen/default_gap_148"
-                        android:layout_marginRight="@dimen/default_gap_30"
-                        android:background="@color/white"
-                        app:img_not_null='@{data.money>=3000? true:false}'
-                        app:img_post_key="contPics" />
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/contract_pic_1"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_marginRight="@dimen/default_gap_30"
+                            android:background="@color/white"
+                            app:img_not_null='@{data.money>=3000? true:false}'
+                            app:img_post_key="contPics" />
 
 
-                    <com.wazxb.xuerongbao.widget.UploadImageView
-                        android:layout_width="@dimen/default_gap_202"
-                        android:layout_height="@dimen/default_gap_148"
-                        android:layout_marginRight="@dimen/default_gap_30"
-                        android:background="@color/white"
-                        app:img_not_null='@{data.money>=3000? true:false}'
-                        app:img_post_key="contPics" />
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/contract_pic_2"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_marginRight="@dimen/default_gap_30"
+                            android:layout_toRightOf="@+id/contract_pic_1"
+                            android:background="@color/white"
+                            app:img_not_null="false"
+                            app:img_post_key="contPics" />
 
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/contract_pic_3"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_below="@+id/contract_pic_1"
+                            android:layout_marginRight="@dimen/default_gap_30"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:background="@color/white"
+                            app:img_not_null="false"
+                            app:img_post_key="contPics" />
+
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/contract_pic_4"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_below="@+id/contract_pic_2"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:layout_toRightOf="@+id/contract_pic_3"
+                            android:background="@color/white"
+                            app:img_not_null="false"
+                            app:img_post_key="contPics" />
+
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/contract_pic_5"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_below="@+id/contract_pic_3"
+                            android:layout_marginRight="@dimen/default_gap_30"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:background="@color/white"
+                            app:img_not_null="false"
+                            app:img_post_key="contPics" />
+
+                        <com.wazxb.xuerongbao.widget.UploadImageView
+                            android:id="@+id/contract_pic_6"
+                            android:layout_width="@dimen/default_gap_202"
+                            android:layout_height="@dimen/default_gap_148"
+                            android:layout_below="@+id/contract_pic_4"
+                            android:layout_marginTop="@dimen/default_gap_20"
+                            android:layout_toRightOf="@+id/contract_pic_5"
+                            android:background="@color/white"
+                            app:img_post_key="contPics" />
+
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -340,6 +447,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/default_gap_20"
                     android:layout_marginTop="@dimen/default_gap_20"
+                    android:visibility='@{data.money>=3000? View.GONE:View.VISIBLE}'
                     android:orientation="horizontal">
 
                     <CheckBox
@@ -372,6 +480,16 @@
                         android:textColor="@color/text_color_grey"
                         android:textSize="@dimen/default_size_20" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_gap_20"
+                    android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_marginTop="@dimen/default_gap_10"
+                    android:text="@string/video_check"
+                    android:textColor="@color/orange"
+                    android:textSize="@dimen/default_size_20" />
 
                 <Button
                     android:id="@+id/borrow"

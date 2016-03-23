@@ -126,7 +126,9 @@ public class InputTextView extends LinearLayout {
     private void init(AttributeSet attrs) {
         mBinding = DataBindingUtil.inflate(LayoutInflater.from(this.getContext()), R.layout.input_text_view, this, true);
         mEdit = mBinding.edit;
-
+//        if( mBinding.edit.getInputType()==0) {
+//            mBinding.edit.setInputType(InputType.TYPE_CLASS_TEXT);
+//        }
         setGravity(Gravity.CENTER);
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs,
@@ -142,7 +144,7 @@ public class InputTextView extends LinearLayout {
             mKey = a.getString(R.styleable.InputTextView_post_key);
             String label = a.getString(R.styleable.InputTextView_label_text);
             mBinding.label.setText(label);
-            inputType = a.getInt(R.styleable.InputTextView_android_inputType, EditorInfo.TYPE_TEXT_VARIATION_NORMAL);
+            inputType = a.getInt(R.styleable.InputTextView_android_inputType, EditorInfo.TYPE_CLASS_TEXT);
             mBinding.edit.setInputType(inputType);
             mRegex = a.getString(R.styleable.InputTextView_match_regex);
             mHint = a.getString(R.styleable.InputTextView_edit_hint);
@@ -189,13 +191,11 @@ public class InputTextView extends LinearLayout {
                     });
                 }
             });
+            mBinding.edit.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
         } else if ("day".equals(mPickType)) {
             mBinding.edit.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    List<String> sexs = new LinkedList<>();
-                    sexs.add("男");
-                    sexs.add("女");
                     ZXDataPickerHelper.selectDay(getContext(), new ZXDataPickerHelper.IDateSelected() {
 
                         @Override
@@ -205,6 +205,7 @@ public class InputTextView extends LinearLayout {
                     });
                 }
             });
+            mBinding.edit.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
         } else if ("sex".equals(mPickType)) {
             mBinding.rightImg.setOnClickListener(new OnClickListener() {
                 @Override
@@ -234,7 +235,7 @@ public class InputTextView extends LinearLayout {
                     });
                 }
             });
-
+            mBinding.edit.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
         } else if ("bank".equals(mPickType)) {
             mBinding.edit.setOnClickListener(new OnClickListener() {
                 @Override
@@ -249,7 +250,7 @@ public class InputTextView extends LinearLayout {
                     });
                 }
             });
-
+            mBinding.edit.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
         } else if ("school".equals(mPickType)) {
             mBinding.edit.setOnClickListener(new OnClickListener() {
                 @Override
@@ -257,7 +258,7 @@ public class InputTextView extends LinearLayout {
                     ZXActivityJumpHelper.startActivityForResult((Activity) getContext(), PHONE_REQUEST_SCHOOL, SchoolSelActivity.class);
                 }
             });
-
+            mBinding.edit.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
         } else {
             mEdit.setOnClickListener(new OnClickListener() {
                 @Override

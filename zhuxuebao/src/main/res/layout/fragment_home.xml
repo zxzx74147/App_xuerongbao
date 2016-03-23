@@ -32,7 +32,7 @@
             <LinearLayout
                 android:id="@+id/banner_layout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/default_gap_330"
+                android:layout_height="@dimen/default_gap_320"
                 android:orientation="horizontal">
 
             </LinearLayout>
@@ -42,7 +42,7 @@
                 android:layout_height="0dip"
                 android:layout_marginLeft="@dimen/default_gap_20"
                 android:layout_marginRight="@dimen/default_gap_20"
-                android:layout_marginTop="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_14"
                 android:layout_weight="1"
                 android:background="@drawable/loan_button"
                 android:gravity="center"
@@ -54,8 +54,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_gap_17">
+                android:layout_height="@dimen/default_gap_170"
+                android:layout_marginTop="@dimen/default_gap_14">
 
 
                 <LinearLayout
@@ -71,7 +71,7 @@
                         android:layout_width="@dimen/default_gap_90"
                         android:layout_height="@dimen/default_gap_90"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/default_gap_20"
+                        android:layout_marginTop="@dimen/default_gap_10"
                         android:src="@drawable/index_pig" />
 
                     <com.zxzx74147.devlib.widget.StrokeTextView
@@ -79,7 +79,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="@dimen/default_gap_20"
-                        android:layout_marginTop="@dimen/default_gap_20"
+                        android:layout_marginTop="@dimen/default_gap_10"
                         android:text="@string/payback"
                         android:textColor="@color/white"
                         android:textSize="@dimen/default_gap_35"
@@ -100,7 +100,7 @@
                         android:layout_width="@dimen/default_gap_90"
                         android:layout_height="@dimen/default_gap_90"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/default_gap_20"
+                        android:layout_marginTop="@dimen/default_gap_10"
                         android:src="@drawable/index_calculator" />
 
                     <com.zxzx74147.devlib.widget.StrokeTextView
@@ -108,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="@dimen/default_gap_20"
-                        android:layout_marginTop="@dimen/default_gap_20"
+                        android:layout_marginTop="@dimen/default_gap_10"
                         android:text="@string/calculate"
                         android:textColor="@color/white"
                         android:textSize="@dimen/default_gap_35"
@@ -130,7 +130,7 @@
                         android:layout_width="@dimen/default_gap_90"
                         android:layout_height="@dimen/default_gap_90"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/default_gap_20"
+                        android:layout_marginTop="@dimen/default_gap_10"
                         android:src="@drawable/index_evaluate" />
 
                     <com.zxzx74147.devlib.widget.StrokeTextView
@@ -138,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="@dimen/default_gap_20"
-                        android:layout_marginTop="@dimen/default_gap_20"
+                        android:layout_marginTop="@dimen/default_gap_10"
 
                         android:text="@string/evaluate"
                         android:textColor="@color/white"
@@ -154,7 +154,7 @@
                 android:layout_marginBottom="@dimen/default_gap_10"
                 android:layout_marginLeft="@dimen/default_gap_20"
                 android:layout_marginRight="@dimen/default_gap_20"
-                android:layout_marginTop="@dimen/default_gap_17"
+                android:layout_marginTop="@dimen/default_gap_14"
                 android:background="@drawable/index_credit_bg"
                 android:gravity="center_horizontal"
                 android:onClick="@{handler.onCreditClick}"

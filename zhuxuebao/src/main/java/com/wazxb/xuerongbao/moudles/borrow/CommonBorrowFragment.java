@@ -55,6 +55,7 @@ public class CommonBorrowFragment extends BaseFragment {
             });
             return;
         }
+        mBinding.cashView.fillRequestData(mRequestData);
         if (mRequestData.money > user.user.quotaTotal) {
             ZXDialogUtil.showCheckDialog(getActivity(), R.string.credit_fill, new Runnable() {
                 @Override
@@ -64,7 +65,7 @@ public class CommonBorrowFragment extends BaseFragment {
             });
             return;
         }
-        mBinding.cashView.fillRequestData(mRequestData);
+
         ZXActivityJumpHelper.startActivity(getActivity(), BorrowApplyActivity.class, mRequestData);
     }
 

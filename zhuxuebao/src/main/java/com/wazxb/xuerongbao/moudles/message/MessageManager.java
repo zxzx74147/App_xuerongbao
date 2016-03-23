@@ -31,7 +31,6 @@ public class MessageManager {
 
     private long mLastRequest = System.currentTimeMillis();
     private boolean mHasStop = false;
-    private int newNum = 0;
     private boolean mHasInit = false;
 
 
@@ -135,9 +134,6 @@ public class MessageManager {
 
     private void mergeData(MessageData msgData) {
         if (msgData.lastMId != mData.lastMId) {
-            if (msgData.msgList != null) {
-                newNum += msgData.msgList.num;
-            }
             mData.mergeData(msgData);
             EventBus.getDefault().sendEvent(EventBusConfig.EVENT_MESSAGE_REFRESH);
             StorageManager.sharedInstance().saveKVObjectAsync(KEY_MESSAGE, mData);
@@ -153,10 +149,6 @@ public class MessageManager {
             return 0;
         }
         return mData.msgList.getUnReadNum();
-    }
-
-    public void clearNew() {
-        newNum = 0;
     }
 
     public void onEvent(String event) {

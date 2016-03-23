@@ -60,8 +60,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:info_edit_text="@{data.contact.tele}"
-            app:info_label_text="@string/wechat"
-            app:info_left_drawable="@drawable/about_tele" />
+            app:info_label_text="@string/phone"
+            app:info_left_drawable="@drawable/reg_phone" />
 
         <ImageView
             android:layout_width="match_parent"

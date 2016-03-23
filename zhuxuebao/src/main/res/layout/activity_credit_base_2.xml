@@ -12,6 +12,10 @@
         <variable
             name="data"
             type="com.wazxb.xuerongbao.storage.data.UserCdData" />
+
+        <variable
+            name="contract"
+            type="com.wazxb.xuerongbao.storage.data.ContractData" />
     </data>
 
 
@@ -278,6 +282,7 @@
                         android:layout_below="@id/xxw_id"
                         android:layout_marginBottom="@dimen/default_gap_10"
                         android:layout_marginTop="@dimen/default_gap_10"
+                        app:click_url="@{contract.xuexin}"
                         android:text="@string/xxw_remind"
                         android:textColor="@color/button_bg_red"
                         android:textSize="@dimen/default_size_15" />

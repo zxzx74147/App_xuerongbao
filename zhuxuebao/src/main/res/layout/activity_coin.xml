@@ -29,7 +29,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/default_gap_430"
                 android:scaleType="centerCrop"
                 android:src="@drawable/sign_bg" />
 
@@ -38,13 +38,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/default_gap_50"
                 android:layout_marginRight="@dimen/default_gap_50"
-                android:layout_marginTop="-50dip"
+                android:layout_marginTop="-55dip"
                 android:background="@color/white"
                 android:padding="@dimen/default_gap_20">
 
                 <Button
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/default_gap_130"
+                    android:layout_height="@dimen/default_gap_120"
                     android:background="@{coindata.isSigned==0? @drawable/sign_btn:@drawable/sign_gray}"
                     android:onClick="@{coindata.isSigned==0? handler.onSignClick:null}"
                     android:text='@{coindata.isSigned==0? "":"已签到"}' />
@@ -59,9 +59,9 @@
 
                 <FrameLayout
                     android:layout_width="0dip"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_weight="1"
                     android:background="@drawable/sign_day">
 
                     <TextView
@@ -86,9 +86,9 @@
 
                 <FrameLayout
                     android:layout_width="0dip"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_weight="1"
                     android:background="@drawable/sign_day">
 
                     <TextView
@@ -113,9 +113,9 @@
 
                 <FrameLayout
                     android:layout_width="0dip"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/default_gap_20"
+                    android:layout_weight="1"
                     android:background="@drawable/sign_day">
 
                     <TextView
@@ -138,11 +138,10 @@
                 </FrameLayout>
 
 
-
                 <FrameLayout
                     android:layout_width="0dip"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:background="@drawable/sign_day">
 
                     <TextView
@@ -179,10 +178,11 @@
                 <View
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
+                    android:layout_alignBottom="@+id/content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentTop="true"
+
                     android:layout_marginTop="@dimen/default_gap_20"
                     android:background="@drawable/sing_remind_rect" />
 
@@ -199,13 +199,15 @@
                     android:textSize="@dimen/default_size_30" />
 
                 <TextView
+                    android:id="@+id/content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/title"
-                    android:layout_marginBottom="@dimen/default_gap_30"
                     android:layout_marginLeft="@dimen/default_gap_10"
                     android:layout_marginRight="@dimen/default_gap_10"
                     android:layout_marginTop="@dimen/default_gap_30"
+
+                    android:paddingBottom="@dimen/default_gap_30"
                     android:text="@string/sign_remind_content"
 
                     android:textColor="#c3c3c3"

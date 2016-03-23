@@ -53,7 +53,8 @@ public class MoreFragment extends BaseFragment {
 
             @Override
             public void postExecute(Integer result) {
-                mBinding.clearCacheId.setContent(result / 1024f / 1024 + "M");
+                String text = String.format("%.2fM",result / 1024f / 1024);
+                mBinding.clearCacheId.setContent(text);
             }
         });
     }
@@ -88,8 +89,20 @@ public class MoreFragment extends BaseFragment {
 
     public void onClearCacheClick(View v) {
         File file = Glide.getPhotoCacheDir(getContext());
-        ZXFileUtil.deleteFile(file);
-        mBinding.clearCacheId.setContent("0M");
+
+        AsyncHelper.executeAsyncTask(new AsyncHelper.BDTask<Integer>() {
+            @Override
+            public Integer executeBackGround() {
+                Glide.get(getContext()).clearDiskCache();
+                return null;
+            }
+
+            @Override
+            public void postExecute(Integer result) {
+            }
+        });
+
+        mBinding.clearCacheId.setContent("0.0M");
     }
 
     public void onGreenHandClick(View v) {

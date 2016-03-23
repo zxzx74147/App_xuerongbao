@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.databinding.ActivityCreditBase2Binding;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
+import com.wazxb.xuerongbao.storage.StorageManager;
+import com.wazxb.xuerongbao.storage.data.InitData;
 import com.wazxb.xuerongbao.storage.data.UserAllData;
 import com.zxzx74147.devlib.widget.BaseFragment;
 
@@ -26,6 +28,10 @@ public class CreditBaseFragment2 extends BaseFragment {
         UserAllData data = AccountManager.sharedInstance().getUserAllData();
         if (data != null) {
             mBinding.setData(data.cdBase);
+        }
+        InitData init = StorageManager.sharedInstance().getInitdat();
+        if (init != null) {
+            mBinding.setContract(init.contract);
         }
         return mBinding.getRoot();
     }

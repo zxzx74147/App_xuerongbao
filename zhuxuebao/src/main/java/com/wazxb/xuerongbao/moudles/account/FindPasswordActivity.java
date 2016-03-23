@@ -11,13 +11,10 @@ import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
 import com.wazxb.xuerongbao.storage.data.UidData;
 import com.wazxb.xuerongbao.util.FillRqeustUtil;
-import com.wazxb.xuerongbao.widget.InputTextView;
-import com.wazxb.xuerongbao.widget.UploadImageView;
 import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
-import com.zxzx74147.devlib.utils.ZXViewHelper;
 
 public class FindPasswordActivity extends ZXBBaseActivity {
     private ActivityFindPasswordBinding mBinding = null;
@@ -47,22 +44,6 @@ public class FindPasswordActivity extends ZXBBaseActivity {
 
 
 
-
-    public void checkLoginAbled() {
-        mLoginOk = true;
-        ZXViewHelper.dfsViewGroup(mBinding.getRoot(), new ZXViewHelper.IViewProcess() {
-            @Override
-            public void processView(View view) {
-                if (view instanceof InputTextView) {
-                    if (((InputTextView) view).isNotNull() && !((InputTextView) view).getIsFilled()) {
-                        mLoginOk = false;
-                    }
-                }
-            }
-        });
-        mBinding.confirmId.setEnabled(mLoginOk);
-
-    }
 
     public void onReqeustVcode(View v) {
         if (!mBinding.phoneNumId.isReady()) {
@@ -108,22 +89,14 @@ public class FindPasswordActivity extends ZXBBaseActivity {
                     showToast(response.errorString);
                     return;
                 }
-                AccountManager.sharedInstance().saveUid(response.result.uId);
-                finish();
-            }
-        });
-        ZXViewHelper.dfsViewGroup(getWindow().getDecorView(), new ZXViewHelper.IViewProcess() {
-            @Override
-            public void processView(View view) {
-                if (view instanceof InputTextView) {
-                    InputTextView input = (InputTextView) view;
-                    if (ZXStringUtil.checkString(input.getKey())) {
-
-                        mRequest.addParams(input.getKey(), input.getText());
+                showToast("密码重置成功！");
+                mBinding.getRoot().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
                     }
-                } else if (view instanceof UploadImageView) {
+                },1000);
 
-                }
             }
         });
         FillRqeustUtil.fillRequest(mRequest, getWindow().getDecorView());

@@ -26,6 +26,7 @@
                 android:layout_height="@dimen/size_input_layout"
                 android:layout_marginLeft="@dimen/default_gap_20"
                 android:layout_marginRight="@dimen/default_gap_20"
+                android:inputType="text"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/name_hint"
                 app:label_text="@string/name"

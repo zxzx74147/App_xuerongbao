@@ -95,14 +95,14 @@
     <string name="father_name">父亲姓名</string>
     <string name="father_name_post_key">faName</string>
     <string name="father_phone_post_key">faPhone</string>
-    <string name="father_phone">父亲电话</string>
-    <string name="father_phone_hint">请输入父亲电话</string>
+    <string name="father_phone">父亲手机</string>
+    <string name="father_phone_hint">请输入父亲手机</string>
     <string name="mother_name">母亲姓名</string>
     <string name="mother_name_hint">请输入母亲姓名</string>
     <string name="mother_name_post_key">moName</string>
     <string name="mother_phone_post_key">moPhone</string>
-    <string name="mother_phone">母亲电话</string>
-    <string name="mother_phone_hint">请输入母亲电话</string>
+    <string name="mother_phone">母亲手机</string>
+    <string name="mother_phone_hint">请输入母亲手机</string>
     <string name="cancel">取消</string>
     <string name="ok">确认</string>
     <string name="contact_info">联系资料</string>
@@ -133,7 +133,7 @@
     <string name="mate2_name_post_key">cbName</string>
     <string name="mate2_sex_post_key">cbSex</string>
     <string name="mate2_phone_post_key">cbPhone</string>
-    <string name="mate2_dorm_post_key">caDormAddr</string>
+    <string name="mate2_dorm_post_key">cbDormAddr</string>
     <string name="other_info">其它信息：</string>
     <string name="hold_id_photo">手持身份证全身照：</string>
     <string name="admission_photo">录取通知书：</string>
@@ -150,7 +150,7 @@
     <string name="teacher2_sex_post_key">tbSex</string>
     <string name="teacher2_phone_post_key">tbPhone</string>
     <string name="teacher2_duty_post_key">tbDuty</string>
-    <string name="bank_info">银行流水</string>
+    <string name="bank_info">近6个月银行流水</string>
     <string name="other_info_title">其它资料</string>
     <string name="my_bank_card">我的银行卡</string>
     <string name="bind_bank_card">绑定银行卡</string>
@@ -208,6 +208,7 @@
     <string name="agree">同意</string>
     <string name="agreement">协议</string>
     <string name="repayment_contract">《还款合同》</string>
+    <string name="repayment_contract_2">《合同》</string>
     <string name="borrow_succ">申请成功</string>
     <string name="borrow_succ_remind">贷款申请成功\n学融宝会尽快完成审核</string>
     <string name="payback">还款</string>
@@ -320,4 +321,9 @@
     <string name="credit_fill">需要点亮全部资料才能申请贷款</string>
     <string name="mobile_upload_remind">点击查看上传方法</string>
     <string name="id_upload_remind">点击查看上传方法</string>
+    <string name="phone">电话</string>
+    <string name="video_check">资料审核过程中，学融宝客服人员会通过微信或QQ与您取得联系，并完成视频认证。</string>
+    <string name="download">下载</string>
+    <string name="and_upload_1">并签字</string>
+    <string name="and_upload_2">上传照片</string>
 </resources>

@@ -70,6 +70,7 @@ public class ImageUtil {
 //                .load(path)
 //                .resize(IMAGE_MAX_SIZE, IMAGE_MAX_SIZE)
 //                .into(imageView);
+
         return true;
     }
 

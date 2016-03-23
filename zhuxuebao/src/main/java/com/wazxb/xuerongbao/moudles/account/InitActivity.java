@@ -48,7 +48,7 @@ public class InitActivity extends ZXBBaseActivity {
         public Object instantiateItem(ViewGroup container, int position) {
             ImageView imageView = new ImageView(InitActivity.this);
             container.addView(imageView);
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             imageView.setImageResource(IMGS[position]);
             if (position == 3) {
                 imageView.setOnClickListener(new View.OnClickListener() {

@@ -48,6 +48,9 @@ public class ZXFileUtil {
         if (file == null) {
             return result;
         }
+        if(!file.isDirectory()){
+            return (int) file.length();
+        }
         if (file.listFiles() == null) {
             return result;
         }
@@ -127,6 +130,14 @@ public class ZXFileUtil {
             if (file.exists()) {
                 return file;
             } else {
+                if(!file.getParentFile().exists()) {
+                    //如果目标文件所在的目录不存在，则创建父目录
+                    System.out.println("目标文件所在目录不存在，准备创建它！");
+                    if(!file.getParentFile().mkdirs()) {
+                        System.out.println("创建目标文件所在目录失败！");
+                        return null;
+                    }
+                }
                 if (file.createNewFile() == true) {
                     return file;
                 } else {

@@ -35,18 +35,24 @@ public class RedActivity extends ZXBBaseActivity {
         if (data != null) {
             mBinding.setData(data.user);
         }
+
+        mBinding.getRoot().setVisibility(View.INVISIBLE);
         refresh();
 
     }
 
     public void refresh() {
+        showProgressBar();
         if (mRedRequest != null) {
             mRedRequest.cancel();
             mRedRequest = null;
         }
+        showProgressBar();
         mRedRequest = new ZXBHttpRequest<>(RedData.class, new HttpResponseListener<RedData>() {
             @Override
             public void onResponse(HttpResponse<RedData> response) {
+                hideProgressBar();
+                mBinding.getRoot().setVisibility(View.VISIBLE);
                 if (response.hasError()) {
                     showToast(response.errorString);
                     return;
@@ -58,6 +64,8 @@ public class RedActivity extends ZXBBaseActivity {
                 } else {
                     mBinding.sredLayout.setVisibility(View.GONE);
                     mBinding.redLayout.setVisibility(View.VISIBLE);
+                    mBinding.finish.setVisibility(View.GONE);
+                    mBinding.finish2.setVisibility(View.VISIBLE);
                 }
                 mBinding.setReddata(data);
             }
@@ -74,12 +82,23 @@ public class RedActivity extends ZXBBaseActivity {
             mSredRequest.cancel();
             mSredRequest = null;
         }
+        showProgressBar();
         mSredRequest = new ZXBHttpRequest<>(RedData.class, new HttpResponseListener<RedData>() {
             @Override
             public void onResponse(HttpResponse<RedData> response) {
+                hideProgressBar();
                 if (response.hasError()) {
                     showToast(response.errorString);
                     return;
+                }
+                RedData data = response.result;
+                if (data.grabed == 0) {
+                    mBinding.sredLayout.setVisibility(View.VISIBLE);
+                    mBinding.redLayout.setVisibility(View.GONE);
+                } else {
+                    mBinding.sredLayout.setVisibility(View.GONE);
+                    mBinding.redLayout.setVisibility(View.VISIBLE);
+
                 }
                 AccountManager.sharedInstance().requestUserAllData();
             }

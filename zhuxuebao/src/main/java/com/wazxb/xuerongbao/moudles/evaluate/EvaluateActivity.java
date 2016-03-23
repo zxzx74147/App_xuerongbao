@@ -47,7 +47,7 @@ public class EvaluateActivity extends ZXBBaseListActivity {
                     showToast(response.errorString);
                     return;
                 }
-                response.result.evaluateList.evaluate.clear();
+
                 setData(response.result.evaluateList.evaluate);
             }
         });
