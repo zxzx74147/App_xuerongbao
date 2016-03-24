@@ -192,7 +192,7 @@
                             android:layout_toRightOf="@+id/bank_5"
                             android:layout_marginTop="@dimen/default_gap_20"
                             android:background="@color/white"
-                            app:img_not_null="true"
+
                             app:img_post_key="bankPics"
                             app:img_url="@{ZXBDataBindingUtil.splitUrl(data.bankPics,5)}" />
 

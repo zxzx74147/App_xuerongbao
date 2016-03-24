@@ -32,6 +32,7 @@
             android:layout_height="@dimen/size_input_layout"
             android:layout_marginLeft="@dimen/default_gap_20"
             android:layout_marginRight="@dimen/default_gap_20"
+            android:inputType="number"
             android:layout_marginTop="@dimen/default_gap_10"
             app:edit_hint="@string/bind_bank_card_num_hint"
             app:label_text="@string/bind_bank_card_num"

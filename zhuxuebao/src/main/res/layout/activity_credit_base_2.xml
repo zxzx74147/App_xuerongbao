@@ -303,19 +303,7 @@
             </LinearLayout>
 
 
-            <com.wazxb.xuerongbao.widget.InputTextView
-                android:id="@+id/hometown_id"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/size_input_layout"
-                android:layout_marginBottom="@dimen/default_gap_20"
-                android:layout_marginLeft="@dimen/default_gap_20"
-                android:layout_marginRight="@dimen/default_gap_20"
-                android:layout_marginTop="@dimen/default_gap_10"
-                app:edit_hint="@string/hometown_hint"
-                app:input_edit_text="@{data.place}"
-                app:label_text="@string/hometown"
-                app:label_width="@dimen/default_gap_150"
-                app:not_null="true" />
+
         </LinearLayout>
     </ScrollView>
 </layout>

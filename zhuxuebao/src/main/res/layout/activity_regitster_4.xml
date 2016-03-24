@@ -85,7 +85,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 android:inputType="textPassword"
-                app:edit_hint="@string/password_hint"
+                app:edit_hint="@string/password_hint_2"
                 app:label_text="@string/password"
                 app:label_width="@dimen/default_gap_150"
                 app:match_regex="@string/pass_regex"
