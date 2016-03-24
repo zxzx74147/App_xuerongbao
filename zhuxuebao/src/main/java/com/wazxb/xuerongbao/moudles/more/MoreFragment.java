@@ -111,14 +111,14 @@ public class MoreFragment extends BaseFragment {
     public void onGreenHandClick(View v) {
         InitData initData = StorageManager.sharedInstance().getInitdat();
         if (initData != null && initData.contract != null) {
-            CommonWebActivity.startActivity(getActivity(), null, initData.contract.guide);
+            CommonWebActivity.startActivity(getActivity(), getResources().getString(R.string.green_hand), initData.contract.guide);
         }
     }
 
     public void onHelpClick(View v) {
         InitData initData = StorageManager.sharedInstance().getInitdat();
         if (initData != null && initData.contract != null) {
-            CommonWebActivity.startActivity(getActivity(), null, initData.contract.help);
+            CommonWebActivity.startActivity(getActivity(), getResources().getString(R.string.help), initData.contract.help);
         }
     }
 

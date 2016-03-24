@@ -117,7 +117,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text='@{data.lnProdId == BorrowConfig.BORROW_YUELI? "月":"天"}'
+                            android:text='@{data.lnProdId == BorrowConfig.BORROW_YUELI? "个月":"天"}'
                             android:textColor="@color/text_color_black"
                             android:textSize="@dimen/default_gap_24" />
                     </LinearLayout>
@@ -264,7 +264,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text='@{data.lnProdId == BorrowConfig.BORROW_YUELI? "/月":"元"}'
+                            android:text='@{data.lnProdId == BorrowConfig.BORROW_YUELI? "元/月":"元"}'
                             android:textColor="@color/text_color_black"
                             android:textSize="@dimen/default_gap_24" />
                     </LinearLayout>

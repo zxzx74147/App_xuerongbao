@@ -13,6 +13,7 @@ import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.common.pdf.PdfActivity;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
+import com.zxzx74147.devlib.utils.ZXStringUtil;
 import com.zxzx74147.devlib.widget.TitleBar;
 
 import java.io.Serializable;
@@ -79,7 +80,8 @@ public class CommonWebActivity extends ZXBBaseActivity {
         }else {
             mWebView.loadUrl(mUrl);
         }
-        mTitle.setText(getIntent().getStringExtra(TITLE));
+        String  title= getIntent().getStringExtra(TITLE);
+        mTitle.setText(title);
     }
 
 
@@ -113,13 +115,13 @@ public class CommonWebActivity extends ZXBBaseActivity {
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            mTitle.setText(view.getTitle());
+            if(!ZXStringUtil.checkString(mTitle.getText())) {
+                mTitle.setText(view.getTitle());
+            }
         }
 
         @Override
         public boolean shouldOverrideUrlLoading(final WebView view, String url) {
-
-
             view.loadUrl(url);
             return true;
         }

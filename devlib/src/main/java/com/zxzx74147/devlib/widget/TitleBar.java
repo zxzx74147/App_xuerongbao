@@ -107,6 +107,10 @@ public class TitleBar extends LinearLayout {
         mTitle.setText(text);
     }
 
+    public String getText(){
+        return mTitle.getText().toString();
+    }
+
     public void setRightText(int id) {
         mRightText.setText(id);
     }

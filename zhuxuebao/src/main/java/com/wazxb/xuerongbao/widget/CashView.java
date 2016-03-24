@@ -106,7 +106,7 @@ public class CashView extends LinearLayout {
         switch (mMode) {
             case BorrowConfig.BORROW_YUELI:
                 value = (float) CalculatorUtil.getMonth(mAmount, mRate, mTime);
-                mBinding.dayPer.setText("/" + mTime + "月");
+                mBinding.dayPer.setText("/" + "月");
                 break;
             case BorrowConfig.BORROW_FULI:
                 value = mAmount;
@@ -118,7 +118,7 @@ public class CashView extends LinearLayout {
                 break;
         }
 
-        mBinding.value.setText(String.format("%.2f", value));
+        mBinding.value.setText(String.format("%.02f元", value));
 
     }
 
@@ -139,10 +139,12 @@ public class CashView extends LinearLayout {
             mMinTime = prod.minMonth;
             mMaxTime = prod.maxMonth;
             mTime = prod.minMonth;
+            mBinding.time.setText(getResources().getText(R.string.borrow_time) + "（月）");
         } else {
             mMinTime = prod.minDay;
             mMaxTime = prod.maxDay;
             mTime = prod.minDay;
+            mBinding.time.setText(getResources().getText(R.string.borrow_time) + "（天）");
         }
         mMode = prod.lnProdId;
         mRate = prod.rateFlt;

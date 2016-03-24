@@ -7,6 +7,7 @@ import android.view.View;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityCoinAddressBinding;
+import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.network.NetworkConfig;
 import com.wazxb.xuerongbao.network.ZXBHttpRequest;
 import com.wazxb.xuerongbao.storage.data.GiftItemData;
@@ -24,6 +25,12 @@ public class CoinAddressActivity extends ZXBBaseActivity {
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_coin_address);
         mBinding.setHandler(this);
         init();
+        FillRqeustUtil.addWatcher(this, new FillRqeustUtil.CheckFilledListener() {
+            @Override
+            public void onChecked(boolean isReady) {
+                mBinding.loginId.setEnabled(isReady);
+            }
+        });
     }
 
     public void init() {
@@ -55,6 +62,7 @@ public class CoinAddressActivity extends ZXBBaseActivity {
                     showToast(response.errorString);
                     return;
                 }
+                AccountManager.sharedInstance().requestUserAllData();
                 finish();
             }
         });

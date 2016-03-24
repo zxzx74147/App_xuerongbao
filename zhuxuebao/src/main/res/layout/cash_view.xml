@@ -49,6 +49,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/default_gap_20"
@@ -75,10 +76,10 @@
                 android:textSize="@dimen/default_size_30" />
 
             <TextView
+                android:id="@+id/value"
                 android:layout_width="0dip"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:id="@+id/value"
                 android:gravity="end"
                 android:textColor="@color/orange"
                 android:textSize="@dimen/default_size_28" />
