@@ -10,7 +10,6 @@ import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.databinding.ActivityMainTabBinding;
 import com.wazxb.xuerongbao.moudles.LogoActivity;
 import com.wazxb.xuerongbao.moudles.account.InitActivity;
-import com.wazxb.xuerongbao.moudles.gesturepass.GesturePassManager;
 import com.wazxb.xuerongbao.moudles.home.HomeDelegate;
 import com.wazxb.xuerongbao.moudles.more.MoreDelegate;
 import com.wazxb.xuerongbao.moudles.personal.PersonalDelegate;
@@ -37,7 +36,6 @@ public class MainTabActivity extends ZXBBaseActivity {
             ZXActivityJumpHelper.startActivity(this, LogoActivity.class);
         }
         SharedPreferenceHelper.saveBoolean("is_first", false);
-        GesturePassManager.sharedInstance().checkPass();
     }
 
     @Override

@@ -126,6 +126,9 @@ public class PersonalFragment extends BaseFragment {
     }
 
     public void onShareClick(View v) {
+        if (!AccountInterface.checkLogin(getActivity())) {
+            return;
+        }
         InitData data = StorageManager.sharedInstance().getInitdat();
         CommonShareDialog dialog = new CommonShareDialog(getActivity());
         dialog.setShareData(data.share);

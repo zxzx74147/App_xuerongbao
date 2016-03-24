@@ -92,9 +92,6 @@ public class HomeFragment extends BaseFragment {
     }
 
     public void onInterestCalClick(View v) {
-        if (!AccountInterface.checkLogin(getActivity())) {
-            return;
-        }
         ZXActivityJumpHelper.startActivity(this, CaculateActivity.class);
     }
 

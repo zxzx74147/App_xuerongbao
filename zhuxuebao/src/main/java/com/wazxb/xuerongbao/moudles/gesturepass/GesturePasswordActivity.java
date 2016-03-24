@@ -2,6 +2,7 @@ package com.wazxb.xuerongbao.moudles.gesturepass;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 
 import com.alibaba.sdk.android.util.Md5Utils;
@@ -45,6 +46,10 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
         UserAllData data = AccountManager.sharedInstance().getUserAllData();
         if (data != null) {
             mBinding.setData(data.user);
+        }
+
+        if (mMode == MODE_CHECK) {
+            mBinding.titleBar.hideBack();
         }
         mBinding.patternView.setOnPatternDetectedListener(new PatternView.OnPatternDetectedListener() {
             @Override
@@ -93,7 +98,7 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
                         }
                         break;
                     case MODE_SET:
-                        if(splis.length<4){
+                        if (splis.length < 4) {
                             mBinding.remind.setText(R.string.pass_small_error);
                             return;
                         }
@@ -146,7 +151,7 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
         sendRequest(mRequest);
     }
 
-    public void onForgetpassword(View v){
+    public void onForgetpassword(View v) {
         ZXDialogUtil.showCheckDialog(this, R.string.forget_pass_remind, new Runnable() {
             @Override
             public void run() {
@@ -154,5 +159,35 @@ public class GesturePasswordActivity extends ZXBBaseActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        try {
+            return super.onKeyDown(keyCode, event);
+        } catch (IllegalStateException e) {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                finish();
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (mMode == MODE_CHECK) {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                moveTaskToBack(true);
+                return true;
+            }
+        }
+        try {
+            return super.onKeyUp(keyCode, event);
+        } catch (IllegalStateException e) {
+            finish();
+        }
+
+        return true;
     }
 }

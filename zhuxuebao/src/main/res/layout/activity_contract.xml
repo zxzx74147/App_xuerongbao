@@ -59,9 +59,11 @@
         <com.wazxb.xuerongbao.widget.InfoTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="@{handler.onPhoneClick}"
             app:info_edit_text="@{data.contact.tele}"
             app:info_label_text="@string/phone"
-            app:info_left_drawable="@drawable/reg_phone" />
+            app:info_left_drawable="@drawable/about_tele"
+            app:right_text_color="#1a0dab" />
 
         <ImageView
             android:layout_width="match_parent"

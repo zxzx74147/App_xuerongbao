@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 
 import com.wazxb.xuerongbao.EventBusConfig;
+import com.wazxb.xuerongbao.MainTabActivity;
 import com.zxzx74147.devlib.ZXApplicationDelegate;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class ActivityStateManager {
     private static volatile boolean isBackground = true;// 记录是否后台，内部使用，锁屏为true；
 
     private static String mActivityName;
+    private MainTabActivity topActivity;
 
     private ActivityStateManager() {
         IntentFilter filter = new IntentFilter();
@@ -135,4 +137,7 @@ public class ActivityStateManager {
     }
 
 
+    public void setTopActivity(MainTabActivity topActivity) {
+        mTopActivity = topActivity;
+    }
 }

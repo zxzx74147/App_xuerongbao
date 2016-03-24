@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
+import com.wazxb.xuerongbao.moudles.gesturepass.GesturePassManager;
 import com.wazxb.xuerongbao.storage.StorageManager;
 import com.wazxb.xuerongbao.storage.data.InitData;
 import com.wazxb.xuerongbao.storage.data.SplashData;
@@ -44,10 +45,14 @@ public class LogoActivity extends ZXBBaseActivity {
         mImage.postDelayed(new Runnable() {
             @Override
             public void run() {
+                GesturePassManager.sharedInstance().checkPass(null);
                 finish();
             }
         }, 2000);
+
     }
+
+
 }
 
 

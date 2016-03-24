@@ -99,6 +99,7 @@
                 android:onClick="@{handler.onClearCacheClick}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:info_show_right="false"
                 app:info_label_text="@string/clear_cache" />
 
             <ImageView

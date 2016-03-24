@@ -82,7 +82,7 @@ public class AccountManager {
         if (mUserAllData != null && mUserAllData.user != null) {
             if (mPass == null || !mPass.equals(mUserAllData.user.gesture)) {
                 setPassword(mUserAllData.user.gesture);
-                GesturePassManager.sharedInstance().checkPass();
+                GesturePassManager.sharedInstance().checkPass(null);
             }
         }
     }
@@ -95,6 +95,7 @@ public class AccountManager {
 
     public void logout() {
         saveUid(null);
+        setPassword(null);
         mUserAllData = null;
         MessageManager.sharedInstance().clear();
         EventBus.getDefault().post(EventBusConfig.EVENT_FRESH_USER_DATA);

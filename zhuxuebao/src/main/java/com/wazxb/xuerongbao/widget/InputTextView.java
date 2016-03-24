@@ -115,6 +115,14 @@ public class InputTextView extends LinearLayout {
         if (!mIsNotNull && !ZXStringUtil.checkString(getText())) {
             return true;
         }
+        if ((inputType & InputType.TYPE_TEXT_VARIATION_PASSWORD) != 0) {
+            if (!ZXStringUtil.checkString(getText()) || getText().length() < 6) {
+                return false;
+            }
+            if (!ZXStringUtil.checkString(getText()) || getText().length() > 16) {
+                return false;
+            }
+        }
         return false;
     }
 

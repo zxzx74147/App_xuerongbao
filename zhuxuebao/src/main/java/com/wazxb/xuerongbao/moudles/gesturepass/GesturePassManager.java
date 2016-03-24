@@ -1,6 +1,8 @@
 package com.wazxb.xuerongbao.moudles.gesturepass;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 
 import com.wazxb.xuerongbao.EventBusConfig;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
@@ -13,6 +15,7 @@ import com.zxzx74147.devlib.utils.ZXStringUtil;
  */
 public class GesturePassManager {
     private static GesturePassManager mInstance = null;
+    private long lastCheckTime = System.currentTimeMillis();
 
     private GesturePassManager() {
         de.greenrobot.event.EventBus.getDefault().register(this);
@@ -27,19 +30,32 @@ public class GesturePassManager {
 
     public void onEvent(String event) {
         if (EventBusConfig.EVENT_FRONT_BACK_CHANGED.equals(event)) {
-            checkPass();
+            checkPass(null);
         }
     }
 
-    public void checkPass(){
+    public void checkPass(Context context) {
         String mPass = AccountManager.sharedInstance().getPassword();
         if (!ZXStringUtil.checkString(mPass)) {
             return;
         }
+        if(System.currentTimeMillis()-lastCheckTime<3000){
+            return;
+        }
         boolean isBackGround = ActivityStateManager.sharedInstance().getIsBackGround();
         Activity activity = ActivityStateManager.sharedInstance().getTopActivity();
-        if (!isBackGround && activity != null) {
-            ZXActivityJumpHelper.startActivity(activity, GesturePasswordActivity.class, GesturePasswordActivity.MODE_CHECK);
+        if (!isBackGround && (context != null || activity != null)) {
+            lastCheckTime = System.currentTimeMillis();
+            Intent intent = null;
+            if (activity != null) {
+                intent = new Intent(activity, GesturePasswordActivity.class);
+            } else {
+                intent = new Intent(context, GesturePasswordActivity.class);
+            }
+            intent.putExtra(ZXActivityJumpHelper.INTENT_DATA, GesturePasswordActivity.MODE_CHECK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+            activity.startActivity(intent);
+//            ZXActivityJumpHelper.startActivity(activity, GesturePasswordActivity.class, GesturePasswordActivity.MODE_CHECK);
         }
     }
 }

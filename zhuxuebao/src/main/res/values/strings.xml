@@ -7,7 +7,7 @@
     <string name="phone_num">手机号</string>
     <string name="phone_num_hint">请输入手机号</string>
     <string name="password">密码</string>
-    <string name="password_hint">请输入密码</string>
+    <string name="password_hint">6-16位数字、字母或符号</string>
     <string name="forget_password">忘记密码</string>
     <string name="next_step">下一步</string>
     <string name="name">姓名</string>
@@ -23,7 +23,7 @@
     <string name="find_password">找回密码</string>
     <string name="change_password">修改密码</string>
     <string name="school">学校</string>
-    <string name="school_hint">请输入学校名称</string>
+    <string name="school_hint">输入就读学校名称</string>
     <string name="college">学院</string>
     <string name="college_hint">请输入学院名称</string>
     <string name="major">专业</string>
@@ -326,4 +326,5 @@
     <string name="download">下载</string>
     <string name="and_upload_1">并签字</string>
     <string name="and_upload_2">上传照片</string>
+    <string name="pass_regex">[a-zA-Z0-9]</string>
 </resources>

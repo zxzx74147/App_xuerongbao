@@ -37,7 +37,6 @@
                 android:layout_marginTop="@dimen/default_gap_20"
                 android:inputType="phone"
                 app:edit_hint="@string/phone_num_hint"
-                app:input_right_drawable="@drawable/reg_phone"
                 app:label_text="@string/phone_num"
                 app:label_width="@dimen/default_gap_150"
                 app:match_regex="@string/phone_num_regex"
@@ -62,6 +61,7 @@
                     app:edit_hint="@string/vcode_hint"
                     app:label_text="@string/vcode"
                     app:label_width="@dimen/default_gap_150"
+                    android:inputType="number"
                     app:not_null="true"
                     app:post_key="@string/vcode_post_key" />
 
@@ -88,6 +88,7 @@
                 app:edit_hint="@string/password_hint"
                 app:label_text="@string/password"
                 app:label_width="@dimen/default_gap_150"
+                app:match_regex="@string/pass_regex"
                 app:not_null="true"
                 app:post_key="@string/password_post_key" />
 
@@ -113,7 +114,7 @@
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
                 app:edit_hint="@string/invitation_code_hint"
-
+                android:inputType="number"
                 app:label_text="@string/invitation_code"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="false"

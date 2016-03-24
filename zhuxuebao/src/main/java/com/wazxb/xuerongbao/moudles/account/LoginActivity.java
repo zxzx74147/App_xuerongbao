@@ -82,7 +82,7 @@ public class LoginActivity extends ZXBBaseActivity {
                 }
 
                 AccountManager.sharedInstance().saveUid(response.result.uId);
-
+                AccountManager.sharedInstance().requestProdData();
                 finish();
             }
         });

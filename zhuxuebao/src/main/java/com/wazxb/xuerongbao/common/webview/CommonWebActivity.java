@@ -26,8 +26,8 @@ public class CommonWebActivity extends ZXBBaseActivity {
     private TitleBar mTitle = null;
 
     public static class PDFData implements Serializable {
-       public String url;
-       public  String title;
+        public String url;
+        public String title;
     }
 
     public static void startActivity(Context context, String title, String url) {
@@ -66,7 +66,19 @@ public class CommonWebActivity extends ZXBBaseActivity {
             mUrl = savedInstanceState.getString(URL);
         }
 
-        mWebView.loadUrl(mUrl);
+        if (mUrl.endsWith("jpg") || mUrl.endsWith("png")) {
+            StringBuilder sb = new StringBuilder(100);
+            sb.append("<html>");
+            sb.append("<head>");
+            sb.append("</head>");
+            sb.append("<body>");
+            sb.append("<img src=\"" + mUrl + "\"");
+            sb.append("</body>");
+            sb.append("</html>");
+            mWebView.loadDataWithBaseURL("",sb.toString(),"text/html","utf-8","");
+        }else {
+            mWebView.loadUrl(mUrl);
+        }
         mTitle.setText(getIntent().getStringExtra(TITLE));
     }
 

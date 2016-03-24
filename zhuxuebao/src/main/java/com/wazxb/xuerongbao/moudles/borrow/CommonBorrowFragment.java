@@ -76,8 +76,10 @@ public class CommonBorrowFragment extends BaseFragment {
             AccountManager.sharedInstance().requestCaculateData();
             return;
         }
+
         for (ProdData prod : data.lnProdList.prod) {
             if (mMode == prod.lnProdId) {
+
                 mBinding.setData(prod);
                 mRequestData.mProdData = prod;
                 break;

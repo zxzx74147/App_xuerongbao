@@ -137,10 +137,7 @@ public class RegisterFragment4 extends BaseFragment {
         }
         String pass = mBinding.passwordId.getText();
         String pass2 = mBinding.passwordConfirmId.getText();
-        if (!ZXStringUtil.checkString(pass) || pass.length() < 6) {
-            showToast("请填写6位以上密码！");
-            return;
-        }
+
         if (!pass.equals(pass2)) {
             showToast("两次密码输入不一致！");
             return;
@@ -158,6 +155,9 @@ public class RegisterFragment4 extends BaseFragment {
                 mActivity.finish();
             }
         });
+        if(!FillRqeustUtil.checkFill((ZXBBaseActivity) getActivity())){
+            return;
+        }
         ZXViewHelper.dfsViewGroup(mActivity.getWindow().getDecorView(), new ZXViewHelper.IViewProcess() {
             @Override
             public void processView(View view) {

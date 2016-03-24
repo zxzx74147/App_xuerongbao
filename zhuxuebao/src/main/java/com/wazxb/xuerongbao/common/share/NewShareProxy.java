@@ -116,8 +116,8 @@ public class NewShareProxy {
         mMessage.textObject = tObj;
 
         ImageObject iObj = new ImageObject();
-        Bitmap thumb = ImageUtil.getBitmap(R.drawable.logo, 100);
-        Bitmap img = ImageUtil.getBitmap(R.drawable.logo, 150);
+        Bitmap thumb = ImageUtil.getBitmap(R.drawable.logo_small, 100);
+        Bitmap img = ImageUtil.getBitmap(R.drawable.logo_small, 150);
 
         iObj.setThumbImage(thumb);
         iObj.setImageObject(img);
@@ -223,7 +223,7 @@ public class NewShareProxy {
             webObject.webpageUrl = data.wxUrl;
         }
 
-        Bitmap thumb = ImageUtil.getBitmap(R.drawable.logo, 100);
+        Bitmap thumb = ImageUtil.getBitmap(R.drawable.logo_small, 100);
         msg.thumbData = ImageUtil.bitmap2Byte(thumb, 80);
 
         msg.mediaObject = webObject;

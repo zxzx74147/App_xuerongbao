@@ -82,7 +82,7 @@ public class ImageUtil {
      */
     public static byte[] bitmap2Byte(Bitmap bm, int quality) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.JPEG, quality, baos);
+        bm.compress(Bitmap.CompressFormat.PNG, quality, baos);
         return baos.toByteArray();
     }
 

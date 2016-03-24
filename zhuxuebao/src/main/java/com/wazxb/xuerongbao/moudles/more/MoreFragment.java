@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.wazxb.xuerongbao.EventBusConfig;
 import com.wazxb.xuerongbao.R;
+import com.wazxb.xuerongbao.base.ZXBBaseActivity;
 import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
 import com.wazxb.xuerongbao.databinding.FragmentMoreBinding;
 import com.wazxb.xuerongbao.moudles.update.UpdateDialog;
@@ -53,7 +54,7 @@ public class MoreFragment extends BaseFragment {
 
             @Override
             public void postExecute(Integer result) {
-                String text = String.format("%.2fM",result / 1024f / 1024);
+                String text = String.format("%.2fM", result / 1024f / 1024);
                 mBinding.clearCacheId.setContent(text);
             }
         });
@@ -88,8 +89,7 @@ public class MoreFragment extends BaseFragment {
     }
 
     public void onClearCacheClick(View v) {
-        File file = Glide.getPhotoCacheDir(getContext());
-
+        ((ZXBBaseActivity) mActivity).showProgressBar();
         AsyncHelper.executeAsyncTask(new AsyncHelper.BDTask<Integer>() {
             @Override
             public Integer executeBackGround() {
@@ -99,10 +99,13 @@ public class MoreFragment extends BaseFragment {
 
             @Override
             public void postExecute(Integer result) {
+                ((ZXBBaseActivity) mActivity).hideProgressBar();
+                mBinding.clearCacheId.setContent("0.0M");
+                showToast("清理完成");
             }
         });
 
-        mBinding.clearCacheId.setContent("0.0M");
+
     }
 
     public void onGreenHandClick(View v) {

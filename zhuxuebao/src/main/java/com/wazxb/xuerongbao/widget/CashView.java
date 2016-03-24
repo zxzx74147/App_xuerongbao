@@ -8,9 +8,11 @@ import android.widget.LinearLayout;
 
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.databinding.CashViewBinding;
+import com.wazxb.xuerongbao.moudles.account.AccountManager;
 import com.wazxb.xuerongbao.moudles.borrow.BorrowConfig;
 import com.wazxb.xuerongbao.storage.data.BorrowRequestData;
 import com.wazxb.xuerongbao.storage.data.ProdData;
+import com.wazxb.xuerongbao.storage.data.UserAllData;
 import com.wazxb.xuerongbao.util.CalculatorUtil;
 
 import java.util.LinkedList;
@@ -124,9 +126,14 @@ public class CashView extends LinearLayout {
         if (prod == null) {
             return;
         }
+        UserAllData user = AccountManager.sharedInstance().getUserAllData();
+        if (prod.lnProdId == BorrowConfig.BORROW_YUELI) {
+            mMaxMoney = Math.max(user.user.quotaTotal, prod.maxMoney);
+        } else {
+            mMaxMoney = prod.maxMoney;
+        }
         mProdData = prod;
         mMinMoney = prod.minMoney;
-        mMaxMoney = prod.maxMoney;
         mAmount = prod.minMoney;
         if (prod.lnProdId == BorrowConfig.BORROW_YUELI) {
             mMinTime = prod.minMonth;
