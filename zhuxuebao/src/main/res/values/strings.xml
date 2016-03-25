@@ -38,11 +38,11 @@
     <string name="student_id_photo">学生证照片</string>
     <string name="one_card_photo">一卡通照片</string>
     <string name="wechat">微信</string>
-    <string name="wechat_hint">请写微信账号并绑定</string>
+    <string name="wechat_hint">请写微信账号</string>
     <string name="qq">QQ</string>
-    <string name="qq_hint">请写QQ账号并绑定</string>
+    <string name="qq_hint">请写QQ账号</string>
     <string name="weibo">微博</string>
-    <string name="weibo_hint">请写微博账号并绑定</string>
+    <string name="weibo_hint">请写微博账号</string>
     <string name="mail">邮箱</string>
     <string name="mail_hint">请输入邮箱</string>
     <string name="vcode">验证码</string>
@@ -84,6 +84,7 @@
     <string name="collage_class_post_key">grade</string>
     <string name="dorm">寝室地址</string>
     <string name="dorm_hint">请输入寝室地址</string>
+    <string name="dorm_hint_2">请具体到x栋x号房间</string>
     <string name="dorm_post_key">dorm</string>
     <string name="xxw_photo">学信网</string>
     <string name="xxw_remind">点击这里查看如何获取学信网信息截图</string>
@@ -113,6 +114,7 @@
     <string name="father_company_post_key">faCompany</string>
     <string name="company_address">单位地址</string>
     <string name="company_address_hint">请输入单位地址</string>
+    <string name="company_address_hint_2">请具体到x街x号</string>
     <string name="father_company_address_post_key">faCompanyAddr</string>
     <string name="father_duty_post_key">faDuty</string>
     <string name="duty">职务</string>
@@ -124,6 +126,7 @@
     <string name="home_address">家庭住址</string>
     <string name="home_address_post_key">homeAddr</string>
     <string name="home_address_hint">请输入家庭住址</string>
+    <string name="home_address_hint_2">请具体到x路x街x小区名x房间</string>
     <string name="mate1_info">联系人同学一：</string>
     <string name="mate1_name_post_key">caName</string>
     <string name="sex_post_key">sex</string>
@@ -279,7 +282,7 @@
     <string name="share_weixin_2">微信</string>
     <string name="share_weixin_friend">朋友圈</string>
     <string name="share_weibo">微博</string>
-    <string name="share_qq_friend">QQ好友</string>
+    <string name="share_qq_friend">QQ</string>
     <string name="share_qzone">QQ空间</string>
     <string name="share_renren">人人</string>
     <string name="share_test">发个假的测试</string>

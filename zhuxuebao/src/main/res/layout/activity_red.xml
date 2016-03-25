@@ -100,7 +100,7 @@
                     android:textColor="@color/text_color_grey"
                     android:id="@+id/finish_2"
                     android:visibility="gone"
-                    android:text="已完成"
+                    android:text="已兑换"
                     android:textSize="@dimen/default_size_45"
                     android:layout_marginBottom="-50dip"
                     android:layout_marginTop="@dimen/default_gap_120"

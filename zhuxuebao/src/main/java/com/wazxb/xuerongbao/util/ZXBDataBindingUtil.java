@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.common.webview.CommonWebActivity;
 import com.wazxb.xuerongbao.storage.data.LoanItemData;
 import com.wazxb.xuerongbao.storage.data.ProdData;
@@ -15,6 +16,7 @@ import com.wazxb.xuerongbao.widget.InfoTextView;
 import com.wazxb.xuerongbao.widget.InputTextView;
 import com.wazxb.xuerongbao.widget.PaybackBar;
 import com.wazxb.xuerongbao.widget.UploadImageView;
+import com.zxzx74147.devlib.ZXApplicationDelegate;
 import com.zxzx74147.devlib.utils.ZXStringUtil;
 import com.zxzx74147.devlib.widget.StrokeTextView;
 
@@ -45,7 +47,6 @@ public class ZXBDataBindingUtil {
     }
 
 
-
     @BindingAdapter("app:progress")
     public static void setCreditProgress(CreditBar view, int edit) {
         view.setProgress(edit);
@@ -64,10 +65,13 @@ public class ZXBDataBindingUtil {
                 if (view instanceof TextView) {
 
                     title = ((TextView) view).getText().toString();
+                    if (ZXApplicationDelegate.getApplication().getResources().getString(R.string.xxw_remind).equals(title)) {
+                        title = "上传方法";
+                    }
                     title = title.replace("《", "");
                     title = title.replace("》", "");
-                    if(title.length()>5){
-                        title =title.substring(title.length()-4);
+                    if (title.length() > 5) {
+                        title = title.substring(title.length() - 4);
                     }
                 }
                 CommonWebActivity.startActivity(view.getContext(), title, url);

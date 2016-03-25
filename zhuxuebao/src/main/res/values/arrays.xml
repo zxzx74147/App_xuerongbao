@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <array name="degree_list">
+        <item>在读本科</item>
+        <item>在读研究生</item>
+        <item>在读博士</item>
+    </array>
     <array name="bank_list">
         <item>中国工商银行</item>
         <item>中国农业银行</item>

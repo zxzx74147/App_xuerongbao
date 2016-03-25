@@ -248,9 +248,22 @@ public class InputTextView extends LinearLayout {
             mBinding.edit.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    List<String> sexs = new LinkedList<>();
                     String[] banks = getResources().getStringArray(R.array.bank_list);
                     ZXDataPickerHelper.selectItem(getContext(), Arrays.asList(banks), new ZXDataPickerHelper.IItemSelected() {
+                        @Override
+                        public void onSelected(String item) {
+                            mBinding.edit.setText(item);
+                        }
+                    });
+                }
+            });
+            mBinding.edit.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
+        }else if ("degree".equals(mPickType)) {
+            mBinding.edit.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String[] degrees = getResources().getStringArray(R.array.degree_list);
+                    ZXDataPickerHelper.selectItem(getContext(), Arrays.asList(degrees), new ZXDataPickerHelper.IItemSelected() {
                         @Override
                         public void onSelected(String item) {
                             mBinding.edit.setText(item);

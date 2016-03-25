@@ -47,7 +47,7 @@
                     android:layout_height="@dimen/default_gap_120"
                     android:background="@{coindata.isSigned==0? @drawable/sign_btn:@drawable/sign_gray}"
                     android:onClick="@{coindata.isSigned==0? handler.onSignClick:null}"
-                    android:text='@{coindata.isSigned==0? "":"已签到"}' />
+                    android:text='@{coindata.isSigned==0? "":"今日已签到"}' />
             </LinearLayout>
 
             <LinearLayout
