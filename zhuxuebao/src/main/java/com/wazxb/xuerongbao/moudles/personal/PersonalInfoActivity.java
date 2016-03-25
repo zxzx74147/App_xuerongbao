@@ -1,6 +1,9 @@
 package com.wazxb.xuerongbao.moudles.personal;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +26,10 @@ import com.zxzx74147.devlib.network.HttpResponse;
 import com.zxzx74147.devlib.network.HttpResponseListener;
 import com.zxzx74147.devlib.utils.ZXActivityJumpHelper;
 import com.zxzx74147.devlib.utils.ZXDialogUtil;
+import com.zxzx74147.devlib.utils.ZXFileUtil;
+import com.zxzx74147.devlib.utils.ZXStringUtil;
+
+import java.io.File;
 
 /**
  * Created by zhengxin on 16/3/6.
@@ -56,8 +63,26 @@ public class PersonalInfoActivity extends ZXBBaseActivity {
 
     }
 
+    String mPicPath = null;
+
     public void onChangePortraitClick(View v) {
-        ZXUtil.takePhoto(this, RequestCode.REQUEST_MSG_PHOTO);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("上传头像");
+        String[] items = new String[]{"拍照", "照片库"};
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                // Do something with the selection
+                if (item == 1) {
+                    ZXUtil.takePhoto(PersonalInfoActivity.this, RequestCode.REQUEST_MSG_PHOTO);
+                } else {
+                    mPicPath = System.currentTimeMillis() + ".jpg";
+                    ZXUtil.showFrontCamera(PersonalInfoActivity.this, RequestCode.REQUEST_MSG_PHOTO, mPicPath);
+                }
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+
     }
 
     public void onGesturePassClick(View v) {
@@ -75,12 +100,22 @@ public class PersonalInfoActivity extends ZXBBaseActivity {
         if (resultCode == Activity.RESULT_OK) {
             switch (requestCode) {
                 case RequestCode.REQUEST_MSG_PHOTO:
-                    if (data == null || data.getData() == null) {
-                        return;
+
+                    Uri fileUri = null;
+                    if (data == null) {
+                        data = new Intent();
                     }
-                    Uri uri = data.getData();
-                    if (uri != null) {
-                        EditPortraitActivity.startActivityForResult(this, uri, RequestCode.REQUEST_PROFILE_EDIT_PORTRAIT, EditPortraitActivity.MODE_UPLOAD);
+                    if (data.getData() != null) {
+                        fileUri = data.getData();
+                    } else if (ZXStringUtil.checkString(mPicPath)) {
+                        File file = ZXFileUtil.getFile(mPicPath);
+                        if (file.exists()) {
+                            fileUri = Uri.fromFile(file);
+                        }
+                        mPicPath = null;
+                    }
+                    if (fileUri != null) {
+                        EditPortraitActivity.startActivityForResult(this, fileUri, RequestCode.REQUEST_PROFILE_EDIT_PORTRAIT, EditPortraitActivity.MODE_UPLOAD);
                     } else {
                         showToast("图片载入失败");
                     }
@@ -124,7 +159,7 @@ public class PersonalInfoActivity extends ZXBBaseActivity {
     @Override
     public void onResume() {
         super.onResume();
-        if(AccountManager.sharedInstance().getUid() == null){
+        if (AccountManager.sharedInstance().getUid() == null) {
             finish();
         }
     }

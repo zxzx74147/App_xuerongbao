@@ -66,6 +66,7 @@ public class EditPortraitActivity extends ZXBBaseActivity {
                 }
                 isSending = true;
                 Bitmap bm = mRectSelectView.getSelectedImage();
+                showProgressBar();
                 ImageUtil.uploadImage(bm, new ImageUtil.ImageUploadCallback() {
                     @Override
                     public void onPrepare() {
@@ -74,6 +75,7 @@ public class EditPortraitActivity extends ZXBBaseActivity {
 
                     @Override
                     public void onSucc(String picKey, String picUrl) {
+                        hideProgressBar();
                         Intent intent = new Intent();
                         intent.putExtra("key", picKey);
                         intent.putExtra("url", picUrl);
@@ -84,6 +86,7 @@ public class EditPortraitActivity extends ZXBBaseActivity {
                     @Override
                     public void onFail() {
                         showToast("图片上传失败！");
+                        hideProgressBar();
                     }
                 });
             }
