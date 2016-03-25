@@ -210,6 +210,7 @@ public class BannerView extends BaseView<List<CarouselData>> {
             CarouselData ad = mList.get(index_t);
             imageView.setTag(R.id.tag_common, ad);
 
+//            Picasso.with(mContext).load(ad.picUrl).centerCrop().into(imageView);
             ImageUtil.loadImage(ad.picUrl, imageView);
             return imageView;
         }

@@ -155,7 +155,7 @@
     <string name="teacher2_phone_post_key">tbPhone</string>
     <string name="teacher2_duty_post_key">tbDuty</string>
     <string name="bank_info">近6个月银行流水</string>
-    <string name="other_info_title">其它资料</string>
+    <string name="other_info_title">补充信息</string>
     <string name="my_bank_card">我的银行卡</string>
     <string name="bind_bank_card">绑定银行卡</string>
     <string name="my_gold_coin">我的金币</string>

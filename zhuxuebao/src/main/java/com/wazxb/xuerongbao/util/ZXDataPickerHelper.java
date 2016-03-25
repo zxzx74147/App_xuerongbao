@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 
+import com.wangjie.wheelview.WheelView;
 import com.wazxb.xuerongbao.R;
 import com.zxzx74147.devlib.utils.TimerUtil;
 import com.zxzx74147.devlib.utils.ZXDialogUtil;
@@ -102,13 +103,11 @@ public class ZXDataPickerHelper {
 
     public static Dialog selectYear(Context context, final IDateSelected listener) {
         final View view = LayoutInflater.from(context).inflate(R.layout.dialog_date_picker, null);
-        final NumberPicker mPicket = (NumberPicker) view.findViewById(R.id.date_picker);
+        final WheelView mPicket = (WheelView) view.findViewById(R.id.date_picker);
         Button mCancel = (Button) view.findViewById(R.id.cancel);
         Button mOk = (Button) view.findViewById(R.id.ok);
-        mPicket.setFormatter(mYearFormat);
-        mPicket.setMaxValue(YEAR_CURRENT);
-        mPicket.setMinValue(YEAR_CURRENT - 50);
-        mPicket.setValue(YEAR_CURRENT - 3);
+        mPicket.setItems(YEAR);
+
         final Dialog dialog = ZXDialogUtil.showDialog(context, view, null);
         mCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,7 +119,7 @@ public class ZXDataPickerHelper {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-                int year = mPicket.getValue();
+                int year = mPicket.getSeletedIndex();
                 listener.onSelected(year, 0, 0);
             }
         });
@@ -205,10 +204,10 @@ public class ZXDataPickerHelper {
 
     public static Dialog selectItem(Context context, final List<String> items, final IItemSelected listener) {
         final View view = LayoutInflater.from(context).inflate(R.layout.dialog_item_picker, null);
-        final CharacterPickerView mPicker = (CharacterPickerView) view.findViewById(R.id.custom_picker_view);
+        final WheelView mPicker = (WheelView) view.findViewById(R.id.custom_picker_view);
         Button mCancel = (Button) view.findViewById(R.id.cancel);
         Button mOk = (Button) view.findViewById(R.id.ok);
-        mPicker.setPicker(items);
+        mPicker.setItems(items);
         final Dialog dialog = ZXDialogUtil.showDialog(context, view, null);
         mCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -220,8 +219,8 @@ public class ZXDataPickerHelper {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-                int[] selected = mPicker.getCurrentItems();
-                String item = items.get(selected[0]);
+                int selected = mPicker.getSeletedIndex();
+                String item = items.get(selected);
                 listener.onSelected(item);
             }
         });

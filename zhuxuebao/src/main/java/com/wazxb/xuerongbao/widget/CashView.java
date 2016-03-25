@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
+import com.wangjie.wheelview.WheelView;
 import com.wazxb.xuerongbao.R;
 import com.wazxb.xuerongbao.databinding.CashViewBinding;
 import com.wazxb.xuerongbao.moudles.account.AccountManager;
@@ -17,8 +18,6 @@ import com.wazxb.xuerongbao.util.CalculatorUtil;
 
 import java.util.LinkedList;
 import java.util.List;
-
-import cn.jeesoft.widget.pickerview.CharacterPickerView;
 
 /**
  * Created by zhengxin on 16/3/9.
@@ -79,25 +78,26 @@ public class CashView extends LinearLayout {
         for (int i = mMinTime; i <= mMaxTime; i++) {
             mTimes.add(String.valueOf(i));
         }
-        mBinding.picker1.setPicker(mAmounts);
-        mBinding.picker2.setPicker(mTimes);
-        mBinding.picker1.setOnOptionChangedListener(mAmountListener);
-        mBinding.picker2.setOnOptionChangedListener(mTimeListener);
+        mBinding.picker1.setItems(mAmounts);
+        mBinding.picker1.setOnWheelViewListener(mAmountListener);
+        mBinding.picker2.setItems(mTimes);
+        mBinding.picker2.setOnWheelViewListener(mTimeListener);
+        mBinding.picker1.drawLine(false, true);
+        mBinding.picker2.drawLine(true, false);
         calResult();
     }
 
-    private CharacterPickerView.OnOptionChangedListener mAmountListener = new CharacterPickerView.OnOptionChangedListener() {
-        @Override
-        public void onOptionChanged(CharacterPickerView view, int option1, int option2, int option3) {
-            mAmount = Integer.valueOf(mAmounts.get(option1));
+
+    private WheelView.OnWheelViewListener mTimeListener = new WheelView.OnWheelViewListener() {
+        public void onSelected(int selectedIndex, String item) {
+            mTime = Integer.valueOf(mTimes.get(selectedIndex));
             calResult();
         }
     };
 
-    private CharacterPickerView.OnOptionChangedListener mTimeListener = new CharacterPickerView.OnOptionChangedListener() {
-        @Override
-        public void onOptionChanged(CharacterPickerView view, int option1, int option2, int option3) {
-            mTime = Integer.valueOf(mTimes.get(option1));
+    private WheelView.OnWheelViewListener mAmountListener = new WheelView.OnWheelViewListener() {
+        public void onSelected(int selectedIndex, String item) {
+            mAmount = Integer.valueOf(mAmounts.get(selectedIndex));
             calResult();
         }
     };
@@ -127,7 +127,7 @@ public class CashView extends LinearLayout {
             return;
         }
         UserAllData user = AccountManager.sharedInstance().getUserAllData();
-        if (prod.lnProdId == BorrowConfig.BORROW_YUELI) {
+        if (prod.lnProdId == BorrowConfig.BORROW_YUELI && user != null) {
             mMaxMoney = Math.max(user.user.quotaTotal, prod.maxMoney);
         } else {
             mMaxMoney = prod.maxMoney;

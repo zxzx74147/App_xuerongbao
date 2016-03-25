@@ -36,7 +36,7 @@ public class BorrowActivity extends ZXBBaseActivity {
 
     private void addTabs(CalculatorData data) {
         mBinding.tabHost.setup(this, getSupportFragmentManager());
-        if (data.lnProdList == null || data.lnProdList.prod == null) {
+        if (data == null || data.lnProdList == null || data.lnProdList.prod == null) {
             return;
         }
         List<ProdData> pords = data.lnProdList.prod;

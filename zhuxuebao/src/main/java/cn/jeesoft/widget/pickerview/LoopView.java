@@ -51,6 +51,7 @@ public class LoopView extends View {
     float x;
     float y;
     float z;
+    Rect mRect = new Rect();
 
     public LoopView(Context context) {
         super(context);
@@ -274,8 +275,12 @@ public class LoopView extends View {
                 k1++;
             }
             k1 = (v - g) / 2;
+
             canvas.drawLine(0.0F, n, v, n, paintC);
             canvas.drawLine(0.0F, o, v, o, paintC);
+            canvas.drawLine(-129, n, v+120, n, paintC);
+            canvas.drawLine(0.0F, o, v, o, paintC);
+
             int j1 = 0;
             while (j1 < r) {
                 canvas.save();

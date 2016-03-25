@@ -5,10 +5,10 @@
     android:background="@color/view_default_bg"
     android:orientation="vertical">
 
-    <NumberPicker
+    <com.wangjie.wheelview.WheelView
         android:id="@+id/date_picker"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="match_parent"

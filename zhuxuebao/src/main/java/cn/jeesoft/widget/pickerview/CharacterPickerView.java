@@ -4,7 +4,9 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.wazxb.xuerongbao.R;
@@ -46,8 +48,11 @@ public class CharacterPickerView extends FrameLayout {
     }
 
     private void init(Context context) {
-        View.inflate(context, R.layout.j_picker_items, this);
+        View content = LayoutInflater.from(context).inflate(R.layout.j_picker_items,this,false);
+        FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        addView(content,lp);
         wheelOptions = new MWheelOptions(this);
+        setClipChildren(false);
     }
 
 

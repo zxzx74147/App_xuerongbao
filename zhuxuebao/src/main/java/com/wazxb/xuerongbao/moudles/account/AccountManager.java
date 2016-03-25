@@ -156,9 +156,6 @@ public class AccountManager {
             mCalRequest = null;
             return;
         }
-        if (mUid == null) {
-            return;
-        }
         mCalRequest = new ZXBHttpRequest<>(CalculatorData.class, new HttpResponseListener<CalculatorData>() {
             @Override
             public void onResponse(HttpResponse<CalculatorData> response) {

@@ -5,7 +5,7 @@
     android:background="@color/view_default_bg"
     android:orientation="vertical">
 
-    <cn.jeesoft.widget.pickerview.CharacterPickerView
+    <com.wangjie.wheelview.WheelView
         android:id="@+id/custom_picker_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -19,12 +19,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/view_default_bg">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/view_default_bg"
+
             android:orientation="vertical">
 
 
@@ -58,10 +59,10 @@
                     android:layout_width="0dip"
                     android:layout_height="@dimen/size_input_layout"
                     android:layout_weight="1"
+                    android:inputType="number"
                     app:edit_hint="@string/vcode_hint"
                     app:label_text="@string/vcode"
                     app:label_width="@dimen/default_gap_150"
-                    android:inputType="number"
                     app:not_null="true"
                     app:post_key="@string/vcode_post_key" />
 
@@ -113,8 +114,8 @@
                 android:layout_marginLeft="@dimen/default_gap_20"
                 android:layout_marginRight="@dimen/default_gap_20"
                 android:layout_marginTop="@dimen/default_gap_10"
-                app:edit_hint="@string/invitation_code_hint"
                 android:inputType="number"
+                app:edit_hint="@string/invitation_code_hint"
                 app:label_text="@string/invitation_code"
                 app:label_width="@dimen/default_gap_150"
                 app:not_null="false"
@@ -187,6 +188,17 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_big" />
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/default_gap_20"
+                android:layout_marginRight="@dimen/default_gap_20"
+                android:layout_marginTop="@dimen/default_gap_130"
+                android:background="#ef9236"
+                android:src="@drawable/register_remind" />
         </LinearLayout>
+
+
     </ScrollView>
 </layout>
