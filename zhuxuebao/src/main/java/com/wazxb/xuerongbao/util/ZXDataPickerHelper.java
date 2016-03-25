@@ -128,13 +128,56 @@ public class ZXDataPickerHelper {
     }
 
     public static Dialog selectDay(Context context, final IDateSelected listener) {
-        final View view = LayoutInflater.from(context).inflate(R.layout.dialog_item_picker, null);
-        final CharacterPickerView mPicker = (CharacterPickerView) view.findViewById(R.id.custom_picker_view);
+        final View view = LayoutInflater.from(context).inflate(R.layout.dialog_item_day_picker, null);
+        final CharacterPickerView mPickerYear = (CharacterPickerView) view.findViewById(R.id.custom_picker_view_year);
+        final CharacterPickerView mPickerMonth = (CharacterPickerView) view.findViewById(R.id.custom_picker_view_month);
+        final CharacterPickerView mPickerDay = (CharacterPickerView) view.findViewById(R.id.custom_picker_view_day);
         Button mCancel = (Button) view.findViewById(R.id.cancel);
         Button mOk = (Button) view.findViewById(R.id.ok);
-        mPicker.setPicker(YEAR, MONTHS, DAYS);
+        mPickerYear.setPicker(YEAR);
+        mPickerMonth.setPicker(MONTH);
+        mPickerDay.setPicker(DAY_31);
 
-
+        mPickerYear.setOnOptionChangedListener(new CharacterPickerView.OnOptionChangedListener() {
+            @Override
+            public void onOptionChanged(CharacterPickerView view, int option1, int option2, int option3) {
+                int[] item = mPickerYear.getCurrentItems();
+                int year = Integer.valueOf(YEAR.get(item[0]));
+                item = mPickerMonth.getCurrentItems();
+                int month = Integer.valueOf(MONTH.get(item[0]));
+                if (mTable.get(month, false)) {
+                    mPickerDay.setPicker(DAY_31);
+                } else if (month == 2) {
+                    if (isLeapYear(year)) {
+                        mPickerDay.setPicker(DAY_29);
+                    } else {
+                        mPickerDay.setPicker(DAY_28);
+                    }
+                } else {
+                    mPickerDay.setPicker(DAY_30);
+                }
+            }
+        });
+        mPickerMonth.setOnOptionChangedListener(new CharacterPickerView.OnOptionChangedListener() {
+            @Override
+            public void onOptionChanged(CharacterPickerView view, int option1, int option2, int option3) {
+                int[] item = mPickerYear.getCurrentItems();
+                int year = Integer.valueOf(YEAR.get(item[0]));
+                item = mPickerMonth.getCurrentItems();
+                int month = Integer.valueOf(MONTH.get(item[0]));
+                if (mTable.get(month, false)) {
+                    mPickerDay.setPicker(DAY_31);
+                } else if (month == 2) {
+                    if (isLeapYear(year)) {
+                        mPickerDay.setPicker(DAY_29);
+                    } else {
+                        mPickerDay.setPicker(DAY_28);
+                    }
+                } else {
+                    mPickerDay.setPicker(DAY_30);
+                }
+            }
+        });
         final Dialog dialog = ZXDialogUtil.showDialog(context, view, null);
         mCancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,10 +189,12 @@ public class ZXDataPickerHelper {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
-                int[] selected = mPicker.getCurrentItems();
-                int year = Integer.valueOf(YEAR.get(selected[0]));
-                int month = Integer.valueOf(MONTH.get(selected[1]));
-                int day = Integer.valueOf(DAY_31.get(selected[2]));
+                int[] selectedYear = mPickerYear.getCurrentItems();
+                int[] selectedMonth = mPickerMonth.getCurrentItems();
+                int[] selectedDay = mPickerDay.getCurrentItems();
+                int year = Integer.valueOf(YEAR.get(selectedYear[0]));
+                int month = Integer.valueOf(MONTH.get(selectedMonth[1]));
+                int day = Integer.valueOf(DAY_31.get(selectedDay[2]));
 
                 listener.onSelected(year, month, day);
             }
